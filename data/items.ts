@@ -530,6 +530,16 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: -49,
 		gen: 8,
 	},
+	aumagaricelebliumz: {
+		name: "Aumagaricelebium Z",
+		spritenum: 690,
+		onTakeItem: false,
+		zMove: "Temporal Desolation",
+		zMoveFrom: "Earth Power",
+		itemUser: ["Celebi-Auamagari"],
+		num: -49,
+		gen: 8,
+	},
 	babiriberry: {
 		name: "Babiri Berry",
 		spritenum: 17,
@@ -1852,6 +1862,19 @@ export const Items: { [itemid: string]: ItemData } = {
 		forcedForme: ["Arceus-Dark", "Silvally-Dark"],
 		num: 791,
 		gen: 7,
+	},
+	darkraite: {
+		name: "Darkraite",
+		spritenum: 576,
+		megaStone: "Darkrai-Mega",
+		megaEvolves: "Darkrai",
+		itemUser: ["Darkrai"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: -42,
+		gen: 8,
 	},
 	darkraite: {
 		name: "Darkraite",
@@ -4823,6 +4846,30 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: -33,
 		gen: 8,
 	},
+	kuoberry: {
+		name: "Kuo Berry",
+		spritenum: 5,
+		isBerry: true,
+		naturalGift: {
+			basePower: 120,
+			type: "Electric",
+		},
+		onUpdate(pokemon) {
+			if (pokemon.hp <= pokemon.baseMaxhp / 4 || (pokemon.hp <= pokemon.baseMaxhp / 2 && pokemon.hasAbility('gluttony'))) {
+				pokemon.eatItem();
+			}
+		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp * 0.5);
+			pokemon.trySetStatus('par', pokemon);
+			pokemon.trySetStatus('slp', pokemon);
+		},
+		num: -33,
+		gen: 8,
+	},
 	laggingtail: {
 		name: "Lagging Tail",
 		spritenum: 237,
@@ -6018,6 +6065,32 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: -10,
 		gen: 8,
 	},
+	mightyenite: {
+		name: "Mightyenite",
+		spritenum: 576,
+		megaStone: "Mightyena-Mega",
+		megaEvolves: "Mightyena",
+		itemUser: ["Mightyena"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: -7,
+		gen: 8,
+	},
+	miloticite: {
+		name: "Miloticite",
+		spritenum: 576,
+		megaStone: "Milotic-Mega",
+		megaEvolves: "Milotic",
+		itemUser: ["Milotic"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: -10,
+		gen: 8,
+	},
 	mimikiumz: {
 		name: "Mimikium Z",
 		spritenum: 688,
@@ -6466,6 +6539,27 @@ export const Items: { [itemid: string]: ItemData } = {
 		},
 		onEat(pokemon) {
 			if (pokemon.status === "blindness") {
+				pokemon.cureStatus();
+			}
+		},
+		num: -31,
+		gen: 8,
+	},
+	nutpeaberry: {
+		name: "Nutpea Berry",
+		spritenum: 333,
+		isBerry: true,
+		naturalGift: {
+			basePower: 80,
+			type: "Dark",
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'blindness') {
+				pokemon.eatItem();
+			}
+		},
+		onEat(pokemon) {
+			if (pokemon.status === 'blindness') {
 				pokemon.cureStatus();
 			}
 		},
@@ -7316,6 +7410,19 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat: false,
 		num: 177,
 		gen: 3,
+	},
+	rapidashite: {
+		name: "Rapidashite",
+		spritenum: 576,
+		megaStone: "Rapidash-Mega",
+		megaEvolves: "Rapidash",
+		itemUser: ["Rapidash"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: -2,
+		gen: 8,
 	},
 	rapidashite: {
 		name: "Rapidashite",
