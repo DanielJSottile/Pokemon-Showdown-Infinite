@@ -4969,8 +4969,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 						secondBestStat = source.storedStats[s];
 					}
 				}
-				this.boost({[statName]: 1}, source);
-				this.boost({[statNameTwo]: 1}, source);
+				this.boost({ [statName]: 1 }, source);
+				this.boost({ [statNameTwo]: 1 }, source);
 			}
 		},
 		name: "Supreme Being",
