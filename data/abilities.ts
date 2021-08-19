@@ -3112,6 +3112,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	omniforge: {
 		onDamagingHit(damage, target, source, move) {
 			if (target.getMoveHitData(move).typeMod < 0) {
+<<<<<<< HEAD
 				const result = this.random(5);
 				if (result === 0) {
 					this.boost({atk: 2});
@@ -3123,6 +3124,19 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 					this.boost({spd: 2});
 				} else {
 					this.boost({spe: 2});
+=======
+				let result = this.random(5);
+				if (result === 0) {
+					this.boost({ atk: 2 });
+				} else if (result === 1) {
+					this.boost({ def: 2 });
+				} else if (result === 2) {
+					this.boost({ spa: 2 });
+				} else if (result === 3) {
+					this.boost({ spd: 2 });
+				} else {
+					this.boost({ spe: 2 });
+>>>>>>> 6efd8b176... added changes to current abilities
 				}
 			}
 		},
@@ -3209,6 +3223,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	parentalbond: {
 		onPrepareHit(source, target, move) {
+<<<<<<< HEAD
 			if (move.category === "Status" || move.selfdestruct || move.multihit) { return; }
 			if (
 				[
@@ -4489,6 +4504,11 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		onAnyFaint(target, source) {
 			if (source && source.volatiles["dynamax"]) return;
 			this.boost({spa: 1}, this.effectState.target);
+=======
+		onAnyFaint(target, source) {
+			if (source && source.volatiles["dynamax"]) return;
+			this.boost({ spa: 1 }, this.effectState.target);
+>>>>>>> 6efd8b176... added changes to current abilities
 		},
 		name: "Soul-Heart",
 		rating: 3.5,
