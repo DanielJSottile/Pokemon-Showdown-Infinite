@@ -254,7 +254,7 @@ export const Formats: FormatList = [
 	///////////////////////////////////////////////////////////////////
 
 	{
-		section: "Pkmn Yesterday/Tomorrow  Doubles",
+		section: "Pkmn Yesterday/Tomorrow Doubles",
 	},
 	{
 		name: "[Gen 8] Doubles OU",
