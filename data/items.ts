@@ -529,16 +529,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Steel",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Steel' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Steel" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -1350,16 +1342,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Rock",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Rock' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Rock" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -1432,15 +1416,8 @@ export const Items: { [itemid: string]: ItemData } = {
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			if (
-<<<<<<< HEAD
 				move.type === 'Normal' &&
 				(!target.volatiles['substitute'] || move.flags['bypasssub'] || (move.infiltrates && this.gen >= 6))
-=======
-				move.type === "Normal" &&
-				(!target.volatiles["substitute"] ||
-					move.flags["authentic"] ||
-					(move.infiltrates && this.gen >= 6))
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 			) {
 				if (target.eatItem()) {
 					this.debug("-50% reduction");
@@ -1566,19 +1543,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fighting",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Fighting' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Fighting" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -1632,19 +1598,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Flying",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Flying' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Flying" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -1667,16 +1622,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dark",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Dark' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Dark" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -3867,19 +3814,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dragon",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Dragon' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Dragon" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -4524,16 +4460,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Ghost",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Ghost' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Ghost" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -4556,19 +4484,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Poison",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Poison' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Poison" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -6501,16 +6418,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fire",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Fire' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Fire" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -6620,16 +6529,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Water",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Water' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Water" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -6652,19 +6553,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Psychic",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Psychic' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Psychic" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -7645,16 +7535,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Grass",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Grass' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Grass" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -7801,16 +7683,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fairy",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Fairy' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Fairy" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -8274,19 +8148,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Ground",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Ground' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Ground" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -8913,16 +8776,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Bug",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Bug' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Bug" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
@@ -10232,19 +10087,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Electric",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Electric' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (
-				move.type === "Electric" &&
-				target.getMoveHitData(move).typeMod > 0
-			) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 				if (target.eatItem()) {
 					this.debug("-50% reduction");
@@ -10490,16 +10334,8 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Ice",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-<<<<<<< HEAD
 			if (move.type === 'Ice' && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-=======
-			if (move.type === "Ice" && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub =
-					target.volatiles["substitute"] &&
-					!move.flags["authentic"] &&
-					!(move.infiltrates && this.gen >= 6);
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 				if (hitSub) return;
 
 				if (target.eatItem()) {
