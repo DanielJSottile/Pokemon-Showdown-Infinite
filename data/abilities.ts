@@ -380,7 +380,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 						bestStat = source.storedStats[s];
 					}
 				}
-				this.boost({[statName]: length}, source);
+				this.boost({ [statName]: length }, source);
 			}
 		},
 		name: "Beast Boost",
@@ -684,7 +684,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 					this.add("-ability", target, "Cotton Down");
 					activated = true;
 				}
-				this.boost({spe: -1}, pokemon, target, null, true);
+				this.boost({ spe: -1 }, pokemon, target, null, true);
 			}
 		},
 		name: "Cotton Down",
@@ -792,7 +792,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	dauntlessshield: {
 		onStart(pokemon) {
-			this.boost({def: 1}, pokemon);
+			this.boost({ def: 1 }, pokemon);
 		},
 		name: "Dauntless Shield",
 		rating: 3.5,
@@ -1043,9 +1043,9 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				totalspd += target.getStat("spd", false, true);
 			}
 			if (totaldef && totaldef >= totalspd) {
-				this.boost({spa: 1});
+				this.boost({ spa: 1 });
 			} else if (totalspd) {
-				this.boost({atk: 1});
+				this.boost({ atk: 1 });
 			}
 		},
 		name: "Download",
@@ -2220,7 +2220,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				) {
 					this.add("-immune", target);
 				} else {
-					this.boost({atk: -1}, target, pokemon, null, true);
+					this.boost({ atk: -1 }, target, pokemon, null, true);
 				}
 			}
 		},
@@ -2230,7 +2230,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	intrepidsword: {
 		onStart(pokemon) {
-			this.boost({atk: 1}, pokemon);
+			this.boost({ atk: 1 }, pokemon);
 		},
 		name: "Intrepid Sword",
 		rating: 4,
@@ -4520,7 +4520,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			if (pokemon.activeTurns) {
-				this.boost({spe: 1});
+				this.boost({ spe: 1 });
 			}
 		},
 		name: "Speed Boost",
@@ -4564,7 +4564,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	stamina: {
 		onDamagingHit(damage, target, source, effect) {
-			this.boost({def: 1});
+			this.boost({ def: 1 });
 		},
 		name: "Stamina",
 		rating: 3.5,
@@ -4601,7 +4601,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	steadfast: {
 		onFlinch(pokemon) {
-			this.boost({spe: 1});
+			this.boost({ spe: 1 });
 		},
 		name: "Steadfast",
 		rating: 1,
