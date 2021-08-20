@@ -5402,7 +5402,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zapcannon: ["8M"],
 		},
 	},
-	zubat: {
+	nidoranf: {
 		learnset: {
 			dualwingbeat: ["8T"],
 			assurance: ["8M"],
@@ -6491,6 +6491,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			thrash: ["8E"],
 			toxic: ["8M"],
 			workup: ["8M"],
+			zapcannon: ["8M"],
+			zenheadbutt: ["8T"],
 		},
 	},
 	clefairy: {
@@ -9949,6 +9951,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			stompingtantrum: ["8T"],
 			stoneedge: ["8M", "8L54"],
 			substitute: ["8M"],
+			suckerpunch: ["8L22"],
 			sunnyday: ["8M"],
 			superpower: ["8T"],
 			swagger: ["8M"],
@@ -12476,7 +12479,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			lightscreen: ["8M"],
 		},
 	},
-	happiny: {
+	golduck: {
 		learnset: {
 			corrosivegas: ["8T"],
 			poltergeist: ["8T"],
@@ -15625,7 +15628,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zapcannon: ["8M"],
 		},
 	},
-	leafeon: {
+	geodude: {
 		learnset: {
 			grassyglide: ["8T"],
 			innerpower: ["8M"],
@@ -20370,7 +20373,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			worryseed: ["8T", "8L19"],
 		},
 	},
-	yanma: {
+	turbanner: {
 		learnset: {
 			hiddenpower: ["8M"],
 			innerpower: ["8M"],
@@ -20444,7 +20447,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			uturn: ["8M", "8L49"],
 		},
 	},
-	wooper: {
+	haunter: {
 		learnset: {
 			risingvoltage: ["8T"],
 			dualwingbeat: ["8T"],
@@ -20893,7 +20896,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			revealingjudgment: ["8L1"],
 		},
 	},
-	wynaut: {
+	drowzee: {
 		learnset: {
 			mimic: ["8T"],
 			charm: ["8L1"],
@@ -20906,7 +20909,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			tickle: ["8T"],
 		},
 	},
-	wobbuffet: {
+	hypno: {
 		learnset: {
 			amnesia: ["8M"],
 			mimic: ["8T"],
@@ -20917,7 +20920,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			tickle: ["8T"],
 		},
 	},
-	girafarig: {
+	krabby: {
 		learnset: {
 			expandingforce: ["8T"],
 			helpinghand: ["8M"],
@@ -21979,7 +21982,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			whirlpool: ["8M"],
 		},
 	},
-	shuckle: {
+	electrode: {
 		learnset: {
 			skittersmack: ["8T"],
 			meteorbeam: ["8T"],
@@ -22617,7 +22620,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			toxic: ["8M", "8V"],
 		},
 	},
-	mamoswine: {
+	exeggutor: {
 		learnset: {
 			hoarfrost: ["8M"],
 			innerpower: ["8M"],
@@ -22804,7 +22807,12 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			attract: ["8M"],
 			blizzard: ["8M"],
 			bodyslam: ["8M"],
-			brine: ["8M"],
+			boneclub: ["8L7", "8V", "8V"],
+			bonemerang: ["8L21", "8V", "8V"],
+			bonerush: ["8L51", "8V"],
+			brickbreak: ["8M"],
+			brutalswing: ["8M"],
+			bubblebeam: ["8M"],
 			bulldoze: ["8M"],
 			calmmind: ["8M"],
 			confuseray: ["8E"],
@@ -22835,27 +22843,22 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			nightshade: ["8L45"],
 			powergem: ["8M", "8L40"],
 			protect: ["8M"],
-			psychic: ["8M"],
 			raindance: ["8M"],
-			reflect: ["8M"],
 			rest: ["8M"],
 			rockblast: ["8M"],
 			rockslide: ["8M"],
 			rocktomb: ["8M"],
 			round: ["8M"],
-			safeguard: ["8M"],
 			sandstorm: ["8M"],
-			scald: ["8M"],
-			screech: ["8M"],
-			selfdestruct: ["8M"],
 			shadowball: ["8M"],
+			shadowbone: ["8L27"],
 			sleeptalk: ["8M"],
-			snore: ["8M"],
-			spite: ["8L15"],
-			stealthrock: ["8M"],
-			stompingtantrum: ["8M"],
+			smackdown: ["8M"],
+			snore: ["8T"],
+			spite: ["8T"],
+			stealthrock: ["8T"],
+			stompingtantrum: ["8T", "8L43"],
 			stoneedge: ["8M"],
-			strengthsap: ["8L35"],
 			substitute: ["8M"],
 			sunnyday: ["8M", "8V"],
 			supersonic: ["8E", "8V"],
@@ -22963,7 +22966,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			wringout: ["8L28"],
 		},
 	},
-	delibird: {
+	tyrogue: {
 		learnset: {
 			hoarfrost: ["8M"],
 			dualwingbeat: ["8T"],
@@ -23051,7 +23054,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			waterpulse: ["8T"],
 		},
 	},
-	mantyke: {
+	hitmonlee: {
 		learnset: {
 			gust: ["8T"],
 			acrobatics: ["8M"],
@@ -23119,7 +23122,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			wingattack: ["8L14"],
 		},
 	},
-	mantine: {
+	hitmonchan: {
 		learnset: {
 			dualwingbeat: ["8T"],
 			bodypress: ["8M"],
@@ -23839,7 +23842,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zapcannon: ["8M"],
 		},
 	},
-	entei: {
+	lickilicky: {
 		learnset: {
 			scorchingsands: ["8T"],
 			helpinghand: ["8M"],
@@ -24178,7 +24181,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			whirlpool: ["8M"],
 		},
 	},
-	larvitar: {
+	weezing: {
 		learnset: {
 			innerpower: ["8M"],
 			chaosleap: ["8M"],
@@ -24254,7 +24257,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			uproar: ["8T"],
 		},
 	},
-	pupitar: {
+	weezinggalar: {
 		learnset: {
 			innerpower: ["8M"],
 			chaosleap: ["8M"],
@@ -24325,7 +24328,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			uproar: ["8T"],
 		},
 	},
-	tyranitar: {
+	rhyhorn: {
 		learnset: {
 			lashout: ["8T"],
 			backlash: ["8M"],
@@ -43816,6 +43819,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			protect: ["8M"],
 			quash: ["8M"],
 			raindance: ["8M"],
+			reflecttype: ["8E"],
 			rest: ["8M"],
 			return: ["8M"],
 			rocktomb: ["8M"],
@@ -43972,6 +43976,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			protect: ["8M"],
 			quash: ["8M"],
 			raindance: ["8M"],
+			reflecttype: ["8E"],
 			rest: ["8M"],
 			return: ["8M"],
 			roar: ["8M"],
