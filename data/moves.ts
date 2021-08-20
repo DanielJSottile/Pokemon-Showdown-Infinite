@@ -1777,6 +1777,56 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	beatdrop: {
+		num: -39,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Beat Drop",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === "move" ? action.move : null;
+			if (
+				!move ||
+				(move.category === "Status" && move.id !== "mefirst") ||
+				target.volatiles["mustrecharge"]
+			) {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Clever",
+	},
+	beatup: {
+		num: 251,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			return (
+				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
+			);
+		},
+		category: "Physical",
+		name: "Beat Up",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, mystery: 1},
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(
+				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
+			);
+			move.multihit = move.allies.length;
+		},
+		secondary: null,
+		target: "normal",
 		type: "Dark",
 		contestType: "Clever",
 	},
@@ -3619,7 +3669,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				// random integer from 1-3 inclusive
 				const offset = this.random(3) + 1;
 				// the list of all sides in counterclockwise order
-				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
+				const sides = [
+					this.sides[0],
+					this.sides[2]!,
+					this.sides[1],
+					this.sides[3]!,
+				];
 				for (const id of sideConditions) {
 					const effectName = this.dex.conditions.get(id).name;
 					const rotatedSides = [];
@@ -3629,19 +3684,21 @@ export const Moves: { [moveid: string]: MoveData } = {
 						const targetSide = sides[(i + offset) % 4]; // the next side in rotation
 						rotatedSides.push(targetSide.sideConditions[id]);
 						if (sourceSide.sideConditions[id]) {
-							this.add('-sideend', sourceSide, effectName, '[silent]');
+							this.add("-sideend", sourceSide, effectName, "[silent]");
 							someCondition = true;
 						}
 					}
 					if (!someCondition) continue;
 					[
-						sides[0].sideConditions[id], sides[1].sideConditions[id],
-						sides[2]!.sideConditions[id], sides[3]!.sideConditions[id],
+						sides[0].sideConditions[id],
+						sides[1].sideConditions[id],
+						sides[2]!.sideConditions[id],
+						sides[3]!.sideConditions[id],
 					] = [...rotatedSides];
 					for (const side of sides) {
 						if (side.sideConditions[id]) {
 							let layers = side.sideConditions[id].layers || 1;
-							for (; layers > 0; layers--) this.add('-sidestart', side, effectName, '[silent]');
+							for (; layers > 0; layers--) { this.add("-sidestart", side, effectName, "[silent]"); }
 						} else {
 							delete side.sideConditions[id];
 						}
@@ -3670,7 +3727,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add('-swapsideconditions');
 			}
 			if (!success) return false;
-			this.add('-activate', source, 'move: Court Change');
+			this.add("-activate", source, "move: Court Change");
 		},
 		secondary: null,
 		target: "all",
@@ -12002,37 +12059,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Water",
 		contestType: "Clever",
 	},
-	ingrain: {
-		num: 275,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Ingrain",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1, nonsky: 1},
-		volatileStatus: 'ingrain',
-		condition: {
-			onStart(pokemon) {
-				this.add('-start', pokemon, 'move: Ingrain');
-			},
-			onResidualOrder: 7,
-			onResidual(pokemon) {
-				this.heal(pokemon.baseMaxhp / 16);
-			},
-			onTrapPokemon(pokemon) {
-				pokemon.tryTrap();
-			},
-			// groundedness implemented in battle.engine.js:BattlePokemon#isGrounded
-			onDragOut(pokemon) {
-				this.add('-activate', pokemon, 'move: Ingrain');
-				return null;
-			},
+	innerpowerwater: {
+		num: -22,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
+				return move.basePower + 30;
+			}
+			return move.basePower;
 		},
+		category: "Physical",
+		realMove: "Inner Power",
+		name: "Inner Power Water",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
-		target: "self",
-		type: "Grass",
-		zMove: {boost: {spd: 1}},
+		target: "normal",
+		type: "Water",
 		contestType: "Clever",
 	},
 	instruct: {
@@ -17069,6 +17114,30 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Steel",
 		contestType: "Popular",
 	},
+	pointypoint: {
+		num: -32,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Pointy Point",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1},
+		self: {
+			onHit(source) {
+				const result = this.random(2);
+				if (result === 0) {
+					source.side.foe.addSideCondition('spikes');
+				} else {
+					source.side.foe.addSideCondition('metalshard');
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Popular",
+	},
 	poisonfang: {
 		num: 305,
 		accuracy: 100,
@@ -18874,6 +18943,60 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, heal: 1 },
+		onTryMove(pokemon, target, move) {
+			if (pokemon.species.name === "Unown-Alphabet" || move.hasBounced) {
+				return;
+			}
+			this.add("-fail", pokemon, "move: revealingjudgment");
+			this.hint(
+				"Only a Pokemon whose form is Unown Alphabet can use this move."
+			);
+			return null;
+		},
+		volatileStatus: "revealingjudgment",
+		beforeMoveCallback(pokemon) {
+			if (pokemon.volatiles["revealingjudgment"]) {
+				return true;
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add("-singleturn", pokemon, "move: Revealing Judgment");
+				this.add("-message", "Unown is judging your character...");
+			},
+			onHit(pokemon, source, move) {
+				if (
+					pokemon.species.name === "Unown-Alphabet" &&
+					move.category !== "Status"
+				) {
+					pokemon.volatiles["revealingjudgment"].gotHit = true;
+					const healedBy = this.heal(pokemon.maxhp / 3);
+					pokemon.removeVolatile("revealingjudgment");
+					this.add(
+						"-message",
+						"Unown revealed the true intentions of the foe!"
+					);
+					return !!healedBy;
+				}
+			},
+		},
+		heal: [1, 3],
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {effect: "clearnegativeboost"},
+		contestType: "Clever",
+	},
+	revealingjudgment: {
+		num: -3,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Revealing Judgment",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
 		onTryMove(pokemon, target, move) {
 			if (pokemon.species.name === "Unown-Alphabet" || move.hasBounced) {
 				return;
@@ -25288,6 +25411,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
