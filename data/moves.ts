@@ -17179,6 +17179,84 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
+	pastsassurance: {
+		num: -10,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Past's Assurance",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
+		onHitField() {
+			this.field.removePseudoWeather("magicroom");
+			this.field.removePseudoWeather("wonderroom");
+			this.field.removePseudoWeather("trickroom");
+			this.field.clearWeather();
+			this.field.clearTerrain();
+			this.add("-clearallboost");
+			for (const pokemon of this.getAllActive()) {
+				pokemon.clearBoosts();
+			}
+		},
+		onHit(target, source, move) {
+			let success = false;
+			const removeTarget = [
+				"reflect",
+				"lightscreen",
+				"auroraveil",
+				"safeguard",
+				"mist",
+				"spikes",
+				"toxicspikes",
+				"stealthrock",
+				"stickyweb",
+				"metalshard",
+			];
+			const removeAll = [
+				"spikes",
+				"toxicspikes",
+				"stealthrock",
+				"stickyweb",
+				"metalshard",
+			];
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add(
+						"-sideend",
+						target.side,
+						this.dex.conditions.get(targetCondition).name,
+						"[from] move: Defog",
+						"[of] " + source
+					);
+					success = true;
+				}
+			}
+			for (const sideCondition of removeAll) {
+				if (source.side.removeSideCondition(sideCondition)) {
+					this.add(
+						"-sideend",
+						source.side,
+						this.dex.conditions.get(sideCondition).name,
+						"[from] move: Defog",
+						"[of] " + source
+					);
+					success = true;
+					this.add(
+						"-message",
+						"The field was reset to its original state"
+					);
+				}
+			}
+			return success;
+		},
+		secondary: null,
+		target: "all",
+		type: "Infinite",
+		zMove: {effect: "heal"},
+		contestType: "Beautiful",
+	},
 	payback: {
 		num: 371,
 		accuracy: 100,
@@ -20310,6 +20388,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: {
 			chance: 10,
 			status: "whiplash",
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
+	roundhousekick: {
+		num: -19,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Roundhouse Kick",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 10,
+			status: 'whiplash',
 		},
 		target: "normal",
 		type: "Fighting",
@@ -26126,6 +26221,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
