@@ -7820,6 +7820,29 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Dragon",
 		contestType: "Cool",
 	},
+	gmaxguardian: {
+		num: 1000,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		isNonstandard: "Gigantamax",
+		name: "G-Max Guardian",
+		pp: 5,
+		priority: 0,
+		flags: {},
+		isMax: "Dragonite",
+		self: {
+			onHit(source) {
+				const side = source.side.allySide!;
+				side.addSideCondition("mist");
+				side.addSideCondition("safeguard");
+			},
+		},
+		secondary: null,
+		target: "adjacentFoe",
+		type: "Dragon",
+		contestType: "Cool",
+	},
 	gmaxhydrosnipe: {
 		num: 1000,
 		accuracy: true,
