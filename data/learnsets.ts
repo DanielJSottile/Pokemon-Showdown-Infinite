@@ -85194,7 +85194,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			leafstorm: ["8M"],
 			darkestlariat: ["8M"],
 			bodypress: ["8M"],
-			flareup: ["8M"],
+			lavaterrain: ["8M"],
 			pyroclasticblow: ["8M"],
 			innerpower: ["8M"],
 			midnightstrike: ["8M"],
