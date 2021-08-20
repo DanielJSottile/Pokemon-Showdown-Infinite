@@ -1628,6 +1628,56 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		contestType: "Cool",
 	},
+	beatdrop: {
+		num: -39,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Beat Drop",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === "move" ? action.move : null;
+			if (
+				!move ||
+				(move.category === "Status" && move.id !== "mefirst") ||
+				target.volatiles["mustrecharge"]
+			) {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Clever",
+	},
+	beatup: {
+		num: 251,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			return (
+				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
+			);
+		},
+		category: "Physical",
+		name: "Beat Up",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, mystery: 1},
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(
+				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
+			);
+			move.multihit = move.allies.length;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Clever",
+	},
 	behemothbash: {
 		num: 782,
 		accuracy: 100,
@@ -10922,13 +10972,19 @@ export const Moves: { [moveid: string]: MoveData } = {
 			status: "brn",
 		},
 		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful",
+		type: "Psychic",
+		contestType: "Clever",
 	},
-	infernooverdrive: {
-		num: 640,
-		accuracy: true,
-		basePower: 1,
+	innerpowerrock: {
+		num: -22,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
+				return move.basePower + 30;
+			}
+			return move.basePower;
+		},
 		category: "Physical",
 		name: "Inferno Overdrive",
 		pp: 1,
@@ -13270,6 +13326,70 @@ export const Moves: { [moveid: string]: MoveData } = {
 					!pokemon.isSemiInvulnerable() &&
 					!pokemon.hasType("Fire")
 				) {
+					this.damage(pokemon.baseMaxhp / 16, pokemon);
+				} else {
+					this.debug(
+						`Pokemon semi-invuln or not grounded; Lava Terrain skipped`
+					);
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add("-fieldend", "move: Lava Terrain");
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Fire",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	lavaterrain: {
+		num: -23,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Lava Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: "lavaterrain",
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem("terrainextender")) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (
+					move.type === "Water" &&
+					defender.isGrounded() &&
+					!defender.isSemiInvulnerable()
+				) {
+					this.debug("lava terrain weaken");
+					return this.chainModify(0.5);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === "Ability") {
+					this.add(
+						"-fieldstart",
+						"move: Lava Terrain",
+						"[from] ability: " + effect,
+						"[of] " + source
+					);
+				} else {
+					this.add("-fieldstart", "move: Lava Terrain");
+				}
+			},
+			onResidualOrder: 5,
+			onResidualSubOrder: 2,
+			onResidual(pokemon) {
+				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable() && !pokemon.hasType("Fire")) {
 					this.damage(pokemon.baseMaxhp / 16, pokemon);
 				} else {
 					this.debug(
