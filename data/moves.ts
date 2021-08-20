@@ -7347,6 +7347,57 @@ export const Moves: { [moveid: string]: MoveData } = {
 		contestType: "Clever",
 	},
 	gmaxannihilation: {
+<<<<<<< HEAD
+=======
+		num: 1000,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		desc: "",
+		shortDesc: "",
+		isNonstandard: "Gigantamax",
+		name: "G-Max Annihilation",
+		pp: 5,
+		priority: 0,
+		flags: {},
+		isMax: "Victini",
+		// code for reverting to old explosion mechanic in scripts.ts
+		selfdestruct: "always",
+		target: "adjacentFoe",
+		type: "Fire",
+		contestType: "Cool",
+	},
+	gmaxbattering: {
+		num: 1000,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		desc: "Flinches or raises user def 1 stage. Base Power scales with the base move's Base Power.",
+		shortDesc: "Flinches or raises user def 1 stage.",
+		isNonstandard: "Gigantamax",
+		name: "G-Max Battering",
+		pp: 5,
+		priority: 0,
+		flags: {},
+		isMax: "Bashigon",
+		self: {
+			onHit(source) {
+				for (const pokemon of source.foes()) {
+					const result = this.random(2);
+					if (result === 0) {
+						pokemon.addVolatile('flinch');
+					} else {
+						this.boost({def: 1}, pokemon, source);
+					}
+				}
+			},
+		},
+		target: "adjacentFoe",
+		type: "Steel",
+		contestType: "Cool",
+	},
+	gmaxbefuddle: {
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		num: 1000,
 		accuracy: true,
 		basePower: 10,
@@ -7532,6 +7583,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		shortDesc: "Boosts attack 1 stage, does 2x against opposing D-Max; User must recharge. BP scales with base move.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Colossal Force",
 		pp: 5,
@@ -7623,6 +7678,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		desc: "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
+		shortDesc: "Base move affects power. Breaks all protection.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Draconian Blow",
 		pp: 5,
@@ -7715,11 +7775,19 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Water",
 		contestType: "Cool",
 	},
+<<<<<<< HEAD
 	gmaxghostlysting: {
+=======
+	"gmaxghostlysting": {
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		num: 1000,
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		shortDesc: "Lowers the opponents Def -1, causes the opponent to be Cursed. BP scales with base move's BP.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Ghostly Sting",
 		pp: 5,
@@ -7835,11 +7903,16 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					this.boost({spe: -1}, pokemon);
 					pokemon.addVolatile('block');
 =======
 					pokemon.trySetStatus("psn", source);
 >>>>>>> 3bbfa5c75... added new moves but not gmax ones
+=======
+					this.boost({spe: -1}, pokemon);
+					pokemon.addVolatile('block');
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 				}
 			},
 		},
@@ -7863,15 +7936,21 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 					const result = this.random(2);
 					if (result === 0) {
 						pokemon.addVolatile('flinch');
 					} else {
 						pokemon.trySetStatus('brn', source);
 					}
+<<<<<<< HEAD
 =======
 					if (!pokemon.volatiles["dynamax"]) { pokemon.addVolatile("torment"); }
 >>>>>>> 3bbfa5c75... added new moves but not gmax ones
+=======
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 				}
 			},
 		},
@@ -7929,6 +8008,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		shortDesc: "Lowers the opponents Sp. Def by -1, Blinds opponents. BP scales with base move.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Nightfall",
 		pp: 5,
@@ -8288,6 +8371,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		desc: "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
+		shortDesc: "Base move affects power. Breaks all protection.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Tigerstorm Strike",
 		pp: 5,
@@ -8305,6 +8393,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		desc: "Foe: Leech Seed or Flinch. Base Power scales with the base move's Base Power.",
+		shortDesc: "Foe: Leech Seed or Flinch.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Vegetation",
 		pp: 5,
