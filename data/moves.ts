@@ -1612,8 +1612,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 			);
 		},
 		category: "Physical",
-		name: "Beat Up",
-		pp: 10,
+		name: "Beastly Awakening Punch",
+		pp: 1,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, mystery: 1},
 		onModifyMove(move, pokemon) {
@@ -1622,10 +1622,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 			);
 			move.multihit = move.allies.length;
 		},
+		isZ: "slakingiumz",
 		secondary: null,
 		target: "normal",
-		type: "Dark",
-		contestType: "Clever",
+		type: "Normal",
+		contestType: "Cool",
 	},
 	behemothbash: {
 		num: 782,
