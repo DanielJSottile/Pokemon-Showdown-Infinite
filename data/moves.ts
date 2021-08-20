@@ -8048,6 +8048,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		desc: "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
+		shortDesc: "Base move affects power. Breaks all protection.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Draconian Blow",
 		pp: 5,
@@ -8065,6 +8070,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 160,
 		category: "Physical",
+<<<<<<< HEAD
+=======
+		desc: "Foe: Leech Seed or Flinch. Base Power scales with the base move's Base Power.",
+		shortDesc: "Foe: Leech Seed or Flinch.",
+>>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		isNonstandard: "Gigantamax",
 		name: "G-Max Drum Solo",
 		pp: 5,
