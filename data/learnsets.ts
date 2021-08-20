@@ -41403,7 +41403,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zenheadbutt: ["8T", "8L35"],
 		},
 	},
-	beldum: {
+	patrat: {
 		learnset: {
 			headbutt: ["8T"],
 			holdback: ["8T"],
@@ -51955,7 +51955,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zenheadbutt: ["8T"],
 		},
 	},
-	drilbur: {
+	escavalier: {
 		learnset: {
 			scorchingsands: ["8T"],
 			innerpower: ["8M"],
@@ -52013,7 +52013,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			xscissor: ["8M"],
 		},
 	},
-	excadrill: {
+	foongus: {
 		learnset: {
 			scorchingsands: ["8T"],
 			innerpower: ["8M"],
@@ -79315,6 +79315,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			playrough: ["8M", "8L51"],
 			powerwhip: ["8M"],
 			protect: ["8M"],
+			reflect: ["8M"],
 			rest: ["8M"],
 			rockblast: ["8M"],
 			rockslide: ["8M"],
