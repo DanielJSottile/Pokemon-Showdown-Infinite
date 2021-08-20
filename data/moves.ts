@@ -1667,6 +1667,57 @@ export const Moves: { [moveid: string]: MoveData } = {
 			);
 		},
 		category: "Physical",
+		name: "Beastly Awakening Punch",
+		pp: 1,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, mystery: 1},
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(
+				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
+			);
+			move.multihit = move.allies.length;
+		},
+		isZ: "slakingiumz",
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	beatdrop: {
+		num: -39,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Beat Drop",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === "move" ? action.move : null;
+			if (
+				!move ||
+				(move.category === "Status" && move.id !== "mefirst") ||
+				target.volatiles["mustrecharge"]
+			) {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Clever",
+	},
+	beatup: {
+		num: 251,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			return (
+				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
+			);
+		},
+		category: "Physical",
 		name: "Beat Up",
 		pp: 10,
 		priority: 0,
@@ -12324,6 +12375,33 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Ground",
 		contestType: "Popular",
+	},
+	limitbreak: {
+		num: -7,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Limit Break",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		onHit(target) {
+			if (
+				target.hp <= target.maxhp / 2 ||
+				target.boosts.spa >= 6 ||
+				target.maxhp === 1
+			) {
+				// Shedinja clause
+				return false;
+			}
+			this.directDamage(target.maxhp / 2);
+			this.boost({spa: 12}, target);
+		},
+		secondary: null,
+		target: "self",
+		type: "Infinite",
+		zMove: {effect: "heal"},
+		contestType: "Cute",
 	},
 	liquidation: {
 		num: 710,
@@ -24064,6 +24142,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
