@@ -6771,8 +6771,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			nastyplot: ["8M"],
 			nightslash: ["8E"],
 			payback: ["8M"],
-			payday: ["8M", "8L12"],
-			playrough: ["8M"],
 			protect: ["8M"],
 			psychup: ["8M"],
 			raindance: ["8M"],
@@ -17260,7 +17258,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zapcannon: ["8M"],
 		},
 	},
-	dragonite: {
+	slowbro: {
 		learnset: {
 			scaleshot: ["8T"],
 			dualwingbeat: ["8T"],
@@ -18352,7 +18350,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			workup: ["8M"],
 		},
 	},
-	croconaw: {
+	magnezone: {
 		learnset: {
 			swift: ["8M"],
 			mudshot: ["8M"],
@@ -80168,6 +80166,9 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			playrough: ["8M", "8L51"],
 			powerwhip: ["8M"],
 			protect: ["8M"],
+			psychicfangs: ["8M"],
+			quickattack: ["8L1"],
+			reflect: ["8M"],
 			rest: ["8M"],
 			revenge: ["8M"],
 			rockblast: ["8M"],
@@ -80346,6 +80347,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			scaryface: ["8M"],
 			slash: ["8L11"],
 			sleeptalk: ["8M"],
+			snarl: ["8M"],
 			snore: ["8M"],
 			solarbeam: ["8M"],
 			substitute: ["8M"],
@@ -80423,6 +80425,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			round: ["8M"],
 			scald: ["8M"],
 			sleeptalk: ["8M"],
+			sludgebomb: ["8M"],
+			sludgewave: ["8M"],
 			snore: ["8M"],
 			stomp: ["8L42"],
 			stompingtantrum: ["8M"],
