@@ -3819,7 +3819,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				// random integer from 1-3 inclusive
 				const offset = this.random(3) + 1;
 				// the list of all sides in counterclockwise order
-				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
+				const sides = [
+					this.sides[0],
+					this.sides[2]!,
+					this.sides[1],
+					this.sides[3]!,
+				];
 				for (const id of sideConditions) {
 					const effectName = this.dex.conditions.get(id).name;
 					const rotatedSides = [];
@@ -3829,19 +3834,21 @@ export const Moves: { [moveid: string]: MoveData } = {
 						const targetSide = sides[(i + offset) % 4]; // the next side in rotation
 						rotatedSides.push(targetSide.sideConditions[id]);
 						if (sourceSide.sideConditions[id]) {
-							this.add('-sideend', sourceSide, effectName, '[silent]');
+							this.add("-sideend", sourceSide, effectName, "[silent]");
 							someCondition = true;
 						}
 					}
 					if (!someCondition) continue;
 					[
-						sides[0].sideConditions[id], sides[1].sideConditions[id],
-						sides[2]!.sideConditions[id], sides[3]!.sideConditions[id],
+						sides[0].sideConditions[id],
+						sides[1].sideConditions[id],
+						sides[2]!.sideConditions[id],
+						sides[3]!.sideConditions[id],
 					] = [...rotatedSides];
 					for (const side of sides) {
 						if (side.sideConditions[id]) {
 							let layers = side.sideConditions[id].layers || 1;
-							for (; layers > 0; layers--) this.add('-sidestart', side, effectName, '[silent]');
+							for (; layers > 0; layers--) { this.add("-sidestart", side, effectName, "[silent]"); }
 						} else {
 							delete side.sideConditions[id];
 						}
@@ -3870,7 +3877,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add('-swapsideconditions');
 			}
 			if (!success) return false;
-			this.add('-activate', source, 'move: Court Change');
+			this.add("-activate", source, "move: Court Change");
 		},
 		secondary: null,
 		target: "all",
@@ -16846,6 +16853,44 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Steel",
 		contestType: "Popular",
 	},
+	originflare: {
+		num: -27,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Origin Flare",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			boosts: {
+				spa: -2,
+			},
+		},
+		target: "normal",
+		type: "Steel",
+		contestType: "Popular",
+	},
+	originstrike: {
+		num: -28,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Origin Strike",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 40,
+			boosts: {
+				atk: -2,
+			},
+		},
+		target: "normal",
+		type: "Steel",
+		contestType: "Popular",
+	},
 	outrage: {
 		num: 200,
 		accuracy: 100,
@@ -18445,6 +18490,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 			source.addVolatile("lockon", target);
 			this.add("-activate", source, "move: Psychokinesis", "[of] " + target);
 			this.add("-message", "The user is locked on to the target!");
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Popular",
+	},
+	psychokinesis: {
+		num: -33,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Psychokinesis",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onTryHit(target, source) {
+			if (source.volatiles['lockon']) return false;
+		},
+		onHit(target, source) {
+			source.addVolatile('lockon', target);
+			this.add('-activate', source, 'move: Psychokinesis', '[of] ' + target);
+			this.add('-message', 'The user is locked on to the target!');
 		},
 		secondary: null,
 		target: "normal",
@@ -25988,6 +26055,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
