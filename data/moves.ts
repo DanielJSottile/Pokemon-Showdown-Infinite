@@ -1631,6 +1631,56 @@ export const Moves: { [moveid: string]: MoveData } = {
 	behemothbash: {
 		num: 782,
 		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Beat Drop",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === "move" ? action.move : null;
+			if (
+				!move ||
+				(move.category === "Status" && move.id !== "mefirst") ||
+				target.volatiles["mustrecharge"]
+			) {
+				return false;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Clever",
+	},
+	beatup: {
+		num: 251,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			return (
+				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
+			);
+		},
+		category: "Physical",
+		name: "Beat Up",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, mystery: 1},
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(
+				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
+			);
+			move.multihit = move.allies.length;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Clever",
+	},
+	behemothbash: {
+		num: 782,
+		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
 		name: "Behemoth Bash",
@@ -10697,38 +10747,50 @@ export const Moves: { [moveid: string]: MoveData } = {
 			status: "brn",
 		},
 		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful",
+		type: "Psychic",
+		contestType: "Clever",
 	},
-	infernooverdrive: {
-		num: 640,
-		accuracy: true,
-		basePower: 1,
+	innerpowerrock: {
+		num: -22,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
+				return move.basePower + 30;
+			}
+			return move.basePower;
+		},
 		category: "Physical",
 		name: "Inferno Overdrive",
 		pp: 1,
 		priority: 0,
-		flags: {},
-		isZ: "firiumz",
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
-		contestType: "Cool",
+		type: "Rock",
+		contestType: "Clever",
 	},
-	infestation: {
-		num: 611,
+	innerpowersteel: {
+		num: -22,
 		accuracy: 100,
-		basePower: 20,
-		category: "Special",
-		name: "Infestation",
-		pp: 20,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
+				return move.basePower + 30;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		realMove: "Inner Power",
+		name: "Inner Power Steel",
+		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Bug",
-		contestType: "Cute",
+		type: "Steel",
+		contestType: "Clever",
 	},
 	ingrain: {
 		num: 275,
@@ -10757,10 +10819,15 @@ export const Moves: { [moveid: string]: MoveData } = {
 				return null;
 			},
 		},
+		category: "Physical",
+		realMove: "Inner Power",
+		name: "Inner Power Water",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
-		target: "self",
-		type: "Grass",
-		zMove: {boost: {spd: 1}},
+		target: "normal",
+		type: "Water",
 		contestType: "Clever",
 	},
 	innerpower: {
@@ -12842,6 +12909,33 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Ground",
 		contestType: "Popular",
+	},
+	limitbreak: {
+		num: -7,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Limit Break",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		onHit(target) {
+			if (
+				target.hp <= target.maxhp / 2 ||
+				target.boosts.spa >= 6 ||
+				target.maxhp === 1
+			) {
+				// Shedinja clause
+				return false;
+			}
+			this.directDamage(target.maxhp / 2);
+			this.boost({spa: 12}, target);
+		},
+		secondary: null,
+		target: "self",
+		type: "Infinite",
+		zMove: {effect: "heal"},
+		contestType: "Cute",
 	},
 	liquidation: {
 		num: 710,
@@ -17981,6 +18075,32 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Infinite",
 		zMove: {effect: "clearnegativeboost"},
+		contestType: "Popular",
+	},
+	reconstruction: {
+		num: -43,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Reconstruction",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, authentic: 1},
+		onHit(pokemon) {
+			const totalBoosts = pokemon.positiveBoosts() + pokemon.negativeBoosts();
+			if (totalBoosts >= 15) {
+				// this default sets it to heal to full just in case
+				this.heal(Math.ceil(pokemon.maxhp));
+			} else {
+				this.heal(Math.ceil((pokemon.maxhp / 4)) + Math.ceil(((pokemon.maxhp / 20) * totalBoosts)));
+			}
+			pokemon.clearBoosts();
+			this.add('-clearboost', pokemon);
+		},
+		secondary: null,
+		target: "self",
+		type: "Infinite",
+		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Popular",
 	},
 	recover: {
@@ -24611,6 +24731,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
