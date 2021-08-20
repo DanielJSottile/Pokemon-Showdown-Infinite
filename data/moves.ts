@@ -1461,7 +1461,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: {effect: 'clearnegativeboost'},
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	beakblast: {
@@ -16702,9 +16702,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onTryImmunity(target) {
-			return this.dex.getImmunity('trapped', target);
+			return this.dex.getImmunity("trapped", target);
 		},
-		volatileStatus: 'octolock',
+		volatileStatus: "octolock",
 		condition: {
 			duration: 4,
 			onStart(pokemon, source) {
@@ -16771,9 +16771,18 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
-				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
-					delete pokemon.volatiles['octolock'];
-					this.add('-end', pokemon, 'Octolock', '[partiallytrapped]', '[silent]');
+				if (
+					source &&
+					(!source.isActive || source.hp <= 0 || !source.activeTurns)
+				) {
+					delete pokemon.volatiles["octolock"];
+					this.add(
+						"-end",
+						pokemon,
+						"Octolock",
+						"[partiallytrapped]",
+						"[silent]"
+					);
 					return;
 				}
 				this.boost(
@@ -16784,7 +16793,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				);
 			},
 			onTrapPokemon(pokemon) {
-				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
 		},
 		secondary: null,
@@ -17559,6 +17568,134 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Flying",
 		contestType: "Beautiful",
 	},
+	perditionspyre: {
+		num: -30,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		desc: "Has a 20% chance to put the target to sleep.",
+		shortDesc: "20% chance to put the target to sleep.",
+		name: "Perdition's Pyre",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			status: 'slp',
+		},
+		target: "allAdjacentFoes",
+		type: "Fire",
+		contestType: "Popular",
+	},
+	perfecttemposymphony: {
+		num: -15,
+		accuracy: true,
+		basePower: 180,
+		category: "Special",
+		desc: "Creates Random Effects",
+		shortDesc: "Creates Random Effects",
+		name: "Perfect-Tempo Symphony",
+		pp: 1,
+		priority: 0,
+		flags: {sound: 1, authentic: 1},
+		self: {
+			onHit(pokemon) {
+				let stats = [];
+				const boost = {};
+				for (const statPlus in pokemon.boosts) {
+					if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+					// @ts-ignore
+					if (pokemon.boosts[statPlus] < 6) {
+						stats.push(statPlus);
+					}
+				}
+				let randomStat = stats.length ? this.sample(stats) : "";
+				// @ts-ignore
+				if (randomStat) boost[randomStat] = 2;
+
+				randomStat = stats.length ? this.sample(stats) : "";
+				// @ts-ignore
+				if (randomStat) boost[randomStat] = 2;
+
+				stats = [];
+				for (const statMinus in pokemon.boosts) {
+					if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
+					// @ts-ignore
+					if (pokemon.boosts[statMinus] > -6 && !(statMinus in boost)) {
+						stats.push(statMinus);
+					}
+				}
+				randomStat = stats.length ? this.sample(stats) : "";
+				// @ts-ignore
+				if (randomStat) boost[randomStat] = -1;
+
+				randomStat = stats.length ? this.sample(stats) : "";
+				// @ts-ignore
+				if (randomStat) boost[randomStat] = -1;
+
+				this.boost(boost);
+			},
+		},
+		isZ: "togepiumz",
+		secondary: {
+			chance: 100,
+			onHit(source, target) {
+				const rand = this.random(48);
+				if (rand < 2) {
+					this.field.setTerrain('psychicterrain');
+				} else if (rand < 4) {
+					this.field.setTerrain('electricterrain');
+				} else if (rand < 6) {
+					this.field.setTerrain('grassyterrain');
+				} else if (rand < 8) {
+					this.field.setTerrain('mistyterrain');
+				} else if (rand < 10) {
+					this.field.setWeather('sunnyday');
+				} else if (rand < 12) {
+					this.field.setWeather('raindance');
+				} else if (rand < 14) {
+					this.field.setWeather('primordialsea');
+				} else if (rand < 16) {
+					this.field.setWeather('desolateland');
+				} else if (rand < 18) {
+					this.field.setWeather('hail');
+				} else if (rand < 20) {
+					this.field.setWeather('sandstorm');
+				} else if (rand < 22) {
+					this.field.setWeather('maelstrom');
+				} else if (rand < 24) {
+					source.setStatus('slp', target);
+				} else if (rand < 26) {
+					source.setStatus('brn', target);
+				} else if (rand < 28) {
+					source.setStatus('par', target);
+				} else if (rand < 30) {
+					source.setStatus('fsb', target);
+				} else if (rand < 32) {
+					source.setStatus('psn', target);
+				} else if (rand < 34) {
+					source.setStatus('tox', target);
+				} else if (rand < 36) {
+					source.setStatus('confusion', target);
+				} else if (rand < 38) {
+					this.add('-fieldstart', 'move: Trick Room', '[of] ' + source);
+				} else if (rand < 40) {
+					this.add('-fieldstart', 'move: Wonder Room', '[of] ' + source);
+				} else if (rand < 42) {
+					this.add('-fieldstart', 'move: Magic Room', '[of] ' + source);
+				} else if (rand < 44) {
+					this.add('-fieldstart', 'move: Inverse Room', '[of] ' + source);
+				} else if (rand < 46) {
+					this.field.setTerrain('lavaterrain');
+				} else {
+					this.field.setWeather('deltastream');
+				}
+			},
+		},
+		target: "allAdjacentFoes",
+		type: "Flying",
+		contestType: "Beautiful",
+	},
 	perishsong: {
 		num: 195,
 		accuracy: true,
@@ -18205,7 +18342,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		volatileStatus: "powertrick",
 		condition: {
 			onStart(pokemon) {
-				this.add('-start', pokemon, 'Power Trick');
+				this.add("-start", pokemon, "Power Trick");
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -18226,7 +18363,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				pokemon.storedStats.spd = newspd;
 			},
 			onEnd(pokemon) {
-				this.add('-end', pokemon, 'Power Trick');
+				this.add("-end", pokemon, "Power Trick");
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -26212,6 +26349,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+		contestType: "Tough",
+	},
+	wyvernblow: {
+		num: -37,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wyvern Blow",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		willCrit: true,
+		boosts: {
+			def: -1,
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Tough",
 	},
 	wyvernblow: {
