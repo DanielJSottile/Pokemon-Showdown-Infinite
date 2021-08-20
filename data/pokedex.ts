@@ -8327,7 +8327,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseSpecies: "Garchomp",
 		forme: "Mega",
 		types: ["Dragon", "Ground"],
-		baseStats: {hp: 108, atk: 170, def: 115, spa: 120, spd: 95, spe: 92},
+		baseStats: {hp: 108, atk: 165, def: 110, spa: 115, spd: 90, spe: 112},
 		abilities: {0: "Sand Force"},
 		heightm: 1.9,
 		weightkg: 95,
