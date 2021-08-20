@@ -9907,7 +9907,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 36,
 		eggGroups: ["Field"],
 		otherFormes: ["Samurott-Mega"],
-		formeOrder: ["Samurott", "Samurott-Mega"]
+		formeOrder: ["Samurott", "Samurott-Mega"],
 	},
 	samurottmega: {
 		num: 503,
