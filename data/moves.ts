@@ -13495,7 +13495,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({spe: 1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spe: 1}, pokemon, source);
+					}
 				}
 			},
 		},
@@ -13517,7 +13520,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					this.boost({spd: -1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spd: -1}, pokemon, source);
+					}
 				}
 			},
 		},
@@ -13561,7 +13567,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setWeather("sunnyday");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setWeather("sunnyday");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13582,7 +13591,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					this.boost({spa: -1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spa: -1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13603,7 +13615,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setWeather("raindance");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setWeather("raindance");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13681,7 +13696,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setWeather("hail");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setWeather("hail");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13702,7 +13720,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({atk: 1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({atk: 1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13723,7 +13744,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setTerrain("electricterrain");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setTerrain("electricterrain");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13743,7 +13767,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setTerrain("psychicterrain");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setTerrain("psychicterrain");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13764,7 +13791,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({spa: 1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spa: 1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13785,7 +13815,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setTerrain("grassyterrain");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setTerrain("grassyterrain");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13806,7 +13839,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					this.boost({def: -1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({def: -1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13828,7 +13864,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({spd: 1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spd: 1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13849,7 +13888,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setWeather("sandstorm");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setWeather("sandstorm");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13869,7 +13911,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-				this.field.setTerrain("mistyterrain");
+				const result = this.random(5);
+				if (result === 0) {
+					this.field.setTerrain("mistyterrain");
+				}
 			},
 		},
 		target: "adjacentFoe",
@@ -13890,7 +13935,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({def: 1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({def: 1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13912,7 +13960,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					this.boost({spe: -1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({spe: -1}, pokemon);
+					}
 				}
 			},
 		},
@@ -13934,7 +13985,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					this.boost({atk: -1}, pokemon);
+					const result = this.random(5);
+					if (result === 0) {
+						this.boost({atk: -1}, pokemon);
+					}
 				}
 			},
 		},
