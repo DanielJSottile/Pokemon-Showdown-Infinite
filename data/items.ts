@@ -7275,12 +7275,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dark",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.cureStatus();
 			}
 		},
@@ -8121,12 +8121,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fighting",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.cureStatus();
 			}
 		},
