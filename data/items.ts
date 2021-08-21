@@ -1841,7 +1841,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'bewitchment') {
+			if (pokemon.status === "bewitchment") {
 				pokemon.cureStatus();
 			}
 		},
@@ -2032,7 +2032,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat(pokemon) {
-			pokemon.removeVolatile('infatuation');
+			pokemon.removeVolatile("infatuation");
 		},
 		num: -29,
 		gen: 8,
@@ -2971,15 +2971,21 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Infinite",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-			if (move.type === 'Infinite' && target.getMoveHitData(move).typeMod > 0 && (!target.volatiles['substitute'] || move.flags['authentic'] || (move.infiltrates && this.gen >= 6))) {
+			if (
+				move.type === "Infinite" &&
+				target.getMoveHitData(move).typeMod > 0 &&
+				(!target.volatiles["substitute"] ||
+					move.flags["authentic"] ||
+					(move.infiltrates && this.gen >= 6))
+			) {
 				if (target.eatItem()) {
-					this.debug('-50% reduction');
-					this.add('-enditem', target, this.effect, '[weaken]');
+					this.debug("-50% reduction");
+					this.add("-enditem", target, this.effect, "[weaken]");
 					return this.chainModify(0.5);
 				}
 			}
 		},
-		onEat() { },
+		onEat() {},
 		num: -32,
 		gen: 8,
 	},
@@ -3912,12 +3918,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent("TryHeal", pokemon)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
-			pokemon.trySetStatus('par', pokemon);
-			pokemon.trySetStatus('slp', pokemon);
+			pokemon.trySetStatus("par", pokemon);
+			pokemon.trySetStatus("slp", pokemon);
 		},
 		num: -33,
 		gen: 8,
@@ -5264,7 +5270,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.cureStatus();
 			}
 		},
@@ -5949,12 +5955,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fighting",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.cureStatus();
 			}
 		},
