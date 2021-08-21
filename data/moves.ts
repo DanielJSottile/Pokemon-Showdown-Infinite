@@ -961,13 +961,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Attract",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'attract',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "attract",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
@@ -1144,14 +1139,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 							return this.chainModify(0.75);
 						}
 						return this.chainModify([2732, 4096]);
-=======
-						if (this.activePerHalf > 1) { return this.chainModify([2732, 4096]); }
-						return this.chainModify(0.5);
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
-						return this.chainModify([2732, 4096]);
->>>>>>> 639989c0c... changes to old moves added
 					}
 				}
 			},
@@ -1513,7 +1500,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		num: -26,
 		accuracy: true,
 		basePower: 175,
-<<<<<<< HEAD
 		category: "Physical",
 		name: "Beastly Awakening Punch",
 		pp: 1,
@@ -1584,76 +1570,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		onModifyMove(move, pokemon) {
 			move.allies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted && !ally.status);
 			move.multihit = move.allies.length;
-		},
-		isZ: "slakingiumz",
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool",
-	},
-	beatdrop: {
-		num: -39,
-		accuracy: 100,
-		basePower: 70,
-		category: "Special",
-		name: "Beat Drop",
-		pp: 5,
-		priority: 1,
-		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === "move" ? action.move : null;
-			if (
-				!move ||
-				(move.category === "Status" && move.id !== "mefirst") ||
-				target.volatiles["mustrecharge"]
-			) {
-				return false;
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Clever",
-	},
-	beatup: {
-		num: 251,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon, target, move) {
-			return (
-				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
-			);
-		},
-=======
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-		category: "Physical",
-		name: "Beastly Awakening Punch",
-		pp: 1,
-		priority: 0,
-<<<<<<< HEAD
-		flags: {protect: 1, mirror: 1, mystery: 1},
-		onModifyMove(move, pokemon) {
-			move.allies = pokemon.side.pokemon.filter(
-				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
-			);
-			move.multihit = move.allies.length;
-=======
-		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
-		sleepUsable: true,
-		self: {
-			onHit(pokemon) {
-				const oldAbility = pokemon.setAbility('insomnia');
-				if (oldAbility) {
-					this.add('-ability', pokemon, 'Insomnia', '[from] move: Beastly Awakening Punch');
-					if (pokemon.status === 'slp') {
-						pokemon.cureStatus();
-					}
-					return;
-				}
-				return false;
-			},
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		},
 		isZ: "slakingiumz",
 		secondary: null,
@@ -2009,10 +1925,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Block",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 639989c0c... changes to old moves added
 		flags: {protect: 1, mirror: 1},
 		volatileStatus: "block",
 		condition: {
@@ -2051,14 +1963,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onTrapPokemon(pokemon) {
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
-<<<<<<< HEAD
-=======
-		flags: {reflectable: 1, mirror: 1},
-		onHit(target, source, move) {
-			return target.addVolatile("trapped", source, move, "trapper");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		},
 		secondary: null,
 		target: "normal",
@@ -2136,15 +2040,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		basePowerCallback(pokemon, target, move) {
 			if (target.newlySwitched || this.queue.willMove(target)) {
 				this.debug("Bolt Beak damage boost");
-<<<<<<< HEAD
-<<<<<<< HEAD
 				return move.basePower * 1.8;
-=======
-				return move.basePower * 2;
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				return move.basePower * 1.8;
->>>>>>> 639989c0c... changes to old moves added
 			}
 			this.debug("Bolt Beak NOT boosted");
 			return move.basePower;
@@ -2917,15 +2813,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, sound: 1, distance: 1, bypasssub: 1},
 		noSketch: true,
 		secondary: {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			chance: 50,
-=======
-			chance: 100,
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			chance: 50,
->>>>>>> 639989c0c... changes to old moves added
 			volatileStatus: "confusion",
 		},
 		target: "any",
@@ -3026,10 +2914,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {snatch: 1, sound: 1, dance: 1},
 		onTry(source) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 639989c0c... changes to old moves added
 			if (
 				source.hp <= (source.maxhp * 33) / 100 ||
 				source.maxhp === 1 ||
@@ -3037,12 +2921,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			) {
 				return false;
 			}
-<<<<<<< HEAD
-=======
-			if (source.hp <= (source.maxhp * 33) / 100 || source.maxhp === 1) { return false; }
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		},
 		onTryHit(pokemon, target, move) {
 			if (!this.boost(move.boosts as SparseBoostsTable)) return null;
@@ -3855,13 +3733,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Curse",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {bypasssub: 1},
 		volatileStatus: 'curse',
-=======
-		flags: {authentic: 1},
-		volatileStatus: "curse",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onModifyMove(move, source, target) {
 			if (!source.hasType("Ghost")) {
 				move.target = move.nonGhostTarget as MoveTarget;
@@ -4070,30 +3943,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 				"toxicspikes",
 				"stealthrock",
 				"stickyweb",
-<<<<<<< HEAD
-<<<<<<< HEAD
 				"metalshard",
-=======
-				"gmaxsteelsurge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				"metalshard",
->>>>>>> 639989c0c... changes to old moves added
 			];
 			const removeAll = [
 				"spikes",
 				"toxicspikes",
 				"stealthrock",
 				"stickyweb",
-<<<<<<< HEAD
-<<<<<<< HEAD
 				"metalshard",
-=======
-				"gmaxsteelsurge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				"metalshard",
->>>>>>> 639989c0c... changes to old moves added
 			];
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
@@ -4137,13 +3994,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Destiny Bond",
 		pp: 5,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {bypasssub: 1},
 		volatileStatus: 'destinybond',
-=======
-		flags: {authentic: 1},
-		volatileStatus: "destinybond",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onPrepareHit(pokemon) {
 			return !pokemon.removeVolatile("destinybond");
 		},
@@ -4291,13 +4143,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Disable",
 		pp: 20,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'disable',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "disable",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (
 				!target.lastMove ||
@@ -5181,13 +5028,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Electrify",
 		pp: 20,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, mirror: 1, allyanim: 1},
 		volatileStatus: 'electrify',
-=======
-		flags: {protect: 1, mirror: 1, mystery: 1},
-		volatileStatus: "electrify",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (!this.queue.willMove(target) && target.activeTurns) return false;
 		},
@@ -5341,13 +5183,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Encore",
 		pp: 5,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'encore',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "encore",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			duration: 3,
 			noCopy: true, // doesn't get copied by Z-Baton Pass
@@ -5710,13 +5547,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fairy Lock",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {mirror: 1, bypasssub: 1},
 		pseudoWeather: 'fairylock',
-=======
-		flags: {mirror: 1, authentic: 1},
-		pseudoWeather: "fairylock",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			duration: 2,
 			onStart(target) {
@@ -5809,37 +5641,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	fallaciouspastry: {
 		num: -25,
-<<<<<<< HEAD
-=======
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Fallacious Pastry",
-		pp: 1,
-		priority: 0,
-		flags: {snatch: 1, distance: 1, authentic: 1},
-		onHit(pokemon, source) {
-			this.add('-activate', source, 'move: Fallacious Pastry');
-			this.add('-anim', source, 'HealBell', source);
-			const side = pokemon.side;
-			let success = false;
-			for (const ally of side.pokemon) {
-				if (ally.heal(ally.maxhp / 2)) success = true;
-				if (ally.cureStatus()) success = true;
-			}
-			this.add('-message', "Alcremie's party memebers were healed by the mysterious pastry!");
-			return success;
-		},
-		selfdestruct: "ifHit",
-		isZ: "alcremiumz",
-		secondary: null,
-		target: "allyTeam",
-		type: "Normal",
-		contestType: "Cute",
-	},
-	falsesurrender: {
-		num: 793,
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6218,15 +6019,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		basePowerCallback(pokemon, target, move) {
 			if (target.newlySwitched || this.queue.willMove(target)) {
 				this.debug("Fishious Rend damage boost");
-<<<<<<< HEAD
-<<<<<<< HEAD
 				return move.basePower * 1.8;
-=======
-				return move.basePower * 2;
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				return move.basePower * 1.8;
->>>>>>> 639989c0c... changes to old moves added
 			}
 			this.debug("Fishious Rend NOT boosted");
 			return move.basePower;
@@ -6448,13 +6241,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flatter",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
 		volatileStatus: 'confusion',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, mystery: 1},
-		volatileStatus: "confusion",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		boosts: {
 			spa: 1,
 		},
@@ -6877,13 +6665,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Foresight",
 		pp: 40,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'foresight',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "foresight",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (target.volatiles["miracleeye"]) return false;
 		},
@@ -7270,13 +7053,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gastro Acid",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
 		volatileStatus: 'gastroacid',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, mystery: 1},
-		volatileStatus: "gastroacid",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (target.getAbility().isPermanent) {
 				return false;
@@ -7529,53 +7307,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		contestType: "Clever",
 	},
 	gmaxannihilation: {
-<<<<<<< HEAD
-=======
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Annihilation",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Victini",
-		// code for reverting to old explosion mechanic in scripts.ts
-		selfdestruct: "always",
-		target: "adjacentFoe",
-		type: "Fire",
-		contestType: "Cool",
-	},
-	gmaxbattering: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Battering",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Bashigon",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					const result = this.random(2);
-					if (result === 0) {
-						pokemon.addVolatile('flinch');
-					} else {
-						this.boost({def: 1}, pokemon, source);
-					}
-				}
-			},
-		},
-		target: "adjacentFoe",
-		type: "Steel",
-		contestType: "Cool",
-	},
-	gmaxbefuddle: {
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 		num: 1000,
 		accuracy: true,
 		basePower: 10,
@@ -7763,13 +7494,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		shortDesc: "Boosts attack 1 stage, does 2x against opposing D-Max; User must recharge. BP scales with base move.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Colossal Force",
 		pp: 5,
@@ -7863,14 +7587,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
-		shortDesc: "Base move affects power. Breaks all protection.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Draconian Blow",
 		pp: 5,
@@ -7963,26 +7679,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Water",
 		contestType: "Cool",
 	},
-<<<<<<< HEAD
-<<<<<<< HEAD
 	gmaxghostlysting: {
-=======
-	"gmaxghostlysting": {
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
-	gmaxghostlysting: {
->>>>>>> 639989c0c... changes to old moves added
 		num: 1000,
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		shortDesc: "Lowers the opponents Def -1, causes the opponent to be Cursed. BP scales with base move's BP.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Ghostly Sting",
 		pp: 5,
@@ -8123,22 +7824,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 					const result = this.random(2);
 					if (result === 0) {
 						pokemon.addVolatile("flinch");
 					} else {
 						pokemon.trySetStatus("brn", source);
 					}
-<<<<<<< HEAD
-=======
-					if (!pokemon.volatiles["dynamax"]) { pokemon.addVolatile("torment"); }
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
 				}
 			},
 		},
@@ -8198,13 +7889,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		shortDesc: "Lowers the opponents Sp. Def by -1, Blinds opponents. BP scales with base move.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Nightfall",
 		pp: 5,
@@ -8403,44 +8087,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				for (const side of source.side.foeSidesWithConditions()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 					side.addSideCondition("metalshard");
 				}
 			},
 		},
-=======
-					side.addSideCondition("gmaxsteelsurge");
-				}
-			},
-		},
-		condition: {
-			onSideStart(side) {
-				this.add("-sidestart", side, "move: G-Max Steelsurge");
-			},
-			onSwitchIn(pokemon) {
-				if (pokemon.hasItem("heavydutyboots")) return;
-				// Ice Face and Disguise correctly get typed damage from Stealth Rock
-				// because Stealth Rock bypasses Substitute.
-				// They don't get typed damage from Steelsurge because Steelsurge doesn't,
-				// so we're going to test the damage of a Steel-type Stealth Rock instead.
-				const steelHazard = this.dex.getActiveMove("Stealth Rock");
-				steelHazard.type = "Steel";
-				const typeMod = this.clampIntRange(
-					pokemon.runEffectiveness(steelHazard),
-					-6,
-					6
-				);
-				this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
-			},
-		},
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-					side.addSideCondition("metalshard");
-				}
-			},
-		},
->>>>>>> 639989c0c... changes to old moves added
 		secondary: null,
 		target: "adjacentFoe",
 		type: "Steel",
@@ -8571,14 +8221,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "Power is equal to the base move's Max Move power. If this move is successful and any Pokemon on the opposing side is using Baneful Bunker, Detect, King's Shield, Mat Block, Max Guard, Obstruct, Protect, or Spiky Shield, this move will fully break the protection.",
-		shortDesc: "Base move affects power. Breaks all protection.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Tigerstorm Strike",
 		pp: 5,
@@ -8596,14 +8238,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 10,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "Foe: Leech Seed or Flinch. Base Power scales with the base move's Base Power.",
-		shortDesc: "Foe: Leech Seed or Flinch.",
->>>>>>> 5f9a9c712... all moves i beleive are added minus the super brand new ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		isNonstandard: "Gigantamax",
 		name: "G-Max Vegetation",
 		pp: 5,
@@ -8802,15 +8436,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"toxicspikes",
 					"stealthrock",
 					"stickyweb",
-<<<<<<< HEAD
-<<<<<<< HEAD
 					"metalshard",
-=======
-					"gmaxsteelsurge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-					"metalshard",
->>>>>>> 639989c0c... changes to old moves added
 				];
 				for (const targetCondition of removeTarget) {
 					if (source.side.foe.removeSideCondition(targetCondition)) {
@@ -8970,13 +8596,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grass Whistle",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
 		status: 'slp',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, authentic: 1},
-		status: "slp",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -9262,13 +8883,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grudge",
 		pp: 5,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {bypasssub: 1},
 		volatileStatus: 'grudge',
-=======
-		flags: {authentic: 1},
-		volatileStatus: "grudge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			onStart(pokemon) {
 				this.add("-singlemove", pokemon, "Grudge");
@@ -9766,18 +9382,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heal Pulse",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, pulse: 1, reflectable: 1, distance: 1, heal: 1, allyanim: 1},
-=======
-		flags: {
-			protect: 1,
-			pulse: 1,
-			reflectable: 1,
-			distance: 1,
-			heal: 1,
-			mystery: 1,
-		},
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onHit(target, source) {
 			let success = false;
 			if (source.hasAbility("megalauncher")) {
@@ -9948,13 +9553,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Helping Hand",
 		pp: 20,
 		priority: 5,
-<<<<<<< HEAD
 		flags: {bypasssub: 1},
 		volatileStatus: 'helpinghand',
-=======
-		flags: {authentic: 1},
-		volatileStatus: "helpinghand",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (!target.newlySwitched && !this.queue.willMove(target)) {
 				return false;
@@ -11026,13 +10626,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Imprison",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {snatch: 1, bypasssub: 1},
 		volatileStatus: 'imprison',
-=======
-		flags: {snatch: 1, authentic: 1},
-		volatileStatus: "imprison",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			noCopy: true,
 			onStart(target) {
@@ -11109,8 +10704,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		category: "Physical",
 		name: "Inferno Overdrive",
 		pp: 1,
-<<<<<<< HEAD
-=======
 		priority: 0,
 		flags: {},
 		isZ: "firiumz",
@@ -12139,60 +11732,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		contestType: "Clever",
 	},
 	innerpowerwater: {
-=======
-		type: "Psychic",
-		contestType: "Clever",
-	},
-	innerpowerrock: {
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-		num: -22,
-		accuracy: 100,
-		basePower: 60,
-		basePowerCallback(pokemon, target, move) {
-			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
-				return move.basePower + 30;
-			}
-			return move.basePower;
-		},
-		category: "Physical",
-		realMove: "Inner Power",
-<<<<<<< HEAD
-		name: "Inner Power Water",
-=======
-		name: "Inner Power Rock",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: null,
-		target: "normal",
-<<<<<<< HEAD
-=======
-		type: "Rock",
-		contestType: "Clever",
-	},
-	innerpowersteel: {
-		num: -22,
-		accuracy: 100,
-		basePower: 60,
-		basePowerCallback(pokemon, target, move) {
-			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
-				return move.basePower + 30;
-			}
-			return move.basePower;
-		},
-		category: "Physical",
-		realMove: "Inner Power",
-		name: "Inner Power Steel",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Clever",
-	},
-	innerpowerwater: {
 		num: -22,
 		accuracy: 100,
 		basePower: 60,
@@ -12210,7 +11749,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		type: "Water",
 		contestType: "Clever",
 	},
@@ -13114,11 +12652,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Life Dew",
 		pp: 10,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {snatch: 1, heal: 1, bypasssub: 1},
-=======
-		flags: {snatch: 1, heal: 1, authentic: 1},
->>>>>>> 639989c0c... changes to old moves added
 		heal: [1, 3],
 		secondary: null,
 		target: "allies",
@@ -13169,14 +12703,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 							return this.chainModify(0.75);
 						}
 						return this.chainModify([2732, 4096]);
-=======
-						if (this.activePerHalf > 1) { return this.chainModify([2732, 4096]); }
-						return this.chainModify(0.5);
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
-						return this.chainModify([2732, 4096]);
->>>>>>> 639989c0c... changes to old moves added
 					}
 				}
 			},
@@ -13912,10 +13438,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spe: 1}, pokemon, source);
-					}
+					this.boost({spe: 1}, pokemon);
 				}
 			},
 		},
@@ -13937,10 +13460,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spd: -1}, pokemon, source);
-					}
+					this.boost({spd: -1}, pokemon);
 				}
 			},
 		},
@@ -13984,20 +13504,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setWeather("sunnyday");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setWeather("sunnyday");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14018,10 +13525,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spa: -1}, pokemon);
-					}
+					this.boost({spa: -1}, pokemon);
 				}
 			},
 		},
@@ -14042,20 +13546,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setWeather("raindance");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setWeather("raindance");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14133,20 +13624,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setWeather("hail");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setWeather("hail");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14167,10 +13645,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({atk: 1}, pokemon);
-					}
+					this.boost({atk: 1}, pokemon);
 				}
 			},
 		},
@@ -14191,20 +13666,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setTerrain("electricterrain");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setTerrain("electricterrain");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14224,20 +13686,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setTerrain("psychicterrain");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setTerrain("psychicterrain");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14258,10 +13707,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spa: 1}, pokemon);
-					}
+					this.boost({spa: 1}, pokemon);
 				}
 			},
 		},
@@ -14282,20 +13728,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setTerrain("grassyterrain");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setTerrain("grassyterrain");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14316,10 +13749,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({def: -1}, pokemon);
-					}
+					this.boost({def: -1}, pokemon);
 				}
 			},
 		},
@@ -14341,10 +13771,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spd: 1}, pokemon);
-					}
+					this.boost({spd: 1}, pokemon);
 				}
 			},
 		},
@@ -14365,20 +13792,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setWeather("sandstorm");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setWeather("sandstorm");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14398,20 +13812,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 83893be6e... i think thats everything
-				const result = this.random(5);
-				if (result === 0) {
-					this.field.setTerrain("mistyterrain");
-				}
-<<<<<<< HEAD
-=======
 				this.field.setTerrain("mistyterrain");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 83893be6e... i think thats everything
 			},
 		},
 		target: "adjacentFoe",
@@ -14432,10 +13833,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.alliesAndSelf()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({def: 1}, pokemon);
-					}
+					this.boost({def: 1}, pokemon);
 				}
 			},
 		},
@@ -14457,10 +13855,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({spe: -1}, pokemon);
-					}
+					this.boost({spe: -1}, pokemon);
 				}
 			},
 		},
@@ -14482,10 +13877,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.foes()) {
-					const result = this.random(5);
-					if (result === 0) {
-						this.boost({atk: -1}, pokemon);
-					}
+					this.boost({atk: -1}, pokemon);
 				}
 			},
 		},
@@ -14539,13 +13931,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onTrapPokemon(pokemon) {
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
-<<<<<<< HEAD
-=======
-		onHit(target, source, move) {
-			return target.addVolatile("trapped", source, move, "trapper");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		},
 		secondary: null,
 		target: "normal",
@@ -14815,18 +14200,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Metal Sound",
 		pp: 40,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, allyanim: 1},
-=======
-		flags: {
-			protect: 1,
-			reflectable: 1,
-			mirror: 1,
-			sound: 1,
-			authentic: 1,
-			mystery: 1,
-		},
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		boosts: {
 			spd: -2,
 		},
@@ -15230,13 +14604,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Miracle Eye",
 		pp: 40,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'miracleeye',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "miracleeye",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (target.volatiles["foresight"]) return false;
 		},
@@ -15555,8 +14924,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			case "raindance":
 			case "primordialsea":
 			case "sandstorm":
@@ -15565,25 +14932,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 				break;
 			case "sunnyday":
 			case "desolateland":
-=======
-			case "sunnyday":
-			case "desolateland":
-				factor = 0.667;
-				break;
-=======
->>>>>>> 639989c0c... changes to old moves added
-			case "raindance":
-			case "primordialsea":
-			case "sandstorm":
-			case "hail":
-<<<<<<< HEAD
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				factor = 0.667;
-				break;
-			case "sunnyday":
-			case "desolateland":
->>>>>>> 639989c0c... changes to old moves added
 				factor = 0.25;
 				break;
 			}
@@ -15748,8 +15096,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			move.type = this.runEvent("Memory", pokemon, null, move, "Normal");
-<<<<<<< HEAD
-=======
 		},
 		secondary: null,
 		target: "normal",
@@ -15877,7 +15223,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (pokemon.getStat('atk', false, true) >= pokemon.getStat('spa', false, true)) {
 				move = 'earthquake';
 			}
->>>>>>> 639989c0c... changes to old moves added
 			if (this.field.isTerrain("electricterrain")) {
 				move = "thunderbolt";
 			} else if (this.field.isTerrain("grassyterrain")) {
@@ -16254,7 +15599,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add('-end', pokemon, 'Octolock', '[partiallytrapped]', '[silent]');
 				return;
 			},
->>>>>>> 639989c0c... changes to old moves added
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
@@ -16286,19 +15630,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Odor Sleuth",
 		pp: 40,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, allyanim: 1},
 		volatileStatus: 'foresight',
-=======
-		flags: {
-			protect: 1,
-			reflectable: 1,
-			mirror: 1,
-			authentic: 1,
-			mystery: 1,
-		},
-		volatileStatus: "foresight",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (target.volatiles["miracleeye"]) return false;
 		},
@@ -16688,14 +16021,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 90,
 		category: "Special",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "Has a 20% chance to put the target to sleep.",
-		shortDesc: "20% chance to put the target to sleep.",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		name: "Perdition's Pyre",
 		pp: 15,
 		priority: 0,
@@ -16713,14 +16038,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 180,
 		category: "Special",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "Creates Random Effects",
-		shortDesc: "Creates Random Effects",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		name: "Perfect-Tempo Symphony",
 		pp: 1,
 		priority: 0,
@@ -17043,15 +16360,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			status: "bewitchment",
-=======
-			status: "bewitchment"
->>>>>>> 639989c0c... changes to old moves added
-=======
-			status: "bewitchment",
->>>>>>> 401b19641... trailing commas
 		},
 		target: "normal",
 		type: "Fairy",
@@ -17080,7 +16389,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 				if (this.singleEvent("Eat", item, null, source, null, null)) {
 					this.runEvent("EatItem", source, null, null, item);
 					if (item.id === "leppaberry") target.staleness = "external";
-<<<<<<< HEAD
 				}
 				if (item.onEat) source.ateBerry = true;
 			}
@@ -17306,13 +16614,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Powder",
 		pp: 20,
 		priority: 1,
-<<<<<<< HEAD
 		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'powder',
-=======
-		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "powder",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			duration: 1,
 			onStart(target) {
@@ -18403,15 +17706,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				"toxicspikes",
 				"stealthrock",
 				"stickyweb",
-<<<<<<< HEAD
-<<<<<<< HEAD
 				"metalshard",
-=======
-				"gmaxsteelsurge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				"metalshard",
->>>>>>> 639989c0c... changes to old moves added
 			];
 			for (const condition of sideConditions) {
 				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
@@ -18443,15 +17738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				"toxicspikes",
 				"stealthrock",
 				"stickyweb",
-<<<<<<< HEAD
-<<<<<<< HEAD
 				"metalshard",
-=======
-				"gmaxsteelsurge",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-				"metalshard",
->>>>>>> 639989c0c... changes to old moves added
 			];
 			for (const condition of sideConditions) {
 				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
@@ -18650,7 +17937,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 =======
 						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
 						return this.chainModify([2732, 4096]);
->>>>>>> 639989c0c... changes to old moves added
 					}
 				}
 			},
@@ -19111,15 +18397,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			status: "whiplash",
-=======
-			status: "whiplash"
->>>>>>> 639989c0c... changes to old moves added
-=======
-			status: "whiplash",
->>>>>>> 401b19641... trailing commas
 		},
 		target: "normal",
 		type: "Fighting",
@@ -19613,15 +18891,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
 		secondary: {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			chance: 25,
-=======
-			chance: 30,
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			chance: 25,
->>>>>>> 639989c0c... changes to old moves added
 			status: "brn",
 		},
 		target: "normal",
@@ -19707,18 +18977,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Screech",
 		pp: 40,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, allyanim: 1},
-=======
-		flags: {
-			protect: 1,
-			reflectable: 1,
-			mirror: 1,
-			sound: 1,
-			authentic: 1,
-			mystery: 1,
-		},
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		boosts: {
 			def: -2,
 		},
@@ -20070,13 +19329,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		ignoreEvasion: true,
 		secondary: null,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		ohko: "Ice",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		target: "normal",
 		type: "Ice",
 		zMove: {basePower: 160},
@@ -20207,14 +19459,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "This move can hit Fairy-type Pokemon. The target loses its type immunity upon being hit until it switches out.",
-		shortDesc: "Can hit fairy types, target loses type immunity.",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		name: "Shield Breaker",
 		pp: 10,
 		priority: 0,
@@ -20383,13 +19627,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sing",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
 		status: 'slp',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, authentic: 1},
-		status: "slp",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -20589,15 +19828,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				return;
 			}
 			this.add("-prepare", attacker, move.name);
-<<<<<<< HEAD
-<<<<<<< HEAD
 			this.boost({def: 1, atk: 1}, attacker, attacker, move);
-=======
-			this.boost({def: 1}, attacker, attacker, move);
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			this.boost({def: 1, atk: 1}, attacker, attacker, move);
->>>>>>> 639989c0c... changes to old moves added
 			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
 				return;
 			}
@@ -20939,15 +20170,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			chance: 50,
-=======
-			chance: 30,
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			chance: 50,
->>>>>>> 639989c0c... changes to old moves added
 			status: "psn",
 		},
 		target: "normal",
@@ -21158,13 +20381,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Snatch",
 		pp: 10,
 		priority: 4,
-<<<<<<< HEAD
 		flags: {bypasssub: 1},
 		volatileStatus: 'snatch',
-=======
-		flags: {authentic: 1},
-		volatileStatus: "snatch",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			duration: 1,
 			onStart(pokemon) {
@@ -21428,15 +20646,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			chance: 50,
-=======
-			chance: 30,
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			chance: 50,
->>>>>>> 639989c0c... changes to old moves added
 			status: "par",
 		},
 		target: "normal",
@@ -21458,10 +20668,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			volatileStatus: "sparklingaria",
 		},
 		onAfterMove(source, target, move) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 639989c0c... changes to old moves added
 			for (const [i, allyActive] of target.side.active.entries()) {
 				if (allyActive && allyActive.status === "brn") { allyActive.cureStatus(); }
 				const foeActive = target.side.foe.active[i];
@@ -21589,13 +20795,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onTrapPokemon(pokemon) {
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
-<<<<<<< HEAD
-=======
-		onHit(target, source, move) {
-			return target.addVolatile("trapped", source, move, "trapper");
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		},
 		secondary: null,
 		target: "normal",
@@ -21961,13 +21160,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spotlight",
 		pp: 15,
 		priority: 3,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, allyanim: 1},
 		volatileStatus: 'spotlight',
-=======
-		flags: {protect: 1, reflectable: 1, mystery: 1},
-		volatileStatus: "spotlight",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTryHit(target) {
 			if (this.activePerHalf === 1) return false;
 		},
@@ -22543,15 +21737,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onTryPrimaryHitPriority: -1,
 			onTryPrimaryHit(target, source, move) {
-<<<<<<< HEAD
 				if (target === source || move.flags['bypasssub'] || move.infiltrates) {
-=======
-				if (
-					target === source ||
-					move.flags["authentic"] ||
-					move.infiltrates
-				) {
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 					return;
 				}
 				let damage = this.actions.getDamage(source, target, move);
@@ -22729,13 +21915,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Supersonic",
 		pp: 20,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
 		volatileStatus: 'confusion',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, authentic: 1},
-		volatileStatus: "confusion",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -22796,13 +21977,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Swagger",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
 		volatileStatus: 'confusion',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, mystery: 1},
-		volatileStatus: "confusion",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		boosts: {
 			atk: 2,
 		},
@@ -23189,13 +22365,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Taunt",
 		pp: 20,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'taunt',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "taunt",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			duration: 3,
 			onStart(target) {
@@ -23343,13 +22514,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Telekinesis",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, gravity: 1, allyanim: 1},
 		volatileStatus: 'telekinesis',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, gravity: 1, mystery: 1},
-		volatileStatus: "telekinesis",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		onTry(source, target, move) {
 			// Additional Gravity check for Z-move variant
 			if (this.field.getPseudoWeather("Gravity")) {
@@ -23474,7 +22640,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			switch (this.field.terrain) {
 			case "electricterrain":
 				move.type = "Electric";
-<<<<<<< HEAD
 				break;
 			case "grassyterrain":
 				move.type = "Grass";
@@ -23485,18 +22650,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			case "psychicterrain":
 				move.type = "Psychic";
 				break;
-=======
-				break;
-			case "grassyterrain":
-				move.type = "Grass";
-				break;
-			case "mistyterrain":
-				move.type = "Fairy";
-				break;
-			case "psychicterrain":
-				move.type = "Psychic";
-				break;
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 			case "lavaterrain":
 				move.type = "Fire";
 				break;
@@ -23642,13 +22795,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onTrapPokemon(pokemon) {
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
-<<<<<<< HEAD
-=======
-		onHit(target, source, move) {
-			if (source.isActive) { target.addVolatile("trapped", source, move, "trapper"); }
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
@@ -23974,13 +23120,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Torment",
 		pp: 15,
 		priority: 0,
-<<<<<<< HEAD
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'torment',
-=======
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		volatileStatus: "torment",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
@@ -24014,13 +23155,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		// No Guard-like effect for Poison-type users implemented in Scripts#tryMoveHit
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		status: "tox",
 		secondary: null,
 		target: "normal",
@@ -24934,7 +24068,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 			case "sunnyday":
 			case "desolateland":
 				move.type = "Fire";
-<<<<<<< HEAD
 				break;
 			case "raindance":
 			case "primordialsea":
@@ -24945,24 +24078,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 				break;
 			case "hail":
 				move.type = "Ice";
-				break;
-			case "maelstrom":
-				move.type = "Infinite";
-				break;
-			case "deltastream":
-				move.type = "Flying";
-=======
-				break;
-			case "raindance":
-			case "primordialsea":
-				move.type = "Water";
-				break;
-			case "sandstorm":
-				move.type = "Rock";
-				break;
-			case "hail":
-				move.type = "Ice";
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 				break;
 			case "maelstrom":
 				move.type = "Infinite";
@@ -24976,29 +24091,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 			switch (pokemon.effectiveWeather()) {
 			case "sunnyday":
 			case "desolateland":
-<<<<<<< HEAD
-<<<<<<< HEAD
 			case "raindance":
 			case "primordialsea":
 			case "sandstorm":
 			case "hail":
 			case "maelstrom":
 			case "deltastream":
-=======
-				move.basePower *= 2;
-				break;
-=======
->>>>>>> 639989c0c... changes to old moves added
-			case "raindance":
-			case "primordialsea":
-			case "sandstorm":
-			case "hail":
-<<<<<<< HEAD
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
-			case "maelstrom":
-			case "deltastream":
->>>>>>> 639989c0c... changes to old moves added
 				move.basePower *= 2;
 				break;
 			}
@@ -25342,14 +24440,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		desc: "This move's type depends on the user's held Plate.",
-		shortDesc: "Type varies based on the held Plate.",
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
-=======
->>>>>>> 639989c0c... changes to old moves added
 		name: "Wrath",
 		pp: 10,
 		priority: 0,
