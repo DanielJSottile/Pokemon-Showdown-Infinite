@@ -552,6 +552,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+<<<<<<< HEAD
 		volatileStatus: "anchorshot",
 		condition: {
 			duration: 4,
@@ -571,11 +572,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'anchorshot',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Anchor Shot', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Anchor Shot', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -588,11 +600,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['anchorshot'];
+					this.add('-end', pokemon, 'Anchor Shot', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
@@ -1135,9 +1156,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 					}
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug("Aurora Veil weaken");
+<<<<<<< HEAD
 						if (this.activePerHalf > 1) {
 							return this.chainModify(0.75);
 						}
+=======
+						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
+>>>>>>> 6a6cd7d58... changes to old moves added
 						return this.chainModify([2732, 4096]);
 					}
 				}
@@ -2129,6 +2154,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+<<<<<<< HEAD
 		volatileStatus: "block",
 		condition: {
 			duration: 4,
@@ -2143,11 +2169,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'block',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Block', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Block', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -2160,11 +2197,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['block'];
+					this.add('-end', pokemon, 'Block', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
@@ -3118,11 +3164,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {snatch: 1, sound: 1, dance: 1},
 		onTry(source) {
 			if (
+<<<<<<< HEAD
 				source.hp <= (source.maxhp * 33) / 100 ||
 				source.maxhp === 1 ||
 				source.getItem().id === "kommoniumz"
 			) {
 				return false;
+=======
+				(source.hp <= (source.maxhp * 33) / 100 || source.maxhp === 1) ||
+				(source.getItem().id === 'kommoniumz')) {
+					 return false;
+>>>>>>> 6a6cd7d58... changes to old moves added
 			}
 		},
 		onTryHit(pokemon, target, move) {
@@ -4031,6 +4083,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		onTry(source, target, move) {
+<<<<<<< HEAD
 			if (
 				["Darkrai", "Apocalylidae"].includes(source.species.name) ||
 				move.hasBounced
@@ -4041,6 +4094,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 			this.hint(
 				"Only a Pokemon whose form is Darkrai or Apocalylidae can use this move."
 			);
+=======
+			if (["Darkrai", "Apocalylidae"].includes(source.species.name) || move.hasBounced) {
+				return;
+			}
+			this.add("-fail", source, "move: Dark Void");
+			this.hint("Only a Pokemon whose form is Darkrai or Apocalylidae can use this move.");
+>>>>>>> 6a6cd7d58... changes to old moves added
 			return null;
 		},
 		secondary: null,
@@ -5194,7 +5254,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onBasePower(basePower, attacker, defender, move) {
 				if (
 					move.type === "Electric" &&
+<<<<<<< HEAD
 					(attacker.isGrounded() || attacker.hasAbility("surgesurfer")) &&
+=======
+					(attacker.isGrounded() || attacker.hasAbility('surgesurfer')) &&
+>>>>>>> 6a6cd7d58... changes to old moves added
 					!attacker.isSemiInvulnerable()
 				) {
 					this.debug("electric terrain boost");
@@ -6238,7 +6302,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Water",
 	},
-	fissure: {
+	"fissure": {
 		num: 90,
 		accuracy: 50,
 		basePower: 0,
@@ -6248,7 +6312,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
 		damageCallback(pokemon, target) {
+<<<<<<< HEAD
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
+=======
+			const hp75 = Math.floor(target.getUndynamaxedHP() * 3 / 4);
+>>>>>>> 6a6cd7d58... changes to old moves added
 			return this.clampIntRange(hp75, 1);
 		},
 		ignoreEvasion: true,
@@ -9242,7 +9310,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
-	guillotine: {
+	"guillotine": {
 		num: 12,
 		accuracy: 50,
 		basePower: 0,
@@ -9252,7 +9320,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		damageCallback(pokemon, target) {
+<<<<<<< HEAD
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
+=======
+			const hp75 = Math.floor(target.getUndynamaxedHP() * 3 / 4);
+>>>>>>> 6a6cd7d58... changes to old moves added
 			return this.clampIntRange(hp75, 1);
 		},
 		ignoreEvasion: true,
@@ -10362,7 +10434,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	horndrill: {
+	"horndrill": {
 		num: 32,
 		accuracy: 50,
 		basePower: 0,
@@ -10372,7 +10444,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		damageCallback(pokemon, target) {
+<<<<<<< HEAD
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
+=======
+			const hp75 = Math.floor(target.getUndynamaxedHP() * 3 / 4);
+>>>>>>> 6a6cd7d58... changes to old moves added
 			return this.clampIntRange(hp75, 1);
 		},
 		ignoreEvasion: true,
@@ -12951,7 +13027,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	landswrath: {
+	"landswrath": {
 		num: 616,
 		accuracy: 100,
 		basePower: 90,
@@ -12962,7 +13038,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, nonsky: 1},
 		self: {
 			onHit(source) {
+<<<<<<< HEAD
 				source.side.foe.addSideCondition("landswrath");
+=======
+				source.side.foe.addSideCondition('landswrath');
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		condition: {
@@ -12973,9 +13053,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onResidualOrder: 5,
 			onResidualSubOrder: 1,
 			onResidual(target) {
+<<<<<<< HEAD
 				if (!target.hasType("Ground")) {
 					this.damage(target.baseMaxhp / 6, target);
 				}
+=======
+				if (!target.hasType("Ground")) { this.damage(target.baseMaxhp / 6, target); }
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 11,
@@ -13486,7 +13570,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Life Dew",
 		pp: 10,
 		priority: 0,
+<<<<<<< HEAD
 		flags: {snatch: 1, heal: 1, bypasssub: 1},
+=======
+		flags: {snatch: 1, heal: 1, authentic: 1},
+>>>>>>> 6a6cd7d58... changes to old moves added
 		heal: [1, 3],
 		secondary: null,
 		target: "allies",
@@ -13533,9 +13621,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 				) {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug("Light Screen weaken");
+<<<<<<< HEAD
 						if (this.activePerHalf > 1) {
 							return this.chainModify(0.75);
 						}
+=======
+						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
+>>>>>>> 6a6cd7d58... changes to old moves added
 						return this.chainModify([2732, 4096]);
 					}
 				}
@@ -14755,6 +14847,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 5,
 		priority: 0,
 		flags: {reflectable: 1, mirror: 1},
+<<<<<<< HEAD
 		volatileStatus: "meanlook",
 		condition: {
 			duration: 4,
@@ -14769,11 +14862,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'meanlook',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Mean Look', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Mean Look', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -14786,11 +14890,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['meanlook'];
+					this.add('-end', pokemon, 'Mean Look', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
@@ -16110,11 +16223,16 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {},
 		onTryHit(target, pokemon) {
 			let move = "triattack";
+<<<<<<< HEAD
 			if (
 				pokemon.getStat("atk", false, true) >=
 				pokemon.getStat("spa", false, true)
 			) {
 				move = "earthquake";
+=======
+			if (pokemon.getStat('atk', false, true) >= pokemon.getStat('spa', false, true)) {
+				move = 'earthquake';
+>>>>>>> 6a6cd7d58... changes to old moves added
 			}
 =======
 >>>>>>> 3bbfa5c75... added new moves but not gmax ones
@@ -16476,12 +16594,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onTryImmunity(target) {
-			return this.dex.getImmunity("trapped", target);
+			return this.dex.getImmunity('trapped', target);
 		},
-		volatileStatus: "octolock",
+		volatileStatus: 'octolock',
 		condition: {
 			duration: 4,
 			onStart(pokemon, source) {
+<<<<<<< HEAD
 				this.add("-activate", pokemon, "move: Octolock", "[of] " + source);
 			},
 			onEnd(pokemon) {
@@ -16526,32 +16645,35 @@ export const Moves: { [moveid: string]: MoveData } = {
 				);
 				return;
 			},
+=======
+				this.add('-activate', pokemon, 'move: Octolock', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Octolock', '[partiallytrapped]', '[silent]');
+				return;
+			},
+>>>>>>> 6a6cd7d58... changes to old moves added
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
-				if (
-					source &&
-					(!source.isActive || source.hp <= 0 || !source.activeTurns)
-				) {
-					delete pokemon.volatiles["octolock"];
-					this.add(
-						"-end",
-						pokemon,
-						"Octolock",
-						"[partiallytrapped]",
-						"[silent]"
-					);
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['octolock'];
+					this.add('-end', pokemon, 'Octolock', '[partiallytrapped]', '[silent]');
 					return;
 				}
+<<<<<<< HEAD
 				this.boost(
 					{def: -1, spd: -1},
 					pokemon,
 					source,
 					this.dex.getActiveMove("Octolock")
 				);
+=======
+				this.boost({def: -1, spd: -1}, pokemon, source, this.dex.getActiveMove("Octolock"));
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 			onTrapPokemon(pokemon) {
-				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
 			},
 		},
 		secondary: null,
@@ -17427,7 +17549,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
+<<<<<<< HEAD
 			status: "bewitchment",
+=======
+			status: "bewitchment"
+>>>>>>> 6a6cd7d58... changes to old moves added
 		},
 		target: "normal",
 		type: "Fairy",
@@ -17853,7 +17979,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		volatileStatus: "powertrick",
 		condition: {
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Power Trick");
+				this.add('-start', pokemon, 'Power Trick');
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -17874,7 +18000,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				pokemon.storedStats.spd = newspd;
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Power Trick");
+				this.add('-end', pokemon, 'Power Trick');
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -19084,9 +19210,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 				) {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug("Reflect weaken");
+<<<<<<< HEAD
 						if (this.activePerHalf > 1) {
 							return this.chainModify(0.75);
 						}
+=======
+						if (this.activePerHalf > 1) { return this.chainModify(0.75); }
+>>>>>>> 6a6cd7d58... changes to old moves added
 						return this.chainModify([2732, 4096]);
 =======
 						if (this.activePerHalf > 1) { return this.chainModify([2732, 4096]); }
@@ -19724,7 +19854,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
+<<<<<<< HEAD
 			status: "whiplash",
+=======
+			status: "whiplash"
+>>>>>>> 6a6cd7d58... changes to old moves added
 		},
 		target: "normal",
 		type: "Fighting",
@@ -20641,7 +20775,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	sheercold: {
+	"sheercold": {
 		num: 329,
 		accuracy: 50,
 		basePower: 0,
@@ -21996,9 +22130,15 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		onAfterMove(source, target, move) {
 			for (const [i, allyActive] of target.side.active.entries()) {
+<<<<<<< HEAD
 				if (allyActive && allyActive.status === "brn") { allyActive.cureStatus(); }
 				const foeActive = target.side.foe.active[i];
 				if (foeActive && foeActive.status === "brn") foeActive.cureStatus();
+=======
+				if (allyActive && allyActive.status === 'brn') allyActive.cureStatus();
+				const foeActive = target.side.foe.active[i];
+				if (foeActive && foeActive.status === 'brn') foeActive.cureStatus();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			}
 		},
 		target: "allAdjacent",
@@ -22080,6 +22220,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+<<<<<<< HEAD
 		volatileStatus: "spiderweb",
 		condition: {
 			duration: 4,
@@ -22099,11 +22240,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'spiderweb',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Spider Web', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Spider Web', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -22116,11 +22268,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['spiderweb'];
+					this.add('-end', pokemon, 'Spider Web', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
@@ -22285,6 +22446,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+<<<<<<< HEAD
 		volatileStatus: "spiritshackle",
 		condition: {
 			duration: 4,
@@ -22304,11 +22466,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'spiritshackle',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Spirit Shackle', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Spirit Shackle', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -22321,11 +22494,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['spiritshackle'];
+					this.add('-end', pokemon, 'Spirit Shackle', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
@@ -24097,6 +24279,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+<<<<<<< HEAD
 		volatileStatus: "thousandwaves",
 		condition: {
 			duration: 4,
@@ -24116,11 +24299,22 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[partiallytrapped]",
 					"[silent]"
 				);
+=======
+		volatileStatus: 'thousandwaves',
+		condition: {
+			duration: 4,
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Thousand Waves', '[of] ' + source);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Thousand Waves', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 				return;
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+<<<<<<< HEAD
 				if (
 					source &&
 					(!source.isActive || source.hp <= 0 || !source.activeTurns)
@@ -24133,11 +24327,20 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"[partiallytrapped]",
 						"[silent]"
 					);
+=======
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
+					delete pokemon.volatiles['thousandwaves'];
+					this.add('-end', pokemon, 'Thousand Waves', '[partiallytrapped]', '[silent]');
+>>>>>>> 6a6cd7d58... changes to old moves added
 					return;
 				}
 			},
 			onTrapPokemon(pokemon) {
+<<<<<<< HEAD
 				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
+=======
+				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+>>>>>>> 6a6cd7d58... changes to old moves added
 			},
 		},
 		secondary: null,
