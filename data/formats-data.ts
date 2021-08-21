@@ -2466,7 +2466,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		randomDoubleBattleMoves: ["brickbreak", "bugbite", "dualwingbeat", "uturn"],
 		randomDoubleBattleLevel: 84,
 		tier: "PU",
-		doublesTier: "NFE",
+		doublesTier: "LC",
 	},
 	scizor: {
 		randomBattleMoves: [
@@ -2575,6 +2575,29 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	electiviremega: {
+		randomBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"flamethrower",
+			"earthquake",
+			"voltswitch",
+		],
+		randomDoubleBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"substitute",
+			"flamethrower",
+			"earthquake",
+			"protect",
+			"followme",
+		],
+
+		tier: "UUBL",
+		doublesTier: "DUU",
 	},
 	magby: {
 		tier: "LC",
@@ -8061,6 +8084,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 
 		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	drifigible: {
+		tier: "PU",
 		doublesTier: "(DUU)",
 	},
 	buneary: {
