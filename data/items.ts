@@ -4296,7 +4296,10 @@ export const Items: { [itemid: string]: ItemData } = {
 		spritenum: 677,
 		onMemory: 'Infinite',
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
+			if (
+				(source && source.baseSpecies.num === 773) ||
+				pokemon.baseSpecies.num === 773
+			) {
 				return false;
 			}
 			return true;
@@ -4309,8 +4312,8 @@ export const Items: { [itemid: string]: ItemData } = {
 	infinitiumz: {
 		name: "Infinitium Z",
 		spritenum: 636,
-		onPlate: 'Infinite',
-		onMemory: 'Infinite',
+		onPlate: "Infinite",
+		onMemory: "Infinite",
 		onTakeItem: false,
 		zMove: true,
 		zMoveType: "Infinite",
