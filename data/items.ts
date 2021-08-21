@@ -4114,8 +4114,8 @@ export const Items: { [itemid: string]: ItemData } = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === 'Infinite' && target.getMoveHitData(move).typeMod > 0 && (!target.volatiles['substitute'] || move.flags['authentic'] || (move.infiltrates && this.gen >= 6))) {
 				if (target.eatItem()) {
-					this.debug('-50% reduction');
-					this.add('-enditem', target, this.effect, '[weaken]');
+					this.debug("-50% reduction");
+					this.add("-enditem", target, this.effect, "[weaken]");
 					return this.chainModify(0.5);
 				}
 			}
@@ -4838,7 +4838,10 @@ export const Items: { [itemid: string]: ItemData } = {
 		spritenum: 677,
 		onMemory: 'Infinite',
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
+			if (
+				(source && source.baseSpecies.num === 773) ||
+				pokemon.baseSpecies.num === 773
+			) {
 				return false;
 			}
 			return true;
@@ -5004,7 +5007,10 @@ export const Items: { [itemid: string]: ItemData } = {
 		spritenum: 677,
 		onMemory: 'Infinite',
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
+			if (
+				(source && source.baseSpecies.num === 773) ||
+				pokemon.baseSpecies.num === 773
+			) {
 				return false;
 			}
 			return true;
@@ -7521,12 +7527,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dark",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.cureStatus();
 			}
 		},
@@ -8388,12 +8394,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fighting",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.cureStatus();
 			}
 		},
