@@ -2510,7 +2510,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		randomDoubleBattleMoves: ["brickbreak", "bugbite", "dualwingbeat", "uturn"],
 		randomDoubleBattleLevel: 84,
 		tier: "PU",
-		doublesTier: "NFE",
+		doublesTier: "LC",
 	},
 	scizor: {
 		randomBattleMoves: [
@@ -15231,6 +15231,29 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		randomDoubleBattleMoves: ["closecombat", "fakeout", "grassknot", "knockoff", "plasmafists", "playrough", "snarl"],
 		randomDoubleBattleLevel: 78,
 		tier: "OU",
+		doublesTier: "DOU",
+	},
+	zeraora: {
+		randomBattleMoves: [
+			"plasmafists",
+			"closecombat",
+			"voltswitch",
+			"hiddenpowerice",
+			"knockoff",
+			"grassknot",
+			"workup",
+		],
+		randomDoubleBattleMoves: [
+			"plasmafists",
+			"closecombat",
+			"voltswitch",
+			"hiddenpowerice",
+			"knockoff",
+			"grassknot",
+			"fakeout",
+			"protect",
+		],
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	meltan: {
