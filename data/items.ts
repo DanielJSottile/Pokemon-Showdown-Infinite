@@ -4928,12 +4928,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent("TryHeal", pokemon)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
-			pokemon.trySetStatus('par', pokemon);
-			pokemon.trySetStatus('slp', pokemon);
+			pokemon.trySetStatus("par", pokemon);
+			pokemon.trySetStatus("slp", pokemon);
 		},
 		num: -33,
 		gen: 8,
