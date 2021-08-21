@@ -131,7 +131,6 @@ export const Formats: FormatList = [
 		banlist: ['PU', 'Centiskorch', 'Drampa', 'Exeggutor-Alola', 'Gallade', 'Haunter', 'Magmortar', 'Magneton', 'Omastar', 'Rotom-Frost', 'Turtonator', 'Vikavolt', 'Silvally-Dragon', 'Silvally-Ground', 'Sneasel', 'Damp Rock', 'Grassy Seed'],
 	},
 	{
-<<<<<<< HEAD
 		name: "[Gen 8] LC UU",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
@@ -239,7 +238,6 @@ export const Formats: FormatList = [
 		banlist: ['DOU', 'DBL'],
 	},
 	{
-<<<<<<< HEAD
 		name: "[Gen 8] Doubles LC",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658672/">Doubles LC</a>`,
@@ -368,8 +366,6 @@ export const Formats: FormatList = [
 		},
 	},
 	{
-=======
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 		name: "[Gen 8] Doubles Custom Game",
 
 		mod: 'gen8',
@@ -749,7 +745,6 @@ export const Formats: FormatList = [
 		},
 	},
 	{
-<<<<<<< HEAD
 		name: "[Gen 8] Mix and Mega",
 		desc: `Mega evolve any Pok&eacute;mon with any mega stone and no limit. Boosts based on mega evolution from gen 7.`,
 		threads: [
@@ -876,8 +871,6 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-=======
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 		name: "[Gen 8] Free-For-All",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3681641/">Free-For-All</a>`,
@@ -915,7 +908,6 @@ export const Formats: FormatList = [
 			'Final Gambit', 'Flower Shield',
 		],
 	},
-<<<<<<< HEAD
 	{
 		name: "[Gen 8] Camomons",
 		desc: `Pok&eacute;mon change type to match their first two moves.`,
@@ -3512,6 +3504,4 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Desync Clause Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
-=======
->>>>>>> da0c0d110... server working and most validations are working, will need to test battles soon
 ];
