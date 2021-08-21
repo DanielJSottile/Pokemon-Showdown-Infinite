@@ -2666,6 +2666,29 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "UUBL",
 		doublesTier: "DUU",
 	},
+	electiviremega: {
+		randomBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"flamethrower",
+			"earthquake",
+			"voltswitch",
+		],
+		randomDoubleBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"substitute",
+			"flamethrower",
+			"earthquake",
+			"protect",
+			"followme",
+		],
+
+		tier: "UUBL",
+		doublesTier: "DUU",
+	},
 	magby: {
 		tier: "LC",
 	},
@@ -5940,6 +5963,54 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "PU",
 		doublesTier: "DUU",
 	},
+	delcattymega: {
+		randomBattleMoves: [
+			"fakeout",
+			"doubleedge",
+			"thunderwave",
+			"spiritbreak",
+			"wildcharge",
+			"suckerpunch",
+			"healbell",
+		],
+		randomDoubleBattleMoves: [
+			"fakeout",
+			"doubleedge",
+			"thunderwave",
+			"spiritbreak",
+			"wildcharge",
+			"suckerpunch",
+			"healbell",
+			"protect",
+		],
+
+		tier: "RU",
+		doublesTier: "DUU",
+	},
+	sableye: {
+		randomBattleMoves: [
+			"recover",
+			"willowisp",
+			"taunt",
+			"toxic",
+			"knockoff",
+			"foulplay",
+		],
+		randomDoubleBattleMoves: [
+			"recover",
+			"willowisp",
+			"taunt",
+			"fakeout",
+			"knockoff",
+			"foulplay",
+			"helpinghand",
+			"snarl",
+			"protect",
+		],
+
+		tier: "PU",
+		doublesTier: "DUU",
+	},
 	sableyemega: {
 		randomBattleMoves: [
 			"recover",
@@ -8341,6 +8412,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 
 		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	drifigible: {
+		tier: "PU",
 		doublesTier: "(DUU)",
 	},
 	drifigible: {
@@ -11389,6 +11464,28 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	bearticmega: {
+		randomBattleMoves: [
+			"iciclecrash",
+			"superpower",
+			"earthquake",
+			"stoneedge",
+			"swordsdance",
+			"aquajet",
+		],
+		randomDoubleBattleMoves: [
+			"iciclecrash",
+			"superpower",
+			"earthquake",
+			"stoneedge",
+			"swordsdance",
+			"aquajet",
+			"protect",
+		],
+
+		tier: "RUBL",
+		doublesTier: "DUU",
 	},
 	bearticmega: {
 		randomBattleMoves: [
