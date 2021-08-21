@@ -2127,7 +2127,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'bewitchment') {
+			if (pokemon.status === "bewitchment") {
 				pokemon.cureStatus();
 			}
 		},
@@ -5987,12 +5987,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dark",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.cureStatus();
 			}
 		},
