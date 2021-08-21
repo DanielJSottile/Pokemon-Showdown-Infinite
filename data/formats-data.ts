@@ -1499,6 +1499,28 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "OU",
 		doublesTier: "DOU",
 	},
+	rapidashmega: {
+		randomBattleMoves: [
+			"flareblitz",
+			"wildcharge",
+			"morningsun",
+			"highhorsepower",
+			"drillpeck",
+		],
+		randomDoubleBattleMoves: [
+			"flareblitz",
+			"wildcharge",
+			"protect",
+			"drillpeck",
+			"flamecharge",
+			"megahorn",
+			"drillrun",
+			"willowisp",
+		],
+
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 	slowpoke: {
 		tier: "LC",
 	},
@@ -2619,6 +2641,29 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	electiviremega: {
+		randomBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"flamethrower",
+			"earthquake",
+			"voltswitch",
+		],
+		randomDoubleBattleMoves: [
+			"wildcharge",
+			"crosschop",
+			"icepunch",
+			"substitute",
+			"flamethrower",
+			"earthquake",
+			"protect",
+			"followme",
+		],
+
+		tier: "UUBL",
+		doublesTier: "DUU",
 	},
 	electiviremega: {
 		randomBattleMoves: [
@@ -4328,6 +4373,30 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "UUBL",
 		doublesTier: "DUU",
 	},
+	dunsparcemega: {
+		randomBattleMoves: [
+			"earthquake",
+			"dragonrush",
+			"coil",
+			"glare",
+			"outrage",
+			"roost",
+			"landswrath",
+		],
+		randomDoubleBattleMoves: [
+			"coil",
+			"earthquake",
+			"landswrath",
+			"earthquake",
+			"glare",
+			"outrage",
+			"protect",
+			"roost",
+		],
+
+		tier: "UUBL",
+		doublesTier: "DUU",
+	},
 	gligar: {
 		randomBattleMoves: [
 			"stealthrock",
@@ -4630,6 +4699,29 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	octillerymega: {
+		randomBattleMoves: [
+			"hydropump",
+			"fireblast",
+			"icebeam",
+			"energyball",
+			"rockblast",
+			"gunkshot",
+			"scald",
+		],
+		randomDoubleBattleMoves: [
+			"hydropump",
+			"surf",
+			"fireblast",
+			"icebeam",
+			"energyball",
+			"chargebeam",
+			"protect",
+		],
+
+		tier: "OU",
+		doublesTier: "DUU",
 	},
 	octillerymega: {
 		randomBattleMoves: [
@@ -5819,6 +5911,54 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	delcattymega: {
+		randomBattleMoves: [
+			"fakeout",
+			"doubleedge",
+			"thunderwave",
+			"spiritbreak",
+			"wildcharge",
+			"suckerpunch",
+			"healbell",
+		],
+		randomDoubleBattleMoves: [
+			"fakeout",
+			"doubleedge",
+			"thunderwave",
+			"spiritbreak",
+			"wildcharge",
+			"suckerpunch",
+			"healbell",
+			"protect",
+		],
+
+		tier: "RU",
+		doublesTier: "DUU",
+	},
+	sableye: {
+		randomBattleMoves: [
+			"recover",
+			"willowisp",
+			"taunt",
+			"toxic",
+			"knockoff",
+			"foulplay",
+		],
+		randomDoubleBattleMoves: [
+			"recover",
+			"willowisp",
+			"taunt",
+			"fakeout",
+			"knockoff",
+			"foulplay",
+			"helpinghand",
+			"snarl",
+			"protect",
+		],
+
+		tier: "PU",
+		doublesTier: "DUU",
 	},
 	delcattymega: {
 		randomBattleMoves: [
@@ -8056,6 +8196,28 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
+	luxraymega: {
+		randomBattleMoves: [
+			"wildcharge",
+			"icefang",
+			"voltswitch",
+			"crunch",
+			"superpower",
+			"facade",
+		],
+		randomDoubleBattleMoves: [
+			"wildcharge",
+			"icefang",
+			"voltswitch",
+			"crunch",
+			"superpower",
+			"facade",
+			"protect",
+		],
+
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	cranidos: {
 		tier: "LC",
 	},
@@ -8345,6 +8507,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 
 		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	drifigible: {
+		tier: "PU",
 		doublesTier: "(DUU)",
 	},
 	drifigible: {
@@ -11351,6 +11517,28 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	bearticmega: {
+		randomBattleMoves: [
+			"iciclecrash",
+			"superpower",
+			"earthquake",
+			"stoneedge",
+			"swordsdance",
+			"aquajet",
+		],
+		randomDoubleBattleMoves: [
+			"iciclecrash",
+			"superpower",
+			"earthquake",
+			"stoneedge",
+			"swordsdance",
+			"aquajet",
+			"protect",
+		],
+
+		tier: "RUBL",
+		doublesTier: "DUU",
 	},
 	bearticmega: {
 		randomBattleMoves: [
