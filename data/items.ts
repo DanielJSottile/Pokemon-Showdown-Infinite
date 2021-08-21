@@ -2237,7 +2237,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'bewitchment') {
+			if (pokemon.status === "bewitchment") {
 				pokemon.cureStatus();
 			}
 		},
@@ -2461,7 +2461,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Normal",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.volatiles['infatuation']) {
+			if (pokemon.volatiles["infatuation"]) {
 				pokemon.eatItem();
 			}
 		},
@@ -4211,9 +4211,9 @@ export const Items: { [itemid: string]: ItemData } = {
 		spritenum: 89,
 		isGem: true,
 		onSourceTryPrimaryHit(target, source, move) {
-			if (target === source || move.category === 'Status') return;
-			if (move.type === 'Infinite' && source.useItem()) {
-				source.addVolatile('gem');
+			if (target === source || move.category === "Status") return;
+			if (move.type === "Infinite" && source.useItem()) {
+				source.addVolatile("gem");
 			}
 		},
 		num: -16,
@@ -4222,9 +4222,12 @@ export const Items: { [itemid: string]: ItemData } = {
 	infinitememory: {
 		name: "Infinite Memory",
 		spritenum: 677,
-		onMemory: 'Infinite',
+		onMemory: "Infinite",
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 773) || pokemon.baseSpecies.num === 773) {
+			if (
+				(source && source.baseSpecies.num === 773) ||
+				pokemon.baseSpecies.num === 773
+			) {
 				return false;
 			}
 			return true;
@@ -4237,8 +4240,8 @@ export const Items: { [itemid: string]: ItemData } = {
 	infinitiumz: {
 		name: "Infinitium Z",
 		spritenum: 636,
-		onPlate: 'Infinite',
-		onMemory: 'Infinite',
+		onPlate: "Infinite",
+		onMemory: "Infinite",
 		onTakeItem: false,
 		zMove: true,
 		zMoveType: "Infinite",
@@ -4647,12 +4650,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent("TryHeal", pokemon)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
-			pokemon.trySetStatus('par', pokemon);
-			pokemon.trySetStatus('slp', pokemon);
+			pokemon.trySetStatus("par", pokemon);
+			pokemon.trySetStatus("slp", pokemon);
 		},
 		num: -33,
 		gen: 8,
@@ -6234,12 +6237,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Dark",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'blindness') {
+			if (pokemon.status === "blindness") {
 				pokemon.cureStatus();
 			}
 		},
@@ -6966,12 +6969,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Fighting",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'whiplash') {
+			if (pokemon.status === "whiplash") {
 				pokemon.cureStatus();
 			}
 		},
