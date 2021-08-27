@@ -95,7 +95,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Absolute Zero",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -112,7 +112,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Absorb",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -127,7 +127,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Accelerock",
 		pp: 20,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Rock",
@@ -141,7 +141,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Acid",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -160,14 +160,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Acid Armor",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Poison",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	aciddownpour: {
@@ -193,7 +193,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Acid Spray",
 		pp: 20,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -219,7 +219,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Acrobatics",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -254,7 +254,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "adjacentAllyOrSelf",
 		type: "Normal",
-		zMove: { effect: "crit2" },
+		zMove: {effect: "crit2"},
 		contestType: "Tough",
 	},
 	aerialace: {
@@ -265,7 +265,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aerial Ace",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -279,7 +279,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aeroblast",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, mirror: 1, distance: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "any",
@@ -308,7 +308,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 	},
 	agility: {
@@ -319,14 +319,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Agility",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spe: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	aircutter: {
@@ -337,7 +337,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Air Cutter",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "allAdjacentFoes",
@@ -352,7 +352,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Air Slash",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, mirror: 1, distance: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -401,7 +401,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	alphabeticalorder: {
@@ -459,7 +459,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost(
-						{ spa: 2 },
+						{spa: 2},
 						target,
 						source,
 						this.dex.getActiveMove("Alphabetical Order")
@@ -473,7 +473,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					this.checkMoveMakesContact(move, source, target)
 				) {
 					this.boost(
-						{ spa: 2 },
+						{spa: 2},
 						target,
 						source,
 						this.dex.getActiveMove("Alphabetical Order")
@@ -484,7 +484,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	alphastrike: {
@@ -495,7 +495,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Alpha Strike",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTry(pokemon) {
 			if (pokemon.species.name === "Unown-Alphabet") {
 				return;
@@ -533,14 +533,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Amnesia",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spd: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	anchorshot: {
@@ -608,7 +608,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ancient Power",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -653,7 +653,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Apocalyptic Maelstrom",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			self: {
@@ -674,7 +674,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Apple Acid",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -692,7 +692,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aqua Jet",
 		pp: 20,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -706,7 +706,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aqua Ring",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "aquaring",
 		condition: {
 			onStart(pokemon) {
@@ -720,7 +720,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Water",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
 	aquatail: {
@@ -731,7 +731,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aqua Tail",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -745,7 +745,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Arm Thrust",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -760,7 +760,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aromatherapy",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, distance: 1 },
+		flags: {snatch: 1, distance: 1},
 		onHit(pokemon, source, move) {
 			this.add("-activate", source, "move: Aromatherapy");
 			let success = false;
@@ -778,7 +778,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "allyTeam",
 		type: "Grass",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
 	aromaticmist: {
@@ -796,7 +796,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "adjacentAlly",
 		type: "Fairy",
-		zMove: { boost: { spd: 2 } },
+		zMove: {boost: {spd: 2}},
 		contestType: "Beautiful",
 	},
 	assist: {
@@ -902,7 +902,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Assurance",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -916,7 +916,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Astonish",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -933,7 +933,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Astral Barrage",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ghost",
@@ -946,7 +946,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Attack Order",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -1028,7 +1028,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	aurasphere: {
@@ -1039,7 +1039,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aura Sphere",
 		pp: 20,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, pulse: 1, mirror: 1, distance: 1 },
+		flags: {bullet: 1, protect: 1, pulse: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Fighting",
@@ -1053,7 +1053,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aura Wheel",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			self: {
@@ -1091,7 +1091,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aurora Beam",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -1110,7 +1110,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Aurora Veil",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "auroraveil",
 		onTry() {
 			return this.field.isWeather("hail");
@@ -1154,7 +1154,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Ice",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	autotomize: {
@@ -1165,7 +1165,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Autotomize",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onTryHit(pokemon) {
 			const hasContrary = pokemon.hasAbility("contrary");
 			if (
@@ -1187,7 +1187,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	avalanche: {
@@ -1208,7 +1208,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Avalanche",
 		pp: 10,
 		priority: -4,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ice",
@@ -1256,7 +1256,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Infinite",
-		zMove: { boost: { def: 2 } },
+		zMove: {boost: {def: 2}},
 		contestType: "Cool",
 	},
 	babydolleyes: {
@@ -1274,7 +1274,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	baddybad: {
@@ -1285,7 +1285,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Baddy Bad",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		self: {
 			sideCondition: "reflect",
 		},
@@ -1312,7 +1312,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Balloon Burst",
 		pp: 5,
 		priority: -4,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		mindBlownRecoil: true,
 		onAfterMove(pokemon, target, move) {
 			if (move.mindBlownRecoil && !move.multihit) {
@@ -1390,7 +1390,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	barrage: {
@@ -1401,7 +1401,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Barrage",
 		pp: 20,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -1416,7 +1416,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Barricade",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 2,
 			spd: 2,
@@ -1438,14 +1438,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Barrier",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	batonpass: {
@@ -1461,7 +1461,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	beakblast: {
@@ -1472,7 +1472,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Beak Blast",
 		pp: 15,
 		priority: -3,
-		flags: { bullet: 1, protect: 1 },
+		flags: {bullet: 1, protect: 1},
 		beforeTurnCallback(pokemon) {
 			pokemon.addVolatile("beakblast");
 		},
@@ -1504,7 +1504,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Beastly Awakening Punch",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		sleepUsable: true,
 		self: {
 			onHit(pokemon) {
@@ -1717,7 +1717,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Beat Up",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, mystery: 1 },
+		flags: {protect: 1, mirror: 1, mystery: 1},
 		onModifyMove(move, pokemon) {
 			move.allies = pokemon.side.pokemon.filter(
 				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
@@ -1737,7 +1737,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Behemoth Bash",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -1750,7 +1750,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Behemoth Blade",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -1763,7 +1763,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Belch",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		// Move disabling implemented in Battle#nextTurn in sim/battle.js
 		secondary: null,
 		target: "normal",
@@ -1778,7 +1778,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Belly Drum",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(target) {
 			if (
 				target.hp <= target.maxhp / 2 ||
@@ -1789,12 +1789,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				return false;
 			}
 			this.directDamage(target.maxhp / 2);
-			this.boost({ atk: 12 }, target);
+			this.boost({atk: 12}, target);
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Cute",
 	},
 	bestow: {
@@ -1838,7 +1838,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Cute",
 	},
 	bide: {
@@ -1849,7 +1849,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bide",
 		pp: 10,
 		priority: 1,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		volatileStatus: "bide",
 		ignoreImmunity: true,
 		beforeMoveCallback(pokemon) {
@@ -1895,7 +1895,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 						damage: this.effectState.totalDamage * 2,
 						category: "Physical",
 						priority: 1,
-						flags: { contact: 1, protect: 1 },
+						flags: {contact: 1, protect: 1},
 						effectType: "Move",
 						type: "Normal",
 					};
@@ -1925,7 +1925,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bind",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -1940,7 +1940,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bite",
 		pp: 25,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -1972,7 +1972,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Blast Burn",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -1989,7 +1989,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Blaze Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: {
 			chance: 10,
@@ -2007,7 +2007,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Blizzard",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move) {
 			if (this.field.isWeather("hail")) move.accuracy = true;
 		},
@@ -2069,7 +2069,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	bloomdoom: {
@@ -2095,7 +2095,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Blue Flare",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			status: "brn",
@@ -2112,7 +2112,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Body Press",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		useSourceDefensiveAsOffensive: true,
 		secondary: null,
 		target: "normal",
@@ -2126,7 +2126,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Body Slam",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -2151,7 +2151,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bolt Beak",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -2164,7 +2164,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bolt Strike",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			status: "par",
@@ -2181,7 +2181,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bone Club",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "flinch",
@@ -2198,7 +2198,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bonemerang",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -2214,7 +2214,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bone Rush",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -2304,7 +2304,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bouncy Bubble",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, heal: 1 },
+		flags: {protect: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -2344,7 +2344,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Branch Poke",
 		pp: 40,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -2357,7 +2357,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Brave Bird",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		recoil: [33, 100],
 		secondary: null,
 		target: "any",
@@ -2372,7 +2372,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Breaking Swipe",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -2405,7 +2405,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Brick Break",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
 			pokemon.side.removeSideCondition("reflect");
@@ -2425,7 +2425,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Brine",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.hp * 2 <= target.maxhp) {
 				return this.chainModify(2);
@@ -2444,7 +2444,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Brutal Swing",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Dark",
@@ -2458,7 +2458,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bubble",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -2477,7 +2477,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bubble Beam",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -2496,7 +2496,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bug Bite",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onHit(target, source) {
 			const item = target.getItem();
 			if (source.hp && item.isBerry && target.takeItem(source)) {
@@ -2547,7 +2547,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bulk Up",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 			def: 1,
@@ -2555,7 +2555,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Fighting",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cool",
 	},
 	bulldoze: {
@@ -2566,7 +2566,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bulldoze",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -2585,7 +2585,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bullet Punch",
 		pp: 30,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -2599,7 +2599,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Bullet Seed",
 		pp: 30,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -2616,7 +2616,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Burning Jealousy",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			onHit(target, source, move) {
@@ -2637,7 +2637,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Blazing Strike",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		willCrit: true,
 		boosts: {
 			spe: -1,
@@ -2655,7 +2655,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Burn Up",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		onTryMove(pokemon, target, move) {
 			if (pokemon.hasType("Fire")) return;
 			this.add("-fail", pokemon, "move: Burn Up");
@@ -2691,7 +2691,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Buzzy Buzz",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		secondary: {
 			chance: 100,
 			status: "par",
@@ -2708,7 +2708,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Calm Mind",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spa: 1,
 			spd: 1,
@@ -2716,7 +2716,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	camouflage: {
@@ -2727,7 +2727,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Camouflage",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(target) {
 			let newType = "Normal";
 			if (this.field.isTerrain("electricterrain")) {
@@ -2750,7 +2750,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Clever",
 	},
 	captivate: {
@@ -2761,7 +2761,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Captivate",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onTryImmunity(pokemon, source) {
 			return (
 				(pokemon.gender === "M" && source.gender === "F") ||
@@ -2774,7 +2774,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
-		zMove: { boost: { spd: 2 } },
+		zMove: {boost: {spd: 2}},
 		contestType: "Cute",
 	},
 	catastropika: {
@@ -2785,7 +2785,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Catastropika",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "pikaniumz",
 		secondary: null,
 		target: "normal",
@@ -2807,7 +2807,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Cute",
 	},
 	chaosleap: {
@@ -2818,7 +2818,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Chaos Leap",
 		pp: 20,
 		priority: -1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			onHit(source) {
 				source.forceSwitchFlag = true;
@@ -2838,7 +2838,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Charge",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "charge",
 		onHit(pokemon) {
 			this.add("-activate", pokemon, "move: Charge");
@@ -2862,7 +2862,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Electric",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	chargebeam: {
@@ -2873,7 +2873,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Charge Beam",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 70,
 			self: {
@@ -2901,7 +2901,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	chatter: {
@@ -2950,7 +2950,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Chip Away",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		ignoreDefensive: true,
 		ignoreEvasion: true,
 		secondary: null,
@@ -2966,7 +2966,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Circle Throw",
 		pp: 10,
 		priority: -6,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		forceSwitch: true,
 		target: "normal",
 		type: "Fighting",
@@ -2980,7 +2980,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Clamp",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -3014,7 +3014,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Clangorous Soul",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, sound: 1, dance: 1 },
+		flags: {snatch: 1, sound: 1, dance: 1},
 		onTry(source) {
 			if (
 				source.hp <= (source.maxhp * 33) / 100 ||
@@ -3076,7 +3076,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Clear Smog",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onHit(target) {
 			target.clearBoosts();
 			this.add("-clearboost", target);
@@ -3094,7 +3094,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Close Combat",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				def: -1,
@@ -3131,7 +3131,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Coil",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 			def: 1,
@@ -3140,7 +3140,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Poison",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	cometpunch: {
@@ -3151,7 +3151,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Comet Punch",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -3174,7 +3174,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	confuseray: {
@@ -3185,12 +3185,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Confuse Ray",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	confusion: {
@@ -3201,7 +3201,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Confusion",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "confusion",
@@ -3218,7 +3218,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Constrict",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -3252,7 +3252,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Conversion",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(target) {
 			const type = this.dex.moves.get(target.moveSlots[0].id).type;
 			if (target.hasType(type) || !target.setType(type)) return false;
@@ -3261,7 +3261,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Beautiful",
 	},
 	conversion2: {
@@ -3297,7 +3297,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
 	copycat: {
@@ -3374,7 +3374,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cute",
 	},
 	coreenforcer: {
@@ -3385,7 +3385,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Core Enforcer",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onHit(target) {
 			if (target.getAbility().isPermanent) return;
 			if (target.newlySwitched || this.queue.willMove(target)) return;
@@ -3452,7 +3452,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cosmic Power",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 1,
 			spd: 1,
@@ -3460,7 +3460,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
 	},
 	cottonguard: {
@@ -3471,14 +3471,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cotton Guard",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 3,
 		},
 		secondary: null,
 		target: "self",
 		type: "Grass",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	cottonspore: {
@@ -3489,14 +3489,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cotton Spore",
 		pp: 40,
 		priority: 0,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1 },
+		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			spe: -2,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Grass",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	counter: {
@@ -3511,7 +3511,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Counter",
 		pp: 20,
 		priority: -5,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		beforeTurnCallback(pokemon) {
 			pokemon.addVolatile("counter");
 		},
@@ -3558,7 +3558,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Court Change",
 		pp: 10,
 		priority: 0,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		onHitField(target, source) {
 			const sideConditions = [
 				'mist', 'lightscreen', 'reflect', 'spikes', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock', 'metalshard', 'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
@@ -3642,7 +3642,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Covet",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onAfterHit(target, source, move) {
 			if (source.item || source.volatiles["gem"]) {
 				return;
@@ -3687,7 +3687,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Crabhammer",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -3727,7 +3727,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Fairy",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	crosschop: {
@@ -3738,7 +3738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cross Chop",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -3753,7 +3753,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cross Poison",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "psn",
@@ -3771,7 +3771,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Crunch",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -3790,7 +3790,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Crush Claw",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -3821,7 +3821,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Crush Grip",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -3848,7 +3848,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (!source.hasType("Ghost")) {
 				delete move.volatileStatus;
 				delete move.onHit;
-				move.self = { boosts: { spe: -1, atk: 1, def: 1 } };
+				move.self = {boosts: {spe: -1, atk: 1, def: 1}};
 			} else if (move.volatileStatus && target.volatiles["curse"]) {
 				return false;
 			}
@@ -3869,7 +3869,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "randomNormal",
 		nonGhostTarget: "self",
 		type: "Ghost",
-		zMove: { effect: "curse" },
+		zMove: {effect: "curse"},
 		contestType: "Tough",
 	},
 	cut: {
@@ -3880,7 +3880,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Cut",
 		pp: 30,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -3894,7 +3894,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Darkest Lariat",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		ignoreEvasion: true,
 		ignoreDefensive: true,
 		secondary: null,
@@ -3910,7 +3910,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dark Pulse",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, pulse: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, pulse: 1, mirror: 1, distance: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -3927,7 +3927,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dark Void",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		onTry(source, target, move) {
 			if (
@@ -3945,7 +3945,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Dark",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	dazzlinggleam: {
@@ -3956,7 +3956,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dazzling Gleam",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "bewitchment",
@@ -3990,7 +3990,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Defend Order",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 1,
 			spd: 1,
@@ -3998,7 +3998,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Bug",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	defensecurl: {
@@ -4009,7 +4009,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Defense Curl",
 		pp: 40,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 1,
 		},
@@ -4020,7 +4020,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cute",
 	},
 	defog: {
@@ -4087,7 +4087,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Flying",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cool",
 	},
 	destinybond: {
@@ -4134,7 +4134,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Ghost",
-		zMove: { effect: "redirect" },
+		zMove: {effect: "redirect"},
 		contestType: "Clever",
 	},
 	detect: {
@@ -4157,7 +4157,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Fighting",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Cool",
 	},
 	devastatingdrake: {
@@ -4183,7 +4183,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Diamond Storm",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			chance: 50,
 			boosts: {
@@ -4205,7 +4205,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dig",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, charge: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, charge: 1, protect: 1, mirror: 1, nonsky: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -4320,7 +4320,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	disarmingvoice: {
@@ -4345,7 +4345,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Discharge",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -4362,7 +4362,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dive",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, charge: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, charge: 1, protect: 1, mirror: 1, nonsky: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -4373,9 +4373,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 				!attacker.transformed
 			) {
 				const forme =
-					attacker.hp <= attacker.maxhp / 2
-						? "cramorantgorging"
-						: "cramorantgulping";
+					attacker.hp <= attacker.maxhp / 2 ?
+						"cramorantgorging" :
+						"cramorantgulping";
 				attacker.formeChange(forme, move);
 			}
 			this.add("-prepare", attacker, move.name);
@@ -4415,7 +4415,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dizzy Punch",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "confusion",
@@ -4471,7 +4471,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double-Edge",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
@@ -4486,7 +4486,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double Hit",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -4503,7 +4503,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double Iron Bash",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		multihit: 2,
 		secondary: {
 			chance: 30,
@@ -4523,7 +4523,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double Kick",
 		pp: 30,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -4539,7 +4539,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double Slap",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -4554,14 +4554,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Double Team",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			evasion: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	dracometeor: {
@@ -4572,7 +4572,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Draco Meteor",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spa: -2,
@@ -4591,7 +4591,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Ascent",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		self: {
 			boosts: {
 				def: -1,
@@ -4610,7 +4610,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Breath",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -4627,7 +4627,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Claw",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -4641,7 +4641,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Dance",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1, dance: 1 },
+		flags: {snatch: 1, dance: 1},
 		boosts: {
 			atk: 1,
 			spe: 1,
@@ -4649,7 +4649,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Dragon",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	dragondarts: {
@@ -4660,7 +4660,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Darts",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: 2,
 		smartTarget: true,
 		secondary: null,
@@ -4679,7 +4679,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Energy",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Dragon",
@@ -4692,7 +4692,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Hammer",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -4706,7 +4706,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Pulse",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, pulse: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, pulse: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Dragon",
@@ -4721,7 +4721,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Rage",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -4735,7 +4735,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Rush",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -4752,7 +4752,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dragon Tail",
 		pp: 10,
 		priority: -6,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		forceSwitch: true,
 		target: "normal",
 		type: "Dragon",
@@ -4766,7 +4766,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Draining Kiss",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, heal: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, heal: 1},
 		drain: [3, 4],
 		secondary: null,
 		target: "normal",
@@ -4781,7 +4781,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Drain Punch",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1, heal: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -4796,7 +4796,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dream Eater",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		onTryImmunity(target) {
 			return target.status === "slp" || target.hasAbility("comatose");
@@ -4814,7 +4814,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Drill Peck",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -4828,7 +4828,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Drill Run",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -4843,7 +4843,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Drum Beating",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -4861,7 +4861,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dual Chop",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -4877,7 +4877,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dual Wingbeat",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -4892,7 +4892,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dynamax Cannon",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -4905,7 +4905,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Dynamic Punch",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 100,
 			volatileStatus: "confusion",
@@ -4922,7 +4922,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Earth Power",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -4941,7 +4941,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Earthquake",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Ground",
@@ -4992,14 +4992,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Eerie Impulse",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			spa: -2,
 		},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	eeriespell: {
@@ -5043,7 +5043,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Egg Bomb",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -5057,7 +5057,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Electric Terrain",
 		pp: 10,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		terrain: "electricterrain",
 		condition: {
 			duration: 5,
@@ -5121,7 +5121,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Electric",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	electrify: {
@@ -5153,7 +5153,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Electric",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	electroball: {
@@ -5171,7 +5171,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Electro Ball",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -5187,7 +5187,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Electroweb",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -5207,7 +5207,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "E-Max Eternal Energy",
 		pp: 5,
 		priority: 0,
-		flags: { charge: 1, recharge: 1 },
+		flags: {charge: 1, recharge: 1},
 		isMax: "Eternatus",
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -5243,7 +5243,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Embargo",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "embargo",
 		condition: {
 			duration: 5,
@@ -5259,7 +5259,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	ember: {
@@ -5270,7 +5270,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ember",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -5364,7 +5364,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 	},
 	endeavor: {
@@ -5378,7 +5378,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Endeavor",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTryImmunity(target, pokemon) {
 			return pokemon.hp < target.hp;
 		},
@@ -5422,7 +5422,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	energyball: {
@@ -5433,7 +5433,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Energy Ball",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -5496,7 +5496,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	eruption: {
@@ -5510,7 +5510,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Eruption",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Fire",
@@ -5524,7 +5524,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Eternabeam",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -5540,7 +5540,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Expanding Force",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, source) {
 			if (this.field.isTerrain("psychicterrain") && source.isGrounded()) {
 				this.debug("terrain buff");
@@ -5564,7 +5564,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Explosion",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		selfdestruct: "always",
 		secondary: null,
 		target: "allAdjacent",
@@ -5579,7 +5579,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Extrasensory",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "flinch",
@@ -5618,7 +5618,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Extreme Speed",
 		pp: 5,
 		priority: 2,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -5632,7 +5632,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Facade",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon) {
 			if (pokemon.status && pokemon.status !== "slp") {
 				return this.chainModify(2);
@@ -5665,7 +5665,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Fairy",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	fairyspell: {
@@ -5682,7 +5682,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	fairywind: {
@@ -5693,7 +5693,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fairy Wind",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "bewitchment",
@@ -5710,7 +5710,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fake Out",
 		pp: 10,
 		priority: 3,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry(source) {
 			if (source.activeMoveActions > 1) {
 				this.hint("Fake Out only works on your first turn out.");
@@ -5740,7 +5740,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	fallaciouspastry: {
@@ -5782,7 +5782,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "False Surrender",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -5795,7 +5795,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "False Swipe",
 		pp: 40,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onDamagePriority: -20,
 		onDamage(damage, target, source, effect) {
 			if (damage >= target.hp) return target.hp - 1;
@@ -5820,7 +5820,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Flying",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
 	feint: {
@@ -5831,7 +5831,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Feint",
 		pp: 10,
 		priority: 2,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		breaksProtect: true,
 		// Breaking protection implemented in scripts.js
 		secondary: null,
@@ -5847,7 +5847,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Feint Attack",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "blindness",
@@ -5864,7 +5864,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fell Stinger",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (!target || target.fainted || target.hp <= 0) {
 				this.boost({atk: 3}, pokemon, pokemon, move);
@@ -5883,7 +5883,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fiery Dance",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, dance: 1 },
+		flags: {protect: 1, mirror: 1, dance: 1},
 		secondary: {
 			chance: 50,
 			self: {
@@ -5904,7 +5904,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fiery Wrath",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -5925,7 +5925,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Final Gambit",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		selfdestruct: "ifHit",
 		secondary: null,
 		target: "normal",
@@ -5941,7 +5941,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Blast",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -5958,7 +5958,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Fang",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondaries: [
 			{
 				chance: 10,
@@ -5981,7 +5981,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Lash",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -6007,7 +6007,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Pledge",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onPrepareHit(target, source, move) {
 			for (const action of this.queue.list as MoveAction[]) {
 				if (
@@ -6033,7 +6033,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (move.sourceEffect === "waterpledge") {
 				move.type = "Water";
 				move.forceSTAB = true;
-				move.self = { sideCondition: "waterpledge" };
+				move.self = {sideCondition: "waterpledge"};
 			}
 			if (move.sourceEffect === "grasspledge") {
 				move.type = "Fire";
@@ -6072,7 +6072,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Punch",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -6089,7 +6089,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fire Spin",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -6104,7 +6104,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "First Impression",
 		pp: 10,
 		priority: 2,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry(source) {
 			if (source.activeMoveActions > 1) {
 				this.hint("First Impression only works on your first turn out.");
@@ -6132,7 +6132,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fishious Rend",
 		pp: 10,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -6145,7 +6145,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fissure",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		damageCallback(pokemon, target) {
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
 			return this.clampIntRange(hp75, 1);
@@ -6185,7 +6185,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flail",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -6201,7 +6201,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flame Burst",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onHit(target, source, move) {
 			for (const ally of target.adjacentAllies()) {
 				this.damage(
@@ -6235,7 +6235,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flame Charge",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			self: {
@@ -6256,7 +6256,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flame Wheel",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, defrost: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, defrost: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -6273,7 +6273,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flamethrower",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -6290,7 +6290,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flare Blitz",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, defrost: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, defrost: 1},
 		recoil: [33, 100],
 		secondary: {
 			chance: 10,
@@ -6308,14 +6308,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flash",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			accuracy: -1,
 		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Beautiful",
 	},
 	flashcannon: {
@@ -6326,7 +6326,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flash Cannon",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -6353,7 +6353,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	fleurcannon: {
@@ -6364,7 +6364,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fleur Cannon",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spa: -2,
@@ -6415,7 +6415,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			} else {
 				if (!move.secondaries) move.secondaries = [];
 				if (item.fling.status) {
-					move.secondaries.push({ status: item.fling.status });
+					move.secondaries.push({status: item.fling.status});
 				} else if (item.fling.volatileStatus) {
 					move.secondaries.push({
 						volatileStatus: item.fling.volatileStatus,
@@ -6448,7 +6448,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flip Turn",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -6462,7 +6462,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Floaty Fall",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, gravity: 1 },
+		flags: {contact: 1, protect: 1, gravity: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -6495,7 +6495,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	flowershield: {
@@ -6506,7 +6506,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Flower Shield",
 		pp: 10,
 		priority: 0,
-		flags: { distance: 1 },
+		flags: {distance: 1},
 		onHitField(t, source, move) {
 			const targets: Pokemon[] = [];
 			for (const pokemon of this.getAllActive()) {
@@ -6521,14 +6521,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 			}
 			let success = false;
 			for (const target of targets) {
-				success = this.boost({ def: 1 }, target, source, move) || success;
+				success = this.boost({def: 1}, target, source, move) || success;
 			}
 			return success;
 		},
 		secondary: null,
 		target: "all",
 		type: "Fairy",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
 	fly: {
@@ -6620,7 +6620,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Focus Blast",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -6639,7 +6639,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Focus Energy",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "focusenergy",
 		condition: {
 			onStart(target, source, effect) {
@@ -6661,7 +6661,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cool",
 	},
 	focuspunch: {
@@ -6672,7 +6672,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Focus Punch",
 		pp: 20,
 		priority: -3,
-		flags: { contact: 1, protect: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, punch: 1},
 		beforeTurnCallback(pokemon) {
 			pokemon.addVolatile("focuspunch");
 		},
@@ -6741,7 +6741,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	forcepalm: {
@@ -6752,7 +6752,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Force Palm",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -6796,7 +6796,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "crit2" },
+		zMove: {effect: "crit2"},
 		contestType: "Clever",
 	},
 	forestscurse: {
@@ -6822,7 +6822,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Clever",
 	},
 	foulplay: {
@@ -6833,7 +6833,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Foul Play",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		useTargetOffensive: true,
 		secondary: null,
 		target: "normal",
@@ -6848,7 +6848,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Freeze-Dry",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onEffectiveness(typeMod, target, type) {
 			if (type === "Water") return 1;
 		},
@@ -6868,7 +6868,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Freeze Shock",
 		pp: 5,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -6896,7 +6896,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Freezing Glare",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "frz",
@@ -6912,7 +6912,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Freezy Frost",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		onHit() {
 			this.add("-clearallboost");
 			for (const pokemon of this.getAllActive()) {
@@ -6932,7 +6932,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Frenzy Plant",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1, nonsky: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -6949,7 +6949,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Frost Breath",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		willCrit: true,
 		secondary: null,
 		target: "normal",
@@ -6967,7 +6967,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Frustration",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -6983,7 +6983,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fury Attack",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -7008,7 +7008,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fury Cutter",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
 			onStart() {
@@ -7034,7 +7034,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fury Swipes",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -7050,7 +7050,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fusion Bolt",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon) {
 			if (this.lastSuccessfulMoveThisTurn === "fusionflare") {
 				this.debug("double power");
@@ -7070,7 +7070,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Fusion Flare",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		onBasePower(basePower, pokemon) {
 			if (this.lastSuccessfulMoveThisTurn === "fusionbolt") {
 				this.debug("double power");
@@ -7132,7 +7132,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Future's Reckoning",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		onModifyMove(move, pokemon) {
 			if (
 				pokemon.getStat("atk", false, true) >
@@ -7186,7 +7186,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Poison",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
 	geargrind: {
@@ -7197,7 +7197,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gear Grind",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
@@ -7229,7 +7229,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			for (const target of targets) {
 				didSomething =
 					this.boost(
-						{ atk: 1, spa: 1 },
+						{atk: 1, spa: 1},
 						target,
 						source,
 						move,
@@ -7242,7 +7242,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Steel",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	genesissupernova: {
@@ -7275,7 +7275,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Geomancy",
 		pp: 10,
 		priority: 0,
-		flags: { charge: 1, nonsky: 1 },
+		flags: {charge: 1, nonsky: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -7295,7 +7295,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Fairy",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Beautiful",
 	},
 	gigadrain: {
@@ -7306,7 +7306,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Giga Drain",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -7321,7 +7321,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Giga Impact",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, recharge: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -7353,7 +7353,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Glacial Lance",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -7366,7 +7366,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Glaciate",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -7385,12 +7385,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Glare",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "par",
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Tough",
 	},
 	glitzyglow: {
@@ -7401,7 +7401,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Glitzy Glow",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		self: {
 			sideCondition: "lightscreen",
 		},
@@ -7445,7 +7445,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					if (result === 0) {
 						pokemon.addVolatile("flinch");
 					} else {
-						this.boost({ def: 1 }, pokemon, source);
+						this.boost({def: 1}, pokemon, source);
 					}
 				}
 			},
@@ -7614,7 +7614,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source) {
 				if (!source.volatiles["dynamax"]) return;
 				for (const pokemon of source.side.active) {
-					this.boost({ atk: 1 }, pokemon);
+					this.boost({atk: 1}, pokemon);
 				}
 			},
 		},
@@ -7774,7 +7774,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
-					this.boost({ spe: -2 }, pokemon);
+					this.boost({spe: -2}, pokemon);
 				}
 			},
 		},
@@ -8311,7 +8311,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
-					this.boost({ evasion: -1 }, pokemon);
+					this.boost({evasion: -1}, pokemon);
 				}
 			},
 		},
@@ -8632,7 +8632,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grass Knot",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		onTryHit(target, source, move) {
 			if (target.volatiles["dynamax"]) {
 				this.add("-fail", source, "move: Grass Knot", "[from] Dynamax");
@@ -8662,7 +8662,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grass Pledge",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onPrepareHit(target, source, move) {
 			for (const action of this.queue.list as MoveAction[]) {
 				if (
@@ -8728,7 +8728,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	grassyglide: {
@@ -8758,7 +8758,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grassy Terrain",
 		pp: 10,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		terrain: "grassyterrain",
 		condition: {
 			duration: 5,
@@ -8816,7 +8816,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Grass",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
 	gravapple: {
@@ -8827,7 +8827,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Grav Apple",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower) {
 			if (this.field.getPseudoWeather("gravity")) {
 				return this.chainModify(1.5);
@@ -8850,7 +8850,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gravity",
 		pp: 5,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		pseudoWeather: "gravity",
 		condition: {
 			duration: 5,
@@ -8933,7 +8933,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	gravitybeam: {
@@ -8944,7 +8944,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gravity Beam",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower) {
 			if (this.field.getPseudoWeather("gravity")) {
 				return this.chainModify(1.5);
@@ -8973,7 +8973,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	growth: {
@@ -8984,7 +8984,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Growth",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onModifyMove(move, pokemon) {
 			if (
 				["sunnyday", "desolateland"].includes(pokemon.effectiveWeather())
@@ -8999,7 +8999,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Beautiful",
 	},
 	grudge: {
@@ -9045,7 +9045,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Ghost",
-		zMove: { effect: "redirect" },
+		zMove: {effect: "redirect"},
 		contestType: "Tough",
 	},
 	guardianofalola: {
@@ -9102,7 +9102,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	guardswap: {
@@ -9138,7 +9138,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	guillotine: {
@@ -9149,7 +9149,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Guillotine",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		damageCallback(pokemon, target) {
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
 			return this.clampIntRange(hp75, 1);
@@ -9170,7 +9170,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gunk Shot",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "psn",
@@ -9187,7 +9187,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gust",
 		pp: 35,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -9210,7 +9210,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Gyro Ball",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -9231,7 +9231,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Ice",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	hammerarm: {
@@ -9242,7 +9242,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hammer Arm",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		self: {
 			boosts: {
 				spe: -1,
@@ -9268,7 +9268,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Cute",
 	},
 	harden: {
@@ -9279,14 +9279,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Harden",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	haze: {
@@ -9307,7 +9307,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Ice",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
 	headbutt: {
@@ -9318,7 +9318,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Headbutt",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -9335,7 +9335,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Head Charge",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [1, 4],
 		secondary: null,
 		target: "normal",
@@ -9350,7 +9350,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Head Smash",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -9378,7 +9378,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "allyTeam",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
 	healblock: {
@@ -9389,7 +9389,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heal Block",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "healblock",
 		condition: {
 			duration: 5,
@@ -9442,7 +9442,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Psychic",
-		zMove: { boost: { spa: 2 } },
+		zMove: {boost: {spa: 2}},
 		contestType: "Clever",
 	},
 	healingwish: {
@@ -9453,7 +9453,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Healing Wish",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onTryHit(pokemon, target, move) {
 			if (!this.canSwitch(pokemon.side)) {
 				delete move.selfdestruct;
@@ -9493,12 +9493,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heal Order",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
 		type: "Bug",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	healpulse: {
@@ -9525,7 +9525,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "any",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	heartstamp: {
@@ -9536,7 +9536,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heart Stamp",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -9572,7 +9572,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { effect: "crit2" },
+		zMove: {effect: "crit2"},
 		contestType: "Clever",
 	},
 	heatcrash: {
@@ -9600,7 +9600,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heat Crash",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		onTryHit(target, pokemon, move) {
 			if (target.volatiles["dynamax"]) {
 				this.add("-fail", pokemon, "Dynamax");
@@ -9623,7 +9623,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heat Wave",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -9657,7 +9657,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Heavy Slam",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		onTryHit(target, pokemon, move) {
 			if (target.volatiles["dynamax"]) {
 				this.add("-fail", pokemon, "Dynamax");
@@ -9708,7 +9708,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "adjacentAlly",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	hex: {
@@ -9725,7 +9725,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hex",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -9749,7 +9749,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			move.type = pokemon.hpType || "Dark";
 		},
@@ -9776,7 +9776,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Bug",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Bug",
@@ -9800,7 +9800,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Dark",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -9824,7 +9824,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Dragon",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -9848,7 +9848,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Electric",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -9872,7 +9872,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Fighting",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -9896,7 +9896,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Fire",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fire",
@@ -9920,7 +9920,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Flying",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Flying",
@@ -9944,7 +9944,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Ghost",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -9968,7 +9968,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Grass",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -9992,7 +9992,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Ground",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ground",
@@ -10016,7 +10016,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Ice",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ice",
@@ -10040,7 +10040,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Poison",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Poison",
@@ -10064,7 +10064,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Psychic",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -10088,7 +10088,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Rock",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Rock",
@@ -10112,7 +10112,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Steel",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -10136,7 +10136,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hidden Power Water",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -10150,7 +10150,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "High Horsepower",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ground",
@@ -10164,7 +10164,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "High Jump Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(
@@ -10203,7 +10203,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hold Back",
 		pp: 40,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onDamagePriority: -20,
 		onDamage(damage, target, source, effect) {
 			if (damage >= target.hp) return target.hp - 1;
@@ -10225,7 +10225,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "adjacentAlly",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Cute",
 	},
 	honeclaws: {
@@ -10236,7 +10236,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hone Claws",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 			accuracy: 1,
@@ -10244,7 +10244,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Dark",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cute",
 	},
 	hornattack: {
@@ -10255,7 +10255,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Horn Attack",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -10269,7 +10269,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Horn Drill",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		damageCallback(pokemon, target) {
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
 			return this.clampIntRange(hp75, 1);
@@ -10290,7 +10290,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Horn Leech",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, heal: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -10305,14 +10305,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Howl",
 		pp: 40,
 		priority: 0,
-		flags: { snatch: 1, sound: 1 },
+		flags: {snatch: 1, sound: 1},
 		boosts: {
 			atk: 1,
 		},
 		secondary: null,
 		target: "allies",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cool",
 	},
 	hurricane: {
@@ -10323,17 +10323,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hurricane",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, mirror: 1, distance: 1},
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
-				case "raindance":
-				case "primordialsea":
-					move.accuracy = true;
-					break;
-				case "sunnyday":
-				case "desolateland":
-					move.accuracy = 50;
-					break;
+			case "raindance":
+			case "primordialsea":
+				move.accuracy = true;
+				break;
+			case "sunnyday":
+			case "desolateland":
+				move.accuracy = 50;
+				break;
 			}
 		},
 		secondary: {
@@ -10352,7 +10352,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hydro Cannon",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -10390,7 +10390,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hydro Pump",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -10419,7 +10419,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hyper Beam",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -10436,7 +10436,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hyper Fang",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "flinch",
@@ -10518,12 +10518,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Hypnosis",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	iceball: {
@@ -10549,7 +10549,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Ball",
 		pp: 20,
 		priority: 0,
-		flags: { bullet: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
 			onLockMove: "iceball",
@@ -10582,7 +10582,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Beam",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "frz",
@@ -10599,7 +10599,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Burn",
 		pp: 5,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -10627,7 +10627,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Fang",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondaries: [
 			{
 				chance: 10,
@@ -10650,7 +10650,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Hammer",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		self: {
 			boosts: {
 				spe: -1,
@@ -10669,7 +10669,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Punch",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 10,
 			status: "frz",
@@ -10686,7 +10686,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ice Shard",
 		pp: 30,
 		priority: 1,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ice",
@@ -10700,7 +10700,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Icicle Crash",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -10717,7 +10717,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Icicle Spear",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -10734,7 +10734,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Icy Wind",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -10784,7 +10784,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pressureTarget: "foeSide",
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { spd: 2 } },
+		zMove: {boost: {spd: 2}},
 		contestType: "Clever",
 	},
 	incinerate: {
@@ -10795,7 +10795,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Incinerate",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onHit(pokemon, source) {
 			const item = pokemon.getItem();
 			if ((item.isBerry || item.isGem) && pokemon.takeItem(source)) {
@@ -10815,7 +10815,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inferno",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			status: "brn",
@@ -11519,7 +11519,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			move.type = pokemon.hpType || "Dark";
 		},
@@ -11546,7 +11546,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Bug",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Bug",
@@ -11570,7 +11570,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Dark",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -11594,7 +11594,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Dragon",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -11618,7 +11618,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Electric",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -11642,7 +11642,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Fairy",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
@@ -11666,7 +11666,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Fighting",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -11690,7 +11690,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Fire",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fire",
@@ -11714,7 +11714,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Flying",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Flying",
@@ -11738,7 +11738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Ghost",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -11762,7 +11762,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Grass",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -11786,7 +11786,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Ground",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ground",
@@ -11810,7 +11810,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Ice",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ice",
@@ -11834,7 +11834,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Infinite",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Infinite",
@@ -11858,7 +11858,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Poison",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Poison",
@@ -11882,7 +11882,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Psychic",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -11906,7 +11906,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Steel",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -11930,7 +11930,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Water",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -11954,7 +11954,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inner Power Water",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -12025,7 +12025,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	inverseroom: {
@@ -12036,7 +12036,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Inverse Room",
 		pp: 10,
 		priority: 0,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		pseudoWeather: "inverseroom",
 		condition: {
 			duration: 5,
@@ -12070,7 +12070,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Infinite",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	iondeluge: {
@@ -12102,7 +12102,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Electric",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Beautiful",
 	},
 	irondefense: {
@@ -12113,14 +12113,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Iron Defense",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	ironhead: {
@@ -12131,7 +12131,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Iron Head",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -12148,7 +12148,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Iron Tail",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -12167,7 +12167,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Jaw Lock",
 		pp: 10,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		onHit(target, source, move) {
 			source.addVolatile("trapped", target, move, "trapper");
 			target.addVolatile("trapped", source, move, "trapper");
@@ -12184,7 +12184,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Judgment",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
@@ -12208,7 +12208,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Jump Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(
@@ -12248,7 +12248,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Karate Chop",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -12263,14 +12263,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Kinesis",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			accuracy: -1,
 		},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Clever",
 	},
 	kingsshield: {
@@ -12318,7 +12318,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost(
-						{ atk: -1 },
+						{atk: -1},
 						source,
 						target,
 						this.dex.getActiveMove("King's Shield")
@@ -12332,7 +12332,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					this.checkMoveMakesContact(move, source, target)
 				) {
 					this.boost(
-						{ atk: -1 },
+						{atk: -1},
 						source,
 						target,
 						this.dex.getActiveMove("King's Shield")
@@ -12343,7 +12343,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cool",
 	},
 	knockoff: {
@@ -12354,7 +12354,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Knock Off",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, source, target, move) {
 			const item = target.getItem();
 			if (
@@ -12401,7 +12401,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Land's Wrath",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		self: {
 			onHit(source) {
 				source.side.foe.addSideCondition("landswrath");
@@ -12438,7 +12438,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Laser Focus",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "laserfocus",
 		condition: {
 			duration: 2,
@@ -12466,7 +12466,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cool",
 	},
 	lashout: {
@@ -12477,7 +12477,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lash Out",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, source) {
 			if (source.statsLoweredThisTurn) {
 				this.debug("lashout buff");
@@ -12496,7 +12496,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Last Resort",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry(source) {
 			if (source.moveSlots.length < 2) return false; // Last Resort fails unless the user knows at least 2 moves
 			let hasLastResort = false; // User must actually have Last Resort for it to succeed
@@ -12660,7 +12660,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Fire",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
 	leafage: {
@@ -12671,7 +12671,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leafage",
 		pp: 40,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -12685,7 +12685,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leaf Blade",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -12700,7 +12700,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leaf Storm",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spa: -2,
@@ -12719,7 +12719,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leaf Tornado",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -12738,7 +12738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leech Life",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, heal: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -12753,7 +12753,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leech Seed",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "leechseed",
 		condition: {
 			onStart(target) {
@@ -12780,7 +12780,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	leer: {
@@ -12791,14 +12791,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Leer",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			def: -1,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cool",
 	},
 	letssnuggleforever: {
@@ -12809,7 +12809,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Let's Snuggle Forever",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "mimikiumz",
 		secondary: null,
 		target: "normal",
@@ -12843,7 +12843,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lick",
 		pp: 30,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -12874,7 +12874,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Light of Ruin",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		recoil: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -12889,7 +12889,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Light Screen",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "lightscreen",
 		condition: {
 			duration: 5,
@@ -12926,7 +12926,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Psychic",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
 	},
 	lightthatburnsthesky: {
@@ -12961,7 +12961,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Limit Break",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(target) {
 			if (
 				target.hp <= target.maxhp / 2 ||
@@ -12972,12 +12972,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				return false;
 			}
 			this.directDamage(target.maxhp / 2);
-			this.boost({ spa: 12 }, target);
+			this.boost({spa: 12}, target);
 		},
 		secondary: null,
 		target: "self",
 		type: "Infinite",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Cute",
 	},
 	liquefaction: {
@@ -13029,7 +13029,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Liquidation",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -13048,7 +13048,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lock-On",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source) {
 			if (source.volatiles["lockon"]) return false;
 		},
@@ -13082,7 +13082,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	lovelykiss: {
@@ -13093,12 +13093,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lovely Kiss",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	lowkick: {
@@ -13128,7 +13128,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Low Kick",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTryHit(target, pokemon, move) {
 			if (target.volatiles["dynamax"]) {
 				this.add("-fail", pokemon, "Dynamax");
@@ -13150,7 +13150,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Low Sweep",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -13169,7 +13169,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lucky Chant",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "luckychant",
 		condition: {
 			duration: 5,
@@ -13186,7 +13186,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Cute",
 	},
 	lunardance: {
@@ -13197,7 +13197,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lunar Dance",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1, dance: 1 },
+		flags: {snatch: 1, heal: 1, dance: 1},
 		onTryHit(pokemon, target, move) {
 			if (!this.canSwitch(pokemon.side)) {
 				delete move.selfdestruct;
@@ -13244,7 +13244,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Lunge",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -13263,7 +13263,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Luster Purge",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -13282,7 +13282,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mach Punch",
 		pp: 30,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -13301,7 +13301,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Infinite",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	magicalleaf: {
@@ -13312,7 +13312,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magical Leaf",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -13369,7 +13369,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { spd: 2 } },
+		zMove: {boost: {spd: 2}},
 		contestType: "Beautiful",
 	},
 	magicpowder: {
@@ -13402,7 +13402,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magic Room",
 		pp: 10,
 		priority: 0,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		pseudoWeather: "magicroom",
 		condition: {
 			duration: 5,
@@ -13433,7 +13433,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Psychic",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	magmastorm: {
@@ -13444,7 +13444,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magma Storm",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -13459,7 +13459,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magnet Bomb",
 		pp: 20,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -13489,7 +13489,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			for (const target of targets) {
 				didSomething =
 					this.boost(
-						{ def: 1, spd: 1 },
+						{def: 1, spd: 1},
 						target,
 						source,
 						move,
@@ -13502,7 +13502,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Electric",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	magnetrise: {
@@ -13513,7 +13513,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magnet Rise",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, gravity: 1 },
+		flags: {snatch: 1, gravity: 1},
 		volatileStatus: "magnetrise",
 		onTry(source, target, move) {
 			if (target.volatiles["smackdown"] || target.volatiles["ingrain"]) {
@@ -13542,7 +13542,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Electric",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Clever",
 	},
 	magnitude: {
@@ -13553,7 +13553,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Magnitude",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onModifyMove(move, pokemon) {
 			const i = this.random(100);
 			if (i < 5) {
@@ -13597,7 +13597,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Malicious Moonsault",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "inciniumz",
 		secondary: null,
 		target: "normal",
@@ -13612,7 +13612,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mat Block",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, nonsky: 1 },
+		flags: {snatch: 1, nonsky: 1},
 		stallingMove: true,
 		sideCondition: "matblock",
 		onTry(source) {
@@ -13656,7 +13656,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Fighting",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
 	maxairstream: {
@@ -13675,7 +13675,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.alliesAndSelf()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spe: 1 }, pokemon, source);
+						this.boost({spe: 1}, pokemon, source);
 					}
 				}
 			},
@@ -13700,7 +13700,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spd: -1 }, pokemon, source);
+						this.boost({spd: -1}, pokemon, source);
 					}
 				}
 			},
@@ -13771,7 +13771,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spa: -1 }, pokemon);
+						this.boost({spa: -1}, pokemon);
 					}
 				}
 			},
@@ -13900,7 +13900,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.alliesAndSelf()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ atk: 1 }, pokemon);
+						this.boost({atk: 1}, pokemon);
 					}
 				}
 			},
@@ -13971,7 +13971,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.alliesAndSelf()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spa: 1 }, pokemon);
+						this.boost({spa: 1}, pokemon);
 					}
 				}
 			},
@@ -14019,7 +14019,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ def: -1 }, pokemon);
+						this.boost({def: -1}, pokemon);
 					}
 				}
 			},
@@ -14044,7 +14044,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.alliesAndSelf()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spd: 1 }, pokemon);
+						this.boost({spd: 1}, pokemon);
 					}
 				}
 			},
@@ -14115,7 +14115,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.alliesAndSelf()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ def: 1 }, pokemon);
+						this.boost({def: 1}, pokemon);
 					}
 				}
 			},
@@ -14140,7 +14140,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ spe: -1 }, pokemon);
+						this.boost({spe: -1}, pokemon);
 					}
 				}
 			},
@@ -14165,7 +14165,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(5);
 					if (result === 0) {
-						this.boost({ atk: -1 }, pokemon);
+						this.boost({atk: -1}, pokemon);
 					}
 				}
 			},
@@ -14224,7 +14224,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
 	},
 	meditate: {
@@ -14235,14 +14235,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Meditate",
 		pp: 40,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Beautiful",
 	},
 	mefirst: {
@@ -14292,7 +14292,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "adjacentFoe",
 		type: "Normal",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	megadrain: {
@@ -14303,7 +14303,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mega Drain",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -14319,7 +14319,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Megahorn",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Bug",
@@ -14333,7 +14333,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mega Kick",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -14347,7 +14347,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mega Punch",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -14361,7 +14361,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Memento",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		boosts: {
 			atk: -2,
 			spa: -2,
@@ -14370,7 +14370,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { effect: "healreplacement" },
+		zMove: {effect: "healreplacement"},
 		contestType: "Tough",
 	},
 	menacingmoonrazemaelstrom: {
@@ -14404,7 +14404,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Metal Burst",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source, move) {
 			const lastDamagedBy = source.getLastDamagedBy(true);
 			if (lastDamagedBy === undefined || !lastDamagedBy.thisTurn) {
@@ -14430,7 +14430,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Metal Claw",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -14478,7 +14478,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "foeSide",
 		type: "Steel",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
 	metalsound: {
@@ -14496,7 +14496,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Steel",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	meteorassault: {
@@ -14507,7 +14507,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Meteor Assault",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, recharge: 1, mirror: 1 },
+		flags: {protect: 1, recharge: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -14523,13 +14523,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Meteor Beam",
 		pp: 10,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
 			this.add("-prepare", attacker, move.name);
-			this.boost({ spa: 1 }, attacker, attacker, move);
+			this.boost({spa: 1}, attacker, attacker, move);
 			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
 				return;
 			}
@@ -14548,7 +14548,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Meteor Mash",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 20,
 			self: {
@@ -14710,7 +14710,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Midnight Strike",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "blindness",
@@ -14727,12 +14727,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Milk Drink",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	mimic: {
@@ -14781,7 +14781,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cute",
 	},
 	mindblown: {
@@ -14792,7 +14792,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mind Blown",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		mindBlownRecoil: true,
 		onAfterMove(pokemon, target, move) {
 			if (move.mindBlownRecoil && !move.multihit) {
@@ -14818,7 +14818,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mind Reader",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source) {
 			if (source.volatiles["lockon"]) return false;
 		},
@@ -14829,7 +14829,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	minimize: {
@@ -14840,7 +14840,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Minimize",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "minimize",
 		condition: {
 			noCopy: true,
@@ -14882,7 +14882,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	miracleeye: {
@@ -14915,7 +14915,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	mirrorcoat: {
@@ -14930,7 +14930,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mirror Coat",
 		pp: 20,
 		priority: -5,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		beforeTurnCallback(pokemon) {
 			pokemon.addVolatile("mirrorcoat");
 		},
@@ -14988,7 +14988,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Flying",
-		zMove: { boost: { atk: 2 } },
+		zMove: {boost: {atk: 2}},
 		contestType: "Clever",
 	},
 	mirrorshot: {
@@ -14999,7 +14999,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mirror Shot",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -15018,7 +15018,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mist",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "mist",
 		condition: {
 			duration: 5,
@@ -15056,7 +15056,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Ice",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
 	mistball: {
@@ -15067,7 +15067,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mist Ball",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -15086,7 +15086,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Misty Explosion",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		selfdestruct: "always",
 		onBasePower(basePower, source) {
 			if (this.field.isTerrain("mistyterrain") && source.isGrounded()) {
@@ -15106,7 +15106,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Misty Terrain",
 		pp: 10,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		terrain: "mistyterrain",
 		condition: {
 			duration: 5,
@@ -15164,7 +15164,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Fairy",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
 	},
 	moonblast: {
@@ -15175,7 +15175,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Moonblast",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -15194,7 +15194,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Moongeist Beam",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		ignoreAbility: true,
 		secondary: null,
 		target: "normal",
@@ -15209,27 +15209,27 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Moonlight",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-				case "raindance":
-				case "primordialsea":
-				case "sandstorm":
-				case "hail":
-					factor = 0.667;
-					break;
-				case "sunnyday":
-				case "desolateland":
-					factor = 0.25;
-					break;
+			case "raindance":
+			case "primordialsea":
+			case "sandstorm":
+			case "hail":
+				factor = 0.667;
+				break;
+			case "sunnyday":
+			case "desolateland":
+				factor = 0.25;
+				break;
 			}
 			return !!this.heal(this.modify(pokemon.maxhp, factor));
 		},
 		secondary: null,
 		target: "self",
 		type: "Fairy",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	morningsun: {
@@ -15240,27 +15240,27 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Morning Sun",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
-				case "desolateland":
-					factor = 0.667;
-					break;
-				case "raindance":
-				case "primordialsea":
-				case "sandstorm":
-				case "hail":
-					factor = 0.25;
-					break;
+			case "sunnyday":
+			case "desolateland":
+				factor = 0.667;
+				break;
+			case "raindance":
+			case "primordialsea":
+			case "sandstorm":
+			case "hail":
+				factor = 0.25;
+				break;
 			}
 			return !!this.heal(this.modify(pokemon.maxhp, factor));
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	mudbomb: {
@@ -15271,7 +15271,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mud Bomb",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -15290,7 +15290,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mud Shot",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -15309,7 +15309,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mud-Slap",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -15328,7 +15328,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mud Sport",
 		pp: 15,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		pseudoWeather: "mudsport",
 		condition: {
 			duration: 5,
@@ -15351,7 +15351,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Ground",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	muddywater: {
@@ -15362,7 +15362,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Muddy Water",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -15381,7 +15381,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Multi-Attack",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			move.type = this.runEvent("Memory", pokemon, null, move, "Normal");
@@ -15401,7 +15401,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Murky Corruption",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -15428,7 +15428,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Mystical Fire",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -15447,14 +15447,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Nasty Plot",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spa: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Dark",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	naturalgift: {
@@ -15465,7 +15465,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Natural Gift",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
@@ -15545,7 +15545,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Nature's Madness",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
@@ -15559,7 +15559,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Needle Arm",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -15591,7 +15591,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Night Daze",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "blindness",
@@ -15608,7 +15608,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Nightmare",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "nightmare",
 		condition: {
 			noCopy: true,
@@ -15626,7 +15626,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	nightshade: {
@@ -15638,7 +15638,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Night Shade",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -15652,7 +15652,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Night Slash",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -15675,7 +15675,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	noretreat: {
@@ -15686,7 +15686,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "No Retreat",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "noretreat",
 		onTry(source, target, move) {
 			if (source.volatiles["noretreat"]) return false;
@@ -15721,7 +15721,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Nuzzle",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			status: "par",
@@ -15738,7 +15738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Oblivion Wing",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, distance: 1, heal: 1},
 		drain: [3, 4],
 		secondary: null,
 		target: "any",
@@ -15790,7 +15790,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost(
-						{ def: -2 },
+						{def: -2},
 						source,
 						target,
 						this.dex.getActiveMove("Obstruct")
@@ -15804,7 +15804,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					this.checkMoveMakesContact(move, source, target)
 				) {
 					this.boost(
-						{ def: -2 },
+						{def: -2},
 						source,
 						target,
 						this.dex.getActiveMove("Obstruct")
@@ -15839,7 +15839,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Octazooka",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -15858,7 +15858,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Octolock",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryImmunity(target) {
 			return this.dex.getImmunity("trapped", target);
 		},
@@ -15919,8 +15919,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				);
 			},
 			onTrapPokemon(pokemon) {
-				if (this.effectState.source && this.effectState.source.isActive)
-					pokemon.tryTrap();
+				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
 		},
 		secondary: null,
@@ -15943,7 +15942,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Clever",
 	},
 	oilslick: {
@@ -15973,7 +15972,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Ominous Wind",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -15998,7 +15997,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Origin Pulse",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, pulse: 1, mirror: 1 },
+		flags: {protect: 1, pulse: 1, mirror: 1},
 		target: "allAdjacentFoes",
 		type: "Water",
 		contestType: "Beautiful",
@@ -16011,7 +16010,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Origin Flare",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -16030,7 +16029,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Origin Strike",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 40,
 			boosts: {
@@ -16049,7 +16048,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Outrage",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "lockedmove",
 		},
@@ -16087,7 +16086,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Overheat",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spa: -2,
@@ -16130,7 +16129,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	paleowave: {
@@ -16142,7 +16141,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Paleo Wave",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -16161,7 +16160,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Parabolic Charge",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		secondary: null,
 		target: "allAdjacent",
@@ -16178,7 +16177,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
 		onHit(target, source, move) {
-			const success = this.boost({ atk: -1, spa: -1 }, target, source);
+			const success = this.boost({atk: -1, spa: -1}, target, source);
 			if (!success && !target.hasAbility("mirrorarmor")) {
 				delete move.selfSwitch;
 			}
@@ -16187,7 +16186,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { effect: "healreplacement" },
+		zMove: {effect: "healreplacement"},
 		contestType: "Cool",
 	},
 	pastsassurance: {
@@ -16265,7 +16264,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Infinite",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
 	payback: {
@@ -16455,7 +16454,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Perdition's Pyre",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			status: "slp",
@@ -16472,7 +16471,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Perfect-Tempo Symphony",
 		pp: 1,
 		priority: 0,
-		flags: { sound: 1, authentic: 1 },
+		flags: {sound: 1, authentic: 1},
 		self: {
 			onHit(pokemon) {
 				let stats = [];
@@ -16494,8 +16493,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 
 				stats = [];
 				for (const statMinus in pokemon.boosts) {
-					if (statMinus === "accuracy" || statMinus === "evasion")
-						continue;
+					if (statMinus === "accuracy" || statMinus === "evasion") { continue; }
 					// @ts-ignore
 					if (pokemon.boosts[statMinus] > -6 && !(statMinus in boost)) {
 						stats.push(statMinus);
@@ -16619,7 +16617,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	petalblizzard: {
@@ -16630,7 +16628,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Petal Blizzard",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Grass",
@@ -16644,7 +16642,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Petal Dance",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, dance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
 		self: {
 			volatileStatus: "lockedmove",
 		},
@@ -16669,7 +16667,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Phantom Force",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, charge: 1, mirror: 1 },
+		flags: {contact: 1, charge: 1, mirror: 1},
 		breaksProtect: true,
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -16699,7 +16697,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Photon Geyser",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (
 				pokemon.getStat("atk", false, true) >
@@ -16725,7 +16723,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pika Papow",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -16739,7 +16737,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pin Missile",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -16756,7 +16754,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Plasma Fists",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		pseudoWeather: "iondeluge",
 		secondary: null,
 		target: "normal",
@@ -16778,7 +16776,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	playrough: {
@@ -16789,7 +16787,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Play Rough",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "bewitchment",
@@ -16806,7 +16804,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pluck",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		onHit(target, source) {
 			const item = target.getItem();
 			if (source.hp && item.isBerry && target.takeItem(source)) {
@@ -16856,7 +16854,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pointy Point",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1 },
+		flags: {protect: 1, reflectable: 1},
 		self: {
 			onHit(source) {
 				const result = this.random(2);
@@ -16880,7 +16878,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Fang",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			status: "tox",
@@ -16897,12 +16895,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Gas",
 		pp: 40,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "psn",
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	poisonjab: {
@@ -16913,7 +16911,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Jab",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "psn",
@@ -16930,12 +16928,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Powder",
 		pp: 35,
 		priority: 0,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1 },
+		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
 		status: "psn",
 		secondary: null,
 		target: "normal",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	poisonsting: {
@@ -16946,7 +16944,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Sting",
 		pp: 35,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "psn",
@@ -16963,7 +16961,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poison Tail",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: {
 			chance: 10,
@@ -16981,7 +16979,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pollen Puff",
 		pp: 15,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		onTryHit(target, source, move) {
 			if (source.isAlly(target)) {
 				move.basePower = 0;
@@ -17008,7 +17006,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Poltergeist",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTry(source, target) {
 			return !!target.item;
 		},
@@ -17032,7 +17030,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pound",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -17066,7 +17064,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Bug",
-		zMove: { boost: { spd: 2 } },
+		zMove: {boost: {spd: 2}},
 		contestType: "Clever",
 	},
 	powdersnow: {
@@ -17077,7 +17075,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Powder Snow",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "frz",
@@ -17094,7 +17092,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Power Gem",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Rock",
@@ -17125,7 +17123,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	powerswap: {
@@ -17161,7 +17159,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	powertrick: {
@@ -17172,7 +17170,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Power Trick",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		volatileStatus: "powertrick",
 		condition: {
 			onStart(pokemon) {
@@ -17214,7 +17212,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Clever",
 	},
 	powertrip: {
@@ -17228,7 +17226,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Power Trip",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -17244,7 +17242,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Power-Up Punch",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 100,
 			self: {
@@ -17265,7 +17263,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Power Whip",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -17279,7 +17277,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Precipice Blades",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		target: "allAdjacentFoes",
 		type: "Ground",
 		contestType: "Cool",
@@ -17292,7 +17290,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Present",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
 			if (rand < 2) {
@@ -17319,7 +17317,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Prismatic Laser",
 		pp: 10,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -17377,7 +17375,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	psybeam: {
@@ -17388,7 +17386,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psybeam",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "confusion",
@@ -17428,7 +17426,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
 	psychic: {
@@ -17439,7 +17437,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psychic",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -17458,7 +17456,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psychic Fangs",
 		pp: 10,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
 			pokemon.side.removeSideCondition("reflect");
@@ -17478,7 +17476,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psychic Terrain",
 		pp: 10,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		terrain: "psychicterrain",
 		condition: {
 			duration: 5,
@@ -17541,7 +17539,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	psychoboost: {
@@ -17552,7 +17550,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psycho Boost",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spa: -2,
@@ -17571,7 +17569,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psycho Cut",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -17586,7 +17584,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psychokinesis",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source) {
 			if (source.volatiles["lockon"]) return false;
 		},
@@ -17608,7 +17606,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psycho Shift",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source, move) {
 			if (!source.status) return false;
 			move.status = source.status;
@@ -17621,7 +17619,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spa: 2 } },
+		zMove: {boost: {spa: 2}},
 		contestType: "Clever",
 	},
 	psyshock: {
@@ -17633,7 +17631,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psyshock",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -17648,7 +17646,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psystrike",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -17665,7 +17663,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Psywave",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -17679,7 +17677,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pulverizing Pancake",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "snorliumz",
 		secondary: null,
 		target: "normal",
@@ -17718,7 +17716,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Punishment",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -17734,7 +17732,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Purify",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, heal: 1 },
+		flags: {protect: 1, reflectable: 1, heal: 1},
 		onHit(target, source) {
 			if (!target.cureStatus()) return false;
 			this.heal(Math.ceil(source.maxhp * 0.5), source);
@@ -17742,7 +17740,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Poison",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Beautiful",
 	},
 	pursuit: {
@@ -17761,7 +17759,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pursuit",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		beforeTurnCallback(pokemon) {
 			for (const side of this.sides) {
 				if (side.hasAlly(pokemon)) continue;
@@ -17828,7 +17826,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pyro Ball",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1, bullet: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1, bullet: 1},
 		secondary: {
 			chance: 10,
 			status: "brn",
@@ -17844,7 +17842,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Pyroclastic Blow",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		selfdestruct: "always",
 		secondary: null,
 		target: "allAdjacent",
@@ -17928,7 +17926,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Quash",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onHit(target) {
 			if (this.activePerHalf === 1) return false; // fails in singles
 			const action = this.queue.willMove(target);
@@ -17940,7 +17938,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	quickattack: {
@@ -17951,7 +17949,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Quick Attack",
 		pp: 30,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -17965,7 +17963,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Quick Guard",
 		pp: 15,
 		priority: 3,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "quickguard",
 		onTry() {
 			return !!this.queue.willAct();
@@ -18004,7 +18002,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Fighting",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
 	quiverdance: {
@@ -18015,7 +18013,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Quiver Dance",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1, dance: 1 },
+		flags: {snatch: 1, dance: 1},
 		boosts: {
 			spa: 1,
 			spd: 1,
@@ -18024,7 +18022,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Bug",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	rage: {
@@ -18035,7 +18033,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rage",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "rage",
 		},
@@ -18045,7 +18043,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onHit(target, source, move) {
 				if (target !== source && move.category !== "Status") {
-					this.boost({ atk: 1 });
+					this.boost({atk: 1});
 				}
 			},
 			onBeforeMovePriority: 100,
@@ -18067,7 +18065,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rage Powder",
 		pp: 20,
 		priority: 2,
-		flags: { powder: 1 },
+		flags: {powder: 1},
 		volatileStatus: "ragepowder",
 		onTry(source) {
 			return this.activePerHalf > 1;
@@ -18095,7 +18093,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Bug",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	raindance: {
@@ -18111,7 +18109,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Water",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	rapidspin: {
@@ -18122,7 +18120,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rapid Spin",
 		pp: 40,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onAfterHit(target, pokemon) {
 			if (pokemon.hp && pokemon.removeVolatile("leechseed")) {
 				this.add(
@@ -18207,7 +18205,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Razor Leaf",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "allAdjacentFoes",
@@ -18222,7 +18220,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Razor Shell",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -18241,7 +18239,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Razor Wind",
 		pp: 10,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -18316,7 +18314,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Infinite",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Popular",
 	},
 	recover: {
@@ -18327,12 +18325,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Recover",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	recycle: {
@@ -18343,7 +18341,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Recycle",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
 			const item = pokemon.lastItem;
@@ -18359,7 +18357,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	reflect: {
@@ -18370,7 +18368,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Reflect",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "reflect",
 		condition: {
 			duration: 5,
@@ -18414,7 +18412,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Psychic",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	reflecttype: {
@@ -18457,7 +18455,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	refresh: {
@@ -18468,7 +18466,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Refresh",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onHit(pokemon) {
 			if (["", "slp", "frz"].includes(pokemon.status)) return false;
 			pokemon.cureStatus();
@@ -18476,7 +18474,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Cute",
 	},
 	relicsong: {
@@ -18524,7 +18522,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rest",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onTry(source) {
 			if (source.status === "slp" || source.hasAbility("comatose")) {
 				return false;
@@ -18553,7 +18551,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	retaliate: {
@@ -18564,7 +18562,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Retaliate",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon) {
 			if (pokemon.side.faintedLastTurn) {
 				this.debug("Boosted for a faint last turn");
@@ -18700,7 +18698,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	revelationdance: {
@@ -18711,7 +18709,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Revelation Dance",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, dance: 1 },
+		flags: {protect: 1, mirror: 1, dance: 1},
 		onModifyType(move, pokemon) {
 			let type = pokemon.getTypes()[0];
 			if (type === "Bird") type = "???";
@@ -18740,7 +18738,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Revenge",
 		pp: 10,
 		priority: -4,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -18773,7 +18771,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Reversal",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -18788,7 +18786,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rising Voltage",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (this.field.isTerrain("electricterrain") && target.isGrounded()) {
 				this.debug("terrain buff");
@@ -18813,7 +18811,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
 	roaroftime: {
@@ -18824,7 +18822,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Roar of Time",
 		pp: 5,
 		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
+		flags: {recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -18841,7 +18839,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Blast",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -18858,7 +18856,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Climb",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "confusion",
@@ -18875,14 +18873,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Polish",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spe: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Rock",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	rockslide: {
@@ -18893,7 +18891,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Slide",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -18910,7 +18908,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Smash",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			status: "whiplash",
@@ -18927,7 +18925,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Throw",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Rock",
@@ -18941,7 +18939,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Tomb",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -18960,7 +18958,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rock Wrecker",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, recharge: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, recharge: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "mustrecharge",
 		},
@@ -19021,7 +19019,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 	},
 	rollingkick: {
@@ -19032,7 +19030,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rolling Kick",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -19064,7 +19062,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rollout",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
 			onLockMove: "rollout",
@@ -19097,7 +19095,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Roost",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		self: {
 			volatileStatus: "roost",
@@ -19117,7 +19115,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Flying",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	rototiller: {
@@ -19128,7 +19126,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Rototiller",
 		pp: 10,
 		priority: 0,
-		flags: { distance: 1, nonsky: 1 },
+		flags: {distance: 1, nonsky: 1},
 		onHitField(target, source) {
 			const targets: Pokemon[] = [];
 			let anyAirborne = false;
@@ -19145,13 +19143,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 			}
 			if (!targets.length && !anyAirborne) return false; // Fails when there are no grounded Grass types or airborne Pokemon
 			for (const pokemon of targets) {
-				this.boost({ atk: 1, spa: 1 }, pokemon, source);
+				this.boost({atk: 1, spa: 1}, pokemon, source);
 			}
 		},
 		secondary: null,
 		target: "all",
 		type: "Ground",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Tough",
 	},
 	round: {
@@ -19198,7 +19196,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Roundhouse Kick",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "whiplash",
@@ -19215,7 +19213,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sacred Fire",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		secondary: {
 			chance: 50,
 			status: "brn",
@@ -19232,7 +19230,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sacred Sword",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		ignoreEvasion: true,
 		ignoreDefensive: true,
 		secondary: null,
@@ -19248,7 +19246,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Safeguard",
 		pp: 25,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "safeguard",
 		condition: {
 			duration: 5,
@@ -19311,7 +19309,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	sandattack: {
@@ -19322,14 +19320,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sand Attack",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			accuracy: -1,
 		},
 		secondary: null,
 		target: "normal",
 		type: "Ground",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Cute",
 	},
 	sandstorm: {
@@ -19345,7 +19343,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Rock",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
 	sandtomb: {
@@ -19356,7 +19354,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sand Tomb",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -19371,7 +19369,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sappy Seed",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1 },
+		flags: {protect: 1, reflectable: 1},
 		onHit(target, source) {
 			if (target.hasType("Grass")) return null;
 			target.addVolatile("leechseed", source);
@@ -19404,7 +19402,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Scald",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
 		secondary: {
 			chance: 25,
@@ -19422,7 +19420,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Scale Shot",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		selfBoost: {
 			boosts: {
@@ -19451,7 +19449,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
 	scorchingsands: {
@@ -19462,7 +19460,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Scorching Sands",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
 		secondary: {
 			chance: 30,
@@ -19479,7 +19477,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Scratch",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -19500,7 +19498,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Clever",
 	},
 	searingshot: {
@@ -19511,7 +19509,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Searing Shot",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "brn",
@@ -19528,7 +19526,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Searing Sunraze Smash",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "solganiumz",
 		ignoreAbility: true,
 		secondary: null,
@@ -19544,7 +19542,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Secret Power",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain("")) return;
 			move.secondaries = [];
@@ -19596,7 +19594,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Secret Sword",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -19610,7 +19608,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Seed Bomb",
 		pp: 15,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -19624,7 +19622,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Seed Flare",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			boosts: {
@@ -19644,7 +19642,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Seismic Toss",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -19659,7 +19657,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Self-Destruct",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		selfdestruct: "always",
 		secondary: null,
 		target: "allAdjacent",
@@ -19674,7 +19672,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Ball",
 		pp: 15,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -19693,7 +19691,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Bone",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -19712,7 +19710,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Claw",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -19727,7 +19725,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Force",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, charge: 1, mirror: 1 },
+		flags: {contact: 1, charge: 1, mirror: 1},
 		breaksProtect: true,
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -19757,7 +19755,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Punch",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -19771,7 +19769,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Sneak",
 		pp: 30,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -19786,7 +19784,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shadow Strike",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -19805,14 +19803,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sharpen",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cute",
 	},
 	shatteredpsyche: {
@@ -19838,7 +19836,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sheer Cold",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		damageCallback(pokemon, target) {
 			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4);
 			return this.clampIntRange(hp75, 1);
@@ -19859,7 +19857,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shell Side Arm",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onPrepareHit(target, source, move) {
 			if (!source.isAlly(target)) {
 				this.attrLastMove("[anim] Shell Side Arm " + move.category);
@@ -19917,7 +19915,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shell Smash",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: -1,
 			spd: -1,
@@ -19928,7 +19926,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	shelltrap: {
@@ -19939,7 +19937,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shell Trap",
 		pp: 5,
 		priority: -3,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		beforeTurnCallback(pokemon) {
 			pokemon.addVolatile("shelltrap");
 		},
@@ -20014,7 +20012,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shift Gear",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spe: 2,
 			atk: 1,
@@ -20022,7 +20020,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	shockwave: {
@@ -20033,7 +20031,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shock Wave",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -20047,7 +20045,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Shore Up",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
 			if (this.field.isWeather("sandstorm")) {
@@ -20058,7 +20056,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Ground",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	signalbeam: {
@@ -20069,7 +20067,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Signal Beam",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			volatileStatus: "confusion",
@@ -20086,7 +20084,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Silver Wind",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -20132,7 +20130,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	sing: {
@@ -20148,7 +20146,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 	},
 	singeingshock: {
@@ -20192,7 +20190,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sizzly Slide",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, defrost: 1 },
+		flags: {contact: 1, protect: 1, defrost: 1},
 		secondary: {
 			chance: 100,
 			status: "brn",
@@ -20239,7 +20237,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Clever",
 	},
 	skillswap: {
@@ -20309,7 +20307,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	skittersmack: {
@@ -20320,7 +20318,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Skitter Smack",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -20338,13 +20336,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Skull Bash",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, charge: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
 			this.add("-prepare", attacker, move.name);
-			this.boost({ def: 1, atk: 1 }, attacker, attacker, move);
+			this.boost({def: 1, atk: 1}, attacker, attacker, move);
 			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
 				return;
 			}
@@ -20364,7 +20362,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sky Attack",
 		pp: 5,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1, distance: 1},
 		critRatio: 2,
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -20548,7 +20546,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sky Uppercut",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -20562,12 +20560,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Slack Off",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	slam: {
@@ -20578,7 +20576,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Slam",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -20592,7 +20590,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Slash",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -20607,12 +20605,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sleep Powder",
 		pp: 15,
 		priority: 0,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1 },
+		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	sleeptalk: {
@@ -20673,7 +20671,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "crit2" },
+		zMove: {effect: "crit2"},
 		contestType: "Cute",
 	},
 	sludge: {
@@ -20684,7 +20682,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sludge",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			status: "psn",
@@ -20701,7 +20699,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sludge Bomb",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: "psn",
@@ -20718,7 +20716,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sludge Wave",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "psn",
@@ -20735,7 +20733,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Smack Down",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		volatileStatus: "smackdown",
 		condition: {
 			noCopy: true,
@@ -20794,7 +20792,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Smart Strike",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -20812,7 +20810,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Smelling Salts",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onHit(target) {
 			if (target.status === "par") target.cureStatus();
 		},
@@ -20829,7 +20827,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Smog",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 40,
 			status: "psn",
@@ -20846,14 +20844,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Smokescreen",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			accuracy: -1,
 		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
+		zMove: {boost: {evasion: 1}},
 		contestType: "Clever",
 	},
 	snaptrap: {
@@ -20864,7 +20862,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Snap Trap",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -20927,7 +20925,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pressureTarget: "foeSide",
 		target: "self",
 		type: "Dark",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	snipeshot: {
@@ -20938,7 +20936,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Snipe Shot",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		tracksTarget: true,
 		secondary: null,
@@ -20987,7 +20985,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Water",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	softboiled: {
@@ -20998,12 +20996,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Soft-Boiled",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	solarbeam: {
@@ -21014,7 +21012,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Solar Beam",
 		pp: 10,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1 },
+		flags: {charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -21056,7 +21054,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Solar Blade",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, charge: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, charge: 1, protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -21099,7 +21097,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sonic Boom",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -21113,7 +21111,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Soul Plunge",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		// Please recheck to see if this works, otherwise will need to implement
 		// it in the same as the old one
 		useSourceDefensiveAsOffensive: true,
@@ -21130,7 +21128,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Soul-Stealing 7-Star Strike",
 		pp: 1,
 		priority: 0,
-		flags: { contact: 1 },
+		flags: {contact: 1},
 		isZ: "marshadiumz",
 		secondary: null,
 		target: "normal",
@@ -21145,7 +21143,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spacial Rend",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -21160,7 +21158,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spark",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			status: "par",
@@ -21202,7 +21200,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sparkly Swirl",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		self: {
 			onHit(pokemon, source, move) {
 				this.add("-activate", source, "move: Aromatherapy");
@@ -21257,7 +21255,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	spiderweb: {
@@ -21315,7 +21313,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Bug",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	spikecannon: {
@@ -21326,7 +21324,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spike Cannon",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -21342,7 +21340,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spikes",
 		pp: 20,
 		priority: 0,
-		flags: { reflectable: 1, nonsky: 1 },
+		flags: {reflectable: 1, nonsky: 1},
 		sideCondition: "spikes",
 		condition: {
 			// this is a side condition
@@ -21367,7 +21365,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "foeSide",
 		type: "Ground",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	spikyshield: {
@@ -21444,7 +21442,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Grass",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	spiritbreak: {
@@ -21455,7 +21453,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spirit Break",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -21534,7 +21532,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spit Up",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		onTry(source) {
 			return !!source.volatiles["stockpile"];
 		},
@@ -21569,7 +21567,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Tough",
 	},
 	splash: {
@@ -21580,7 +21578,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Splash",
 		pp: 40,
 		priority: 0,
-		flags: { gravity: 1 },
+		flags: {gravity: 1},
 		onTry(source, target, move) {
 			// Additional Gravity check for Z-move variant
 			if (this.field.getPseudoWeather("Gravity")) {
@@ -21594,7 +21592,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 3 } },
+		zMove: {boost: {atk: 3}},
 		contestType: "Cute",
 	},
 	splinteredstormshards: {
@@ -21626,7 +21624,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Splishy Splash",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1 },
+		flags: {protect: 1},
 		secondary: {
 			chance: 30,
 			status: "par",
@@ -21643,7 +21641,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spooky Spook",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, defrost: 1 },
+		flags: {contact: 1, protect: 1, defrost: 1},
 		secondary: {
 			chance: 100,
 			volatileStatus: "curse",
@@ -21660,12 +21658,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Spore",
 		pp: 15,
 		priority: 0,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1 },
+		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
 		status: "slp",
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	spotlight: {
@@ -21699,7 +21697,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	stealthrock: {
@@ -21710,7 +21708,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stealth Rock",
 		pp: 20,
 		priority: 0,
-		flags: { reflectable: 1 },
+		flags: {reflectable: 1},
 		sideCondition: "stealthrock",
 		condition: {
 			// this is a side condition
@@ -21730,7 +21728,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "foeSide",
 		type: "Rock",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
 	steameruption: {
@@ -21741,7 +21739,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Steam Eruption",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
+		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
 		secondary: {
 			chance: 30,
@@ -21759,7 +21757,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Steamroller",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -21776,7 +21774,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Steel Beam",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		mindBlownRecoil: true,
 		onAfterMove(pokemon, target, move) {
 			if (move.mindBlownRecoil && !move.multihit) {
@@ -21801,7 +21799,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Steel Roller",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry() {
 			return !this.field.isTerrain("");
 		},
@@ -21823,7 +21821,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Steel Wing",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -21844,7 +21842,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sticky Web",
 		pp: 20,
 		priority: 0,
-		flags: { reflectable: 1 },
+		flags: {reflectable: 1},
 		sideCondition: "stickyweb",
 		condition: {
 			onSideStart(side) {
@@ -21855,7 +21853,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				if (pokemon.hasItem("heavydutyboots")) return;
 				this.add("-activate", pokemon, "move: Sticky Web");
 				this.boost(
-					{ spe: -1 },
+					{spe: -1},
 					pokemon,
 					this.effectState.source,
 					this.dex.getActiveMove("stickyweb")
@@ -21866,7 +21864,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pressureTarget: "self",
 		target: "foeSide",
 		type: "Bug",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
 	stockpile: {
@@ -21877,7 +21875,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stockpile",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		onTry(source) {
 			if (
 				source.volatiles["stockpile"] &&
@@ -21895,7 +21893,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.effectState.spd = 0;
 				this.add("-start", target, "stockpile" + this.effectState.layers);
 				const [curDef, curSpD] = [target.boosts.def, target.boosts.spd];
-				this.boost({ def: 1, spd: 1 }, target, target);
+				this.boost({def: 1, spd: 1}, target, target);
 				if (curDef !== target.boosts.def) this.effectState.def--;
 				if (curSpD !== target.boosts.spd) this.effectState.spd--;
 			},
@@ -21905,7 +21903,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add("-start", target, "stockpile" + this.effectState.layers);
 				const curDef = target.boosts.def;
 				const curSpD = target.boosts.spd;
-				this.boost({ def: 1, spd: 1 }, target, target);
+				this.boost({def: 1, spd: 1}, target, target);
 				if (curDef !== target.boosts.def) this.effectState.def--;
 				if (curSpD !== target.boosts.spd) this.effectState.spd--;
 			},
@@ -21930,7 +21928,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Tough",
 	},
 	stokedsparksurfer: {
@@ -21959,7 +21957,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stomp",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, nonsky: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -21985,7 +21983,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stomping Tantrum",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Ground",
@@ -21999,7 +21997,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stone Edge",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		critRatio: 1,
 		secondary: null,
 		target: "normal",
@@ -22017,7 +22015,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stored Power",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -22033,7 +22031,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Storm Throw",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		willCrit: true,
 		secondary: null,
 		target: "normal",
@@ -22048,7 +22046,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Strange Steam",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "confusion",
@@ -22064,7 +22062,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Strength",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -22078,12 +22076,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Strength Sap",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, heal: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1, heal: 1},
 		onHit(target, source) {
 			if (target.boosts.atk === -6) return false;
 			const atk = target.getStat("atk", false, true);
 			const success = this.boost(
-				{ atk: -1 },
+				{atk: -1},
 				target,
 				source,
 				null,
@@ -22095,7 +22093,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	stringshot: {
@@ -22106,14 +22104,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "String Shot",
 		pp: 40,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			spe: -2,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Bug",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	struggle: {
@@ -22125,7 +22123,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 1,
 		noPPBoosts: true,
 		priority: 0,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		noSketch: true,
 		onModifyMove(move, pokemon, target) {
 			move.type = "???";
@@ -22145,7 +22143,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Struggle Bug",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -22164,12 +22162,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stuff Cheeks",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		// Move disabling implemented in Battle#nextTurn in sim/battle.ts
 		onTry(source) {
 			const item = source.getItem();
 			if (item.isBerry && source.eatItem(true)) {
-				this.boost({ def: 2 }, source, null, null, false, true);
+				this.boost({def: 2}, source, null, null, false, true);
 			} else {
 				return false;
 			}
@@ -22186,12 +22184,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Stun Spore",
 		pp: 30,
 		priority: 0,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1 },
+		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
 		status: "par",
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	submission: {
@@ -22202,7 +22200,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Submission",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [1, 4],
 		secondary: {
 			chance: 20,
@@ -22220,7 +22218,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Substitute",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, nonsky: 1 },
+		flags: {snatch: 1, nonsky: 1},
 		volatileStatus: "substitute",
 		onTryHit(target) {
 			if (target.volatiles["substitute"]) {
@@ -22312,7 +22310,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	subzeroslammer: {
@@ -22338,7 +22336,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sucker Punch",
 		pp: 5,
 		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry(source, target) {
 			const action = this.queue.willMove(target);
 			const move = action?.choice === "move" ? action.move : null;
@@ -22368,7 +22366,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Fire",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Beautiful",
 	},
 	sunsteelstrike: {
@@ -22379,7 +22377,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sunsteel Strike",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		ignoreAbility: true,
 		secondary: null,
 		target: "normal",
@@ -22397,7 +22395,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Super Fang",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -22411,7 +22409,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Superpower",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				atk: -1,
@@ -22436,7 +22434,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	supersonicskystrike: {
@@ -22462,7 +22460,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Surf",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Water",
@@ -22476,7 +22474,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Surging Strikes",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, punch: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, punch: 1, mirror: 1},
 		willCrit: true,
 		multihit: 3,
 		secondary: null,
@@ -22501,7 +22499,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	swallow: {
@@ -22512,7 +22510,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Swallow",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onTry(source) {
 			return !!source.volatiles["stockpile"];
 		},
@@ -22530,7 +22528,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Tough",
 	},
 	sweetkiss: {
@@ -22541,12 +22539,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sweet Kiss",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	sweetscent: {
@@ -22557,14 +22555,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Sweet Scent",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			evasion: -2,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Cute",
 	},
 	swift: {
@@ -22575,7 +22573,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Swift",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
@@ -22656,7 +22654,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	swordsdance: {
@@ -22667,14 +22665,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Swords Dance",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1, dance: 1 },
+		flags: {snatch: 1, dance: 1},
 		boosts: {
 			atk: 2,
 		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	synchronoise: {
@@ -22685,7 +22683,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Synchronoise",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onTryImmunity(target, source) {
 			return target.hasType(source.getTypes());
 		},
@@ -22702,27 +22700,27 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Synthesis",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
-				case "desolateland":
-					factor = 0.667;
-					break;
-				case "raindance":
-				case "primordialsea":
-				case "sandstorm":
-				case "hail":
-					factor = 0.25;
-					break;
+			case "sunnyday":
+			case "desolateland":
+				factor = 0.667;
+				break;
+			case "raindance":
+			case "primordialsea":
+			case "sandstorm":
+			case "hail":
+				factor = 0.25;
+				break;
 			}
 			return !!this.heal(this.modify(pokemon.maxhp, factor));
 		},
 		secondary: null,
 		target: "self",
 		type: "Grass",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
 	},
 	tackle: {
@@ -22733,7 +22731,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tackle",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -22747,14 +22745,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tail Glow",
 		pp: 20,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			spa: 3,
 		},
 		secondary: null,
 		target: "self",
 		type: "Bug",
-		zMove: { effect: "clearnegativeboost" },
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
 	tailslap: {
@@ -22765,7 +22763,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tail Slap",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -22782,14 +22780,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tail Whip",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
 			def: -1,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Cute",
 	},
 	tailwind: {
@@ -22800,7 +22798,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tailwind",
 		pp: 15,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "tailwind",
 		condition: {
 			duration: 4,
@@ -22826,7 +22824,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Flying",
-		zMove: { effect: "crit2" },
+		zMove: {effect: "crit2"},
 		contestType: "Cool",
 	},
 	takedown: {
@@ -22837,7 +22835,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Take Down",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [1, 4],
 		secondary: null,
 		target: "normal",
@@ -22852,7 +22850,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tar Shot",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "tarshot",
 		condition: {
 			onStart(pokemon) {
@@ -22919,7 +22917,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Clever",
 	},
 	tearfullook: {
@@ -22930,7 +22928,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tearful Look",
 		pp: 20,
 		priority: 0,
-		flags: { reflectable: 1, mirror: 1 },
+		flags: {reflectable: 1, mirror: 1},
 		boosts: {
 			atk: -1,
 			spa: -1,
@@ -22938,7 +22936,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	teatime: {
@@ -22981,7 +22979,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Techno Blast",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			move.type = this.runEvent("Drive", pokemon, null, move, "Normal");
@@ -23014,12 +23012,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Teeter Dance",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, dance: 1 },
+		flags: {protect: 1, mirror: 1, dance: 1},
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "allAdjacent",
 		type: "Normal",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
 	telekinesis: {
@@ -23078,7 +23076,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
+		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
 	teleport: {
@@ -23095,7 +23093,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Cool",
 	},
 	temporaldesolation: {
@@ -23150,25 +23148,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Terrain Pulse",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, pulse: 1 },
+		flags: {protect: 1, mirror: 1, pulse: 1},
 		onModifyType(move, pokemon) {
 			if (!pokemon.isGrounded()) return;
 			switch (this.field.terrain) {
-				case "electricterrain":
-					move.type = "Electric";
-					break;
-				case "grassyterrain":
-					move.type = "Grass";
-					break;
-				case "mistyterrain":
-					move.type = "Fairy";
-					break;
-				case "psychicterrain":
-					move.type = "Psychic";
-					break;
-				case "lavaterrain":
-					move.type = "Fire";
-					break;
+			case "electricterrain":
+				move.type = "Electric";
+				break;
+			case "grassyterrain":
+				move.type = "Grass";
+				break;
+			case "mistyterrain":
+				move.type = "Fairy";
+				break;
+			case "psychicterrain":
+				move.type = "Psychic";
+				break;
+			case "lavaterrain":
+				move.type = "Fire";
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -23190,7 +23188,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thief",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onAfterHit(target, source, move) {
 			if (source.item || source.volatiles["gem"]) {
 				return;
@@ -23243,7 +23241,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thousand Arrows",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== "Ground") return;
 			if (!target) return; // avoid crashing when called from a chat plugin
@@ -23253,7 +23251,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			}
 		},
 		volatileStatus: "smackdown",
-		ignoreImmunity: { Ground: true },
+		ignoreImmunity: {Ground: true},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ground",
@@ -23325,7 +23323,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thrash",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			volatileStatus: "lockedmove",
 		},
@@ -23350,7 +23348,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Throat Chop",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
 			onStart(target) {
@@ -23399,17 +23397,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
-				case "raindance":
-				case "primordialsea":
-					move.accuracy = true;
-					break;
-				case "sunnyday":
-				case "desolateland":
-					move.accuracy = 50;
-					break;
+			case "raindance":
+			case "primordialsea":
+				move.accuracy = true;
+				break;
+			case "sunnyday":
+			case "desolateland":
+				move.accuracy = 50;
+				break;
 			}
 		},
 		secondary: {
@@ -23428,7 +23426,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunderbolt",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "par",
@@ -23445,7 +23443,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder Cage",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -23459,7 +23457,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder Fang",
 		pp: 15,
 		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
 		secondaries: [
 			{
 				chance: 10,
@@ -23482,7 +23480,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunderous Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -23500,7 +23498,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder Punch",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 10,
 			status: "par",
@@ -23517,7 +23515,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder Shock",
 		pp: 30,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			status: "par",
@@ -23534,13 +23532,13 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Thunder Wave",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "par",
 		ignoreImmunity: false,
 		secondary: null,
 		target: "normal",
 		type: "Electric",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cool",
 	},
 	tickle: {
@@ -23559,7 +23557,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	timesarrow: {
@@ -23581,7 +23579,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onResidualOrder: 4,
 			onEnd(target) {
 				if (target && !target.fainted) {
-					this.boost({ atk: 1, spa: 1, spe: 1 }, target);
+					this.boost({atk: 1, spa: 1, spe: 1}, target);
 					const damage = this.heal(this.effectState.hp, target, target);
 					if (damage) {
 						this.add(
@@ -23599,7 +23597,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
 	topsyturvy: {
@@ -23625,7 +23623,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Clever",
 	},
 	torment: {
@@ -23659,7 +23657,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	toxic: {
@@ -23670,12 +23668,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Toxic",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "tox",
 		secondary: null,
 		target: "normal",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	toxicspikes: {
@@ -23686,7 +23684,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Toxic Spikes",
 		pp: 20,
 		priority: 0,
-		flags: { reflectable: 1, nonsky: 1 },
+		flags: {reflectable: 1, nonsky: 1},
 		sideCondition: "toxicspikes",
 		condition: {
 			// this is a side condition
@@ -23724,7 +23722,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "foeSide",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	toxicthread: {
@@ -23735,7 +23733,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Toxic Thread",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "psn",
 		boosts: {
 			spe: -1,
@@ -23743,7 +23741,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Poison",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
 	transform: {
@@ -23763,7 +23761,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: "heal" },
+		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
 	triattack: {
@@ -23774,7 +23772,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Tri Attack",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			onHit(target, source) {
@@ -23867,7 +23865,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		zMove: { boost: { spe: 2 } },
+		zMove: {boost: {spe: 2}},
 		contestType: "Clever",
 	},
 	trickortreat: {
@@ -23901,7 +23899,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Cute",
 	},
 	trickroom: {
@@ -23912,7 +23910,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Trick Room",
 		pp: 5,
 		priority: -7,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		pseudoWeather: "trickroom",
 		condition: {
 			duration: 5,
@@ -23939,7 +23937,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Psychic",
-		zMove: { boost: { accuracy: 1 } },
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Clever",
 	},
 	tripleaxel: {
@@ -23953,7 +23951,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Triple Axel",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 3,
 		multiaccuracy: true,
 		secondary: null,
@@ -23973,7 +23971,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Triple Kick",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		multihit: 3,
 		multiaccuracy: true,
 		secondary: null,
@@ -23991,7 +23989,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Trop Kick",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -24009,21 +24007,21 @@ export const Moves: { [moveid: string]: MoveData } = {
 		basePowerCallback(source, target, move) {
 			const callerMoveId = move.sourceEffect || move.id;
 			const moveSlot =
-				callerMoveId === "instruct"
-					? source.getMoveData(move.id)
-					: source.getMoveData(callerMoveId);
+				callerMoveId === "instruct" ?
+					source.getMoveData(move.id) :
+					source.getMoveData(callerMoveId);
 			if (!moveSlot) return 40;
 			switch (moveSlot.pp) {
-				case 0:
-					return 200;
-				case 1:
-					return 80;
-				case 2:
-					return 60;
-				case 3:
-					return 50;
-				default:
-					return 40;
+			case 0:
+				return 200;
+			case 1:
+				return 80;
+			case 2:
+				return 60;
+			case 3:
+				return 50;
+			default:
+				return 40;
 			}
 		},
 		category: "Special",
@@ -24031,7 +24029,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 5,
 		noPPBoosts: true,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -24047,7 +24045,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Twineedle",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: {
 			chance: 20,
@@ -24081,7 +24079,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Twister",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -24098,7 +24096,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "U-turn",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -24174,7 +24172,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Vacuum Wave",
 		pp: 30,
 		priority: 1,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -24188,7 +24186,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "V-create",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				spe: -1,
@@ -24213,7 +24211,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Veevee Volley",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -24227,11 +24225,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Venom Drench",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onHit(target, source, move) {
 			if (target.status === "psn" || target.status === "tox") {
 				return !!this.boost(
-					{ atk: -1, spa: -1, spe: -1 },
+					{atk: -1, spa: -1, spe: -1},
 					target,
 					source,
 					move
@@ -24242,7 +24240,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Poison",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
 	venoshock: {
@@ -24253,7 +24251,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Venoshock",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.status === "psn" || target.status === "tox") {
 				return this.chainModify(2);
@@ -24272,7 +24270,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Vine Whip",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -24286,7 +24284,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Vise Grip",
 		pp: 30,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -24300,7 +24298,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Vital Throw",
 		pp: 10,
 		priority: -1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -24314,7 +24312,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Volt Switch",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -24329,7 +24327,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Volt Tackle",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [33, 100],
 		secondary: {
 			chance: 10,
@@ -24353,7 +24351,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wake-Up Slap",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		onHit(target) {
 			if (target.status === "slp") target.cureStatus();
 		},
@@ -24370,7 +24368,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Waterfall",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -24387,7 +24385,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Gun",
 		pp: 25,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -24408,7 +24406,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Pledge",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onPrepareHit(target, source, move) {
 			for (const action of this.queue) {
 				if (action.choice !== "move") continue;
@@ -24443,7 +24441,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (move.sourceEffect === "firepledge") {
 				move.type = "Water";
 				move.forceSTAB = true;
-				move.self = { sideCondition: "waterpledge" };
+				move.self = {sideCondition: "waterpledge"};
 			}
 		},
 		condition: {
@@ -24485,7 +24483,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Pulse",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, pulse: 1, mirror: 1, distance: 1 },
+		flags: {protect: 1, pulse: 1, mirror: 1, distance: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "confusion",
@@ -24512,7 +24510,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Shuriken",
 		pp: 20,
 		priority: 1,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -24527,7 +24525,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Sport",
 		pp: 15,
 		priority: 0,
-		flags: { nonsky: 1 },
+		flags: {nonsky: 1},
 		pseudoWeather: "watersport",
 		condition: {
 			duration: 5,
@@ -24550,7 +24548,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Water",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	waterspout: {
@@ -24564,7 +24562,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Water Spout",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Water",
@@ -24578,43 +24576,43 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Weather Ball",
 		pp: 10,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		onModifyType(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
-				case "desolateland":
-					move.type = "Fire";
-					break;
-				case "raindance":
-				case "primordialsea":
-					move.type = "Water";
-					break;
-				case "sandstorm":
-					move.type = "Rock";
-					break;
-				case "hail":
-					move.type = "Ice";
-					break;
-				case "maelstrom":
-					move.type = "Infinite";
-					break;
-				case "deltastream":
-					move.type = "Flying";
-					break;
+			case "sunnyday":
+			case "desolateland":
+				move.type = "Fire";
+				break;
+			case "raindance":
+			case "primordialsea":
+				move.type = "Water";
+				break;
+			case "sandstorm":
+				move.type = "Rock";
+				break;
+			case "hail":
+				move.type = "Ice";
+				break;
+			case "maelstrom":
+				move.type = "Infinite";
+				break;
+			case "deltastream":
+				move.type = "Flying";
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
-				case "desolateland":
-				case "raindance":
-				case "primordialsea":
-				case "sandstorm":
-				case "hail":
-				case "maelstrom":
-				case "deltastream":
-					move.basePower *= 2;
-					break;
+			case "sunnyday":
+			case "desolateland":
+			case "raindance":
+			case "primordialsea":
+			case "sandstorm":
+			case "hail":
+			case "maelstrom":
+			case "deltastream":
+				move.basePower *= 2;
+				break;
 			}
 		},
 		secondary: null,
@@ -24632,7 +24630,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Whirlpool",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -24652,7 +24650,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	wickedblow: {
@@ -24663,7 +24661,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wicked Blow",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, punch: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, punch: 1, mirror: 1},
 		willCrit: true,
 		secondary: null,
 		target: "normal",
@@ -24677,7 +24675,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wide Guard",
 		pp: 10,
 		priority: 3,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		sideCondition: "wideguard",
 		onTry() {
 			return !!this.queue.willAct();
@@ -24718,7 +24716,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "allySide",
 		type: "Rock",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
 	wildcharge: {
@@ -24729,7 +24727,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wild Charge",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [1, 4],
 		secondary: null,
 		target: "normal",
@@ -24744,12 +24742,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Will-O-Wisp",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		status: "brn",
 		secondary: null,
 		target: "normal",
 		type: "Fire",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Beautiful",
 	},
 	wingattack: {
@@ -24760,7 +24758,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wing Attack",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -24774,7 +24772,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wish",
 		pp: 10,
 		priority: 0,
-		flags: { snatch: 1, heal: 1 },
+		flags: {snatch: 1, heal: 1},
 		slotCondition: "Wish",
 		condition: {
 			duration: 2,
@@ -24800,7 +24798,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
 	withdraw: {
@@ -24811,14 +24809,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Withdraw",
 		pp: 40,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			def: 1,
 		},
 		secondary: null,
 		target: "self",
 		type: "Water",
-		zMove: { boost: { def: 1 } },
+		zMove: {boost: {def: 1}},
 		contestType: "Cute",
 	},
 	wonderroom: {
@@ -24829,7 +24827,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wonder Room",
 		pp: 10,
 		priority: 0,
-		flags: { mirror: 1 },
+		flags: {mirror: 1},
 		pseudoWeather: "wonderroom",
 		condition: {
 			duration: 5,
@@ -24856,7 +24854,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Psychic",
-		zMove: { boost: { spd: 1 } },
+		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
 	woodhammer: {
@@ -24867,7 +24865,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wood Hammer",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
@@ -24882,7 +24880,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Work Up",
 		pp: 30,
 		priority: 0,
-		flags: { snatch: 1 },
+		flags: {snatch: 1},
 		boosts: {
 			atk: 1,
 			spa: 1,
@@ -24890,7 +24888,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: { boost: { atk: 1 } },
+		zMove: {boost: {atk: 1}},
 		contestType: "Tough",
 	},
 	worryseed: {
@@ -24933,7 +24931,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
 	wrap: {
@@ -24944,7 +24942,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wrap",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
@@ -24959,7 +24957,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wrath",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
@@ -24995,7 +24993,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wring Out",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -25062,7 +25060,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Wyvern Blow",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		willCrit: true,
 		boosts: {
 			def: -1,
@@ -25079,7 +25077,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "X-Scissor",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Bug",
@@ -25093,7 +25091,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Yawn",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
+		flags: {protect: 1, reflectable: 1, mirror: 1},
 		volatileStatus: "yawn",
 		onTryHit(target) {
 			if (target.status || !target.runStatusImmunity("slp")) {
@@ -25115,7 +25113,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spe: 1 } },
+		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 	},
 	zapcannon: {
@@ -25126,7 +25124,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Zap Cannon",
 		pp: 5,
 		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 100,
 			status: "par",
@@ -25143,7 +25141,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Zen Headbutt",
 		pp: 15,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",
@@ -25160,7 +25158,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Zing Zap",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: "flinch",
@@ -25177,7 +25175,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Zippy Zap",
 		pp: 10,
 		priority: 2,
-		flags: { contact: 1, protect: 1 },
+		flags: {contact: 1, protect: 1},
 		secondary: {
 			chance: 100,
 			self: {
