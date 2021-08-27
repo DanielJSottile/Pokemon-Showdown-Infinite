@@ -19062,6 +19062,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Bug",
 		contestType: "Popular",
 	},
+	punchbuggy: {
+		num: -49,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Punch Buggy",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		secondary: {
+			chance: 10,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "normal",
+		type: "Bug",
+		contestType: "Popular",
+	},
 	punishment: {
 		num: 386,
 		accuracy: 100,
