@@ -1461,7 +1461,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		zMove: {effect: 'clearnegativeboost'},
+		zMove: {effect: "clearnegativeboost"},
 		contestType: "Cute",
 	},
 	beakblast: {
@@ -11114,7 +11114,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
-			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
+			if (
+				pokemon.species.name === "Unown-Alphabet" &&
+				pokemon.hasAbility("unownsspell")
+			) {
 				return move.basePower + 30;
 			}
 			return move.basePower;
@@ -13144,7 +13147,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	"landswrath": {
+	landswrath: {
 		num: 616,
 		accuracy: 100,
 		basePower: 90,
@@ -16729,9 +16732,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onTryImmunity(target) {
-			return this.dex.getImmunity('trapped', target);
+			return this.dex.getImmunity("trapped", target);
 		},
-		volatileStatus: 'octolock',
+		volatileStatus: "octolock",
 		condition: {
 			duration: 4,
 			onStart(pokemon, source) {
@@ -16798,9 +16801,18 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onResidualOrder: 11,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
-				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns)) {
-					delete pokemon.volatiles['octolock'];
-					this.add('-end', pokemon, 'Octolock', '[partiallytrapped]', '[silent]');
+				if (
+					source &&
+					(!source.isActive || source.hp <= 0 || !source.activeTurns)
+				) {
+					delete pokemon.volatiles["octolock"];
+					this.add(
+						"-end",
+						pokemon,
+						"Octolock",
+						"[partiallytrapped]",
+						"[silent]"
+					);
 					return;
 				}
 				this.boost(
@@ -16811,7 +16823,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				);
 			},
 			onTrapPokemon(pokemon) {
-				if (this.effectState.source && this.effectState.source.isActive) pokemon.tryTrap();
+				if (this.effectState.source && this.effectState.source.isActive) { pokemon.tryTrap(); }
 			},
 		},
 		secondary: null,
@@ -17721,7 +17733,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
-			status: 'slp',
+			status: "slp",
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
@@ -17741,7 +17753,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				let stats = [];
 				const boost = {};
 				for (const statPlus in pokemon.boosts) {
-					if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+					if (statPlus === "accuracy" || statPlus === "evasion") continue;
 					// @ts-ignore
 					if (pokemon.boosts[statPlus] < 6) {
 						stats.push(statPlus);
@@ -17757,7 +17769,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 
 				stats = [];
 				for (const statMinus in pokemon.boosts) {
-					if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
+					if (statMinus === "accuracy" || statMinus === "evasion") { continue; }
 					// @ts-ignore
 					if (pokemon.boosts[statMinus] > -6 && !(statMinus in boost)) {
 						stats.push(statMinus);
@@ -17780,53 +17792,53 @@ export const Moves: { [moveid: string]: MoveData } = {
 			onHit(source, target) {
 				const rand = this.random(48);
 				if (rand < 2) {
-					this.field.setTerrain('psychicterrain');
+					this.field.setTerrain("psychicterrain");
 				} else if (rand < 4) {
-					this.field.setTerrain('electricterrain');
+					this.field.setTerrain("electricterrain");
 				} else if (rand < 6) {
-					this.field.setTerrain('grassyterrain');
+					this.field.setTerrain("grassyterrain");
 				} else if (rand < 8) {
-					this.field.setTerrain('mistyterrain');
+					this.field.setTerrain("mistyterrain");
 				} else if (rand < 10) {
-					this.field.setWeather('sunnyday');
+					this.field.setWeather("sunnyday");
 				} else if (rand < 12) {
-					this.field.setWeather('raindance');
+					this.field.setWeather("raindance");
 				} else if (rand < 14) {
-					this.field.setWeather('primordialsea');
+					this.field.setWeather("primordialsea");
 				} else if (rand < 16) {
-					this.field.setWeather('desolateland');
+					this.field.setWeather("desolateland");
 				} else if (rand < 18) {
-					this.field.setWeather('hail');
+					this.field.setWeather("hail");
 				} else if (rand < 20) {
-					this.field.setWeather('sandstorm');
+					this.field.setWeather("sandstorm");
 				} else if (rand < 22) {
-					this.field.setWeather('maelstrom');
+					this.field.setWeather("maelstrom");
 				} else if (rand < 24) {
-					source.setStatus('slp', target);
+					source.setStatus("slp", target);
 				} else if (rand < 26) {
-					source.setStatus('brn', target);
+					source.setStatus("brn", target);
 				} else if (rand < 28) {
-					source.setStatus('par', target);
+					source.setStatus("par", target);
 				} else if (rand < 30) {
-					source.setStatus('fsb', target);
+					source.setStatus("fsb", target);
 				} else if (rand < 32) {
-					source.setStatus('psn', target);
+					source.setStatus("psn", target);
 				} else if (rand < 34) {
-					source.setStatus('tox', target);
+					source.setStatus("tox", target);
 				} else if (rand < 36) {
-					source.setStatus('confusion', target);
+					source.setStatus("confusion", target);
 				} else if (rand < 38) {
-					this.add('-fieldstart', 'move: Trick Room', '[of] ' + source);
+					this.add("-fieldstart", "move: Trick Room", "[of] " + source);
 				} else if (rand < 40) {
-					this.add('-fieldstart', 'move: Wonder Room', '[of] ' + source);
+					this.add("-fieldstart", "move: Wonder Room", "[of] " + source);
 				} else if (rand < 42) {
-					this.add('-fieldstart', 'move: Magic Room', '[of] ' + source);
+					this.add("-fieldstart", "move: Magic Room", "[of] " + source);
 				} else if (rand < 44) {
-					this.add('-fieldstart', 'move: Inverse Room', '[of] ' + source);
+					this.add("-fieldstart", "move: Inverse Room", "[of] " + source);
 				} else if (rand < 46) {
-					this.field.setTerrain('lavaterrain');
+					this.field.setTerrain("lavaterrain");
 				} else {
-					this.field.setWeather('deltastream');
+					this.field.setWeather("deltastream");
 				}
 			},
 		},
@@ -18480,7 +18492,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		volatileStatus: "powertrick",
 		condition: {
 			onStart(pokemon) {
-				this.add('-start', pokemon, 'Power Trick');
+				this.add("-start", pokemon, "Power Trick");
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -18501,7 +18513,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				pokemon.storedStats.spd = newspd;
 			},
 			onEnd(pokemon) {
-				this.add('-end', pokemon, 'Power Trick');
+				this.add("-end", pokemon, "Power Trick");
 				const newatk = pokemon.storedStats.def;
 				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
@@ -18914,7 +18926,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onTryHit(target, source) {
-			if (source.volatiles['lockon']) return false;
+			if (source.volatiles["lockon"]) return false;
 		},
 		onHit(target, source) {
 			source.addVolatile("lockon", target);
@@ -21314,7 +21326,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	"sheercold": {
+	sheercold: {
 		num: 329,
 		accuracy: 50,
 		basePower: 0,
