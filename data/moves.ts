@@ -1615,7 +1615,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Beastly Awakening Punch",
 		pp: 1,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, mystery: 1},
+		flags: {protect: 1, mirror: 1, allyanim: 1},
 		onModifyMove(move, pokemon) {
 			move.allies = pokemon.side.pokemon.filter(
 				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
