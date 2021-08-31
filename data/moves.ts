@@ -17162,7 +17162,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Perfect-Tempo Symphony",
 		pp: 1,
 		priority: 0,
-		flags: {sound: 1, authentic: 1},
+		flags: {sound: 1, bypasssub: 1},
 		self: {
 			onHit(pokemon) {
 				let stats = [];
