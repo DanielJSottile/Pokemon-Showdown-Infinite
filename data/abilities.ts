@@ -989,10 +989,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			) {
 				return;
 			}
-			const hitSub =
-				target.volatiles["substitute"] &&
-				!move.flags["authentic"] &&
-				!(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -1007,10 +1004,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				return;
 			}
 
-			const hitSub =
-				target.volatiles["substitute"] &&
-				!move.flags["authentic"] &&
-				!(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -1995,15 +1989,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		onCriticalHit(target, type, move) {
 			if (!target) return;
-			if (
-				move.category !== "Physical" ||
-				target.species.id !== "eiscue" ||
-				target.transformed
-			) { return; }
-			if (
-				target.volatiles["substitute"] &&
-				!(move.flags["authentic"] || move.infiltrates)
-			) { return; }
+			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
+			if (target.volatiles['substitute'] && !(move.flags['bypasssub'] || move.infiltrates)) return;
 			if (!target.runImmunity(move.type)) return;
 			return false;
 		},
@@ -2015,10 +2002,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				target.transformed
 			) { return; }
 
-			const hitSub =
-				target.volatiles["substitute"] &&
-				!move.flags["authentic"] &&
-				!(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -2663,9 +2647,6 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 					break;
 				case "psychicterrain":
 					newType = "Psychic";
-					break;
-				case "lavaterrain":
-					newType = "Fire";
 					break;
 				}
 				if (
@@ -5732,5 +5713,73 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Zen Mode",
 		rating: 0,
 		num: 161,
+	},
+
+	// CAP
+	mountaineer: {
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.id === "stealthrock") {
+				return false;
+			}
+		},
+		onTryHit(target, source, move) {
+			if (move.type === "Rock" && !target.activeTurns) {
+				this.add("-immune", target, "[from] ability: Mountaineer");
+				return null;
+			}
+		},
+		isNonstandard: "CAP",
+		isBreakable: true,
+		name: "Mountaineer",
+		rating: 3,
+		num: -2,
+	},
+	rebound: {
+		isNonstandard: "CAP",
+		name: "Rebound",
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (this.effectState.target.activeTurns) return;
+
+			if (
+				target === source ||
+				move.hasBounced ||
+				!move.flags["reflectable"]
+			) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			this.actions.useMove(newMove, target, source);
+			return null;
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (this.effectState.target.activeTurns) return;
+
+			if (
+				target.isAlly(source) ||
+				move.hasBounced ||
+				!move.flags["reflectable"]
+			) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			this.actions.useMove(newMove, this.effectState.target, source);
+			return null;
+		},
+		condition: {
+			duration: 1,
+		},
+		isBreakable: true,
+		rating: 3,
+		num: -3,
+	},
+	persistent: {
+		isNonstandard: "CAP",
+		name: "Persistent",
+		// implemented in the corresponding move
+		rating: 3,
+		num: -4,
 	},
 };
