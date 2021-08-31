@@ -8503,7 +8503,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Grass"],
 	},
 	carnicreeper: {
-		num: -1113,
+		num: -13,
 		name: "Carnicreeper",
 		types: ["Grass", "Dark"],
 		baseStats: {hp: 104, atk: 156, def: 82, spa: 60, spd: 82, spe: 36},
