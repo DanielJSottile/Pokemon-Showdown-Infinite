@@ -669,7 +669,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"sludgebomb",
 			"thunderbolt",
 		],
-
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
