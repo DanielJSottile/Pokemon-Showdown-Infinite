@@ -11298,6 +11298,39 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Water",
 		contestType: "Clever",
 	},
+	ingrain: {
+		num: 275,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Ingrain",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, nonsky: 1},
+		volatileStatus: 'ingrain',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'move: Ingrain');
+			},
+			onResidualOrder: 7,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 16);
+			},
+			onTrapPokemon(pokemon) {
+				pokemon.tryTrap();
+			},
+			// groundedness implemented in battle.engine.js:BattlePokemon#isGrounded
+			onDragOut(pokemon) {
+				this.add('-activate', pokemon, 'move: Ingrain');
+				return null;
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Grass",
+		zMove: {boost: {spd: 1}},
+		contestType: "Clever",
+	},
 	instruct: {
 		num: 689,
 		accuracy: true,
