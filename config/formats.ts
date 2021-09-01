@@ -363,7 +363,6 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		ruleset: ['[Gen 8] OU', '+CAP'],
-		banlist: ['Crucibellite'],
 	},
 	{
 		name: "[Gen 8] Battle Stadium Singles",
