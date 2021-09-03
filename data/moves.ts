@@ -3619,12 +3619,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				// random integer from 1-3 inclusive
 				const offset = this.random(3) + 1;
 				// the list of all sides in counterclockwise order
-				const sides = [
-					this.sides[0],
-					this.sides[2]!,
-					this.sides[1],
-					this.sides[3]!,
-				];
+				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
 				for (const id of sideConditions) {
 					const effectName = this.dex.conditions.get(id).name;
 					const rotatedSides = [];
@@ -3634,23 +3629,19 @@ export const Moves: { [moveid: string]: MoveData } = {
 						const targetSide = sides[(i + offset) % 4]; // the next side in rotation
 						rotatedSides.push(targetSide.sideConditions[id]);
 						if (sourceSide.sideConditions[id]) {
-							this.add("-sideend", sourceSide, effectName, "[silent]");
+							this.add('-sideend', sourceSide, effectName, '[silent]');
 							someCondition = true;
 						}
 					}
 					if (!someCondition) continue;
 					[
-						sides[0].sideConditions[id],
-						sides[1].sideConditions[id],
-						sides[2]!.sideConditions[id],
-						sides[3]!.sideConditions[id],
+						sides[0].sideConditions[id], sides[1].sideConditions[id],
+						sides[2]!.sideConditions[id], sides[3]!.sideConditions[id],
 					] = [...rotatedSides];
 					for (const side of sides) {
 						if (side.sideConditions[id]) {
 							let layers = side.sideConditions[id].layers || 1;
-							for (; layers > 0; layers--) {
-								this.add("-sidestart", side, effectName, "[silent]");
-							}
+							for (; layers > 0; layers--) this.add('-sidestart', side, effectName, '[silent]');
 						} else {
 							delete side.sideConditions[id];
 						}
@@ -3679,11 +3670,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add('-swapsideconditions');
 			}
 			if (!success) return false;
-			this.add("-activate", source, "move: Court Change");
+			this.add('-activate', source, 'move: Court Change');
 		},
-		secondary: null,
-		target: "all",
-		type: "Normal",
 	},
 	covet: {
 		num: 343,
