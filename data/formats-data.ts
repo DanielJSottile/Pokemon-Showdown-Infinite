@@ -226,7 +226,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "AG",
+		tier: "OU",
 		doublesTier: "DUber",
 	},
 	blastoisegmax: {
@@ -7930,7 +7930,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"knockoff",
 		],
-		tier: "AG",
+		tier: "OU",
 		doublesTier: "(DUU)",
 	},
 	turtwig: {
