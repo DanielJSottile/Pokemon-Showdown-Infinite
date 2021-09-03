@@ -4832,10 +4832,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
-	mantykeaumagari: {
+	mantykeremius: {
 		tier: "LC",
 	},
-	mantineaumagari: {
+	mantineremius: {
 		randomBattleMoves: [
 			"scald",
 			"discharge",
@@ -5055,7 +5055,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RUBL",
 		doublesTier: "DOU",
 	},
-	raikouaumagari: {
+	raikouremius: {
 		randomBattleMoves: [
 			"thunderbolt",
 			"flamethrower",
@@ -5078,7 +5078,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RUBL",
 		doublesTier: "(DUU)",
 	},
-	enteiaumagari: {
+	enteiremius: {
 		randomBattleMoves: [
 			"extremespeed",
 			"flareblitz",
@@ -5097,7 +5097,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RUBL",
 		doublesTier: "DUU",
 	},
-	suicuneaumagari: {
+	suicuneremius: {
 		randomBattleMoves: [
 			"moonblast",
 			"icebeam",
@@ -8729,13 +8729,13 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "OU",
 		doublesTier: "DUU",
 	},
-	gibleaumagari: {
+	gibleremius: {
 		tier: "LC",
 	},
-	gabiteaumagari: {
+	gabiteremius: {
 		tier: "NFE",
 	},
-	garchompaumagari: {
+	garchompremius: {
 		randomBattleMoves: [
 			"outrage",
 			"dragonclaw",
@@ -8848,7 +8848,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
-	hippowdonaumagari: {
+	hippowdonremius: {
 		randomBattleMoves: [
 			"earthquake",
 			"slackoff",
@@ -9661,7 +9661,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "AG",
 		doublesTier: "DUber",
 	},
-	arceusaumagari: {
+	arceusremius: {
 		randomBattleMoves: [
 			"nastyplot",
 			"calmmind",
@@ -11791,7 +11791,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "UU",
 		doublesTier: "DUU",
 	},
-	pawniardaumagari: {
+	pawniardremius: {
 		tier: "LC",
 	},
 	dubsknight: {
