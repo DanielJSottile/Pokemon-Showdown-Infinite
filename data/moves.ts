@@ -3672,6 +3672,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (!success) return false;
 			this.add('-activate', source, 'move: Court Change');
 		},
+		secondary: null,
+		target: "all",
+		type: "Normal",
 	},
 	covet: {
 		num: 343,
