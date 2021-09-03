@@ -653,22 +653,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "NFE",
 	},
 	nidoqueen: {
-		randomBattleMoves: [
-			"toxicspikes",
-			"stealthrock",
-			"fireblast",
-			"icebeam",
-			"earthpower",
-			"sludgewave",
-		],
-		randomDoubleBattleMoves: [
-			"protect",
-			"fireblast",
-			"icebeam",
-			"earthpower",
-			"sludgebomb",
-			"thunderbolt",
-		],
+		randomBattleMoves: ["earthpower", "icebeam", "sludgewave", "stealthrock", "toxicspikes"],
+		randomBattleLevel: 84,
+		randomDoubleBattleMoves: ["earthpower", "icebeam", "protect", "sludgebomb", "stealthrock"],
+		randomDoubleBattleLevel: 84,
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
@@ -10870,7 +10858,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		doublesTier: "(DUU)",
 	},
 	scraggy: {
-		tier: "LC",
+		tier: "NFE",
 	},
 	scrafty: {
 		randomBattleMoves: [
