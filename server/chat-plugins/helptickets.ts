@@ -34,7 +34,7 @@ interface TicketState {
 	/** Extra info that they might need for displays or whatnot.
 	 * Use `TextTicketInfo#getState` to set it at creation (store properties of the user object, etc)
 	 */
-	state?: AnyObject;
+	state?: AnyObject & {claimTime?: number};
 }
 
 interface ResolvedTicketInfo {
@@ -91,7 +91,8 @@ try {
 					ticketRoom.expire();
 				} else if (ticket.text && ticket.open) {
 					ticket.open = false;
-					writeStats(`${ticket.type}\t${Date.now() - ticket.created}\t0\t0\tdead\tvalid\t`);
+					const startTime = ticket.state?.claimTime || ticket.created;
+					writeStats(`${ticket.type}\t${Date.now() - startTime}\t0\t0\tdead\tvalid\t`);
 				}
 				continue;
 			}
@@ -795,20 +796,6 @@ export async function getBattleLog(battle: string): Promise<BattleInfo | null> {
 		}
 	} catch {}
 	return null;
-}
-
-function refreshPageFor(page: string, roomid: RoomID, ignoreUsers?: ID[]) {
-	const room = Rooms.get(roomid);
-	if (room) {
-		for (const curUser of Object.values(room.users)) {
-			if (ignoreUsers?.includes(curUser.id)) continue;
-			for (const conn of curUser.connections) {
-				if (conn.openPages?.has(page)) {
-					void Chat.parse(`/j view-${page}`, room, curUser, conn);
-				}
-			}
-		}
-	}
 }
 
 // Prevent a desynchronization issue when hotpatching
@@ -1587,9 +1574,11 @@ export const pages: Chat.PageTable = {
 			buf += `<h2>Issue: ${ticket.type}</h2>`;
 			if (!ticket.claimed && ticket.open) {
 				ticket.claimed = user.id;
+				if (!ticket.state) ticket.state = {};
+				ticket.state.claimTime = Date.now();
 				writeTickets();
 				notifyStaff();
-				refreshPageFor(`help-text-${ticket.userid}`, 'staff', [user.id]);
+				Chat.refreshPageFor(`help-text-${ticket.userid}`, 'staff', false, [user.id]);
 			} else if (ticket.claimed) {
 				buf += `<strong>Claimed:</strong> ${ticket.claimed}<br /><br />`;
 			}
@@ -1659,7 +1648,7 @@ export const pages: Chat.PageTable = {
 				return {day: dateStrings[0], time: dateStrings[1]};
 			};
 
-			Utils.sortBy(logs, log => -log.date);
+			Utils.sortBy(logs, log => -log.resolved.time);
 
 			for (const ticket of logs) {
 				buf += `<details class="readmore"><summary>`;
@@ -2194,7 +2183,7 @@ export const commands: Chat.ChatCommands = {
 			// force a refresh for everyone in it, otherwise we potentially get two punishments at once
 			// from different people clicking at the same time and reading it separately.
 			// Yes. This was a real issue.
-			refreshPageFor(`help-text-${ticketId}`, 'staff');
+			Chat.refreshPageFor(`help-text-${ticketId}`, 'staff');
 		},
 
 		list(target, room, user) {
@@ -2509,6 +2498,10 @@ export const handlers: Chat.Handlers = {
 		const ticket = tickets[userid];
 		if (ticket?.open && ticket.claimed === user.id) {
 			ticket.claimed = null;
+			if (ticket.state?.claimTime) {
+				delete ticket.state.claimTime;
+				if (!Object.keys(ticket.state).length) delete ticket.state;
+			}
 			writeTickets();
 			notifyStaff();
 		}
