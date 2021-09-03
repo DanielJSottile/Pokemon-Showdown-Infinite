@@ -3413,35 +3413,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {mirror: 1},
 		onHitField(target, source) {
 			const sideConditions = [
-				"mist",
-				"lightscreen",
-				"reflect",
-				"spikes",
-				"safeguard",
-				"tailwind",
-				"toxicspikes",
-				"stealthrock",
-				"waterpledge",
-				"firepledge",
-				"grasspledge",
-				"stickyweb",
-				"auroraveil",
-				"metalshard",
-				"gmaxcannonade",
-				"gmaxvinelash",
-				"gmaxwildfire",
+				'mist', 'lightscreen', 'reflect', 'spikes', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock', 'metalshard', 'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
 			];
 			let success = false;
 			if (this.gameType === "freeforall") {
 				// random integer from 1-3 inclusive
 				const offset = this.random(3) + 1;
 				// the list of all sides in counterclockwise order
-				const sides = [
-					this.sides[0],
-					this.sides[2]!,
-					this.sides[1],
-					this.sides[3]!,
-				];
+				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
 				for (const id of sideConditions) {
 					const effectName = this.dex.conditions.get(id).name;
 					const rotatedSides = [];
@@ -3451,23 +3430,19 @@ export const Moves: { [moveid: string]: MoveData } = {
 						const targetSide = sides[(i + offset) % 4]; // the next side in rotation
 						rotatedSides.push(targetSide.sideConditions[id]);
 						if (sourceSide.sideConditions[id]) {
-							this.add("-sideend", sourceSide, effectName, "[silent]");
+							this.add('-sideend', sourceSide, effectName, '[silent]');
 							someCondition = true;
 						}
 					}
 					if (!someCondition) continue;
 					[
-						sides[0].sideConditions[id],
-						sides[1].sideConditions[id],
-						sides[2]!.sideConditions[id],
-						sides[3]!.sideConditions[id],
+						sides[0].sideConditions[id], sides[1].sideConditions[id],
+						sides[2]!.sideConditions[id], sides[3]!.sideConditions[id],
 					] = [...rotatedSides];
 					for (const side of sides) {
 						if (side.sideConditions[id]) {
 							let layers = side.sideConditions[id].layers || 1;
-							for (; layers > 0; layers--) {
-								this.add("-sidestart", side, effectName, "[silent]");
-							}
+							for (; layers > 0; layers--) this.add('-sidestart', side, effectName, '[silent]');
 						} else {
 							delete side.sideConditions[id];
 						}
@@ -3478,58 +3453,26 @@ export const Moves: { [moveid: string]: MoveData } = {
 				const sourceSide = source.side;
 				const targetSide = source.side.foe;
 				for (const id of sideConditions) {
-					const effectName = this.dex.conditions.get(id).name;
-					if (
-						sourceSide.sideConditions[id] &&
-						targetSide.sideConditions[id]
-					) {
-						[
-							sourceSide.sideConditions[id],
-							targetSide.sideConditions[id],
-						] = [
-							targetSide.sideConditions[id],
-							sourceSide.sideConditions[id],
+					if (sourceSide.sideConditions[id] && targetSide.sideConditions[id]) {
+						[sourceSide.sideConditions[id], targetSide.sideConditions[id]] = [
+							targetSide.sideConditions[id], sourceSide.sideConditions[id],
 						];
-						this.add("-sideend", sourceSide, effectName, "[silent]");
-						this.add("-sideend", targetSide, effectName, "[silent]");
-					} else if (
-						sourceSide.sideConditions[id] &&
-						!targetSide.sideConditions[id]
-					) {
+					} else if (sourceSide.sideConditions[id] && !targetSide.sideConditions[id]) {
 						targetSide.sideConditions[id] = sourceSide.sideConditions[id];
 						delete sourceSide.sideConditions[id];
-						this.add("-sideend", sourceSide, effectName, "[silent]");
-					} else if (
-						targetSide.sideConditions[id] &&
-						!sourceSide.sideConditions[id]
-					) {
+					} else if (targetSide.sideConditions[id] && !sourceSide.sideConditions[id]) {
 						sourceSide.sideConditions[id] = targetSide.sideConditions[id];
 						delete targetSide.sideConditions[id];
-						this.add("-sideend", targetSide, effectName, "[silent]");
 					} else {
 						continue;
 					}
-					let sourceLayers = sourceSide.sideConditions[id] ?
-						sourceSide.sideConditions[id].layers || 1 :
-						0;
-					let targetLayers = targetSide.sideConditions[id] ?
-						targetSide.sideConditions[id].layers || 1 :
-						0;
-					for (; sourceLayers > 0; sourceLayers--) {
-						this.add("-sidestart", sourceSide, effectName, "[silent]");
-					}
-					for (; targetLayers > 0; targetLayers--) {
-						this.add("-sidestart", targetSide, effectName, "[silent]");
-					}
 					success = true;
 				}
+				this.add('-swapsideconditions');
 			}
 			if (!success) return false;
-			this.add("-activate", source, "move: Court Change");
+			this.add('-activate', source, 'move: Court Change');
 		},
-		secondary: null,
-		target: "all",
-		type: "Normal",
 	},
 	covet: {
 		num: 343,

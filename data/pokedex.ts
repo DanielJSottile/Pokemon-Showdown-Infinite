@@ -12105,7 +12105,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Water", "Fighting"],
 		gender: "N",
 		baseStats: {hp: 91, atk: 72, def: 90, spa: 129, spd: 90, spe: 108},
-		abilities: {0: "Resolute Gantlet"},
+		abilities: {0: "Resolute Gauntlet"},
 		heightm: 1.4,
 		weightkg: 48.5,
 		color: "Yellow",
