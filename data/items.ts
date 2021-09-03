@@ -350,8 +350,8 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 757,
 		gen: 6,
 	},
-	aumagaricelebliumz: {
-		name: "Aumagaricelebium Z",
+	remiuscelebliumz: {
+		name: "Remiuscelebium Z",
 		spritenum: 690,
 		onTakeItem: false,
 		zMove: "Temporal Desolation",
@@ -4296,7 +4296,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 			return true;
 		},
-		itemUser: ["Arceus-Aumagari"],
+		itemUser: ["Arceus-Remius"],
 		num: -51,
 		gen: 8,
 	},

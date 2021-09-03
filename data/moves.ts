@@ -21956,7 +21956,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 1,
 		priority: 0,
 		flags: {},
-		isZ: "aumagaricelebiumz",
+		isZ: "remiuscelebiumz",
 		secondary: {
 			chance: 100,
 			self: {

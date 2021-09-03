@@ -1887,8 +1887,8 @@ export class Pokemon {
 				this.battle.gen >= 5 &&
 				((this.species.num === 493 ||
 					this.species.num === 773) &&
-					// exclusion for arceus-aumagari
-					this.species.name !== 'Arceus-Aumagari'
+					// exclusion for arceus-remius
+					this.species.name !== 'Arceus-Remius'
 				)) ||
 				(this.battle.gen === 4 && this.hasAbility('multitype'))) {
 				return false;

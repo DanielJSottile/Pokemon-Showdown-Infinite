@@ -27535,7 +27535,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			wingattack: ["8L14", "8V"],
 		},
 	},
-	mantykeaumagari: {
+	mantykeremius: {
 		learnset: {
 			gust: ["8T"],
 			acrobatics: ["8M"],
@@ -27603,7 +27603,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			wingattack: ["8L14"],
 		},
 	},
-	mantineaumagari: {
+	mantineremius: {
 		learnset: {
 			dualwingbeat: ["8T"],
 			bodypress: ["8M"],
@@ -28519,7 +28519,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zapcannon: ["8M"],
 		},
 	},
-	raikouaumagari: {
+	raikouremius: {
 		learnset: {
 			risingvoltage: ["8T"],
 			helpinghand: ["8M"],
@@ -28685,7 +28685,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			willowisp: ["8M"],
 		},
 	},
-	enteiaumagari: {
+	enteiremius: {
 		learnset: {
 			helpinghand: ["8M"],
 			agility: ["8M"],
@@ -28854,7 +28854,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			whirlpool: ["8M"],
 		},
 	},
-	suicuneaumagari: {
+	suicuneremius: {
 		learnset: {
 			hoarfrost: ["8M"],
 			helpinghand: ["8M"],
@@ -29553,7 +29553,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zenheadbutt: ["8T"],
 		},
 	},
-	celebiaumagari: {
+	celebiremius: {
 		learnset: {
 			dualwingbeat: ["8T"],
 			scorchingsands: ["8T"],
@@ -45743,7 +45743,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			whirlpool: ["8M"],
 		},
 	},
-	gibleaumagari: {
+	gibleremius: {
 		learnset: {
 			flipturn: ["8T"],
 			scaleshot: ["8T"],
@@ -45816,7 +45816,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			twister: ["8E"],
 		},
 	},
-	gabiteaumagari: {
+	gabiteremius: {
 		learnset: {
 			flipturn: ["8T"],
 			scaleshot: ["8T"],
@@ -45884,7 +45884,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			twister: ["8T"],
 		},
 	},
-	garchompaumagari: {
+	garchompremius: {
 		learnset: {
 			scaleshot: ["8T"],
 			innerpower: ["8M"],
@@ -46288,7 +46288,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			yawn: ["8L13", "8L1"],
 		},
 	},
-	hippowdonaumagari: {
+	hippowdonremius: {
 		learnset: {
 			scorchingsands: ["8T"],
 			innerpower: ["8M"],
@@ -48664,7 +48664,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			zenheadbutt: ["8T"],
 		},
 	},
-	arceusaumagari: {
+	arceusremius: {
 		learnset: {
 			wrath: ["8L100"],
 			soulplunge: ["8T"],
@@ -51402,7 +51402,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			xscissor: ["8M"],
 		},
 	},
-	drilburaumagari: {
+	drilburremius: {
 		learnset: {
 			hoarfrost: ["8M"],
 			tripleaxel: ["8T"],
@@ -51461,7 +51461,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			xscissor: ["8M"],
 		},
 	},
-	excadrillaumagari: {
+	excadrillremius: {
 		learnset: {
 			hoarfrost: ["8M"],
 			tripleaxel: ["8T"],
@@ -58415,7 +58415,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			xscissor: ["8M"],
 		},
 	},
-	pawniardaumagari: {
+	pawniardremius: {
 		learnset: {
 			risingvoltage: ["8T"],
 			innerpower: ["8M"],

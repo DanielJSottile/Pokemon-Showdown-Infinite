@@ -88,9 +88,9 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Audinite",
 		desc: "If held by an Audino, this item allows it to Mega Evolve in battle.",
 	},
-	aumagaricelebiumz: {
-		name: "Aumagaricelebium Z",
-		desc: "If held by a Celebi-Aumagari with Earth Power or Earthquake, it can use Temporal Desolation.",
+	remiuscelebiumz: {
+		name: "Remiuscelebium Z",
+		desc: "If held by a Celebi-Remius with Earth Power or Earthquake, it can use Temporal Desolation.",
 	},
 	babiriberry: {
 		name: "Babiri Berry",
