@@ -16253,11 +16253,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "UUBL",
 		doublesTier: "(DUU)",
 	},
-	// arctozolt: {
-	// 	randomBattleMoves: ["boltbeak", "bulldoze", "iciclecrash", "freezedry"],
-	// 	tier: "NU",
-	// 	doublesTier: "(DUU)",
-	// },
 	dracovish: {
 		randomBattleMoves: ["crunch", "fishiousrend", "icefang", "lowkick", "psychicfangs"],
 		randomBattleLevel: 80,
