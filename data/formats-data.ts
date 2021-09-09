@@ -16148,18 +16148,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		doublesTier: "DUU",
 	},
 	arctozolt: {
-		randomBattleMoves: ["boltbeak", "freezedry", "iciclecrash", "stompingtantrum", "thunderwave"],
-		randomBattleLevel: 86,
-		randomDoubleBattleMoves: ["blizzard", "boltbeak", "iciclecrash", "lowkick", "protect"],
-		randomDoubleBattleLevel: 88,
-		tier: "UUBL",
-		doublesTier: "DUU",
+		randomBattleMoves: ["boltbeak", "bulldoze", "iciclecrash", "freezedry"],
+		tier: "NU",
+		doublesTier: "(DUU)",
 	},
-	// arctozolt: {
-	// 	randomBattleMoves: ["boltbeak", "bulldoze", "iciclecrash", "freezedry"],
-	// 	tier: "NU",
-	// 	doublesTier: "(DUU)",
-	// },
 	dracovish: {
 		randomBattleMoves: [
 			"crunch",
