@@ -16503,4 +16503,22 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
+	pileaglet: {
+		tier: "LC",
+	},
+	javaleur: {
+		tier: "NFE",
+	},
+	eaglance: {
+		randomBattleMoves: [
+			"bravebird",
+			"closecombat",
+			"uturn",
+			"swordsdance",
+			"skyattack",
+			"extremespeed"
+		],
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+	},
 };
