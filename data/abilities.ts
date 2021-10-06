@@ -277,6 +277,25 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 3.5,
 		num: 267,
 	},
+	atramentum: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === "Dark") {
+				this.debug("Atramentum boost");
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === "Dark") {
+				this.debug("Atramentum boost");
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Atramentum",
+		rating: 3.5,
+		num: -16,
+	},
 	aurabreak: {
 		onStart(pokemon) {
 			if (this.suppressingAbility(pokemon)) return;
@@ -1200,6 +1219,27 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 1,
 		num: 194,
 	},
+	extinction: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add("-ability", pokemon, "Extinction");
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (
+				target === source ||
+				move.category === "Status" ||
+				move.type !== "Rock"
+			) { return; }
+			if (!move.auraBooster) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([5448, 4096]);
+		},
+		isBreakable: true,
+		name: "Extinction",
+		rating: 3,
+		num: -18,
+	},
 	fairyaura: {
 		onStart(pokemon) {
 			if (this.suppressingAbility(pokemon)) return;
@@ -1610,6 +1650,27 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Galvanize",
 		rating: 4,
 		num: 206,
+	},
+	glaciation: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add("-ability", pokemon, "Glaciation");
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (
+				target === source ||
+				move.category === "Status" ||
+				move.type !== "Ice"
+			) { return; }
+			if (!move.auraBooster) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([5448, 4096]);
+		},
+		isBreakable: true,
+		name: "Glaciation",
+		rating: 3,
+		num: -17,
 	},
 	gluttony: {
 		name: "Gluttony",
@@ -2781,6 +2842,12 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 3,
 		num: 78,
 	},
+	mountaineer: {
+		// Hazard Immunity implemented in moves.js
+		name: "Mountaineer",
+		rating: 3,
+		num: -13,
+	},
 	moxie: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (source.volatiles["dynamax"]) return;
@@ -3182,6 +3249,16 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Overgrow",
 		rating: 2,
 		num: 65,
+	},
+	overshock: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.randomChance(1, 10)) {
+				source.trySetStatus("par", target);
+			}
+		},
+		name: "Overshock",
+		rating: 2.5,
+		num: -19,
 	},
 	owntempo: {
 		onUpdate(pokemon) {
@@ -3930,6 +4007,46 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Resolute Gauntlet",
 		rating: 4.5,
 		num: -7,
+	},
+	ressurection: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (target.species.baseSpecies !== "Panvoodoo" || target.transformed) { return; }
+			if (
+				!target.hp &&
+				target.species.id !== "panvoodoozombified"
+			) {
+				if (
+					target.fainted &&
+					(
+						target.status ||
+						target.moveSlots.some(
+							(moveSlot) => moveSlot.pp < moveSlot.maxpp
+						))
+				) {
+					// revive completely
+					target.fainted = false;
+					target.heal(target.maxhp);
+					target.setStatus("");
+					for (const moveSlot of target.moveSlots) {
+						moveSlot.pp = moveSlot.maxpp;
+					}
+					this.add(
+						"-heal",
+						target,
+						target.getHealth,
+						"[from] ability: Ressurection"
+					);
+					// transform
+					target.formeChange('Panvoodoo-Zombified');
+					// force out
+					target.switchFlag = true;
+				}
+			}
+		},
+		name: "Ressurection",
+		rating: 4,
+		num: -14,
 	},
 	ripen: {
 		onTryHeal(damage, target, source, effect) {
@@ -5037,6 +5154,23 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 3.5,
 		num: 47,
 	},
+	tigereyes: {
+		onDamagingHit(damage, target, source, move) {
+			if (move?.effectType === "Move" && target.getMoveHitData(move).crit) {
+				source.setBoost({atk: 2});
+				this.add(
+					"-setboost",
+					source,
+					"atk",
+					2,
+					"[from] ability: TigerEyes"
+				);
+			}
+		},
+		name: "Tiger Eyes",
+		rating: 2,
+		num: -13,
+	},
 	timetravel: {
 		// TODO: make this work
 		// onModifyMove(move) {
@@ -5736,73 +5870,5 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Zen Mode",
 		rating: 0,
 		num: 161,
-	},
-
-	// CAP
-	mountaineer: {
-		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === "stealthrock") {
-				return false;
-			}
-		},
-		onTryHit(target, source, move) {
-			if (move.type === "Rock" && !target.activeTurns) {
-				this.add("-immune", target, "[from] ability: Mountaineer");
-				return null;
-			}
-		},
-		isNonstandard: "CAP",
-		isBreakable: true,
-		name: "Mountaineer",
-		rating: 3,
-		num: -2,
-	},
-	rebound: {
-		isNonstandard: "CAP",
-		name: "Rebound",
-		onTryHitPriority: 1,
-		onTryHit(target, source, move) {
-			if (this.effectState.target.activeTurns) return;
-
-			if (
-				target === source ||
-				move.hasBounced ||
-				!move.flags["reflectable"]
-			) {
-				return;
-			}
-			const newMove = this.dex.getActiveMove(move.id);
-			newMove.hasBounced = true;
-			this.actions.useMove(newMove, target, source);
-			return null;
-		},
-		onAllyTryHitSide(target, source, move) {
-			if (this.effectState.target.activeTurns) return;
-
-			if (
-				target.isAlly(source) ||
-				move.hasBounced ||
-				!move.flags["reflectable"]
-			) {
-				return;
-			}
-			const newMove = this.dex.getActiveMove(move.id);
-			newMove.hasBounced = true;
-			this.actions.useMove(newMove, this.effectState.target, source);
-			return null;
-		},
-		condition: {
-			duration: 1,
-		},
-		isBreakable: true,
-		rating: 3,
-		num: -3,
-	},
-	persistent: {
-		isNonstandard: "CAP",
-		name: "Persistent",
-		// implemented in the corresponding move
-		rating: 3,
-		num: -4,
 	},
 };

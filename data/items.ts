@@ -1816,15 +1816,11 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: -42,
 		gen: 8,
 	},
-	darkraite: {
-		name: "Darkraite",
-		spritenum: 576,
-		megaStone: "Darkrai-Mega",
-		megaEvolves: "Darkrai",
-		itemUser: ["Darkrai"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
+	dawnstone: {
+		name: "Dawn Stone",
+		spritenum: 92,
+		fling: {
+			basePower: 80,
 		},
 		num: -42,
 		gen: 8,
@@ -6931,34 +6927,64 @@ export const Items: { [itemid: string]: ItemData } = {
 				pokemon.eatItem();
 			}
 		},
-		onEat(pokemon) {
-			if (pokemon.status === "whiplash") {
-				pokemon.cureStatus();
-			}
-		},
-		num: -27,
-		gen: 8,
+		num: 557,
+		gen: 5,
 	},
-	pumkinberry: {
-		name: "Pumkin Berry",
-		spritenum: 333,
-		isBerry: true,
-		naturalGift: {
-			basePower: 80,
-			type: "Fighting",
+	psychicmemory: {
+		name: "Psychic Memory",
+		spritenum: 680,
+		onMemory: "Psychic",
+		onTakeItem(item, pokemon, source) {
+			if (
+				(source && source.baseSpecies.num === 773) ||
+				pokemon.baseSpecies.num === 773
+			) {
+				return false;
+			}
+			return true;
 		},
-		onUpdate(pokemon) {
-			if (pokemon.status === 'whiplash') {
-				pokemon.eatItem();
+		forcedForme: ["Silvally-Psychic"],
+		itemUser: ["Silvally-Psychic"],
+		num: 916,
+		gen: 7,
+	},
+	psychicseed: {
+		name: "Psychic Seed",
+		spritenum: 665,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			if (
+				!pokemon.ignoringItem() &&
+				this.field.isTerrain("psychicterrain")
+			) {
+				pokemon.useItem();
 			}
 		},
-		onEat(pokemon) {
-			if (pokemon.status === "whiplash") {
-				pokemon.cureStatus();
+		onAnyTerrainStart() {
+			const pokemon = this.effectState.target;
+			if (this.field.isTerrain("psychicterrain")) {
+				pokemon.useItem();
 			}
 		},
-		num: -27,
-		gen: 8,
+		boosts: {
+			spd: 1,
+		},
+		num: 882,
+		gen: 7,
+	},
+	psychiumz: {
+		name: "Psychium Z",
+		spritenum: 641,
+		onPlate: "Psychic",
+		onMemory: "Psychic",
+		onTakeItem: false,
+		zMove: true,
+		zMoveType: "Psychic",
+		forcedForme: ["Arceus-Psychic", "Silvally-Psychic"],
+		num: 786,
+		gen: 7,
 	},
 	pumkinberry: {
 		name: "Pumkin Berry",
