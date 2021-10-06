@@ -16368,7 +16368,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"chllingshivers",
 			"bugbuzz",
 			"substitute",
-			"destinybond"
+			"destinybond",
 		],
 		randomDoubleBattleMoves: [
 			"sleeppowder",

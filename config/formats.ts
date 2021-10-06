@@ -153,7 +153,7 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Anything Goes",
+		name: "[Gen 8] Anything Goes Y/T",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3672172/">AG Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3675040/">AG Sample Teams</a>`,
