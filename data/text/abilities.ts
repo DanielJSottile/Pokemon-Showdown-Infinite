@@ -85,6 +85,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "As One (Spectrier)",
 		shortDesc: "The combination of Unnerve and Grim Neigh.",
 	},
+	atramentum: {
+		name: "Atramentum",
+		shortDesc: "This Pokemon's attacking stat is multiplied by 1.5 while using a Dark-type attack.",
+	 },
 	aurabreak: {
 		name: "Aura Break",
 		desc: "While this Pokemon is active, the effects of the Dark Aura and Fairy Aura Abilities are reversed, multiplying the power of Dark- and Fairy-type moves, respectively, by 3/4 instead of 1.33.",
@@ -369,6 +373,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
 		shortDesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.",
 	},
+	extinction: {
+		name: "Extinction",
+		desc: "While this Pokemon is active, the power of Rock-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Rock move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is emanating an aura of doom!",
+	},
 	fairyaura: {
 		name: "Fairy Aura",
 		desc: "While this Pokemon is active, the power of Fairy-type moves used by active Pokemon is multiplied by 1.33.",
@@ -480,6 +491,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Galvanize",
 		desc: "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type and have 1.2x power.",
+	},
+	glaciation: {
+		name: "Glaciation",
+		desc: "While this Pokemon is active, the power of Ice-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Ice move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is emanating a chilling aura!",
 	},
 	gluttony: {
 		name: "Gluttony",
@@ -862,6 +880,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon is immune to Electric-type moves and raises its Speed by 1 stage when hit by an Electric-type move.",
 		shortDesc: "This Pokemon's Speed is raised 1 stage if hit by an Electric move; Electric immunity.",
 	},
+	mountaineer: {
+		name: "Mountaineer",
+		shortDesc: "The user is immune to entry hazards",
+	},
 	moxie: {
 		name: "Moxie",
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
@@ -954,6 +976,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Grass-type attacks have their power multiplied by 1.5.",
 			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Grass-type attacks have 1.5x power.",
 		},
+	},
+	overshock: {
+		name: "Overshock",
+		desc: "All moves from the user have an additional 10% chance to paralyze the target",
+		shortDesc: "Additional 10% chance to paralyze the target",
 	},
 	owntempo: {
 		name: "Own Tempo",
@@ -1598,6 +1625,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			shortDesc: "The power of Fire- and Ice-type attacks against this Pokemon is halved.",
 		},
 	},
+	tigereyes: {
+		name: "Tiger Eyes",
+		desc: "Upon landing a critical hit, the user recieves a +2 boost in attack.",
+		shortDesc: "Upon landing a critical hit, the user recieves a +2 boost in attack.",
+	},
 	timetravel: {
 		name: "Time Travel",
 		shortDesc: "This ability changes the signature move of Mebiusan depending on what form it is in.",
@@ -1780,25 +1812,5 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		transform: "Zen Mode triggered!",
 		transformEnd: "Zen Mode ended!",
-	},
-
-	// CAP
-	mountaineer: {
-		name: "Mountaineer",
-		shortDesc: "On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock.",
-	},
-	rebound: {
-		name: "Rebound",
-		desc: "On switch-in, this Pokemon blocks certain status moves and instead uses the move against the original user.",
-		shortDesc: "On switch-in, blocks certain status moves and bounces them back to the user.",
-
-		move: "#magiccoat",
-	},
-	persistent: {
-		name: "Persistent",
-		desc: "The duration of Gravity, Heal Block, Magic Room, Safeguard, Tailwind, Trick Room, and Wonder Room is increased by 2 turns if the effect is started by this Pokemon.",
-		shortDesc: "When used, Gravity/Heal Block/Safeguard/Tailwind/Room effects last 2 more turns.",
-
-		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
 };
