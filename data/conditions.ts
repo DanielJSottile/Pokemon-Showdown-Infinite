@@ -97,14 +97,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 				target.cureStatus();
 			}
 		},
-<<<<<<< HEAD
-		onDamagingHit(damage, target, source, move) {
-			if (move.type === 'Fire' && move.category !== 'Status') {
-				target.cureStatus();
-			}
-		},
-=======
->>>>>>> origin/master
 		// Damage reduction is handled directly in the sim/battle.js damage function
 		onResidualOrder: 9,
 		onResidual(pokemon) {

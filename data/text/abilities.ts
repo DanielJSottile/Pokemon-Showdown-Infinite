@@ -1422,6 +1422,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's Speed is raised by 1 stage at the end of each full turn it has been on the field.",
 		shortDesc: "This Pokemon's Speed is raised 1 stage at the end of each full turn on the field.",
 	},
+	spooked: {
+		name: "Spooked",
+		desc: "On switch-in, this Pokemon lowers the Special Attack of adjacent opposing Pokemon by 1 stage.",
+		shortDesc: "On switch-in, this Pokemon lowers the Special Attack of adjacent opponents by 1 stage.",
+	},
 	stakeout: {
 		name: "Stakeout",
 		shortDesc: "This Pokemon's attacking stat is doubled against a target that switched in this turn.",
