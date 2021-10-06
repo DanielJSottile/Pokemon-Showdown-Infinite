@@ -12936,6 +12936,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"shadowforce",
 					"teatime",
 					"transform",
+					"whirlwind",
 				];
 				const blockedByMaxGuard =
 					this.dex.moves.get(move.id).flags["protect"] ||
@@ -16014,6 +16015,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					this.damage(
 						this.clampIntRange(Math.round(pokemon.maxhp / 4), 1)
 					);
+					this.attrLastMove('[still]');
 					return false;
 				}
 			},
