@@ -1560,21 +1560,26 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target, move) {
-			return 5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10);
+			return (
+				5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10)
+			);
 		},
 		category: "Physical",
-		name: "Beat Up",
-		pp: 10,
+		name: "Beastly Awakening Punch",
+		pp: 1,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, allyanim: 1},
 		onModifyMove(move, pokemon) {
-			move.allies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted && !ally.status);
+			move.allies = pokemon.side.pokemon.filter(
+				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
+			);
 			move.multihit = move.allies.length;
 		},
+		isZ: "slakingiumz",
 		secondary: null,
 		target: "normal",
-		type: "Dark",
-		contestType: "Clever",
+		type: "Normal",
+		contestType: "Cool",
 	},
 	behemothbash: {
 		num: 782,
@@ -10637,26 +10642,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	innerpowerrock: {
-		num: -22,
-		accuracy: 100,
-		basePower: 60,
-		basePowerCallback(pokemon, target, move) {
-			if (pokemon.species.name === 'Unown-Alphabet' && pokemon.hasAbility('unownsspell')) {
-				return move.basePower + 30;
-			}
-			return move.basePower;
-		},
-		category: "Physical",
-		name: "Inferno Overdrive",
-		pp: 1,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever",
-	},
 	innerpower: {
 		num: -22,
 		accuracy: 100,
@@ -11041,6 +11026,30 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
+		contestType: "Clever",
+	},
+	innerpowerrock: {
+		num: -22,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (
+				pokemon.species.name === "Unown-Alphabet" &&
+				pokemon.hasAbility("unownsspell")
+			) {
+				return move.basePower + 30;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		realMove: "Inner Power",
+		name: "Inner Power Rock",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Rock",
 		contestType: "Clever",
 	},
 	innerpowersteel: {
@@ -12904,7 +12913,16 @@ export const Moves: { [moveid: string]: MoveData } = {
 				if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return;
 				/** moves blocked by Max Guard but not Protect */
 				const overrideBypassProtect = [
-					'block', 'flowershield', 'gearup', 'magneticflux', 'phantomforce', 'psychup', 'shadowforce', 'teatime', 'transform', 'whirlwind',
+					"block",
+					"flowershield",
+					"gearup",
+					"magneticflux",
+					"phantomforce",
+					"psychup",
+					"shadowforce",
+					"teatime",
+					"transform",
+					"whirlwind",
 				];
 				const blockedByMaxGuard =
 					this.dex.moves.get(move.id).flags["protect"] ||
@@ -15978,9 +15996,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onTryMovePriority: -1,
 			onTryMove(pokemon, target, move) {
-				if (move.type === 'Fire') {
-					this.add('-activate', pokemon, 'move: Powder');
-					this.damage(this.clampIntRange(Math.round(pokemon.maxhp / 4), 1));
+				if (move.type === "Fire") {
+					this.add("-activate", pokemon, "move: Powder");
+					this.damage(
+						this.clampIntRange(Math.round(pokemon.maxhp / 4), 1)
+					);
 					this.attrLastMove('[still]');
 					return false;
 				}
