@@ -516,7 +516,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			if (
 				["sunnyday", "desolateland"].includes(pokemon.effectiveWeather())
 			) {
-				return this.chainModify(2);
+				return this.chainModify(1.8);
 			}
 		},
 		name: "Chlorophyll",
@@ -4041,7 +4041,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	sandrush: {
 		onModifySpe(spe, pokemon) {
 			if (this.field.isWeather("sandstorm")) {
-				return this.chainModify(2);
+				return this.chainModify(1.8);
 			}
 		},
 		onImmunity(type, pokemon) {
@@ -4407,7 +4407,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	slushrush: {
 		onModifySpe(spe, pokemon) {
 			if (this.field.isWeather("hail")) {
-				return this.chainModify(2);
+				return this.chainModify(1.8);
 			}
 		},
 		name: "Slush Rush",
@@ -4869,7 +4869,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			if (
 				["raindance", "primordialsea"].includes(pokemon.effectiveWeather())
 			) {
-				return this.chainModify(2);
+				return this.chainModify(1.8);
 			}
 		},
 		name: "Swift Swim",
