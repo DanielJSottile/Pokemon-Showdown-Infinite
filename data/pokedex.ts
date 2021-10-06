@@ -12595,7 +12595,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Black",
 		evos: ["Spewpa"],
 		eggGroups: ["Bug"],
-		// TODO: Scatterbug technically has the same number of formes as Vivillon
 	},
 	spewpa: {
 		num: 665,
@@ -12610,12 +12609,11 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 9,
 		evos: ["Vivillon"],
 		eggGroups: ["Bug"],
-		// TODO: Spewpa technically has the same number of formes as Vivillon
 	},
 	vivillon: {
 		num: 666,
 		name: "Vivillon",
-		baseForme: "Meadow", // TODO: actual base forme is Icy Snow, not Meadow
+		baseForme: "Meadow",
 		types: ["Bug", "Flying"],
 		baseStats: {hp: 80, atk: 52, def: 50, spa: 90, spd: 50, spe: 89},
 		abilities: {0: "Shield Dust", 1: "Compound Eyes", H: "Friend Guard"},
