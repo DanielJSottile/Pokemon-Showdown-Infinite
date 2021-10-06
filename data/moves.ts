@@ -1768,18 +1768,15 @@ export const Moves: { [moveid: string]: MoveData } = {
 		name: "Beat Up",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, mystery: 1},
+		flags: {protect: 1, mirror: 1, allyanim: 1},
 		onModifyMove(move, pokemon) {
-			move.allies = pokemon.side.pokemon.filter(
-				(ally) => ally === pokemon || (!ally.fainted && !ally.status)
-			);
+			move.allies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted && !ally.status);
 			move.multihit = move.allies.length;
 		},
-		isZ: "slakingiumz",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
-		contestType: "Cool",
+		type: "Dark",
+		contestType: "Clever",
 	},
 	behemothbash: {
 		num: 782,
@@ -12778,51 +12775,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "all",
 		type: "Infinite",
-		zMove: { boost: { spd: 1 } },
-		contestType: "Clever",
-	},
-	inverseroom: {
-		num: -8,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Inverse Room",
-		pp: 10,
-		priority: 0,
-		flags: {mirror: 1},
-		pseudoWeather: "inverseroom",
-		condition: {
-			duration: 5,
-			onStart(target, source) {
-				this.add("-fieldstart", "move: Inverse Room", "[of] " + source);
-				this.add(
-					"-message",
-					"The type-effectiveness of the room has been twisted!"
-				);
-			},
-			onRestart(target, source) {
-				this.field.removePseudoWeather("magicroom");
-			},
-			onNegateImmunity: false,
-			onEffectiveness(typeMod, target, type, move) {
-				// The effectiveness of Freeze Dry on Water isn't reverted
-				if (move && move.id === "freezedry" && type === "Water") return;
-				if (move && !this.dex.getImmunity(move, type)) return 1;
-				return -typeMod;
-			},
-			onResidualOrder: 25,
-			onEnd() {
-				this.add(
-					"-fieldend",
-					"move: Inverse Room",
-					"[of] " + this.effectState.source
-				);
-				this.add("-message", "The type-effectiveness returned to normal!");
-			},
-		},
-		secondary: null,
-		target: "all",
-		type: "Infinite",
 		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
@@ -13484,70 +13436,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
-	lavaterrain: {
-		num: -23,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Lava Terrain",
-		pp: 10,
-		priority: 0,
-		flags: {nonsky: 1},
-		terrain: "lavaterrain",
-		condition: {
-			duration: 5,
-			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
-					return 8;
-				}
-				return 5;
-			},
-			onBasePowerPriority: 6,
-			onBasePower(basePower, attacker, defender, move) {
-				if (
-					move.type === "Water" &&
-					defender.isGrounded() &&
-					!defender.isSemiInvulnerable()
-				) {
-					this.debug("lava terrain weaken");
-					return this.chainModify(0.5);
-				}
-			},
-			onFieldStart(field, source, effect) {
-				if (effect?.effectType === "Ability") {
-					this.add(
-						"-fieldstart",
-						"move: Lava Terrain",
-						"[from] ability: " + effect,
-						"[of] " + source
-					);
-				} else {
-					this.add("-fieldstart", "move: Lava Terrain");
-				}
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 2,
-			onResidual(pokemon) {
-				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable() && !pokemon.hasType("Fire")) {
-					this.damage(pokemon.baseMaxhp / 16, pokemon);
-				} else {
-					this.debug(
-						`Pokemon semi-invuln or not grounded; Lava Terrain skipped`
-					);
-				}
-			},
-			onFieldResidualOrder: 27,
-			onFieldResidualSubOrder: 7,
-			onFieldEnd() {
-				this.add("-fieldend", "move: Lava Terrain");
-			},
-		},
-		secondary: null,
-		target: "all",
-		type: "Fire",
-		zMove: { boost: { def: 1 } },
-		contestType: "Beautiful",
-	},
 	leafage: {
 		num: 670,
 		accuracy: 100,
@@ -13837,47 +13725,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
-	},
-	limitbreak: {
-		num: -7,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Limit Break",
-		pp: 10,
-		priority: 0,
-		flags: {snatch: 1},
-		onHit(target) {
-			if (
-				target.hp <= target.maxhp / 2 ||
-				target.boosts.spa >= 6 ||
-				target.maxhp === 1
-			) {
-				// Shedinja clause
-				return false;
-			}
-			this.directDamage(target.maxhp / 2);
-			this.boost({spa: 12}, target);
-		},
-		secondary: null,
-		target: "self",
-		type: "Infinite",
-		zMove: {effect: "heal"},
-		contestType: "Cute",
-	},
-	liquefaction: {
-		num: -48,
-		accuracy: 90,
-		basePower: 60,
-		category: "Special",
-		name: "Liquefaction",
-		pp: 10,
-		priority: -6,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		forceSwitch: true,
-		target: "normal",
-		type: "Ground",
-		contestType: "Popular",
 	},
 	limitbreak: {
 		num: -7,
@@ -18927,21 +18774,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "allAdjacent",
 		type: "Infinite",
 		contestType: "Popular",
-	},
-	pyroclasticblow: {
-		num: -24,
-		accuracy: 100,
-		basePower: 250,
-		category: "Special",
-		name: "Pyroclastic Blow",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		selfdestruct: "always",
-		secondary: null,
-		target: "allAdjacent",
-		type: "Rock",
-		contestType: "Beautiful",
 	},
 	quash: {
 		num: 511,
