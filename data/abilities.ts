@@ -4664,6 +4664,25 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 4.5,
 		num: 3,
 	},
+	spooked: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Spooked', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({spa: -1}, target, pokemon, null, true);
+				}
+			}
+		},
+		name: "Spooked",
+		rating: 3.5,
+		num: -1,
+	},
 	stakeout: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender) {
