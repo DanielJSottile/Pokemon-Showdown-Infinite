@@ -490,6 +490,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type and have 1.2x power.",
 	},
+	glaciation: {
+		name: "Glaciation",
+		desc: "While this Pokemon is active, the power of Ice-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Ice move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is emanating a chilling aura!",
+	},
 	gluttony: {
 		name: "Gluttony",
 		shortDesc: "When this Pokemon has 1/2 or less of its maximum HP, it uses certain Berries early.",
@@ -1268,6 +1275,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Resolute Gauntlet",
 		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
 		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
+	},
+	resurrection: {
+		name: "Resurrection",
+		desc: "Upon fainting, if the user is Panvoodo and is not transformed, this Pokemon is completely revived and switches out, transforming into its Zombified form.  The implementation of this may change in the future",
+		shortDesc: "Upon fainting, the user transforms into its Zombified form and completely revives, switching out",
 	},
 	ripen: {
 		name: "Ripen",
