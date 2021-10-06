@@ -4008,7 +4008,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 4.5,
 		num: -7,
 	},
-	ressurection: {
+	resurrection: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (target.species.baseSpecies !== "Panvoodoo" || target.transformed) { return; }
@@ -4044,7 +4044,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				}
 			}
 		},
-		name: "Ressurection",
+		name: "Resurrection",
 		rating: 4,
 		num: -14,
 	},
