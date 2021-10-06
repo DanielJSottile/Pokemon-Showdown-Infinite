@@ -16475,4 +16475,32 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "AG",
 		doublesTier: "DUber",
 	},
+	spookypillar: {
+		tier: "LC",
+	},
+	spectrysalis: {
+		tier: "NFE",
+	},
+	papilanima: {
+		randomBattleMoves: [
+			"sleeppowder",
+			"quiverdance",
+			"shadowball",
+			"chllingshivers",
+			"bugbuzz",
+			"substitute",
+			"destinybond"
+		],
+		randomDoubleBattleMoves: [
+			"sleeppowder",
+			"quiverdance",
+			"shadowball",
+			"bugbuzz",
+			"substitute",
+			"destinybond",
+			"chllingshivers",
+		],
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
 };
