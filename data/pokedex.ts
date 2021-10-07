@@ -6307,23 +6307,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Bug", "Dragon"],
 		otherFormes: ["Flygon-Mega"],
 		formeOrder: ["Flygon", "Flygon-Mega"],
-<<<<<<< HEAD
-	},
-	flygonmega: {
-		num: 330,
-		name: "Flygon-Mega",
-		baseSpecies: "Flygon",
-		forme: "Mega",
-		types: ["Bug", "Dragon"],
-		baseStats: {hp: 80, atk: 147, def: 105, spa: 67, spd: 105, spe: 116},
-		abilities: {0: "Dragon Scales"},
-		heightm: 2.5,
-		weightkg: 125.1,
-		color: "Green",
-		eggGroups: ["Bug"],
-		requiredItem: "Flygonite",
-=======
->>>>>>> master
 	},
 	flygonmega: {
 		num: 330,
@@ -6650,65 +6633,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Gray",
 		eggGroups: ["Fairy", "Amourphous"],
 		requiredItem: "Castformite",
-<<<<<<< HEAD
-	},
-	castformmega: {
-		num: 351,
-		name: "Castform-Mega",
-		baseSpecies: "Castform",
-		forme: "Mega",
-		types: ["Flying"],
-		baseStats: {hp: 70, atk: 30, def: 105, spa: 105, spd: 105, spe: 105},
-		abilities: {0: "Protean"},
-		heightm: 0.5,
-		weightkg: 1.2,
-		color: "Gray",
-		eggGroups: ["Fairy", "Amourphous"],
-		requiredItem: "Castformite",
-	},
-	castformmega: {
-		num: 351,
-		name: "Castform-Mega",
-		baseSpecies: "Castform",
-		forme: "Mega",
-		types: ["Flying"],
-		baseStats: {hp: 70, atk: 30, def: 105, spa: 105, spd: 105, spe: 105},
-		abilities: {0: "Protean"},
-		heightm: 0.5,
-		weightkg: 1.2,
-		color: "Gray",
-		eggGroups: ["Fairy", "Amourphous"],
-		requiredItem: "Castformite",
-	},
-	castformmega: {
-		num: 351,
-		name: "Castform-Mega",
-		baseSpecies: "Castform",
-		forme: "Mega",
-		types: ["Flying"],
-		baseStats: {hp: 70, atk: 30, def: 105, spa: 105, spd: 105, spe: 105},
-		abilities: {0: "Protean"},
-		heightm: 0.5,
-		weightkg: 1.2,
-		color: "Gray",
-		eggGroups: ["Fairy", "Amourphous"],
-		requiredItem: "Castformite",
-	},
-	castformmega: {
-		num: 351,
-		name: "Castform-Mega",
-		baseSpecies: "Castform",
-		forme: "Mega",
-		types: ["Flying"],
-		baseStats: {hp: 70, atk: 30, def: 105, spa: 105, spd: 105, spe: 105},
-		abilities: {0: "Protean"},
-		heightm: 0.5,
-		weightkg: 1.2,
-		color: "Gray",
-		eggGroups: ["Fairy", "Amourphous"],
-		requiredItem: "Castformite",
-=======
->>>>>>> master
 	},
 	castformsunny: {
 		num: 351,
@@ -8577,10 +8501,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Green",
 		evos: ["Carnicreeper"],
 		eggGroups: ["Grass"],
-<<<<<<< HEAD
-		changesFrom: "Carnicreeper",
-=======
->>>>>>> master
 	},
 	carnicreeper: {
 		num: -13,
@@ -8593,7 +8513,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Green",
 		prevo: "Carnivine",
 		evoLevel: 50,
-<<<<<<< HEAD
 		eggGroups: ["Grass"],
 		otherFormes: ["Carnicreeper-Gmax"],
 		canGigantamax: "G-Max Vegetation",
@@ -8610,24 +8529,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 0,
 		color: "Green",
 		eggGroups: ["Grass"],
-=======
-		eggGroups: ["Grass"],
-		otherFormes: ["Carnicreeper-Gmax"],
-		canGigantamax: "G-Max Vegetation",
-	},
-	carnicreepergmax: {
-		num: -13,
-		name: "Carnicreeper-Gmax",
-		baseSpecies: "Carnicreeper",
-		forme: "Gmax",
-		types: ["Grass", "Dark"],
-		baseStats: {hp: 104, atk: 156, def: 82, spa: 60, spd: 82, spe: 36},
-		abilities: {0: "Levitate", H: "Sap Sipper"},
-		heightm: 28,
-		weightkg: 0,
-		color: "Green",
-		eggGroups: ["Grass"],
->>>>>>> master
 		changesFrom: "Carnicreeper",
 	},
 	finneon: {
@@ -9950,24 +9851,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Field"],
 		otherFormes: ["Samurott-Mega"],
 		formeOrder: ["Samurott", "Samurott-Mega"],
-<<<<<<< HEAD
-	},
-	samurottmega: {
-		num: 503,
-		name: "Samurott-Mega",
-		baseSpecies: "Samurott",
-		forme: "Mega",
-		types: ["Water", "Fighting"],
-		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 95, atk: 143, def: 95, spa: 120, spd: 85, spe: 90},
-		abilities: {0: "Adaptability"},
-		heightm: 1.7,
-		weightkg: 101.5,
-		color: "Blue",
-		eggGroups: ["Field"],
-		requiredItem: "Samurottite",
-=======
->>>>>>> master
 	},
 	samurottmega: {
 		num: 503,
@@ -10368,69 +10251,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "drilburremius",
 		evoLevel: 31,
 		eggGroups: ["Field"],
-<<<<<<< HEAD
-	},
-	excadrillaumagari: {
-		num: 530,
-		name: "Excadrill-Aumagari",
-		baseSpecies: "Excadrill",
-		forme: "Aumagari",
-		types: ["Ice", "Steel"],
-		baseStats: {hp: 110, atk: 135, def: 60, spa: 50, spd: 65, spe: 88},
-		abilities: {0: "Slush Rush", 1: "Flash Fire", H: "Mold Breaker"},
-		heightm: 0.7,
-		weightkg: 40.4,
-		color: "White",
-		prevo: "drilburaumagari",
-		evoLevel: 31,
-		eggGroups: ["Field"],
-	},
-	excadrillaumagari: {
-		num: 530,
-		name: "Excadrill-Aumagari",
-		baseSpecies: "Excadrill",
-		forme: "Aumagari",
-		types: ["Ice", "Steel"],
-		baseStats: {hp: 110, atk: 135, def: 60, spa: 50, spd: 65, spe: 88},
-		abilities: {0: "Slush Rush", 1: "Flash Fire", H: "Mold Breaker"},
-		heightm: 0.7,
-		weightkg: 40.4,
-		color: "White",
-		prevo: "drilburaumagari",
-		evoLevel: 31,
-		eggGroups: ["Field"],
-	},
-	excadrillaumagari: {
-		num: 530,
-		name: "Excadrill-Aumagari",
-		baseSpecies: "Excadrill",
-		forme: "Aumagari",
-		types: ["Ice", "Steel"],
-		baseStats: {hp: 110, atk: 135, def: 60, spa: 50, spd: 65, spe: 88},
-		abilities: {0: "Slush Rush", 1: "Flash Fire", H: "Mold Breaker"},
-		heightm: 0.7,
-		weightkg: 40.4,
-		color: "White",
-		prevo: "drilburaumagari",
-		evoLevel: 31,
-		eggGroups: ["Field"],
-	},
-	excadrillremius: {
-		num: 530,
-		name: "Excadrill-Remius",
-		baseSpecies: "Excadrill",
-		forme: "Remius",
-		types: ["Ice", "Steel"],
-		baseStats: {hp: 110, atk: 135, def: 60, spa: 50, spd: 65, spe: 88},
-		abilities: {0: "Slush Rush", 1: "Flash Fire", H: "Mold Breaker"},
-		heightm: 0.7,
-		weightkg: 40.4,
-		color: "White",
-		prevo: "drilburremius",
-		evoLevel: 31,
-		eggGroups: ["Field"],
-=======
->>>>>>> master
 	},
 	audino: {
 		num: 531,
@@ -11507,8 +11327,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 99.9,
 		color: "Gray",
 		eggGroups: ["Mineral"],
-<<<<<<< HEAD
-=======
 		otherFormes: ["Klinklang-Mega"],
 		formeOrder: ["Klinklang", "Klinklang-Mega"],
 	},
@@ -11524,7 +11342,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 99.9,
 		color: "Gray",
 		eggGroups: ["Mineral"],
->>>>>>> master
 		requiredItem: "Klinklangite",
 	},
 	tynamo: {
@@ -17503,22 +17320,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		changesFrom: "Calyrex",
 	},
 	apocalylidae: {
-<<<<<<< HEAD
-		num: -1,
-		name: "Apocalylidae",
-		types: ["Flying", "Infinite"],
-		gender: "N",
-		baseStats: {hp: 186, atk: 163, def: 50, spa: 116, spd: 76, spe: 129},
-		abilities: {0: "Gravity Well"},
-		heightm: 20.2,
-		weightkg: 1590.8,
-		color: "Gray",
-		tags: ["Restricted Legendary"],
-		eggGroups: ["Undiscovered"],
-	},
-	syclar: {
-=======
->>>>>>> master
 		num: -1,
 		name: "Apocalylidae",
 		types: ["Flying", "Infinite"],
