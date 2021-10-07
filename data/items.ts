@@ -213,7 +213,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Fallacious Pastry",
 		zMoveFrom: "Celebrate",
 		itemUser: ["Alcremie-Black-Forest", "Alcremie"],
-		num: -38,
+		num: -34,
 		gen: 8,
 	},
 	aloraichiumz: {
@@ -350,14 +350,14 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 757,
 		gen: 6,
 	},
-	remiuscelebliumz: {
+	remiuscelebiumz: {
 		name: "Remiuscelebium Z",
 		spritenum: 690,
 		onTakeItem: false,
 		zMove: "Temporal Desolation",
 		zMoveFrom: "Earth Power",
-		itemUser: ["Celebi-Auamagari"],
-		num: -49,
+		itemUser: ["Celebi-Remius"],
+		num: -28,
 		gen: 8,
 	},
 	babiriberry: {
@@ -407,7 +407,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -45,
+		num: -21,
 		gen: 8,
 	},
 	beastball: {
@@ -596,7 +596,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Bountiful Forgiveness",
 		zMoveFrom: "Soft-Boiled",
 		itemUser: ["Blissey"],
-		num: -22,
+		num: -26,
 		gen: 8,
 	},
 	blueorb: {
@@ -731,7 +731,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		fling: {
 			basePower: 40,
 		},
-		num: -18,
+		num: -36,
 		gen: 7,
 	},
 	cameruptite: {
@@ -757,7 +757,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -11,
+		num: -14,
 		gen: 8,
 	},
 	celebiumz: {
@@ -767,7 +767,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Temporal Reforestation",
 		zMoveFrom: "Giga Drain",
 		itemUser: ["Celebi"],
-		num: -25,
+		num: -28,
 		gen: 8,
 	},
 	cellbattery: {
@@ -1063,7 +1063,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -26,
+		num: -24,
 		gen: 8,
 	},
 	clawfossil: {
@@ -1151,7 +1151,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Infinite Potential Geyser",
 		zMoveFrom: "Photon Geyser",
 		itemUser: ["Cosmoem"],
-		num: -24,
+		num: -33,
 		gen: 8,
 	},
 	coverfossil: {
@@ -1182,7 +1182,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -41,
+		num: -17,
 		gen: 8,
 	},
 	custapberry: {
@@ -1278,7 +1278,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -42,
+		num: -18,
 		gen: 8,
 	},
 	dawnstone: {
@@ -1342,7 +1342,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -8,
+		num: -11,
 		gen: 8,
 	},
 	destinyknot: {
@@ -1515,7 +1515,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				pokemon.cureStatus();
 			}
 		},
-		num: -28,
+		num: -38,
 		gen: 8,
 	},
 	dreadplate: {
@@ -1567,7 +1567,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -6,
+		num: -9,
 		gen: 8,
 	},
 	durinberry: {
@@ -1647,7 +1647,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			pokemon.removeVolatile("infatuation");
 		},
-		num: -29,
+		num: -39,
 		gen: 8,
 	},
 	ejectbutton: {
@@ -2124,7 +2124,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -44,
+		num: -16,
 		gen: 8,
 	},
 	flowersweet: {
@@ -2189,7 +2189,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -9,
+		num: -12,
 		gen: 8,
 	},
 	focusband: {
@@ -2290,7 +2290,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onResidual(pokemon) {
 			pokemon.trySetStatus("fsb", pokemon);
 		},
-		num: -53,
+		num: -51,
 		gen: 8,
 	},
 	fullincense: {
@@ -2329,7 +2329,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			return true;
 		},
 		itemUser: ["Nihilego", "Guzzlord"],
-		num: -40,
+		num: -48,
 		gen: 8,
 	},
 	galaricacuff: {
@@ -2491,7 +2491,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			}
 		},
 		onEat() {},
-		num: -32,
+		num: -42,
 		gen: 8,
 	},
 	glalitite: {
@@ -2526,7 +2526,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -47,
+		num: -23,
 		gen: 8,
 	},
 	grassgem: {
@@ -2767,7 +2767,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "1,000 Burning Whips",
 		zMoveFrom: "Fire Lash",
 		itemUser: ["Heatmor"],
-		num: -20,
+		num: -31,
 		gen: 8,
 	},
 	heatrock: {
@@ -2975,7 +2975,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				source.addVolatile("gem");
 			}
 		},
-		num: -16,
+		num: -35,
 		gen: 8,
 	},
 	aeoniciumz: {
@@ -2986,7 +2986,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onTakeItem: false,
 		zMove: true,
 		zMoveType: "Aeonic",
-		num: -19,
+		num: -25,
 		gen: 7,
 	},
 	insectplate: {
@@ -3195,7 +3195,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -14,
+		num: -20,
 		gen: 8,
 	},
 	kommoniumz: {
@@ -3233,7 +3233,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			pokemon.trySetStatus("par", pokemon);
 			pokemon.trySetStatus("slp", pokemon);
 		},
-		num: -33,
+		num: -43,
 		gen: 8,
 	},
 	laggingtail: {
@@ -3329,7 +3329,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		boosts: {
 			def: 1, // For now this is set to def, but will need to work on this
 		},
-		num: -54,
+		num: -52,
 		gen: 8,
 	},
 	leafstone: {
@@ -3657,7 +3657,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -43,
+		num: -15,
 		gen: 8,
 	},
 	luxuryball: {
@@ -3876,7 +3876,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -3,
+		num: -4,
 		gen: 8,
 	},
 	mentalherb: {
@@ -4116,7 +4116,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -7,
+		num: -10,
 		gen: 8,
 	},
 	miloticite: {
@@ -4129,7 +4129,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -10,
+		num: -13,
 		gen: 8,
 	},
 	mimikiumz: {
@@ -4258,7 +4258,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			return true;
 		},
 		itemUser: ["Arceus-Remius"],
-		num: -51,
+		num: -49,
 		gen: 8,
 	},
 	mysticwater: {
@@ -4347,7 +4347,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			pokemon.trySetStatus("psn", pokemon);
 			pokemon.trySetStatus("slp", pokemon);
 		},
-		num: -36,
+		num: -46,
 		gen: 8,
 	},
 	noivernite: {
@@ -4360,7 +4360,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -46,
+		num: -22,
 		gen: 8,
 	},
 	nomelberry: {
@@ -4420,7 +4420,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				pokemon.cureStatus();
 			}
 		},
-		num: -31,
+		num: -41,
 		gen: 8,
 	},
 	occaberry: {
@@ -4457,7 +4457,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -4,
+		num: -7,
 		gen: 8,
 	},
 	oddincense: {
@@ -5047,7 +5047,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				pokemon.cureStatus();
 			}
 		},
-		num: -27,
+		num: -37,
 		gen: 8,
 	},
 	qualotberry: {
@@ -5614,7 +5614,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -13,
+		num: -19,
 		gen: 8,
 	},
 	sceptilite: {
@@ -5716,7 +5716,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				}
 			}
 		},
-		num: -52,
+		num: -50,
 		gen: 8,
 	},
 	sharpbeak: {
@@ -5866,7 +5866,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -48,
+		num: -3,
 		gen: 8,
 	},
 	sitrusberry: {
@@ -5930,7 +5930,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Beastly Awakening Punch",
 		zMoveFrom: "Giga Impact",
 		itemUser: ["Slaking"],
-		num: -39,
+		num: -30,
 		gen: 8,
 	},
 	slowbronite: {
@@ -6301,7 +6301,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			pokemon.removeVolatile("flinch");
 		},
-		num: -30,
+		num: -40,
 		gen: 8,
 	},
 	sunflorite: {
@@ -6314,7 +6314,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -5,
+		num: -8,
 		gen: 8,
 	},
 	sunstone: {
@@ -6474,7 +6474,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -50,
+		num: -5,
 		gen: 8,
 	},
 	togepiumz: {
@@ -6484,7 +6484,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "Perfect-Tempo Symphony",
 		zMoveFrom: "Metronome",
 		itemUser: ["Togepi", "Togetic", "Togekiss"],
-		num: -23,
+		num: -27,
 		gen: 8,
 	},
 	topoberry: {
@@ -6512,7 +6512,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			pokemon.trySetStatus("bewitchment", pokemon);
 			pokemon.trySetStatus("slp", pokemon);
 		},
-		num: -37,
+		num: -47,
 		gen: 8,
 	},
 	tougaberry: {
@@ -6540,7 +6540,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			pokemon.trySetStatus("brn", pokemon);
 			pokemon.trySetStatus("slp", pokemon);
 		},
-		num: -35,
+		num: -55,
 		gen: 8,
 	},
 	toxicorb: {
@@ -7565,7 +7565,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMove: "1,000,000 Butterfly Cascade",
 		zMoveFrom: "Bug Buzz",
 		itemUser: ["Vivillon", "Vivillon-Fancy", "Vivillon-Pokeball"],
-		num: -21,
+		num: -32,
 		gen: 8,
 	},
 	wacanberry: {
@@ -7864,7 +7864,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			pokemon.trySetStatus("whiplash", pokemon);
 			pokemon.trySetStatus("slp", pokemon);
 		},
-		num: -34,
+		num: -44,
 		gen: 8,
 	},
 	yanmegite: {
@@ -7877,7 +7877,7 @@ export const Items: { [itemid: string]: ItemData } = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: -12,
+		num: -6,
 		gen: 8,
 	},
 	zapplate: {
