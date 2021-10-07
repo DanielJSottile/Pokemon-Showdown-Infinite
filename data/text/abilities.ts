@@ -1264,8 +1264,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
 		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
 	},
-	relentlesskhamsim: {
-		name: "Relentless Khamsim",
+	relentlesskhamsin: {
+		name: "Relentless Khamsin",
 		desc: "On switch-in, the weather becomes extremely harsh sandstorm that prevents damaging Ice-type moves from executing, in addition to all the effects of Sandstorm. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by other Strong Weathers.",
 		shortDesc: "On switch-in, extremely harsh sandstorm begins until this Ability is not active in battle.",
 	},
