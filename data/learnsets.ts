@@ -17,7 +17,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			focusenergy: ["8M"],
 			powergem: ["8M"],
 			storedpower: ["8M"],
-			soulplunge: ["8T"],
 			innerpower: ["8M"],
 			roundhousekick: ["8M"],
 			defog: ["8M"],
@@ -42624,7 +42623,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	regice: {
 		learnset: {
 			hoarfrost: ["8M"],
-			soulplunge: ["8T"],
+			soulplunge: ["8M"],
 			reconstruction: ["8T"],
 			absolutezero: ["8T"],
 			iciclespear: ["8M"],
@@ -43042,7 +43041,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			soulplunge: ["8M"],
 			innerpower: ["8M"],
 			lifedew: ["8M"],
-			soulplunge: ["8T"],
 			ancientpower: ["8L1"],
 			aquaring: ["8L30"],
 			aquatail: ["8T", "8L15"],
@@ -43122,7 +43120,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			soulplunge: ["8M"],
 			innerpower: ["8M"],
 			pyroclasticblow: ["8M"],
-			soulplunge: ["8T"],
 			aerialace: ["8M"],
 			ancientpower: ["8L1"],
 			block: ["8T"],
@@ -49699,7 +49696,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			gravitybeam: ["8M"],
 			chaosleap: ["8M"],
 			innerpower: ["8M"],
-			soulplunge: ["8T"],
 			breakingswipe: ["8M"],
 			aerialace: ["8M"],
 			aircutter: ["8T"],
@@ -50177,7 +50173,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	cofagrigus: {
 		learnset: {
-			soulplunge: ["8T"],
 			terrainpulse: ["8T"],
 			absolutezero: ["8T"],
 			murkycorruption: ["8T"],
@@ -50333,7 +50328,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	arceusremius: {
 		learnset: {
 			wrath: ["8L100"],
-			soulplunge: ["8T"],
 			terrainpulse: ["8T"],
 			absolutezero: ["8T"],
 			murkycorruption: ["8T"],
@@ -67713,7 +67707,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			chaosleap: ["8M"],
 			innerpower: ["8M"],
 			fairyspell: ["8M"],
-			soulplunge: ["8T"],
+			soulplunge: ["8M"],
 			lifedew: ["8T"],
 			aromatherapy: ["8L1"],
 			aurorabeam: ["8L10"],
@@ -67864,7 +67858,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			highhorsepower: ["8M"],
 			shieldbreaker: ["8M"],
 			innerpower: ["8M"],
-			soulplunge: ["8T"],
+			soulplunge: ["8M"],
 			breakingswipe: ["8M"],
 			bind: ["8T", "8L18"],
 			bite: ["8L1"],
@@ -86468,7 +86462,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			chaosleap: ["8M"],
 			limitbreak: ["8M"],
 			inverseroom: ["8M"],
-			soulplunge: ["8T"],
 			defog: ["8T"],
 			snatch: ["8T"],
 			spite: ["8T"],
