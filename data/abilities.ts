@@ -1669,27 +1669,6 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 4,
 		num: 206,
 	},
-	glaciation: {
-		onStart(pokemon) {
-			if (this.suppressingAbility(pokemon)) return;
-			this.add("-ability", pokemon, "Glaciation");
-		},
-		onAnyBasePowerPriority: 20,
-		onAnyBasePower(basePower, source, target, move) {
-			if (
-				target === source ||
-				move.category === "Status" ||
-				move.type !== "Ice"
-			) { return; }
-			if (!move.auraBooster) move.auraBooster = this.effectState.target;
-			if (move.auraBooster !== this.effectState.target) return;
-			return this.chainModify([5448, 4096]);
-		},
-		isBreakable: true,
-		name: "Glaciation",
-		rating: 3,
-		num: -17,
-	},
 	gluttony: {
 		name: "Gluttony",
 		rating: 1.5,
