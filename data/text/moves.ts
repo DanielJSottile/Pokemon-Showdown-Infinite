@@ -751,10 +751,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 100% chance to burn the target if it had a stat stage raised this turn.",
 		shortDesc: "100% burns a target that had a stat rise this turn.",
 	},
-	blazingstrike: {
-		desc: "This move is always a critical hit and lowers the opponents Spe 1 stage.",
-		shortDesc: "Always results in a critical hit, lowers opp Spe -1.",
-		name: "Blazing Strike",
+	blazingstrikes: {
+		desc: "Hits three times. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit. Hits 3 times.",
+		name: "Blazing Strikes",
 	},
 	burnup: {
 		name: "Burn Up",
@@ -7206,9 +7206,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		},
 	},
 	wyvernblow: {
-		desc: "This move is always a critical hit and lowers the opponents Def 1 stage.",
-		shortDesc: "Always results in a critical hit, lowers opp Def -1.",
 		name: "Wyvern Blow",
+		desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit.",
 	},
 	xscissor: {
 		name: "X-Scissor",

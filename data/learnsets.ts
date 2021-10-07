@@ -78409,7 +78409,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			stoneedge: ["8M"],
 			substitute: ["8M"],
 			superpower: ["8M"],
-			blazingstrike: ["8L0"],
+			blazingstrikes: ["8L0"],
 			swift: ["8M"],
 			taunt: ["8M"],
 			thunderpunch: ["8M"],

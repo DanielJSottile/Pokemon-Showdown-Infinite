@@ -2481,19 +2481,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Fire",
 		contestType: "Tough",
 	},
-	blazingstrike: {
+	blazingstrikes: {
 		num: -38,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 25,
 		category: "Physical",
-		name: "Blazing Strike",
+		name: "Blazing Strikes",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1},
 		willCrit: true,
-		boosts: {
-			spe: -1,
-		},
+		multihit: 3,
 		secondary: null,
 		target: "normal",
 		type: "Fire",
@@ -23850,9 +23848,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1},
 		willCrit: true,
-		boosts: {
-			def: -1,
-		},
 		target: "normal",
 		type: "Dragon",
 		contestType: "Tough",

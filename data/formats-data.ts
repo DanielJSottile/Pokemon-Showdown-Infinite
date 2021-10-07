@@ -16318,7 +16318,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	urshifutigerclaw: {
 		randomBattleMoves: [
 			"closecombat",
-			"blazingstrike",
+			"blazingstrikes",
 			"thunderpunch",
 			"uturn",
 		],
@@ -16327,7 +16327,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"closecombat",
 			"thunderpunch",
 			"protect",
-			"blazingstrike",
+			"blazingstrikes",
 			"uturn",
 		],
 		tier: "OU",
@@ -16353,7 +16353,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"bulkup",
 			"drainpunch",
 			"substitute",
-			"blazingstrike",
+			"blazingstrikes",
 		],
 		tier: "OU",
 		doublesTier: "DOU",
