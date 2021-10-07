@@ -102,6 +102,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				!this.field.isWeather([
 					"desolateland",
 					"primordialsea",
+					"eternalwinter",
+					"relentlesskhamsim",
 					"deltastream",
 				])
 			) {
@@ -934,6 +936,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			const strongWeathers = [
 				"desolateland",
 				"primordialsea",
+				"eternalwinter",
+				"relentlesskhamsim",
 				"deltastream",
 			];
 			if (
@@ -964,6 +968,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			const strongWeathers = [
 				"desolateland",
 				"primordialsea",
+				"eternalwinter",
+				"relentlesskhamsim",
 				"deltastream",
 			];
 			if (
@@ -1219,26 +1225,37 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 1,
 		num: 194,
 	},
-	extinction: {
-		onStart(pokemon) {
-			if (this.suppressingAbility(pokemon)) return;
-			this.add("-ability", pokemon, "Extinction");
+	eternalwinter: {
+		onStart(source) {
+			this.field.setWeather("eternalwinter");
 		},
-		onAnyBasePowerPriority: 20,
-		onAnyBasePower(basePower, source, target, move) {
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = [
+				"desolateland",
+				"primordialsea",
+				"eternalwinter",
+				"relentlesskhamsim",
+				"deltastream",
+			];
 			if (
-				target === source ||
-				move.category === "Status" ||
-				move.type !== "Rock"
-			) { return; }
-			if (!move.auraBooster) move.auraBooster = this.effectState.target;
-			if (move.auraBooster !== this.effectState.target) return;
-			return this.chainModify([5448, 4096]);
+				this.field.getWeather().id === "eternalwinter" &&
+				!strongWeathers.includes(weather.id)
+			) { return false; }
 		},
-		isBreakable: true,
-		name: "Extinction",
-		rating: 3,
-		num: -18,
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility("eternalwinter")) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		name: "Eternal Winter",
+		rating: 4.5,
+		num: -17,
 	},
 	fairyaura: {
 		onStart(pokemon) {
@@ -1485,6 +1502,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				if (pokemon.species.id !== "castformrainy") { forme = "Castform-Rainy"; }
 				break;
 			case "hail":
+			case "eternalwinter":
 				if (pokemon.species.id !== "castformsnowy") { forme = "Castform-Snowy"; }
 				break;
 			default:
@@ -1650,27 +1668,6 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Galvanize",
 		rating: 4,
 		num: 206,
-	},
-	glaciation: {
-		onStart(pokemon) {
-			if (this.suppressingAbility(pokemon)) return;
-			this.add("-ability", pokemon, "Glaciation");
-		},
-		onAnyBasePowerPriority: 20,
-		onAnyBasePower(basePower, source, target, move) {
-			if (
-				target === source ||
-				move.category === "Status" ||
-				move.type !== "Ice"
-			) { return; }
-			if (!move.auraBooster) move.auraBooster = this.effectState.target;
-			if (move.auraBooster !== this.effectState.target) return;
-			return this.chainModify([5448, 4096]);
-		},
-		isBreakable: true,
-		name: "Glaciation",
-		rating: 3,
-		num: -17,
 	},
 	gluttony: {
 		name: "Gluttony",
@@ -2011,12 +2008,12 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	icebody: {
 		onWeather(target, source, effect) {
-			if (effect.id === "hail") {
+			if (["hail", "eternalwinter"].includes(effect.id)) {
 				this.heal(target.baseMaxhp / 16);
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (type === "hail") return false;
+			if (["hail", "eternalwinter"].includes(type)) return false;
 		},
 		name: "Ice Body",
 		rating: 1,
@@ -2025,7 +2022,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	iceface: {
 		onStart(pokemon) {
 			if (
-				this.field.isWeather("hail") &&
+				["hail", "eternalwinter"].includes(pokemon.effectiveWeather()) &&
 				pokemon.species.id === "eiscuenoice" &&
 				!pokemon.transformed
 			) {
@@ -2078,7 +2075,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			const pokemon = this.effectState.target;
 			if (!pokemon.hp) return;
 			if (
-				this.field.isWeather("hail") &&
+				["hail", "eternalwinter"].includes(pokemon.effectiveWeather()) &&
 				pokemon.species.id === "eiscuenoice" &&
 				!pokemon.transformed
 			) {
@@ -3199,7 +3196,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	overcoat: {
 		onImmunity(type, pokemon) {
-			if (type === "sandstorm" || type === "hail" || type === "powder") { return false; }
+			if (["sandstorm", "relentlesskhamsim", "hail", "eternalwinter", "powder"].includes(type)) { return false; }
 		},
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
@@ -3693,6 +3690,8 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			const strongWeathers = [
 				"desolateland",
 				"primordialsea",
+				"eternalwinter",
+				"relentlesskhamsim",
 				"deltastream",
 			];
 			if (
@@ -3957,6 +3956,38 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 4.5,
 		num: 144,
 	},
+	relentlesskhamsim: {
+		onStart(source) {
+			this.field.setWeather("relentlesskhamsim");
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = [
+				"desolateland",
+				"primordialsea",
+				"eternalwinter",
+				"relentlesskhamsim",
+				"deltastream",
+			];
+			if (
+				this.field.getWeather().id === "relentlesskhamsim" &&
+				!strongWeathers.includes(weather.id)
+			) { return false; }
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility("relentlesskhamsim")) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		name: "Relentless Khamsim",
+		rating: 4.5,
+		num: -17,
+	},
 	resolutegauntlet: {
 		onStart(pokemon) {
 			let activated = false;
@@ -4139,7 +4170,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	sandforce: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
-			if (this.field.isWeather("sandstorm")) {
+			if (["sandstorm", "relentlesskhamsim"].includes(attacker.effectiveWeather())) {
 				if (
 					move.type === "Rock" ||
 					move.type === "Ground" ||
@@ -4151,7 +4182,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (type === "sandstorm") return false;
+			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
 		},
 		name: "Sand Force",
 		rating: 2,
@@ -4159,12 +4190,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	sandrush: {
 		onModifySpe(spe, pokemon) {
-			if (this.field.isWeather("sandstorm")) {
+			if (
+				["sandstorm", "relentlesskhamsim"].includes(pokemon.effectiveWeather())
+			) {
 				return this.chainModify(1.8);
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (type === "sandstorm") return false;
+			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
 		},
 		name: "Sand Rush",
 		rating: 3,
@@ -4190,12 +4223,12 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	sandveil: {
 		onImmunity(type, pokemon) {
-			if (type === "sandstorm") return false;
+			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
 		},
 		onModifyAccuracyPriority: -1,
-		onModifyAccuracy(accuracy) {
+		onModifyAccuracy(accuracy, source) {
 			if (typeof accuracy !== "number") return;
-			if (this.field.isWeather("sandstorm")) {
+			if (["sandstorm", "relentlesskhamsim"].includes(source.effectiveWeather())) {
 				this.debug("Sand Veil - decreasing accuracy");
 				return this.chainModify([3277, 4096]);
 			}
@@ -4525,7 +4558,9 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	slushrush: {
 		onModifySpe(spe, pokemon) {
-			if (this.field.isWeather("hail")) {
+			if (
+				["hail", "eternalwinter"].includes(pokemon.effectiveWeather())
+			) {
 				return this.chainModify(1.8);
 			}
 		},
@@ -4546,12 +4581,12 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	snowcloak: {
 		onImmunity(type, pokemon) {
-			if (type === "hail") return false;
+			if (["hail", "eternalwinter"].includes(type)) return false;
 		},
 		onModifyAccuracyPriority: -1,
-		onModifyAccuracy(accuracy) {
+		onModifyAccuracy(accuracy, source) {
 			if (typeof accuracy !== "number") return;
-			if (this.field.isWeather("hail")) {
+			if (["hail", "eternalwinter"].includes(source.effectiveWeather())) {
 				this.debug("Snow Cloak - decreasing accuracy");
 				return this.chainModify([3277, 4096]);
 			}
