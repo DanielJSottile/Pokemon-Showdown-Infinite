@@ -3256,6 +3256,40 @@ export const Items: { [itemid: string]: ItemData } = {
 		gen: 2,
 		isPokeball: true,
 	},
+	featherduster: {
+		name: "Feather Duster",
+		spritenum: 667,
+		fling: {
+			basePower: 10,
+		},
+		onStart(source) {
+			let success = false;
+			const removeAll = [
+				"spikes",
+				"toxicspikes",
+				"stealthrock",
+				"stickyweb",
+				"metalshard",
+			];
+			for (const sideCondition of removeAll) {
+				if (source.side.removeSideCondition(sideCondition)) {
+					this.add(
+						"-sideend",
+						source.side,
+						this.dex.conditions.get(sideCondition).name,
+						"[from] item: Feather Duster",
+						"[of] " + source
+					);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			source.useItem();
+			return success;
+		},
+		num: -54,
+		gen: 8,
+	},
 	fightinggem: {
 		name: "Fighting Gem",
 		spritenum: 139,
@@ -4474,6 +4508,18 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 1120,
 		gen: 8,
 		// Hazard Immunity implemented in moves.js
+	},
+	heavyweights: {
+		name: "Heavy Weights",
+		spritenum: 147,
+		fling: {
+			basePower: 130,
+		},
+		onModifyWeight(weighthg) {
+			return this.trunc(weighthg * 2);
+		},
+		num: -53,
+		gen: 8,
 	},
 	helixfossil: {
 		name: "Helix Fossil",
