@@ -103,7 +103,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 					"desolateland",
 					"primordialsea",
 					"eternalwinter",
-					"relentlesskhamsim",
+					"relentlesskhamsin",
 					"deltastream",
 				])
 			) {
@@ -937,7 +937,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				"desolateland",
 				"primordialsea",
 				"eternalwinter",
-				"relentlesskhamsim",
+				"relentlesskhamsin",
 				"deltastream",
 			];
 			if (
@@ -969,7 +969,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				"desolateland",
 				"primordialsea",
 				"eternalwinter",
-				"relentlesskhamsim",
+				"relentlesskhamsin",
 				"deltastream",
 			];
 			if (
@@ -1234,7 +1234,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				"desolateland",
 				"primordialsea",
 				"eternalwinter",
-				"relentlesskhamsim",
+				"relentlesskhamsin",
 				"deltastream",
 			];
 			if (
@@ -3210,7 +3210,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	overcoat: {
 		onImmunity(type, pokemon) {
-			if (["sandstorm", "relentlesskhamsim", "hail", "eternalwinter", "powder"].includes(type)) { return false; }
+			if (["sandstorm", "relentlesskhamsin", "hail", "eternalwinter", "powder"].includes(type)) { return false; }
 		},
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
@@ -3706,7 +3706,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 				"desolateland",
 				"primordialsea",
 				"eternalwinter",
-				"relentlesskhamsim",
+				"relentlesskhamsin",
 				"deltastream",
 			];
 			if (
@@ -3971,20 +3971,20 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 4.5,
 		num: 144,
 	},
-	relentlesskhamsim: {
+	relentlesskhamsin: {
 		onStart(source) {
-			this.field.setWeather("relentlesskhamsim");
+			this.field.setWeather("relentlesskhamsin");
 		},
 		onAnySetWeather(target, source, weather) {
 			const strongWeathers = [
 				"desolateland",
 				"primordialsea",
 				"eternalwinter",
-				"relentlesskhamsim",
+				"relentlesskhamsin",
 				"deltastream",
 			];
 			if (
-				this.field.getWeather().id === "relentlesskhamsim" &&
+				this.field.getWeather().id === "relentlesskhamsin" &&
 				!strongWeathers.includes(weather.id)
 			) { return false; }
 		},
@@ -3992,14 +3992,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			if (this.field.weatherState.source !== pokemon) return;
 			for (const target of this.getAllActive()) {
 				if (target === pokemon) continue;
-				if (target.hasAbility("relentlesskhamsim")) {
+				if (target.hasAbility("relentlesskhamsin")) {
 					this.field.weatherState.source = target;
 					return;
 				}
 			}
 			this.field.clearWeather();
 		},
-		name: "Relentless Khamsim",
+		name: "Relentless Khamsin",
 		rating: 4.5,
 		num: -17,
 	},
@@ -4185,7 +4185,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	sandforce: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
-			if (["sandstorm", "relentlesskhamsim"].includes(attacker.effectiveWeather())) {
+			if (["sandstorm", "relentlesskhamsin"].includes(attacker.effectiveWeather())) {
 				if (
 					move.type === "Rock" ||
 					move.type === "Ground" ||
@@ -4197,7 +4197,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
+			if (["sandstorm", "relentlesskhamsin"].includes(type)) return false;
 		},
 		name: "Sand Force",
 		rating: 2,
@@ -4206,13 +4206,13 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	sandrush: {
 		onModifySpe(spe, pokemon) {
 			if (
-				["sandstorm", "relentlesskhamsim"].includes(pokemon.effectiveWeather())
+				["sandstorm", "relentlesskhamsin"].includes(pokemon.effectiveWeather())
 			) {
 				return this.chainModify(1.8);
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
+			if (["sandstorm", "relentlesskhamsin"].includes(type)) return false;
 		},
 		name: "Sand Rush",
 		rating: 3,
@@ -4238,12 +4238,12 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	sandveil: {
 		onImmunity(type, pokemon) {
-			if (["sandstorm", "relentlesskhamsim"].includes(type)) return false;
+			if (["sandstorm", "relentlesskhamsin"].includes(type)) return false;
 		},
 		onModifyAccuracyPriority: -1,
 		onModifyAccuracy(accuracy, source) {
 			if (typeof accuracy !== "number") return;
-			if (["sandstorm", "relentlesskhamsim"].includes(source.effectiveWeather())) {
+			if (["sandstorm", "relentlesskhamsin"].includes(source.effectiveWeather())) {
 				this.debug("Sand Veil - decreasing accuracy");
 				return this.chainModify([3277, 4096]);
 			}
