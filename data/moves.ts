@@ -640,7 +640,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
-		type: "Infinite",
+		type: "Dark",
 		zMove: {basePower: 150},
 		maxMove: {basePower: 120},
 		contestType: "Popular",
@@ -663,7 +663,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "normal",
-		type: "Infinite",
+		type: "Aeonic",
 		contestType: "Clever",
 	},
 	appleacid: {
@@ -1255,7 +1255,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Infinite",
+		type: "Dark",
 		zMove: {boost: {def: 2}},
 		contestType: "Cool",
 	},
@@ -14618,7 +14618,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "adjacentFoe",
-		type: "Infinite",
+		type: "Aeonic",
 		contestType: "Beautiful",
 	},
 	maxflare: {
@@ -19304,7 +19304,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "allAdjacent",
-		type: "Infinite",
+		type: "Electric",
 		contestType: "Popular",
 	},
 	pyroclasticblow: {
@@ -19687,7 +19687,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Infinite",
+		type: "Rock",
 		zMove: {effect: "clearnegativeboost"},
 		contestType: "Popular",
 	},
@@ -22492,12 +22492,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		// Please recheck to see if this works, otherwise will need to implement
-		// it in the same as the old one
 		useSourceDefensiveAsOffensive: true,
 		secondary: null,
 		target: "normal",
-		type: "Infinite",
+		type: "Ghost",
 		contestType: "Clever",
 	},
 	soulstealing7starstrike: {
@@ -25985,13 +25983,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				move.type = "Water";
 				break;
 			case "sandstorm":
+			case "relentlesskhamsin":
 				move.type = "Rock";
 				break;
 			case "hail":
+			case "eternalwinter":
 				move.type = "Ice";
-				break;
-			case "maelstrom":
-				move.type = "Infinite";
 				break;
 			case "deltastream":
 				move.type = "Flying";
@@ -26005,8 +26002,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 			case "raindance":
 			case "primordialsea":
 			case "sandstorm":
+			case "relentlesskhamsin":
 			case "hail":
-			case "maelstrom":
+			case "eternalwinter":
 			case "deltastream":
 				move.basePower *= 2;
 				break;

@@ -45,7 +45,7 @@ export class BattleActions {
 		Bug: "Savage Spin-Out",
 		Psychic: "Shattered Psyche",
 		Ice: "Subzero Slammer",
-		Infinite: "Dimensional Distortion",
+		Aeonic: "Dimensional Distortion",
 		Flying: "Supersonic Skystrike",
 		Ground: "Tectonic Rage",
 		Fairy: "Twinkle Tackle",

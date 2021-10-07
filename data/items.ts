@@ -3946,11 +3946,11 @@ export const Items: { [itemid: string]: ItemData } = {
 		isBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Infinite",
+			type: "Aeonic",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			if (
-				move.type === "Infinite" &&
+				move.type === "Aeonic" &&
 				target.getMoveHitData(move).typeMod > 0 &&
 				(!target.volatiles["substitute"] ||
 					move.flags["bypasssub"] ||
@@ -4644,46 +4644,27 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 799,
 		gen: 7,
 	},
-	infinitegem: {
-		name: "Infinite Gem",
+	aeonicgem: {
+		name: "Aeonic Gem",
 		spritenum: 89,
 		isGem: true,
 		onSourceTryPrimaryHit(target, source, move) {
 			if (target === source || move.category === "Status") return;
-			if (move.type === "Infinite" && source.useItem()) {
+			if (move.type === "Aeonic" && source.useItem()) {
 				source.addVolatile("gem");
 			}
 		},
 		num: -16,
 		gen: 8,
 	},
-	infinitememory: {
-		name: "Infinite Memory",
-		spritenum: 677,
-		onMemory: "Infinite",
-		onTakeItem(item, pokemon, source) {
-			if (
-				(source && source.baseSpecies.num === 773) ||
-				pokemon.baseSpecies.num === 773
-			) {
-				return false;
-			}
-			return true;
-		},
-		forcedForme: ["Silvally-Infinite"],
-		itemUser: ["Silvally-Infinite"],
-		num: -17,
-		gen: 7,
-	},
-	infinitiumz: {
-		name: "Infinitium Z",
+	aeoniciumz: {
+		name: "Aeonicium Z",
 		spritenum: 636,
-		onPlate: "Infinite",
-		onMemory: "Infinite",
+		onPlate: "Aeonic",
+		onMemory: "Aeonic",
 		onTakeItem: false,
 		zMove: true,
-		zMoveType: "Infinite",
-		forcedForme: ["Arceus-Infinite", "Silvally-Infinite"],
+		zMoveType: "Aeonic",
 		num: -19,
 		gen: 7,
 	},
@@ -10283,29 +10264,6 @@ export const Items: { [itemid: string]: ItemData } = {
 		},
 		num: 83,
 		gen: 1,
-	},
-	timeplate: {
-		name: "Time Plate",
-		spritenum: 463,
-		onPlate: "Infinite",
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move.type === "Infinite") {
-				return this.chainModify([4915, 4096]);
-			}
-		},
-		onTakeItem(item, pokemon, source) {
-			if (
-				(source && source.baseSpecies.num === 493) ||
-				pokemon.baseSpecies.num === 493
-			) {
-				return false;
-			}
-			return true;
-		},
-		forcedForme: ["Arceus-Infinite"],
-		num: -15,
-		gen: 8,
 	},
 	timerball: {
 		name: "Timer Ball",
