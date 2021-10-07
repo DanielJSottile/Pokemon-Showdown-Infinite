@@ -640,7 +640,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
-		type: "Infinite",
+		type: "Dark",
 		zMove: {basePower: 150},
 		maxMove: {basePower: 120},
 		contestType: "Popular",
@@ -663,7 +663,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "normal",
-		type: "Infinite",
+		type: "Aeonic",
 		contestType: "Clever",
 	},
 	appleacid: {
@@ -1255,7 +1255,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Infinite",
+		type: "Dark",
 		zMove: {boost: {def: 2}},
 		contestType: "Cool",
 	},
@@ -2677,7 +2677,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		forceSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Infinite",
+		type: "Steel",
 		contestType: "Cool",
 	},
 	charge: {
@@ -6987,7 +6987,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "any",
-		type: "Infinite",
+		type: "Aeonic",
 		contestType: "Beautiful",
 	},
 	gastroacid: {
@@ -8771,7 +8771,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			volatileStatus: "confusion",
 		},
 		target: "normal",
-		type: "Infinite",
+		type: "Psychic",
 		contestType: "Beautiful",
 	},
 	growl: {
@@ -10954,30 +10954,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Ice",
 		contestType: "Clever",
 	},
-	innerpowerinfinite: {
-		num: -22,
-		accuracy: 100,
-		basePower: 60,
-		basePowerCallback(pokemon, target, move) {
-			if (
-				pokemon.species.name === "Unown-Alphabet" &&
-				pokemon.hasAbility("unownsspell")
-			) {
-				return move.basePower + 30;
-			}
-			return move.basePower;
-		},
-		category: "Physical",
-		realMove: "Inner Power",
-		name: "Inner Power Infinite",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: null,
-		target: "normal",
-		type: "Infinite",
-		contestType: "Clever",
-	},
 	innerpowerpoison: {
 		num: -22,
 		accuracy: 100,
@@ -11240,7 +11216,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Infinite",
+		type: "Psychic",
 		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
@@ -12083,7 +12059,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Infinite",
+		type: "Normal",
 		zMove: {effect: "heal"},
 		contestType: "Cute",
 	},
@@ -12367,22 +12343,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Fighting",
 		contestType: "Cool",
-	},
-	maelstrom: {
-		num: -4,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Maelstrom",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		weather: "Maelstrom",
-		secondary: null,
-		target: "all",
-		type: "Infinite",
-		zMove: {boost: {spe: 1}},
-		contestType: "Clever",
 	},
 	magicalleaf: {
 		num: 345,
@@ -12809,7 +12769,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "adjacentFoe",
-		type: "Infinite",
+		type: "Aeonic",
 		contestType: "Beautiful",
 	},
 	maxflare: {
@@ -15330,7 +15290,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Infinite",
+		type: "Aeonic",
 		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
@@ -16843,7 +16803,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "allAdjacent",
-		type: "Infinite",
+		type: "Electric",
 		contestType: "Popular",
 	},
 	quash: {
@@ -17211,7 +17171,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Infinite",
+		type: "Rock",
 		zMove: {effect: "clearnegativeboost"},
 		contestType: "Popular",
 	},
@@ -19949,12 +19909,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		// Please recheck to see if this works, otherwise will need to implement
-		// it in the same as the old one
 		useSourceDefensiveAsOffensive: true,
 		secondary: null,
 		target: "normal",
-		type: "Infinite",
+		type: "Ghost",
 		contestType: "Clever",
 	},
 	soulstealing7starstrike: {
@@ -23425,13 +23383,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 				move.type = "Water";
 				break;
 			case "sandstorm":
+			case "relentlesskhamsin":
 				move.type = "Rock";
 				break;
 			case "hail":
+			case "eternalwinter":
 				move.type = "Ice";
-				break;
-			case "maelstrom":
-				move.type = "Infinite";
 				break;
 			case "deltastream":
 				move.type = "Flying";
@@ -23445,8 +23402,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 			case "raindance":
 			case "primordialsea":
 			case "sandstorm":
+			case "relentlesskhamsin":
 			case "hail":
-			case "maelstrom":
+			case "eternalwinter":
 			case "deltastream":
 				move.basePower *= 2;
 				break;

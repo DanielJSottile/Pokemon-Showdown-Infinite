@@ -318,7 +318,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	cosmoemiumz: {
 		name: "Cosmoemium Z",
-		desc: "If held by a Cosmoem with Photon Geyser, it can use Infinite Potential Geyser.",
+		desc: "If held by a Cosmoem with Photon Geyser, it can use Aeonic Potential Geyser.",
 	},
 	coverfossil: {
 		name: "Cover Fossil",
@@ -742,7 +742,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	ginemaberry: {
 		name: "Ginema Berry",
-		desc: "Halves damage taken from a supereffective Infinite-type attack. Single use.",
+		desc: "Halves damage taken from a supereffective Aeonic-type attack. Single use.",
 	},
 	glalitite: {
 		name: "Glalitite",
@@ -905,17 +905,13 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Incinium Z",
 		desc: "If held by an Incineroar with Darkest Lariat, it can use Malicious Moonsault.",
 	},
-	infinitegem: {
-		name: "Infinite Gem",
-		desc: "Holder's first successful Infinite-type attack will have 1.3x power. Single use.",
+	aeonicgem: {
+		name: "Aeonic Gem",
+		desc: "Holder's first successful Aeonic-type attack will have 1.3x power. Single use.",
 	},
-	infinitememory: {
-		name: "Infinie Memory",
-		desc: "Holder's Multi-Attack is Infinite type.",
-	},
-	infinitiumz: {
+	aeoniciumz: {
 		name: "Infinitium Z",
-		desc: "If holder has an Infinite move, this item allows it to use an Infinite Z-Move.",
+		desc: "If holder has an Aeonic move, this item allows it to use an Aeonic Z-Move.",
 	},
 	insectplate: {
 		name: "Insect Plate",
@@ -1932,10 +1928,6 @@ export const ItemsText: {[k: string]: ItemText} = {
 		gen7: {
 			desc: "Evolves Pikachu into Raichu or Alolan Raichu, Eevee into Jolteon, and Eelektrik into Eelektross when used.",
 		},
-	},
-	timeplate: {
-		name: "Time Plate",
-		desc: "Holder's Infinite-type attacks have 1.2x power. Judgment is Infinite type.",
 	},
 	timerball: {
 		name: "Timer Ball",

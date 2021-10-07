@@ -6887,9 +6887,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	castformsandy: {
 		randomBattleMoves: ["sandstorm", "blizzard", "fireblast", "weatherball"],
 	},
-	castformnasty: {
-		randomBattleMoves: ["maelstrom", "blizzard", "fireblast", "weatherball"],
-	},
 	kecleon: {
 		randomBattleMoves: [
 			"fakeout",
@@ -9766,24 +9763,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 	},
 	arceusice: {
-		randomBattleMoves: [
-			"calmmind",
-			"judgment",
-			"thunderbolt",
-			"fireblast",
-			"recover",
-		],
-		randomDoubleBattleMoves: [
-			"calmmind",
-			"judgment",
-			"thunderbolt",
-			"focusblast",
-			"recover",
-			"protect",
-			"icywind",
-		],
-	},
-	arceusinfinite: {
 		randomBattleMoves: [
 			"calmmind",
 			"judgment",
@@ -14640,26 +14619,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 
 		tier: "NU",
-		doublesTier: "(DUU)",
-	},
-	silvallyinfinite: {
-		randomBattleMoves: [
-			"multiattack",
-			"thunderbolt",
-			"flamethrower",
-			"uturn",
-			"toxic",
-		],
-		randomDoubleBattleMoves: [
-			"protect",
-			"multiattack",
-			"thunderbolt",
-			"partingshot",
-			"uturn",
-			"thunderwave",
-		],
-
-		tier: "RUBL",
 		doublesTier: "(DUU)",
 	},
 	silvallypoison: {
