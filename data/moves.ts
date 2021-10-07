@@ -26408,9 +26408,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1},
 		willCrit: true,
-		boosts: {
-			def: -1,
-		},
 		target: "normal",
 		type: "Dragon",
 		contestType: "Tough",

@@ -16314,7 +16314,7 @@
 // 	urshifutigerclaw: {
 // 		randomBattleMoves: [
 // 			"closecombat",
-// 			"blazingstrike",
+// 			"blazingstrikes",
 // 			"thunderpunch",
 // 			"uturn",
 // 		],
@@ -16323,7 +16323,7 @@
 // 			"closecombat",
 // 			"thunderpunch",
 // 			"protect",
-// 			"blazingstrike",
+// 			"blazingstrikes",
 // 			"uturn",
 // 		],
 // 		tier: "OU",
@@ -16349,7 +16349,7 @@
 // 			"bulkup",
 // 			"drainpunch",
 // 			"substitute",
-// 			"blazingstrike",
+// 			"blazingstrikes",
 // 		],
 // 		tier: "OU",
 // 		doublesTier: "DOU",
