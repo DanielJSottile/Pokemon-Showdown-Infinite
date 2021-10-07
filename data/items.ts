@@ -3018,18 +3018,8 @@ export const Items: { [itemid: string]: ItemData } = {
 				return this.chainModify([4915, 4096]);
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if (
-				(source && source.baseSpecies.num === 493) ||
-				pokemon.baseSpecies.num === 493
-			) {
-				return false;
-			}
-			return true;
-		},
-		forcedForme: ["Arceus-Bug"],
-		num: 308,
-		gen: 4,
+		num: -16,
+		gen: 8,
 	},
 	ironball: {
 		name: "Iron Ball",
@@ -3063,18 +3053,8 @@ export const Items: { [itemid: string]: ItemData } = {
 				return this.chainModify([4915, 4096]);
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if (
-				(source && source.baseSpecies.num === 493) ||
-				pokemon.baseSpecies.num === 493
-			) {
-				return false;
-			}
-			return true;
-		},
-		forcedForme: ["Arceus-Steel"],
-		num: 313,
-		gen: 4,
+		num: -16,
+		gen: 8,
 	},
 	jabocaberry: {
 		name: "Jaboca Berry",
@@ -4353,8 +4333,13 @@ export const Items: { [itemid: string]: ItemData } = {
 				return this.chainModify([4915, 4096]);
 			}
 		},
-		num: 246,
-		gen: 2,
+		onEat(pokemon) {
+			if (pokemon.status === "blindness") {
+				pokemon.cureStatus();
+			}
+		},
+		num: -31,
+		gen: 8,
 	},
 	ninikuberry: {
 		name: "Niniku Berry",
@@ -4402,8 +4387,8 @@ export const Items: { [itemid: string]: ItemData } = {
 		spritenum: 306,
 		isBerry: true,
 		naturalGift: {
-			basePower: 90,
-			type: "Dragon",
+			basePower: 80,
+			type: "Dark",
 		},
 		onEat: false,
 		num: 178,
