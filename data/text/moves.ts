@@ -2928,9 +2928,6 @@ export const MovesText: {[k: string]: MoveText} = {
 	hiddenpowerice: {
 		name: "Hidden Power Ice",
 	},
-	hiddenpowerinfinite: {
-		name: "Hidden Power Infinite",
-	},
 	hiddenpowerpoison: {
 		name: "Hidden Power Poison",
 	},
@@ -3266,9 +3263,6 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	innerpowerice: {
 		name: "Inner Power Ice",
-	},
-	innerpowerinfinite: {
-		name: "Inner Power Infinite",
 	},
 	innerpowerpoison: {
 		name: "Inner Power Poison",
@@ -3629,11 +3623,6 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Mach Punch",
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
-	},
-	maelstrom: {
-		name: "Maelstrom",
-		desc: "For 5 turns, the weather becomes Maelstrom. At the end of each turn except the last, all active Pokemon lose 1/8 of their maximum HP, rounded down, unless they are an Infinte type or have the Gravity Well, Magic Guard, or Overcoat Abilities. Lasts for 8 turns if the user is holding Calamity Stone. Fails if the current weather is Maelstrom.",
-		shortDesc: "For 5 turns, Maelstrom weather does 1/8th damage to non-Infinte type Pokemon.",
 	},
 	magicalleaf: {
 		name: "Magical Leaf",
