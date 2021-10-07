@@ -753,6 +753,88 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.add('-weather', 'none');
 		},
 	},
+	relentlesskhamsim: {
+		name: 'Relentless Khamsim',
+		effectType: 'Weather',
+		duration: 0,
+		onTryMovePriority: 1,
+		onTryMove(attacker, defender, move) {
+			if (move.type === 'Ice' && move.category !== 'Status') {
+				this.debug('Relentless Khamsim ice suppress');
+				this.add('-fail', attacker, move, '[from] Relentless Khamsim');
+				this.attrLastMove('[still]');
+				return null;
+			}
+		},
+		// This should be applied directly to the stat before any of the other modifiers are chained
+		// So we give it increased priority.
+		onModifySpDPriority: 10,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.hasType('Rock') && this.field.isWeather('relentlesskhamsim')) {
+				return this.modify(spd, 1.3);
+			}
+		},
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				if (this.gen <= 5) this.effectState.duration = 0;
+				this.add('-weather', 'Relentless Khamsim', '[from] ability: ' + effect, '[of] ' + source);
+			} else {
+				this.add('-weather', 'Relentless Khamsim');
+			}
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'Relentless Khamsim', '[upkeep]');
+			if (this.field.isWeather('relentlesskhamsim')) this.eachEvent('Weather');
+		},
+		onWeather(target) {
+			this.damage(target.baseMaxhp / 16);
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
+	eternalwinter: {
+		name: 'Eternal Winter',
+		effectType: 'Weather',
+		duration: 0,
+		onTryMovePriority: 1,
+		onTryMove(attacker, defender, move) {
+			if (move.type === 'Rock' && move.category !== 'Status') {
+				this.debug('Eternal Winter rock suppress');
+				this.add('-fail', attacker, move, '[from] Eternal Winter');
+				this.attrLastMove('[still]');
+				return null;
+			}
+		},
+		// This should be applied directly to the stat before any of the other modifiers are chained
+		// So we give it increased priority.
+		onModifyDefPriority: 10,
+		onModifyDef(def, pokemon) {
+			if (pokemon.hasType('Ice') && this.field.isWeather('eternalwinter')) {
+				return this.modify(def, 1.3);
+			}
+		},
+		onFieldStart(field, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				if (this.gen <= 5) this.effectState.duration = 0;
+				this.add('-weather', 'Eternal Winter', '[from] ability: ' + effect, '[of] ' + source);
+			} else {
+				this.add('-weather', 'Eternal Winter');
+			}
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'Eternal Winter', '[upkeep]');
+			if (this.field.isWeather('eternalwinter')) this.eachEvent('Weather');
+		},
+		onWeather(target) {
+			this.damage(target.baseMaxhp / 16);
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
 	maelstrom: {
 		name: 'Maelstrom',
 		effectType: 'Weather',

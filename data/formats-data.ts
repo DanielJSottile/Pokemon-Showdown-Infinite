@@ -16534,7 +16534,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"uturn",
 			"swordsdance",
 			"skyattack",
-			"extremespeed"
+			"extremespeed",
 		],
 		tier: "RUBL",
 		doublesTier: "(DUU)",
