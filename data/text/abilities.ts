@@ -373,12 +373,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
 		shortDesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.",
 	},
-	extinction: {
-		name: "Extinction",
-		desc: "While this Pokemon is active, the power of Rock-type moves used by active Pokemon is multiplied by 1.33.",
-		shortDesc: "While this Pokemon is active, a Rock move used by any Pokemon has 1.33x power.",
-
-		start: "  [POKEMON] is emanating an aura of doom!",
+	eternalwinter: {
+		name: "Eternal Winter",
+		desc: "On switch-in, the weather becomes extremely harsh hail that prevents damaging Rock-type moves from executing, in addition to all the effects of Hail. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by other Strong Weathers.",
+		shortDesc: "On switch-in, extremely harsh hail begins until this Ability is not active in battle.",
 	},
 	fairyaura: {
 		name: "Fairy Aura",
@@ -491,13 +489,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Galvanize",
 		desc: "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type and have 1.2x power.",
-	},
-	glaciation: {
-		name: "Glaciation",
-		desc: "While this Pokemon is active, the power of Ice-type moves used by active Pokemon is multiplied by 1.33.",
-		shortDesc: "While this Pokemon is active, a Ice move used by any Pokemon has 1.33x power.",
-
-		start: "  [POKEMON] is emanating a chilling aura!",
 	},
 	gluttony: {
 		name: "Gluttony",
@@ -1202,6 +1193,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	regenerator: {
 		name: "Regenerator",
 		shortDesc: "This Pokemon restores 1/4 of its maximum HP, rounded down, when it switches out.",
+	},
+	relentlesskhamsim: {
+		name: "Relentless Khamsim",
+		desc: "On switch-in, the weather becomes extremely harsh sandstorm that prevents damaging Ice-type moves from executing, in addition to all the effects of Sandstorm. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by other Strong Weathers.",
+		shortDesc: "On switch-in, extremely harsh sandstorm begins until this Ability is not active in battle.",
 	},
 	resolutegauntlet: {
 		name: "Resolute Gauntlet",
