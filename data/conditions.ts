@@ -748,15 +748,15 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.add('-weather', 'none');
 		},
 	},
-	relentlesskhamsim: {
-		name: 'Relentless Khamsim',
+	relentlesskhamsin: {
+		name: 'Relentless Khamsin',
 		effectType: 'Weather',
 		duration: 0,
 		onTryMovePriority: 1,
 		onTryMove(attacker, defender, move) {
 			if (move.type === 'Ice' && move.category !== 'Status') {
-				this.debug('Relentless Khamsim ice suppress');
-				this.add('-fail', attacker, move, '[from] Relentless Khamsim');
+				this.debug('Relentless Khamsin ice suppress');
+				this.add('-fail', attacker, move, '[from] Relentless Khamsin');
 				this.attrLastMove('[still]');
 				return null;
 			}
@@ -765,22 +765,22 @@ export const Conditions: {[k: string]: ConditionData} = {
 		// So we give it increased priority.
 		onModifySpDPriority: 10,
 		onModifySpD(spd, pokemon) {
-			if (pokemon.hasType('Rock') && this.field.isWeather('relentlesskhamsim')) {
+			if (pokemon.hasType('Rock') && this.field.isWeather('relentlesskhamsin')) {
 				return this.modify(spd, 1.3);
 			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'Relentless Khamsim', '[from] ability: ' + effect, '[of] ' + source);
+				this.add('-weather', 'Relentless Khamsin', '[from] ability: ' + effect, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Relentless Khamsim');
+				this.add('-weather', 'Relentless Khamsin');
 			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'Relentless Khamsim', '[upkeep]');
-			if (this.field.isWeather('relentlesskhamsim')) this.eachEvent('Weather');
+			this.add('-weather', 'Relentless Khamsin', '[upkeep]');
+			if (this.field.isWeather('relentlesskhamsin')) this.eachEvent('Weather');
 		},
 		onWeather(target) {
 			this.damage(target.baseMaxhp / 16);

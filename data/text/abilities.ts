@@ -1194,8 +1194,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Regenerator",
 		shortDesc: "This Pokemon restores 1/4 of its maximum HP, rounded down, when it switches out.",
 	},
-	relentlesskhamsim: {
-		name: "Relentless Khamsim",
+	relentlesskhamsin: {
+		name: "Relentless Khamsin",
 		desc: "On switch-in, the weather becomes extremely harsh sandstorm that prevents damaging Ice-type moves from executing, in addition to all the effects of Sandstorm. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by other Strong Weathers.",
 		shortDesc: "On switch-in, extremely harsh sandstorm begins until this Ability is not active in battle.",
 	},
