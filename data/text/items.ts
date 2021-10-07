@@ -559,6 +559,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Fast Ball",
 		desc: "A Poke Ball that makes it easier to catch Pokemon which are quick to run away.",
 	},
+	featherduster: {
+		name: "Feather Duster",
+		desc: "An item to be held by a Pokémon. It clears all entry hazards from the user's side of the field upon entry.  It can only be used once.",
+	},
 	fightinggem: {
 		name: "Fighting Gem",
 		desc: "Holder's first successful Fighting-type attack will have 1.3x power. Single use.",
@@ -843,6 +847,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 	heavydutyboots: {
 		name: "Heavy-Duty Boots",
 		desc: "When switching in, the holder is unaffected by hazards on its side of the field.",
+	},
+	heavyweights: {
+		name: "Heavy Weights",
+		desc: "An item to be held by a Pokémon. It doubles the weight of the holder.",
 	},
 	helixfossil: {
 		name: "Helix Fossil",
