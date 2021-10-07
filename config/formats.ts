@@ -110,199 +110,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
-	},
-	{
-		name: "[Gen 8] ZU",
-		desc: `The unofficial usage-based tier below PU.`,
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3687415/">ZU Metagame Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3680071/">ZU Sample Teams</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3678037/">ZU Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['[Gen 8] PU'],
-		banlist: ['PU', 'Centiskorch', 'Drampa', 'Exeggutor-Alola', 'Gallade', 'Haunter', 'Magmortar', 'Magneton', 'Omastar', 'Rotom-Frost', 'Turtonator', 'Vikavolt', 'Silvally-Dragon', 'Silvally-Ground', 'Sneasel', 'Damp Rock', 'Grassy Seed'],
-	},
-	{
-		name: "[Gen 8] LC UU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['[Gen 8] LC'],
-		banlist: [
-			// LC OU
-			'Abra', 'Archen', 'Carvanha', 'Dewpider', 'Diglett-Base', 'Dwebble', 'Ferroseed', 'Foongus', 'Frillish', 'Grookey',
-			'Koffing', 'Larvesta', 'Magnemite', 'Mareanie', 'Mienfoo', 'Mudbray', 'Munchlax', 'Natu', 'Onix', 'Pawniard', 'Ponyta',
-			'Ponyta-Galar', 'Porygon', 'Slowpoke', 'Spritzee', 'Staryu', 'Timburr', 'Trapinch', 'Tyrunt', 'Vulpix',
-			// LC UUBL
-			'Farfetch\u2019d-Galar', 'Scorbunny', 'Shellder', 'Wingull',
-		],
-	},
-	{
-		name: "[Gen 8] CAP",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656824/">CAP Metagame Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3671157/">CAP Sample Teams</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3674024/">CAP Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['[Gen 8] OU', '+CAP'],
-		banlist: ['Crucibellite'],
-	},
-	{
-		name: "[Gen 8] CAP LC",
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['[Gen 8] LC', '+CAP'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles",
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'Limit One Restricted', 'Dynamax Clause'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles Series 9",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3679374/">BSS Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3672698/">BSS Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8'],
-	},
-	{
-		name: "[Gen 8] LC UU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['[Gen 8] LC'],
-		banlist: [
-			// LC OU
-			'Abra', 'Chinchou', 'Dewpider', 'Diglett-Base', 'Drilbur', 'Ferroseed', 'Foongus', 'Frillish', 'Grookey',
-			'Koffing', 'Magnemite', 'Mareanie', 'Mienfoo', 'Mudbray', 'Munchlax', 'Onix', 'Natu', 'Pawniard', 'Ponyta',
-			'Ponyta-Galar', 'Porygon', 'Scraggy', 'Spritzee', 'Staryu', 'Timburr', 'Trapinch', 'Tyrunt', 'Vulpix',
-			// LC BL
-			'Carvanha', 'Farfetch\u2019d-Galar', 'Shellder', 'Wingull',
-		],
-	},
-	{
-		name: "[Gen 8] CAP",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656824/">CAP Metagame Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3671157/">CAP Sample Teams</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3674024/">CAP Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['[Gen 8] OU', '+CAP'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles",
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'Limit One Restricted', 'Dynamax Clause'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles Series 9",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3679374/">BSS Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3672698/">BSS Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8'],
-	},
-	{
-		name: "[Gen 8] Mythical Melee",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3689825/">Mythical Melee Discussion</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', '-All Pokemon', '+Mythical', '+Restricted Legendary', '+Sub-Legendary'],
-		banlist: ['Eternatus-Eternamax'],
-	},
-	{
-		name: "[Gen 8] LC UU",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['[Gen 8] LC'],
-		banlist: [
-			// LC OU
-			'Abra', 'Chinchou', 'Dewpider', 'Diglett-Base', 'Drilbur', 'Ferroseed', 'Foongus', 'Frillish', 'Grookey',
-			'Koffing', 'Magnemite', 'Mareanie', 'Mienfoo', 'Mudbray', 'Munchlax', 'Onix', 'Natu', 'Pawniard', 'Ponyta',
-			'Ponyta-Galar', 'Porygon', 'Scraggy', 'Spritzee', 'Staryu', 'Timburr', 'Trapinch', 'Tyrunt', 'Vulpix',
-			// LC BL
-			'Carvanha', 'Farfetch\u2019d-Galar', 'Shellder', 'Wingull',
-		],
-	},
-	{
-		name: "[Gen 8] CAP",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3656824/">CAP Metagame Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3671157/">CAP Sample Teams</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3674024/">CAP Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['[Gen 8] OU', '+CAP'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles",
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'Limit One Restricted', 'Dynamax Clause'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Battle Stadium Singles Series 9",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3679374/">BSS Discussion</a>`,
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3672698/">BSS Viability Rankings</a>`,
-		],
-
-		mod: 'gen8',
-		searchShow: false,
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8'],
-	},
-	{
-		name: "[Gen 8] Mythical Melee",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3689825/">Mythical Melee Discussion</a>`,
-		],
-
-		mod: 'gen8',
-		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', '-All Pokemon', '+Mythical', '+Restricted Legendary', '+Sub-Legendary'],
-		banlist: ['Eternatus-Eternamax'],
-	},
-	{
-		name: "[Gen 8] Custom Game",
-
-		mod: 'gen8',
-		searchShow: false,
-		debug: true,
-		battle: {trunc: Math.trunc},
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
 	},
 
 	// Yesterday/Tomorrow Doubles
@@ -320,25 +128,24 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		gameType: 'doubles',
-		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause'],
-		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
+		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8', 'Limit One Restricted', 'Dynamax Clause'],
+		restricted: ['Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Doubles Ubers Y/T",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3661142/">Doubles Ubers</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3679374/">BSS Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672698/">BSS Viability Rankings</a>`,
 		],
 
 		mod: 'gen8',
-		gameType: 'doubles',
-		ruleset: ['Standard Doubles', '!Gravity Sleep Clause'],
-		banlist: [],
+		searchShow: false,
+		ruleset: ['Flat Rules', '!! Adjust Level = 50', 'Min Source Gen = 8'],
 	},
 	{
 		name: "[Gen 8] Doubles UU Y/T",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3658504/">Doubles UU</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3689825/">Mythical Melee Discussion</a>`,
 		],
 
 		mod: 'gen8',
@@ -349,11 +156,10 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Doubles LC Y/T",
 		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3658672/">Doubles LC</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
 		],
 
 		mod: 'gen8',
-		gameType: 'doubles',
 		searchShow: false,
 		ruleset: ['Standard Doubles', 'Little Cup', 'Dynamax Clause', 'Swagger Clause', 'Sleep Clause Mod'],
 		banlist: ['Corsola-Galar', 'Cutiefly', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix', 'Vulpix-Alola'],

@@ -1204,20 +1204,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
 		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
 	},
-	resolutegauntlet: {
-		name: "Resolute Gauntlet",
-		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
-		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
-	},
-	resolutegauntlet: {
-		name: "Resolute Gauntlet",
-		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
-		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
-	},
-	resolutegauntlet: {
-		name: "Resolute Gauntlet",
-		desc: "On switch-in, this Pokemon lowers either the Sp. Att or Speed of adjacent opposing Pokemon by 1 stage. Pokemon behind a substitute are immune, as well as users of the Abilities of Intreped Sword, Dauntless Shield, and Resolute Gauntlet.",
-		shortDesc: "On switch-in, this Pokemon lowers the Sp. Att or Speed of adjacent opponents by 1 stage.",
+	resurrection: {
+		name: "Resurrection",
+		desc: "Upon fainting, if the user is Panvoodo and is not transformed, this Pokemon is completely revived and switches out, transforming into its Zombified form.  The implementation of this may change in the future",
+		shortDesc: "Upon fainting, the user transforms into its Zombified form and completely revives, switching out",
 	},
 	ripen: {
 		name: "Ripen",
