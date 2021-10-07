@@ -8210,8 +8210,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		self: {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 					this.boost({spe: -1}, pokemon);
 					pokemon.addVolatile("block");
 				}
@@ -13381,74 +13379,110 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		secondary: null,
-		target: "all",
-		type: "Fire",
-		zMove: {boost: {def: 1}},
+		target: "allAdjacentFoes",
+		type: "Ground",
 		contestType: "Beautiful",
 	},
-	lavaterrain: {
-		num: -23,
+	laserfocus: {
+		num: 673,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Lava Terrain",
-		pp: 10,
+		name: "Laser Focus",
+		pp: 30,
 		priority: 0,
-		flags: {nonsky: 1},
-		terrain: "lavaterrain",
+		flags: {snatch: 1},
+		volatileStatus: "laserfocus",
 		condition: {
-			duration: 5,
-			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
-					return 8;
+			duration: 2,
+			onStart(pokemon, source, effect) {
+				if (
+					effect &&
+					["imposter", "psychup", "transform"].includes(effect.id)
+				) {
+					this.add("-start", pokemon, "move: Laser Focus", "[silent]");
+				} else {
+					this.add("-start", pokemon, "move: Laser Focus");
 				}
+			},
+			onRestart(pokemon) {
+				this.effectState.duration = 2;
+				this.add("-start", pokemon, "move: Laser Focus");
+			},
+			onModifyCritRatio(critRatio) {
 				return 5;
 			},
-			onBasePowerPriority: 6,
-			onBasePower(basePower, attacker, defender, move) {
-				if (
-					move.type === "Water" &&
-					defender.isGrounded() &&
-					!defender.isSemiInvulnerable()
-				) {
-					this.debug("lava terrain weaken");
-					return this.chainModify(0.5);
-				}
-			},
-			onFieldStart(field, source, effect) {
-				if (effect?.effectType === "Ability") {
-					this.add(
-						"-fieldstart",
-						"move: Lava Terrain",
-						"[from] ability: " + effect,
-						"[of] " + source
-					);
-				} else {
-					this.add("-fieldstart", "move: Lava Terrain");
-				}
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 2,
-			onResidual(pokemon) {
-				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable() && !pokemon.hasType("Fire")) {
-					this.damage(pokemon.baseMaxhp / 16, pokemon);
-				} else {
-					this.debug(
-						`Pokemon semi-invuln or not grounded; Lava Terrain skipped`
-					);
-				}
-			},
-			onFieldResidualOrder: 27,
-			onFieldResidualSubOrder: 7,
-			onFieldEnd() {
-				this.add("-fieldend", "move: Lava Terrain");
+			onEnd(pokemon) {
+				this.add("-end", pokemon, "move: Laser Focus", "[silent]");
 			},
 		},
 		secondary: null,
-		target: "all",
+		target: "self",
+		type: "Normal",
+		zMove: {boost: {atk: 1}},
+		contestType: "Cool",
+	},
+	lashout: {
+		num: 808,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Lash Out",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, source) {
+			if (source.statsLoweredThisTurn) {
+				this.debug("lashout buff");
+				return this.chainModify(2);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+	},
+	lastresort: {
+		num: 387,
+		accuracy: 100,
+		basePower: 140,
+		category: "Physical",
+		name: "Last Resort",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onTry(source) {
+			if (source.moveSlots.length < 2) return false; // Last Resort fails unless the user knows at least 2 moves
+			let hasLastResort = false; // User must actually have Last Resort for it to succeed
+			for (const moveSlot of source.moveSlots) {
+				if (moveSlot.id === "lastresort") {
+					hasLastResort = true;
+					continue;
+				}
+				if (!moveSlot.used) return false;
+			}
+			return hasLastResort;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
+	},
+	lavaplume: {
+		num: 436,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Lava Plume",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: "brn",
+		},
+		target: "allAdjacent",
 		type: "Fire",
-		zMove: {boost: {def: 1}},
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	lavaterrain: {
 		num: -23,
@@ -15336,44 +15370,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
-	metalshard: {
-		num: -18,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Metal Shard",
-		pp: 20,
-		priority: 0,
-		flags: {reflectable: 1},
-		sideCondition: 'metalshard',
-		condition: {
-			onStart(side) {
-				this.add("-sidestart", side, "move: Metal Shard");
-				this.add(
-					"-message",
-					"Sharp metallic shards float in the air around the opposing team!"
-				);
-			},
-			onSwitchIn(pokemon) {
-				if (pokemon.hasItem("heavydutyboots")) return;
-				const typeMod = this.clampIntRange(
-					pokemon.runEffectiveness(this.dex.getActiveMove("metalshard")),
-					-6,
-					6
-				);
-				this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
-				this.add(
-					"-message",
-					"The metallic shards dug into the opposing Pokemon!"
-				);
-			},
-		},
-		secondary: null,
-		target: "foeSide",
-		type: "Steel",
-		zMove: {boost: {def: 1}},
-		contestType: "Cool",
-	},
 	metalsound: {
 		num: 319,
 		accuracy: 85,
@@ -16782,9 +16778,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"[silent]"
 				);
 				return;
-=======
-				this.add("-start", pokemon, "move: Octolock", "[of] " + source);
->>>>>>> 3bbfa5c75... added new moves but not gmax ones
 			},
 =======
 				this.add('-activate', pokemon, 'move: Octolock', '[of] ' + source);
@@ -20013,169 +20006,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
-		zMove: {basePower: 150},
-		maxMove: {basePower: 120},
-		contestType: "Cute",
-	},
-	revealingjudgment: {
-		num: -3,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Revealing Judgment",
-		pp: 10,
-		priority: 0,
-		flags: {snatch: 1, heal: 1},
-		onTryMove(pokemon, target, move) {
-			if (pokemon.species.name === "Unown-Alphabet" || move.hasBounced) {
-				return;
-			}
-			this.add("-fail", pokemon, "move: revealingjudgment");
-			this.hint(
-				"Only a Pokemon whose form is Unown Alphabet can use this move."
-			);
-			return null;
-		},
-		volatileStatus: "revealingjudgment",
-		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles["revealingjudgment"]) {
-				return true;
-			}
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Revealing Judgment");
-				this.add("-message", "Unown is judging your character...");
-			},
-			onHit(pokemon, source, move) {
-				if (
-					pokemon.species.name === "Unown-Alphabet" &&
-					move.category !== "Status"
-				) {
-					pokemon.volatiles["revealingjudgment"].gotHit = true;
-					const healedBy = this.heal(pokemon.maxhp / 3);
-					pokemon.removeVolatile("revealingjudgment");
-					this.add(
-						"-message",
-						"Unown revealed the true intentions of the foe!"
-					);
-					return !!healedBy;
-				}
-			},
-		},
-		heal: [1, 3],
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: {effect: "clearnegativeboost"},
-		contestType: "Clever",
-	},
-	revealingjudgment: {
-		num: -3,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Revealing Judgment",
-		pp: 10,
-		priority: 0,
-		flags: { snatch: 1, heal: 1 },
-		onTryMove(pokemon, target, move) {
-			if (pokemon.species.name === "Unown-Alphabet" || move.hasBounced) {
-				return;
-			}
-			this.add("-fail", pokemon, "move: revealingjudgment");
-			this.hint(
-				"Only a Pokemon whose form is Unown Alphabet can use this move."
-			);
-			return null;
-		},
-		volatileStatus: "revealingjudgment",
-		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles["revealingjudgment"]) {
-				return true;
-			}
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Revealing Judgment");
-				this.add("-message", "Unown is judging your character...");
-			},
-			onHit(pokemon, source, move) {
-				if (
-					pokemon.species.name === "Unown-Alphabet" &&
-					move.category !== "Status"
-				) {
-					pokemon.volatiles["revealingjudgment"].gotHit = true;
-					const healedBy = this.heal(pokemon.maxhp / 3);
-					pokemon.removeVolatile("revealingjudgment");
-					this.add(
-						"-message",
-						"Unown revealed the true intentions of the foe!"
-					);
-					return !!healedBy;
-				}
-			},
-		},
-		heal: [1, 3],
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: {effect: "clearnegativeboost"},
-		contestType: "Clever",
-	},
-	revealingjudgment: {
-		num: -3,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Revealing Judgment",
-		pp: 10,
-		priority: 0,
-		flags: {snatch: 1, heal: 1},
-		onTryMove(pokemon, target, move) {
-			if (pokemon.species.name === "Unown-Alphabet" || move.hasBounced) {
-				return;
-			}
-			this.add("-fail", pokemon, "move: revealingjudgment");
-			this.hint(
-				"Only a Pokemon whose form is Unown Alphabet can use this move."
-			);
-			return null;
-		},
-		volatileStatus: "revealingjudgment",
-		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles["revealingjudgment"]) {
-				return true;
-			}
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Revealing Judgment");
-				this.add("-message", "Unown is judging your character...");
-			},
-			onHit(pokemon, source, move) {
-				if (
-					pokemon.species.name === "Unown-Alphabet" &&
-					move.category !== "Status"
-				) {
-					pokemon.volatiles["revealingjudgment"].gotHit = true;
-					const healedBy = this.heal(pokemon.maxhp / 3);
-					pokemon.removeVolatile("revealingjudgment");
-					this.add(
-						"-message",
-						"Unown revealed the true intentions of the foe!"
-					);
-					return !!healedBy;
-				}
-			},
-		},
-		heal: [1, 3],
-		secondary: null,
-		target: "self",
 		type: "Normal",
 		zMove: {effect: "clearnegativeboost"},
 		contestType: "Clever",
