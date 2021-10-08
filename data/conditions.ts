@@ -103,6 +103,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.damage(pokemon.baseMaxhp / 8);
 			this.add('-message', 'The target is chilled by frostbite!');
 		},
+		// Damage reduction is handled directly in the sim/battle.js damage function
 	},
 	psn: {
 		name: 'psn',
