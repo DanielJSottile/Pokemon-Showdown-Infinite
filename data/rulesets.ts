@@ -13,7 +13,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Standard',
 		desc: "The standard ruleset for all offical Smogon singles tiers (Ubers, OU, etc.)",
 		ruleset: [
-			'Obtainable', 'Team Preview', 'Sleep Clause Mod', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod',
+			'Obtainable', 'Team Preview', 'Sleep Clause Mod', 'Species Clause', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Wifi Timer',
 		],
 	},
 	standardnext: {
@@ -495,6 +495,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "VGC's timer: 90 second Team Preview, 7 minutes Your Time, 1 minute per turn",
 		timer: {
 			starting: 7 * 60, addPerTurn: 0, maxPerTurn: 55, maxFirstTurn: 90,
+			grace: 90, timeoutAutoChoose: true, dcTimerBank: false,
+		},
+	},
+	wifitimer: {
+		effectType: 'Rule',
+		name: 'Wifi Timer',
+		desc: "Wifi timer: 90 second Team Preview, 60 minutes Your Time, 45 seconds per turn",
+		timer: {
+			starting: 60 * 60, addPerTurn: 0, maxPerTurn: 45, maxFirstTurn: 90,
 			grace: 90, timeoutAutoChoose: true, dcTimerBank: false,
 		},
 	},

@@ -535,9 +535,13 @@ export const ItemsText: {[k: string]: ItemText} = {
 			desc: "No competitive use.",
 		},
 	},
+	evioline: {
+		name: "Evioline",
+		desc: "If holder's species can evolve, its Attack and Sp. Att are 1.4x.",
+	},
 	eviolite: {
 		name: "Eviolite",
-		desc: "If holder's species can evolve, its Defense and Sp. Def are 1.5x.",
+		desc: "If holder's species can evolve, its Defense and Sp. Def are 1.4x.",
 	},
 	expertbelt: {
 		name: "Expert Belt",
@@ -846,7 +850,8 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	heavydutyboots: {
 		name: "Heavy-Duty Boots",
-		desc: "When switching in, the holder is unaffected by hazards on its side of the field.",
+		shortDesc: "When switching in, the holder is only affected slightly by some hazards.",
+		desc: "When switching in, the holder is unaffected by Sticky Web or Toxic Spikes, but takes 1/32 from Stealth Rocks and Metal Shard, and 1/8 from Spikes.",
 	},
 	heavyweights: {
 		name: "Heavy Weights",
@@ -1212,7 +1217,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	metronome: {
 		name: "Metronome",
-		desc: "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.",
+		desc: "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
 		gen4: {
 			desc: "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
 		},

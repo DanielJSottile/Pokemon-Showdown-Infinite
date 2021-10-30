@@ -13511,13 +13511,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 				);
 			},
 			onSwitchIn(pokemon) {
-				if (pokemon.hasItem("heavydutyboots") || pokemon.hasAbility("mountaineer")) return;
+				if (pokemon.hasAbility("mountaineer")) return;
 				const typeMod = this.clampIntRange(
 					pokemon.runEffectiveness(this.dex.getActiveMove("metalshard")),
 					-6,
 					6
 				);
-				this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
+				if (pokemon.hasItem("heavydutyboots")) {
+					this.damage((pokemon.maxhp * Math.pow(2, -2)) / 8);
+				} else {
+					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
+				}
 				this.add(
 					"-message",
 					"The metallic shards dug into the opposing Pokemon!"
@@ -13926,7 +13930,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		boosts: {
-			evasion: 2,
+			evasion: 1,
 		},
 		secondary: null,
 		target: "self",
@@ -20150,11 +20154,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onSwitchIn(pokemon) {
 				if (!pokemon.isGrounded()) return;
-				if (pokemon.hasItem("heavydutyboots") || pokemon.hasAbility("mountaineer")) return;
+				if (pokemon.hasAbility("mountaineer")) return;
 				const damageAmounts = [0, 3, 4, 6]; // 1/8, 1/6, 1/4
-				this.damage(
-					(damageAmounts[this.effectState.layers] * pokemon.maxhp) / 24
-				);
+				if (pokemon.hasItem("heavydutyboots")) {
+					this.damage(
+						(damageAmounts[3] * pokemon.maxhp) / 24
+					);
+				} else {
+					this.damage(
+						(damageAmounts[this.effectState.layers] * pokemon.maxhp) / 24
+					);
+				}
 			},
 		},
 		secondary: null,
@@ -20511,13 +20521,17 @@ export const Moves: { [moveid: string]: MoveData } = {
 				this.add("-sidestart", side, "move: Stealth Rock");
 			},
 			onSwitchIn(pokemon) {
-				if (pokemon.hasItem("heavydutyboots") || pokemon.hasAbility("mountaineer")) return;
+				if (pokemon.hasAbility("mountaineer")) return;
 				const typeMod = this.clampIntRange(
 					pokemon.runEffectiveness(this.dex.getActiveMove("stealthrock")),
 					-6,
 					6
 				);
-				this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
+				if (pokemon.hasItem("heavydutyboots")) {
+					this.damage((pokemon.maxhp * Math.pow(2, -2)) / 8);
+				} else {
+					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
+				}
 			},
 		},
 		secondary: null,
@@ -21352,7 +21366,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		boosts: {
-			evasion: -2,
+			evasion: -1,
 		},
 		secondary: null,
 		target: "allAdjacentFoes",

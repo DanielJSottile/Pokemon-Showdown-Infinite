@@ -660,11 +660,11 @@ export class BattleActions {
 					let boost = 0;
 					if (!move.ignoreAccuracy) {
 						const boosts = this.battle.runEvent('ModifyBoost', pokemon, null, null, {...pokemon.boosts});
-						boost = this.battle.clampIntRange(boosts['accuracy'], -6, 6);
+						boost = this.battle.clampIntRange(boosts['accuracy'], -1, 1);
 					}
 					if (!move.ignoreEvasion) {
 						const boosts = this.battle.runEvent('ModifyBoost', target, null, null, {...target.boosts});
-						boost = this.battle.clampIntRange(boost - boosts['evasion'], -6, 6);
+						boost = this.battle.clampIntRange(boost - boosts['evasion'], -1, 1);
 					}
 					if (boost > 0) {
 						accuracy = this.battle.trunc(accuracy * (3 + boost) / 3);
@@ -849,7 +849,7 @@ export class BattleActions {
 				if (accuracy !== true) {
 					if (!move.ignoreAccuracy) {
 						const boosts = this.battle.runEvent('ModifyBoost', pokemon, null, null, {...pokemon.boosts});
-						const boost = this.battle.clampIntRange(boosts['accuracy'], -6, 6);
+						const boost = this.battle.clampIntRange(boosts['accuracy'], -1, 1);
 						if (boost > 0) {
 							accuracy *= boostTable[boost];
 						} else {
@@ -858,7 +858,7 @@ export class BattleActions {
 					}
 					if (!move.ignoreEvasion) {
 						const boosts = this.battle.runEvent('ModifyBoost', target, null, null, {...target.boosts});
-						const boost = this.battle.clampIntRange(boosts['evasion'], -6, 6);
+						const boost = this.battle.clampIntRange(boosts['evasion'], -1, 1);
 						if (boost > 0) {
 							accuracy /= boostTable[boost];
 						} else if (boost < 0) {

@@ -1828,6 +1828,27 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 208,
 		gen: 3,
 	},
+	evioline: {
+		name: "Evioline",
+		spritenum: 130,
+		fling: {
+			basePower: 40,
+		},
+		onModifyAtkPriority: 2,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.4);
+			}
+		},
+		onModifySpAPriority: 2,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.4);
+			}
+		},
+		num: -55,
+		gen: 8,
+	},
 	eviolite: {
 		name: "Eviolite",
 		spritenum: 130,
@@ -2828,7 +2849,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		},
 		num: 1120,
 		gen: 8,
-		// Hazard Immunity implemented in moves.js
+		// Hazard Partial Immunity implemented in moves.js
 	},
 	heavyweights: {
 		name: "Heavy Weights",
@@ -4071,7 +4092,7 @@ export const Items: { [itemid: string]: ItemData } = {
 				this.effectState.lastMove = move.id;
 			},
 			onModifyDamage(damage, source, target, move) {
-				const dmgMod = [4096, 4915, 5734, 6553, 7372, 8192];
+				const dmgMod = [4096, 4506, 4915, 5324, 5734, 6144, 6553, 6963, 7372, 7782, 8192];
 				const numConsecutive =
 					this.effectState.numConsecutive > 5 ?
 						5 :
