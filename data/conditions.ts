@@ -932,7 +932,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 				boosts["spd"] = 0;
 				boosts["evasion"] = 0;
 				boosts["atk"] = 0;
-				boosts["def"] = 0;
+				boosts["spe"] = 0;
 				boosts["spa"] = 0;
 				boosts["accuracy"] = 0;
 			}
