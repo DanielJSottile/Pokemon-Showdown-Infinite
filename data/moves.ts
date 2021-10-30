@@ -22405,7 +22405,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Aeonic",
 		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
