@@ -920,22 +920,15 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
-		onAnyModifyBoost(boosts, pokemon) {
+		onModifyBoost(boosts) {
 			// Attackers who are dynamaxed will not experience stat changes
-			const unawareUser = this.effectState.target;
-			if (unawareUser === pokemon) return;
-			if (
-				unawareUser === this.activePokemon &&
-				pokemon === this.activeTarget
-			) {
-				boosts["def"] = 0;
-				boosts["spd"] = 0;
-				boosts["evasion"] = 0;
-				boosts["atk"] = 0;
-				boosts["spe"] = 0;
-				boosts["spa"] = 0;
-				boosts["accuracy"] = 0;
-			}
+			boosts["atk"] = 0;
+			boosts["def"] = 0;
+			boosts["spa"] = 0;
+			boosts["spd"] = 0;
+			boosts["spe"] = 0;
+			boosts["evasion"] = 0;
+			boosts["accuracy"] = 0;
 		},
 		onBeforeSwitchOutPriority: -1,
 		onBeforeSwitchOut(pokemon) {
