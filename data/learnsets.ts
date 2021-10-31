@@ -1749,7 +1749,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			shockwave: ["8T"],
 			skullbash: ["8M"],
 			sleeptalk: ["8M", "8V"],
-			sludgebomb: ["8M"],
 			sludgewave: ["8M"],
 			snarl: ["8M"],
 			snore: ["8T", "8V"],
