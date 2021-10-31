@@ -30,14 +30,8 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['Standard'],
-		banlist: ['AG', 'Arena Trap', 'Power Construct', 'Shadow Tag'],
-	},
-	{
-		name: "[Gen 8] OU (Blitz) Y/T",
-
-		mod: 'gen8',
-		ruleset: ['[Gen 8] OU Y/T', 'Blitz'],
+		ruleset: ['Standard', 'Wifi Timer'],
+		banlist: ['AG', 'Power Construct'],
 	},
 	{
 		name: "[Gen 8] UU Y/T",
@@ -95,7 +89,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['Little Cup', 'Standard'],
+		ruleset: ['Little Cup', 'Standard', 'Wifi Timer'],
 		banlist: [
 			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Rufflet', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vullaby', 'Vulpix-Alola', 'Woobat',
 			'Chlorophyll', 'Moody', 'Baton Pass',
@@ -110,7 +104,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Wifi Timer'],
 	},
 
 	// Yesterday/Tomorrow Doubles

@@ -17168,7 +17168,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Dark", "Grass"],
 		gender: "N",
 		baseStats: {hp: 105, atk: 120, def: 105, spa: 70, spd: 95, spe: 105},
-		abilities: {0: "Hero of the Forest"},
+		abilities: {0: "Hero Of The Forest"},
 		heightm: 1.8,
 		weightkg: 70,
 		color: "Black",

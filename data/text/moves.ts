@@ -565,8 +565,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	boltbeak: {
 		name: "Bolt Beak",
-		desc: "Power doubles if the user moves before the target.",
-		shortDesc: "Power doubles if user moves before the target.",
+		desc: "Power 1.8x if the user moves before the target.",
+		shortDesc: "Power 1.8x if user moves before the target.",
 	},
 	boltstrike: {
 		name: "Bolt Strike",
@@ -1935,8 +1935,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	fishiousrend: {
 		name: "Fishious Rend",
-		desc: "Power doubles if the user moves before the target.",
-		shortDesc: "Power doubles if user moves before the target.",
+		desc: "Power 1.8x if the user moves before the target.",
+		shortDesc: "Power 1.8x if user moves before the target.",
 	},
 	fissure: {
 		name: "Fissure",
@@ -2000,8 +2000,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	flash: {
 		name: "Flash",
-		desc: "Lowers the target's accuracy by 1 stage.",
-		shortDesc: "Lowers the target's accuracy by 1.",
+		desc: "Blinds the target. This move does not ignore type immunity.",
+		shortDesc: "Blinds the target.",
 	},
 	flashcannon: {
 		name: "Flash Cannon",

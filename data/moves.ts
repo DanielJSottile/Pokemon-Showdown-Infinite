@@ -1040,7 +1040,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 20,
 		priority: 0,
 		flags: {bullet: 1, protect: 1, pulse: 1, mirror: 1, distance: 1},
-		secondary: null,
+		secondary: {
+			chance: 10,
+			status: "whiplash",
+		},
 		target: "any",
 		type: "Fighting",
 		contestType: "Beautiful",
@@ -1865,7 +1868,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: {
 			chance: 10,
-			status: "frz",
+			status: "fsb",
 		},
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -6143,20 +6146,19 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	flash: {
 		num: 148,
-		accuracy: 100,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Flash",
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		boosts: {
-			accuracy: -1,
-		},
+		status: 'blindness',
+		ignoreImmunity: false,
 		secondary: null,
 		target: "normal",
 		type: "Normal",
-		zMove: {boost: {evasion: 1}},
+		zMove: {boost: {accuracy: 1}},
 		contestType: "Beautiful",
 	},
 	flashcannon: {
@@ -6694,8 +6696,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 			if (type === "Water") return 1;
 		},
 		secondary: {
-			chance: 10,
-			status: "frz",
+			chance: 20,
+			status: "fsb",
 		},
 		target: "normal",
 		type: "Ice",
@@ -6740,7 +6742,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-			status: "frz",
+			status: "fsb",
 		},
 		target: "normal",
 		type: "Psychic",
@@ -10401,7 +10403,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-			status: "frz",
+			status: "fsb",
 		},
 		target: "normal",
 		type: "Ice",
@@ -10447,7 +10449,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondaries: [
 			{
 				chance: 10,
-				status: "frz",
+				status: "fsb",
 			},
 			{
 				chance: 10,
@@ -10488,7 +10490,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 10,
-			status: "frz",
+			status: "fsb",
 		},
 		target: "normal",
 		type: "Ice",
@@ -15985,7 +15987,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-			status: "frz",
+			status: "fsb",
 		},
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -17323,7 +17325,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {snatch: 1},
 		onHit(pokemon) {
-			if (["", "slp", "frz"].includes(pokemon.status)) return false;
+			if (["", "slp", "fsb"].includes(pokemon.status)) return false;
 			pokemon.cureStatus();
 		},
 		secondary: null,
@@ -22591,7 +22593,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				} else if (result === 1) {
 					target.trySetStatus("par", source);
 				} else {
-					target.trySetStatus("frz", source);
+					target.trySetStatus("fsb", source);
 				}
 			},
 		},
