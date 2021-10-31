@@ -178,30 +178,18 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		num: 107,
 	},
 	arenatrap: {
-		condition: {
-			duration: 1,
-			onResidualOrder: 28,
-			onResidualSubOrder: 2,
-			onStart(target) {
-				this.add("-start", target, "ability: Arena Trap");
-			},
-			onFoeTrapPokemon(pokemon) {
-				if (!pokemon.isAdjacent(this.effectState.target)) return;
-				if (pokemon.isGrounded()) {
-					pokemon.tryTrap(true);
-				}
-			},
-			onFoeMaybeTrapPokemon(pokemon, source) {
-				if (!source) source = this.effectState.target;
-				if (!source || !pokemon.isAdjacent(source)) return;
-				if (pokemon.isGrounded(!pokemon.knownType)) {
-					// Negate immunity if the type is unknown
-					pokemon.maybeTrapped = true;
-				}
-			},
-			onEnd(target) {
-				this.add("-end", target, "Arena Trap");
-			},
+		onFoeTrapPokemon(pokemon) {
+			if (!pokemon.isAdjacent(this.effectState.target)) return;
+			if (pokemon.isGrounded()) {
+				pokemon.tryTrap(true);
+			}
+		},
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (pokemon.isGrounded(!pokemon.knownType)) { // Negate immunity if the type is unknown
+				pokemon.maybeTrapped = true;
+			}
 		},
 		name: "Arena Trap",
 		rating: 5,
@@ -2621,33 +2609,18 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		num: 40,
 	},
 	magnetpull: {
-		condition: {
-			duration: 1,
-			onResidualOrder: 28,
-			onResidualSubOrder: 2,
-			onStart(target) {
-				this.add("-start", target, "ability: Magnet Pull");
-			},
-			onFoeTrapPokemon(pokemon) {
-				if (
-					pokemon.hasType("Steel") &&
-					pokemon.isAdjacent(this.effectState.target)
-				) {
-					pokemon.tryTrap(true);
-				}
-			},
-			onFoeMaybeTrapPokemon(pokemon, source) {
-				if (!source) source = this.effectState.target;
-				if (!source || !pokemon.isAdjacent(source)) return;
-				if (!pokemon.knownType || pokemon.hasType("Steel")) {
-					pokemon.maybeTrapped = true;
-				}
-			},
-			onEnd(target) {
-				this.add("-end", target, "Magnet Pull");
-			},
+		onFoeTrapPokemon(pokemon) {
+			if (pokemon.hasType('Steel') && pokemon.isAdjacent(this.effectState.target)) {
+				pokemon.tryTrap(true);
+			}
 		},
-
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (!pokemon.knownType || pokemon.hasType('Steel')) {
+				pokemon.maybeTrapped = true;
+			}
+		},
 		name: "Magnet Pull",
 		rating: 4,
 		num: 42,
@@ -4397,31 +4370,17 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		num: 231,
 	},
 	shadowtag: {
-		condition: {
-			duration: 1,
-			onResidualOrder: 28,
-			onResidualSubOrder: 2,
-			onStart(target) {
-				this.add("-start", target, "ability: Shadow Tag");
-			},
-			onFoeTrapPokemon(pokemon) {
-				if (
-					!pokemon.hasAbility("shadowtag") &&
-					pokemon.isAdjacent(this.effectState.target)
-				) {
-					pokemon.tryTrap(true);
-				}
-			},
-			onFoeMaybeTrapPokemon(pokemon, source) {
-				if (!source) source = this.effectState.target;
-				if (!source || !pokemon.isAdjacent(source)) return;
-				if (!pokemon.hasAbility("shadowtag")) {
-					pokemon.maybeTrapped = true;
-				}
-			},
-			onEnd(target) {
-				this.add("-end", target, "Shadow Tag");
-			},
+		onFoeTrapPokemon(pokemon) {
+			if (!pokemon.hasAbility('shadowtag') && pokemon.isAdjacent(this.effectState.target)) {
+				pokemon.tryTrap(true);
+			}
+		},
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (!pokemon.hasAbility('shadowtag')) {
+				pokemon.maybeTrapped = true;
+			}
 		},
 		name: "Shadow Tag",
 		rating: 5,
