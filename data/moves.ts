@@ -23912,17 +23912,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 		basePower: 80,
 		category: "Physical",
 		name: "Zippy Zap",
-		pp: 10,
+		pp: 15,
 		priority: 2,
 		flags: {contact: 1, protect: 1},
-		secondary: {
-			chance: 100,
-			self: {
-				boosts: {
-					evasion: 1,
-				},
-			},
-		},
+		critRatio: 1,
+		secondary: null,
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
