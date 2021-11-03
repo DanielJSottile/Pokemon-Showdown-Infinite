@@ -971,8 +971,8 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	kingsrock: {
 		name: "King's Rock",
-		desc: "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
-		shortDesc: "Holder's attacks without a chance to flinch gain a 10% chance to flinch.",
+		desc: "Holder's attacks without a chance to make the target flinch gain a 5% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
+		shortDesc: "Holder's attacks without a chance to flinch gain a 5% chance to flinch.",
 	},
 	klinklangite: {
 		name: "Klinklangite",

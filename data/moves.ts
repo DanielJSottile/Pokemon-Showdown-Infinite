@@ -628,9 +628,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 	antigrav: {
 		num: -55,
 		accuracy: 100,
-		basePower: 20,
+		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
-			return move.basePower + 20 * pokemon.negativeBoosts();
+			return move.basePower + 60 * pokemon.negativeBoosts();
 		},
 		ignoreNegativeOffensive: true,
 		category: "Special",

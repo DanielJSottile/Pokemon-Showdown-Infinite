@@ -3244,7 +3244,7 @@ export const Items: { [itemid: string]: ItemData } = {
 					if (secondary.volatileStatus === "flinch") return;
 				}
 				move.secondaries.push({
-					chance: 10,
+					chance: 5,
 					volatileStatus: "flinch",
 				});
 			}

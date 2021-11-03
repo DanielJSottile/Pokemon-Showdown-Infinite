@@ -161,8 +161,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	antigrav: {
 		name: "Antigrav",
-		desc: "Power is equal to 20+(X*20), where X is the user's total stat stage changes that are less than 0, ignores negative offensive drops.",
-		shortDesc: " + 20 power for each of the user's stat drops, ignores negative offensive drops.",
+		desc: "Power is equal to 60+(X*60), where X is the user's total stat stage changes that are less than 0, ignores negative offensive drops.",
+		shortDesc: " + 60 power for each of the user's stat drops, ignores negative offensive drops.",
 	},
 	apocalypticmaelstrom: {
 		name: "Apocalyptic Maelstrom",
