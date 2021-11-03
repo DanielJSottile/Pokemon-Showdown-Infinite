@@ -13520,7 +13520,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					6
 				);
 				if (pokemon.hasItem("heavydutyboots")) {
-					this.damage((pokemon.maxhp * Math.pow(2, -2)) / 8);
+					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 16);
 				} else {
 					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
 				}
@@ -15381,38 +15381,30 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {sound: 1, bypasssub: 1},
 		self: {
 			onHit(pokemon) {
-				let stats = [];
-				const boost = {};
-				for (const statPlus in pokemon.boosts) {
+				let stats: BoostID[] = [];
+				const boost: SparseBoostsTable = {};
+				let statPlus: BoostID;
+				for (statPlus in pokemon.boosts) {
 					if (statPlus === "accuracy" || statPlus === "evasion") continue;
-					// @ts-ignore
 					if (pokemon.boosts[statPlus] < 6) {
 						stats.push(statPlus);
 					}
 				}
-				let randomStat = stats.length ? this.sample(stats) : "";
-				// @ts-ignore
-				if (randomStat) boost[randomStat] = 2;
-
-				randomStat = stats.length ? this.sample(stats) : "";
-				// @ts-ignore
+				let randomStat: BoostID | undefined = stats.length ?
+					this.sample(stats) :
+					undefined;
 				if (randomStat) boost[randomStat] = 2;
 
 				stats = [];
-				for (const statMinus in pokemon.boosts) {
-					if (statMinus === "accuracy" || statMinus === "evasion") { continue; }
-					// @ts-ignore
-					if (pokemon.boosts[statMinus] > -6 && !(statMinus in boost)) {
+				let statMinus: BoostID;
+				for (statMinus in pokemon.boosts) {
+					if (statMinus === "accuracy" || statMinus === "evasion") continue;
+					if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
 						stats.push(statMinus);
 					}
 				}
-				randomStat = stats.length ? this.sample(stats) : "";
-				// @ts-ignore
-				if (randomStat) boost[randomStat] = -1;
-
-				randomStat = stats.length ? this.sample(stats) : "";
-				// @ts-ignore
-				if (randomStat) boost[randomStat] = -1;
+				randomStat = stats.length ? this.sample(stats) : undefined;
+				if (randomStat) boost[randomStat] = -2;
 
 				this.boost(boost);
 			},
@@ -16767,48 +16759,38 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
-		condition: {
-			onHit() {
-				for (const pokemon of this.getAllActive()) {
-					let stats = [];
-					const boost = {};
-					for (const statPlus in pokemon.boosts) {
-						if (statPlus === "accuracy" || statPlus === "evasion") continue;
-						// @ts-ignore
-						if (pokemon.boosts[statPlus] < 6) {
-							stats.push(statPlus);
-						}
+		self: {
+			onHit(pokemon) {
+				let stats: BoostID[] = [];
+				const boost: SparseBoostsTable = {};
+				let statPlus: BoostID;
+				for (statPlus in pokemon.boosts) {
+					if (statPlus === "accuracy" || statPlus === "evasion") continue;
+					if (pokemon.boosts[statPlus] < 6) {
+						stats.push(statPlus);
 					}
-					let randomStat = stats.length ? this.sample(stats) : "";
-					// @ts-ignore
-					if (randomStat) boost[randomStat] = 1;
-
-					randomStat = stats.length ? this.sample(stats) : "";
-					// @ts-ignore
-					if (randomStat) boost[randomStat] = 1;
-
-					stats = [];
-					for (const statMinus in pokemon.boosts) {
-						if (statMinus === "accuracy" || statMinus === "evasion") { continue; }
-						// @ts-ignore
-						if (pokemon.boosts[statMinus] > -6 && !(statMinus in boost)) {
-							stats.push(statMinus);
-						}
-					}
-					randomStat = stats.length ? this.sample(stats) : "";
-					// @ts-ignore
-					if (randomStat) boost[randomStat] = -1;
-
-					randomStat = stats.length ? this.sample(stats) : "";
-					// @ts-ignore
-					if (randomStat) boost[randomStat] = -1;
-
-					this.boost(boost);
 				}
+				let randomStat: BoostID | undefined = stats.length ?
+					this.sample(stats) :
+					undefined;
+				if (randomStat) boost[randomStat] = 2;
+
+				stats = [];
+				let statMinus: BoostID;
+				for (statMinus in pokemon.boosts) {
+					if (statMinus === "accuracy" || statMinus === "evasion") continue;
+					if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+						stats.push(statMinus);
+					}
+				}
+				randomStat = stats.length ? this.sample(stats) : undefined;
+				if (randomStat) boost[randomStat] = -2;
+
+				this.boost(boost);
 			},
 		},
 		secondary: null,
-		target: "allAdjacent",
+		target: "normal",
 		type: "Electric",
 		contestType: "Popular",
 	},
@@ -20160,7 +20142,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				const damageAmounts = [0, 3, 4, 6]; // 1/8, 1/6, 1/4
 				if (pokemon.hasItem("heavydutyboots")) {
 					this.damage(
-						(damageAmounts[3] * pokemon.maxhp) / 24
+						(damageAmounts[this.effectState.layers] * pokemon.maxhp) / 48
 					);
 				} else {
 					this.damage(
@@ -20530,7 +20512,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					6
 				);
 				if (pokemon.hasItem("heavydutyboots")) {
-					this.damage((pokemon.maxhp * Math.pow(2, -2)) / 8);
+					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 16);
 				} else {
 					this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8);
 				}

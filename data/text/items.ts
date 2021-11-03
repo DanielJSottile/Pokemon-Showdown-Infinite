@@ -851,7 +851,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	heavydutyboots: {
 		name: "Heavy-Duty Boots",
 		shortDesc: "When switching in, the holder is only affected slightly by some hazards.",
-		desc: "When switching in, the holder is unaffected by Sticky Web or Toxic Spikes, but takes 1/32 from Stealth Rocks and Metal Shard, and 1/8 from Spikes.",
+		desc: "When switching in, the holder is unaffected by Sticky Web or Toxic Spikes, but takes 1/2 normal damage from Stealth Rocks, Metal Shard, and Spikes.",
 	},
 	heavyweights: {
 		name: "Heavy Weights",

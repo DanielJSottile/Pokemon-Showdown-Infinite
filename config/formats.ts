@@ -115,6 +115,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] Doubles OU Y/T",
+		gameType: 'doubles',
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3689189/">Doubles OU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658826/">Doubles OU Sample Teams</a>`,
@@ -127,6 +128,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] Doubles Ubers Y/T",
+		gameType: 'doubles',
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3679374/">BSS Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3672698/">BSS Viability Rankings</a>`,
@@ -150,6 +152,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] Doubles LC Y/T",
+		gameType: 'doubles',
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3660866/">LC UU</a>`,
 		],

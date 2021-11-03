@@ -53588,7 +53588,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	darmanitangalar: {
 		learnset: {
-			quantumjump: ["8M"],
 			hoarfrost: ["8M"],
 			lashout: ["8T"],
 			burningjealousy: ["8T"],

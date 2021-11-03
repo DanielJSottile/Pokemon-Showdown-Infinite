@@ -4877,8 +4877,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	quantumjump: {
 		name: "Quantum Jump",
-		desc: "For each successful hit on a target, that Pokemon has 2 stats randomly raised and lowered by 1 stage.",
-		shortDesc: "For each successful hit on a target, that Pokemon has 2 stats randomly raised and lowered by 1 stage.",
+		desc: "The user randomly has 2 stats randomly raised and lowered by 2 stages.",
+		shortDesc: "The user randomly has 2 stats randomly raised and lowered by 2 stages.",
 	},
 	quash: {
 		name: "Quash",
