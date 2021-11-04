@@ -3293,7 +3293,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"throatchop",
 			"uturn",
 		],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	moltres: {
@@ -4027,8 +4027,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"encore",
 		],
 
-		tier: "UUBL",
-		doublesTier: "DOU",
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	yanma: {
 		tier: "LC",
@@ -5024,7 +5024,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"stealthrock",
 			"protect",
 		],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	tyranitarmega: {
@@ -5045,13 +5045,13 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "(OU)",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	tyranitargmax: {
 		isNonstandard: "Gigantamax",
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	lugia: {
 		randomBattleMoves: [
@@ -5222,7 +5222,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"hiddenpowerice",
 		],
 
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "(DUU)",
 	},
 	blazikenmega: {
@@ -6504,7 +6504,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"dragondance",
 		],
 
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	cacnea: {
@@ -9500,7 +9500,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"hiddenpowerice",
 		],
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DUU",
 	},
 	arceus: {
@@ -10330,7 +10330,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	drilburremius: {
@@ -11375,7 +11375,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "DOU",
 	},
 	tynamo: {
@@ -12344,7 +12344,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"icywind",
 			"taunt",
 		],
-		tier: "UUBL",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	meloetta: {
@@ -12555,7 +12555,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"quickattack",
 		],
-		tier: "UUBL",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	fletchling: {
@@ -15026,7 +15026,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"uturn",
 			"stickyweb",
 		],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	cosmog: {
@@ -15112,7 +15112,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"hiddenpowerice",
 		],
 
-		tier: "OU",
+		tier: "UUBL",
 		doublesTier: "(DUU)",
 	},
 	buzzwole: {
@@ -16271,7 +16271,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"wyvernblow",
 			"uturn",
 		],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	urshifutigerclaw: {
@@ -16289,7 +16289,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"blazingstrikes",
 			"uturn",
 		],
-		tier: "OU",
+		tier: "RUBL",
 		doublesTier: "DOU",
 	},
 	urshifugmax: {
@@ -16304,7 +16304,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	},
 	urshifudragonfistgmax: {
 		randomBattleMoves: ["bulkup", "drainpunch", "substitute", "wyvernblow"],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	urshifutigerclawgmax: {
@@ -16314,7 +16314,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"substitute",
 			"blazingstrikes",
 		],
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	zarude: {
@@ -16360,7 +16360,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"thunderbolt",
 			"voltswitch",
 		],
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "DUU",
 	},
 	regidrago: {
