@@ -1775,7 +1775,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	bind: {
 		num: 20,
 		accuracy: 85,
-		basePower: 15,
+		basePower: 35,
 		category: "Physical",
 		name: "Bind",
 		pp: 20,
@@ -2828,7 +2828,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	clamp: {
 		num: 128,
 		accuracy: 85,
-		basePower: 35,
+		basePower: 55,
 		category: "Physical",
 		name: "Clamp",
 		pp: 15,
@@ -5928,7 +5928,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	firespin: {
 		num: 83,
 		accuracy: 85,
-		basePower: 35,
+		basePower: 55,
 		category: "Special",
 		name: "Fire Spin",
 		pp: 15,
@@ -18134,7 +18134,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	sandtomb: {
 		num: 328,
 		accuracy: 85,
-		basePower: 35,
+		basePower: 55,
 		category: "Physical",
 		name: "Sand Tomb",
 		pp: 15,
@@ -19642,7 +19642,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	snaptrap: {
 		num: 779,
 		accuracy: 100,
-		basePower: 35,
+		basePower: 55,
 		category: "Physical",
 		name: "Snap Trap",
 		pp: 15,
@@ -23418,7 +23418,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	whirlpool: {
 		num: 250,
 		accuracy: 85,
-		basePower: 35,
+		basePower: 55,
 		category: "Special",
 		name: "Whirlpool",
 		pp: 15,
@@ -23730,7 +23730,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	wrap: {
 		num: 35,
 		accuracy: 90,
-		basePower: 15,
+		basePower: 35,
 		category: "Physical",
 		name: "Wrap",
 		pp: 20,

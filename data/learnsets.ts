@@ -198,6 +198,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	bulbasaur: {
 		learnset: {
+			snaptrap: ["8E"],
 			grassyglide: ["8T"],
 			innerpower: ["8M"],
 			amnesia: ["8E"],
@@ -7783,7 +7784,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			facade: ["8M"],
 			fireblast: ["8M", "8V"],
 			firefang: ["8L1"],
-			firelash: ["8L1"],
 			flamecharge: ["8M"],
 			flamethrower: ["8M"],
 			flamewheel: ["8M"],
@@ -8804,6 +8804,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	bellsprout: {
 		learnset: {
+			snaptrap: ["8E"],
 			oilslick: ["8M"],
 			grassyglide: ["8T"],
 			innerpower: ["8M"],
@@ -14928,6 +14929,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	tangela: {
 		learnset: {
+			snaptrap: ["8E"],
 			grassyglide: ["8T"],
 			absorb: ["8L10", "8V", "8V"],
 			amnesia: ["8E", "8V"],
@@ -20993,6 +20995,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	chikorita: {
 		learnset: {
+			snaptrap: ["8E"],
 			grassyglide: ["8T"],
 			solarblade: ["8M"],
 			pollenpuff: ["8M"],
@@ -29603,6 +29606,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	celebi: {
 		learnset: {
+			storedpower: ["8T"],
 			lichenwave: ["8M"],
 			dualwingbeat: ["8T"],
 			grassyglide: ["8T"],
@@ -70739,6 +70743,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	dhelmise: {
 		learnset: {
+			snaptrap: ["8E"],
 			lichenwave: ["8M"],
 			poltergeist: ["8T"],
 			grassyglide: ["8T"],
@@ -73183,7 +73188,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			innerpower: ["8M"],
 			return: ["8M"],
 			frustration: ["8M"],
-			knockoff: ["8T"],
 			magnetrise: ["8T"],
 			roleplay: ["8T"],
 			afteryou: ["8T"],
@@ -73236,6 +73240,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	grookey: {
 		learnset: {
+			snaptrap: ["8E"],
 			grassyglide: ["8T"],
 			toxic: ["8M"],
 			megadrain: ["8M"],
@@ -79097,6 +79102,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	zarude: {
 		learnset: {
+			snaptrap: ["8L1"],
 			lichenwave: ["8M"],
 			acrobatics: ["8M"],
 			assurance: ["8M"],
