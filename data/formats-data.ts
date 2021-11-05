@@ -15373,8 +15373,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"icepunch",
 			"protect",
 		],
-		tier: "AG",
-		doublesTier: "DUber",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	poipole: {
 		tier: "NFE",

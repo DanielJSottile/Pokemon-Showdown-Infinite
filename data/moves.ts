@@ -20015,6 +20015,10 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {contact: 1, protect: 1, mirror: 1, bypasssub: 1},
 		stealsBoosts: true,
 		// Boost stealing implemented in scripts.js
+		onAfterMove(pokemon) {
+			// in the future, try to see if i can only remove boosts gained from spectral theif
+			pokemon.clearBoosts();
+		},
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
