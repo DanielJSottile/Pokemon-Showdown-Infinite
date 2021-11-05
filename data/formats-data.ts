@@ -9898,7 +9898,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 		randomDoubleBattleLevel: 81,
-		tier: "UUBL",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	snivy: {
@@ -11438,7 +11438,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "LC",
 	},
 	lampent: {
-		tier: "RU",
+		tier: "NFE",
 	},
 	chandelure: {
 		randomBattleMoves: [
@@ -11461,8 +11461,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "NU",
+		doublesTier: "(DUU)",
 	},
 	axew: {
 		tier: "LC",
@@ -11822,7 +11822,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 		],
 
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	heatmor: {
