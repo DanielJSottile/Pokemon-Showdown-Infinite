@@ -139,8 +139,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	blaze: {
 		name: "Blaze",
-		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Fire-type attack.",
-		shortDesc: "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Fire attacks.",
+		desc: "When this Pokemon has 1/2 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Fire-type attack.",
+		shortDesc: "At 1/2 or less of its max HP, this Pokemon's attacking stat is 1.5x with Fire attacks.",
 		gen4: {
 			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Fire-type attacks have their power multiplied by 1.5.",
 			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Fire-type attacks have 1.5x power.",
@@ -961,8 +961,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	overgrow: {
 		name: "Overgrow",
-		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Grass-type attack.",
-		shortDesc: "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Grass attacks.",
+		desc: "When this Pokemon has 1/2 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Grass-type attack.",
+		shortDesc: "At 1/2 or less of its max HP, this Pokemon's attacking stat is 1.5x with Grass attacks.",
 		gen4: {
 			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Grass-type attacks have their power multiplied by 1.5.",
 			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Grass-type attacks have 1.5x power.",
@@ -1631,8 +1631,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	torrent: {
 		name: "Torrent",
-		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Water-type attack.",
-		shortDesc: "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Water attacks.",
+		desc: "When this Pokemon has 1/2 or less of its maximum HP, rounded down, its attacking stat is multiplied by 1.5 while using a Water-type attack.",
+		shortDesc: "At 1/2 or less of its max HP, this Pokemon's attacking stat is 1.5x with Water attacks.",
 		gen4: {
 			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Water-type attacks have their power multiplied by 1.5.",
 			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Water-type attacks have 1.5x power.",

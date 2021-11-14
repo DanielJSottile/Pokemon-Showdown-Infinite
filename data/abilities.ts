@@ -484,14 +484,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	blaze: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === "Fire" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Fire" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Blaze boost");
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === "Fire" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Fire" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Blaze boost");
 				return this.chainModify(1.5);
 			}
@@ -3213,14 +3213,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	overgrow: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === "Grass" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Grass" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Overgrow boost");
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === "Grass" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Grass" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Overgrow boost");
 				return this.chainModify(1.5);
 			}
@@ -5236,14 +5236,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	torrent: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === "Water" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Water" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Torrent boost");
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === "Water" && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === "Water" && attacker.hp <= attacker.maxhp / 2) {
 				this.debug("Torrent boost");
 				return this.chainModify(1.5);
 			}

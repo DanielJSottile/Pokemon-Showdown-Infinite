@@ -1461,6 +1461,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	pidgeot: {
 		learnset: {
+			focusblast: ["8M"],
 			plumage: ["8M"],
 			dualwingbeat: ["8T"],
 			aerialace: ["8M"],
