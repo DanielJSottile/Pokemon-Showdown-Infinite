@@ -640,7 +640,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Flying",
 		zMove: {basePower: 150},
 		maxMove: {basePower: 120},
 		contestType: "Popular",

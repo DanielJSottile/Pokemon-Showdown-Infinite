@@ -3321,9 +3321,9 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		doublesTier: "DUU",
 	},
 	moltresgalar: {
-		randomBattleMoves: ["fierywrath", "hurricane", "nastyplot", "substitute"],
-		tier: "RUBL",
-		doublesTier: "DUU",
+		randomBattleMoves: ["fierywrath", "hurricane", "nastyplot", "substitute", "roost"],
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	dratini: {
 		tier: "LC",
@@ -16477,7 +16477,22 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"skyattack",
 			"extremespeed",
 		],
-		tier: "RUBL",
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	marmalp: {
+		tier: "LC",
+	},
+	mountarmot: {
+		randomBattleMoves: [
+			"stoneedge",
+			"earthquake",
+			"return",
+			"bulkup",
+			"heavyslam",
+			"darkestlariat",
+		],
+		tier: "PU",
 		doublesTier: "(DUU)",
 	},
 };
