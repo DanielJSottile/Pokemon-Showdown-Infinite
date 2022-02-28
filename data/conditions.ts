@@ -28,7 +28,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 				return;
 			}
 		},
-		// Damage reduction is handled directly in the sim/battle.js damage function
+		// Damage reduction is handled directly in the sim/battle-actions.ts damage function
 		onResidualOrder: 10,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
@@ -158,13 +158,12 @@ export const Conditions: { [k: string]: ConditionData } = {
 				target.cureStatus();
 			}
 		},
-		// Damage reduction is handled directly in the sim/battle.js damage function
+		// Damage reduction is handled directly in the sim/battle-actions.ts damage function
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
 			this.add("-message", "The target is chilled by frostbite!");
 		},
-		// Damage reduction is handled directly in the sim/battle.js damage function
 	},
 	psn: {
 		name: "psn",
@@ -262,7 +261,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifySpD(spd, pokemon) {
-			return this.chainModify(0.33);
+			return this.chainModify(0.5);
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
@@ -297,7 +296,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifyDef(def, pokemon) {
-			return this.chainModify(0.33);
+			return this.chainModify(0.5);
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
