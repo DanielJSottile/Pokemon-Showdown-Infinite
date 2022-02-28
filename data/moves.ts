@@ -10330,7 +10330,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	hypnosis: {
 		num: 95,
-		accuracy: 60,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Hypnosis",

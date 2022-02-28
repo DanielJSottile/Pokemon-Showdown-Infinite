@@ -49,7 +49,6 @@ class TestTools {
 			options.pokemon && '-Nonexistent',
 			options.legality && 'Obtainable',
 			!options.preview && '!Team Preview',
-			options.sleepClause && 'Sleep Clause Mod',
 			!options.cancel && '!Cancel Mod',
 			options.endlessBattleClause && 'Endless Battle Clause',
 			options.inverseMod && 'Inverse Mod',
