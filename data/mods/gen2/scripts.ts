@@ -258,7 +258,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				const isSleepUsable = move.sleepUsable || this.dex.moves.get(move.sourceEffect).sleepUsable;
 				let i: number;
 				for (i = 0; i < hits && target.hp && pokemon.hp; i++) {
-					if (pokemon.status === 'slp' && !isSleepUsable) break;
+					if (pokemon.status === 'drowsy' && !isSleepUsable) break;
 					move.hit = i + 1;
 					if (move.hit === hits) move.lastHit = true;
 					moveDamage = this.moveHit(target, pokemon, move);
@@ -438,7 +438,7 @@ export const Scripts: ModdedBattleScriptsData = {
 						continue;
 					}
 					// A sleeping or frozen target cannot be flinched in Gen 2; King's Rock is exempt
-					if (secondary.volatileStatus === 'flinch' && ['slp', 'frz'].includes(target.status) && !secondary.kingsrock) {
+					if (secondary.volatileStatus === 'flinch' && ['drowsy', 'frz'].includes(target.status) && !secondary.kingsrock) {
 						this.battle.debug('Cannot flinch a sleeping or frozen target');
 						continue;
 					}

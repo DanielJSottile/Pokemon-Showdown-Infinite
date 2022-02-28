@@ -1224,7 +1224,7 @@ function runMovesearch(target: string, cmd: string, canAll: boolean, message: st
 		'multihit', 'ohko', 'powder', 'protect', 'pulse', 'punch', 'recharge', 'reflectable', 'secondary',
 		'snatch', 'sound', 'zmove', 'maxmove', 'gmaxmove', 'protection',
 	];
-	const allStatus = ['psn', 'tox', 'brn', 'par', 'frz', 'slp'];
+	const allStatus = ['psn', 'tox', 'brn', 'par', 'fsb', 'drowsy', 'bewitchment', 'whiplash', 'blindness'];
 	const allVolatileStatus = ['flinch', 'confusion', 'partiallytrapped'];
 	const allBoosts = ['hp', 'atk', 'def', 'spa', 'spd', 'spe', 'accuracy', 'evasion'];
 	const allTargets: {[k: string]: string} = {
@@ -1579,11 +1579,11 @@ function runMovesearch(target: string, cmd: string, canAll: boolean, message: st
 			case 'poison': target = 'psn'; break;
 			case 'burn': target = 'brn'; break;
 			case 'paralyze': target = 'par'; break;
-			case 'freeze': target = 'frz'; break;
-			case 'sleep': target = 'slp'; break;
+			case 'frostbite': target = 'fsb'; break;
+			case 'drowsy': target = 'drowsy'; break;
 			case 'confuse': target = 'confusion'; break;
 			case 'trap': target = 'partiallytrapped'; break;
-			case 'flinche': target = 'flinch'; break;
+			case 'flinch': target = 'flinch'; break;
 			}
 
 			if (allStatus.includes(target)) {
@@ -1854,7 +1854,7 @@ function runMovesearch(target: string, cmd: string, canAll: boolean, message: st
 					move.status === searchStatus ||
 					(move.secondaries && move.secondaries.some(entry => entry.status === searchStatus))
 				);
-				if (searchStatus === 'slp') {
+				if (searchStatus === 'drowsy') {
 					canStatus = canStatus || moveid === 'yawn';
 				}
 				if (searchStatus === 'brn' || searchStatus === 'frz' || searchStatus === 'par') {

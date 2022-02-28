@@ -85,8 +85,8 @@ describe('Misty Terrain', function () {
 		battle.setPlayer('p2', {team: [{species: "Sableye", ability: 'prankster', moves: ['yawn', 'mistyterrain']}]});
 		battle.makeChoices('move yawn', 'move yawn');
 		battle.makeChoices('move skydrop', 'move mistyterrain');
-		assert.equal(battle.p1.active[0].status, 'slp');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p1.active[0].status, 'drowsy');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it('should cause Nature Power to become Moonblast', function () {

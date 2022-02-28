@@ -384,8 +384,8 @@ export const MovesText: {[k: string]: MoveText} = {
 		start: "  [POKEMON] started heating up its beak!",
 	},
 	beastlyawakeningpunch: {
-		desc: "Changes the users ability to Insomnia, can be used while Asleep.",
-		shortDesc: "Changes the users ability to Insomnia, can be used while Asleep.",
+		desc: "Changes the users ability to Insomnia, can be used while Drowsy.",
+		shortDesc: "Changes the users ability to Insomnia, can be used while Drowsy.",
 		name: "Beastly Awakening Punch",
 	},
 	beatdrop: {
@@ -514,14 +514,14 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	blizzard: {
 		name: "Blizzard",
-		desc: "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
-		shortDesc: "10% chance to freeze foe(s). Can't miss in hail.",
+		desc: "Has a 10% chance to frostbite the target. If the weather is Hail, this move does not check accuracy.",
+		shortDesc: "10% chance to frostbite foe(s). Can't miss in hail.",
 		gen3: {
-			desc: "Has a 10% chance to freeze the target.",
-			shortDesc: "10% chance to freeze foe(s).",
+			desc: "Has a 10% chance to frostbite the target.",
+			shortDesc: "10% chance to frostbite foe(s).",
 		},
 		gen2: {
-			shortDesc: "10% chance to freeze the target.",
+			shortDesc: "10% chance to frostbite the target.",
 		},
 	},
 	block: {
@@ -1175,11 +1175,11 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	darkvoid: {
 		name: "Dark Void",
-		desc: "Causes the target to fall asleep. This move cannot be used successfully unless the user's current form, while considering Transform, is Darkrai.",
-		shortDesc: "Darkrai: Causes the foe(s) to fall asleep.",
+		desc: "Causes the target to become drowsy. This move cannot be used successfully unless the user's current form, while considering Transform, is Darkrai.",
+		shortDesc: "Darkrai: Causes the foe(s) to become drowsy.",
 		gen6: {
-			desc: "Causes the target to fall asleep.",
-			shortDesc: "Causes the foe(s) to fall asleep.",
+			desc: "Causes the target to become drowsy.",
+			shortDesc: "Causes the foe(s) to become drowsy.",
 		},
 
 		fail: "But [POKEMON] can't use the move!",
@@ -1507,16 +1507,16 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	dreameater: {
 		name: "Dream Eater",
-		desc: "The target is unaffected by this move unless it is asleep. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		desc: "The target is unaffected by this move unless it is drowsy. The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User gains 1/2 HP inflicted. Sleeping target only.",
 		gen4: {
-			desc: "The target is unaffected by this move unless it is asleep and does not have a substitute. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded down.",
+			desc: "The target is unaffected by this move unless it is drowsy and does not have a substitute. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded down.",
 		},
 		gen3: {
-			desc: "The target is unaffected by this move unless it is asleep and does not have a substitute. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP.",
+			desc: "The target is unaffected by this move unless it is drowsy and does not have a substitute. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP.",
 		},
 		gen1: {
-			desc: "The target is unaffected by this move unless it is asleep. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not recover any HP.",
+			desc: "The target is unaffected by this move unless it is drowsy. The user recovers 1/2 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not recover any HP.",
 		},
 	},
 	drillpeck: {
@@ -1596,10 +1596,10 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	electricterrain: {
 		name: "Electric Terrain",
-		desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
+		desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot become drowsy; Pokemon already drowsy do not wake up. Grounded Pokemon cannot become affected by Yawn or become drowsy from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
 		shortDesc: "5 turns. Grounded: +Electric power, can't sleep.",
 		gen7: {
-			desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
+			desc: "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.5 and grounded Pokemon cannot become drowsy; Pokemon already drowsy do not wake up. Grounded Pokemon cannot become affected by Yawn or become drowsy from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
 		},
 	},
 	electrify: {
@@ -2158,8 +2158,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	freezedry: {
 		name: "Freeze-Dry",
-		desc: "Has a 10% chance to freeze the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
-		shortDesc: "10% chance to freeze. Super effective on Water.",
+		desc: "Has a 20% chance to frostbite the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
+		shortDesc: "20% chance to frostbite. Super effective on Water.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",
@@ -2170,8 +2170,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	freezingglare: {
 		name: "Freezing Glare",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite the target.",
 	},
 	freezyfrost: {
 		name: "Freezy Frost",
@@ -2347,8 +2347,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	gmaxbefuddle: {
 		name: "G-Max Befuddle",
-		desc: "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side either falls asleep, becomes poisoned, or becomes paralyzed, even if they have a substitute.",
-		shortDesc: "Base move affects power. Foes: slp or psn or par.",
+		desc: "Power is equal to the base move's Max Move power. If this move is successful, each Pokemon on the opposing side either falls drowsy, becomes poisoned, or becomes paralyzed, even if they have a substitute.",
+		shortDesc: "Base move affects power. Foes: drowsy or psn or par.",
 	},
 	gmaxcannonade: {
 		name: "G-Max Cannonade",
@@ -2582,7 +2582,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	grasswhistle: {
 		name: "Grass Whistle",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	grassyglide: {
 		name: "Grassy Glide",
@@ -3091,7 +3091,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	hypnosis: {
 		name: "Hypnosis",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	iceball: {
 		name: "Ice Ball",
@@ -3103,8 +3103,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icebeam: {
 		name: "Ice Beam",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite the target.",
 	},
 	iceburn: {
 		name: "Ice Burn",
@@ -3115,8 +3115,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icefang: {
 		name: "Ice Fang",
-		desc: "Has a 10% chance to freeze the target and a 10% chance to make it flinch.",
-		shortDesc: "10% chance to freeze. 10% chance to flinch.",
+		desc: "Has a 10% chance to frostbite the target and a 10% chance to make it flinch.",
+		shortDesc: "10% chance to frostbite. 10% chance to flinch.",
 	},
 	icehammer: {
 		name: "Ice Hammer",
@@ -3125,8 +3125,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icepunch: {
 		name: "Ice Punch",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite the target.",
 	},
 	iceshard: {
 		name: "Ice Shard",
@@ -3571,7 +3571,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	lovelykiss: {
 		name: "Lovely Kiss",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	lowkick: {
 		name: "Low Kick",
@@ -4137,10 +4137,10 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	mistyterrain: {
 		name: "Misty Terrain",
-		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
+		desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot become drowsy from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
 		shortDesc: "5 turns. Can't status,-Dragon power vs grounded.",
 		gen6: {
-			desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
+			desc: "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition. Grounded Pokemon can become affected by Yawn but cannot become drowsy from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
 		},
 	},
 	moonblast: {
@@ -4294,7 +4294,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	nightmare: {
 		name: "Nightmare",
-		desc: "Causes the target to lose 1/4 of its maximum HP, rounded down, at the end of each turn as long as it is asleep. This move does not affect the target unless it is asleep. The effect ends when the target wakes up, even if it falls asleep again in the same turn.",
+		desc: "Causes the target to lose 1/4 of its maximum HP, rounded down, at the end of each turn as long as it is drowsy. This move does not affect the target unless it is drowsy. The effect ends when the target wakes up, even if it becomes drowsy again in the same turn.",
 		shortDesc: "A sleeping target is hurt by 1/4 max HP per turn.",
 
 		start: "  [POKEMON] began having a nightmare!",
@@ -4396,16 +4396,16 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	outrage: {
 		name: "Outrage",
-		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is drowsy at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is drowsy, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
 		gen6: {
-			desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an adjacent opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
+			desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an adjacent opposing Pokemon at random on each turn. If the user is prevented from moving, is drowsy at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
 		},
 		gen4: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
+			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is drowsy at the beginning of a turn, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
 		},
 		gen3: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, falls asleep, becomes frozen, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
+			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, becomes drowsy, becomes frostbitten, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
 		},
 		gen2: {
 			desc: "Whether or not this move is successful, the user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
@@ -4500,24 +4500,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	petaldance: {
 		name: "Petal Dance",
-		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is drowsy at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is drowsy, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
-		gen6: {
-			desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an adjacent opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen4: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen3: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, falls asleep, becomes frozen, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen2: {
-			desc: "Whether or not this move is successful, the user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen1: {
-			desc: "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-			shortDesc: "Lasts 3-4 turns. Confuses the user afterwards.",
-		},
 	},
 	phantomforce: {
 		name: "Phantom Force",
@@ -4658,10 +4642,10 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	powdersnow: {
 		name: "Powder Snow",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the foe(s).",
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite the foe(s).",
 		gen2: {
-			shortDesc: "10% chance to freeze the target.",
+			shortDesc: "10% chance to frostbite the target.",
 		},
 	},
 	powergem: {
@@ -5074,19 +5058,13 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	relicsong: {
 		name: "Relic Song",
-		desc: "Has a 10% chance to cause the target to fall asleep. If this move is successful on at least one target and the user is a Meloetta, it changes to Pirouette Forme if it is currently in Aria Forme, or changes to Aria Forme if it is currently in Pirouette Forme. This forme change does not happen if the Meloetta has the Sheer Force Ability. The Pirouette Forme reverts to Aria Forme when Meloetta is not active.",
+		desc: "Has a 10% chance to cause the target to become drowsy. If this move is successful on at least one target and the user is a Meloetta, it changes to Pirouette Forme if it is currently in Aria Forme, or changes to Aria Forme if it is currently in Pirouette Forme. This forme change does not happen if the Meloetta has the Sheer Force Ability. The Pirouette Forme reverts to Aria Forme when Meloetta is not active.",
 		shortDesc: "10% chance to sleep foe(s). Meloetta transforms.",
 	},
 	rest: {
 		name: "Rest",
-		desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. Fails if the user has full HP, is already asleep, or if another effect is preventing sleep.",
-		shortDesc: "User sleeps 2 turns and restores HP and status.",
-		gen2: {
-			desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process, even if it was already asleep. Fails if the user has full HP.",
-		},
-		gen1: {
-			desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. This does not remove the user's stat penalty for burn or paralysis. Fails if the user has full HP.",
-		},
+		desc: "The user becomes drowsy and heals 50% of its max health.",
+		shortDesc: "User becomes drowsy and heals 50% of its max health.",
 	},
 	retaliate: {
 		name: "Retaliate",
@@ -5283,10 +5261,10 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	safeguard: {
 		name: "Safeguard",
-		desc: "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can fall asleep from its effect. It is removed from the user's side if the user or an ally is successfully hit by Defog. Fails if the effect is already active on the user's side.",
+		desc: "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can become drowsy from its effect. It is removed from the user's side if the user or an ally is successfully hit by Defog. Fails if the effect is already active on the user's side.",
 		shortDesc: "For 5 turns, protects user's party from status.",
 		gen3: {
-			desc: "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can fall asleep from its effect. Fails if the effect is already active on the user's side.",
+			desc: "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. Pokemon on the user's side cannot become affected by Yawn but can become drowsy from its effect. Fails if the effect is already active on the user's side.",
 		},
 		gen2: {
 			desc: "For 5 turns, the user and its party members cannot have non-volatile status conditions or confusion inflicted on them by other Pokemon. During the effect, Outrage, Thrash, and Petal Dance do not confuse the user. Fails if the effect is already active on the user's side.",
@@ -5347,7 +5325,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	scald: {
 		name: "Scald",
-		desc: "Has a 25% chance to burn the target. The target thaws out if it is frozen.",
+		desc: "Has a 25% chance to burn the target. The target thaws out if it is frostbitten.",
 		shortDesc: "25% chance to burn the target. Thaws target.",
 		gen5: {
 			desc: "Has a 30% chance to burn the target.",
@@ -5366,7 +5344,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	scorchingsands: {
 		name: "Scorching Sands",
-		desc: "Has a 30% chance to burn the target. The target thaws out if it is frozen.",
+		desc: "Has a 30% chance to burn the target. The target thaws out if it is frostbitten.",
 		shortDesc: "30% chance to burn the target. Thaws target.",
 	},
 	scratch: {
@@ -5570,11 +5548,11 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	sing: {
 		name: "Sing",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	singeingshock: {
 		name: "Singeing Shock",
-		desc: "Has a 25% chance to burn the target. The target thaws out if it is frozen.",
+		desc: "Has a 25% chance to burn the target. The target thaws out if it is frostbitten.",
 		shortDesc: "25% chance to burn the target. Thaws target.",
 	},
 	sinisterarrowraid: {
@@ -5696,29 +5674,29 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	sleeppowder: {
 		name: "Sleep Powder",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	sleeptalk: {
 		name: "Sleep Talk",
-		desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Dynamax Cannon, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Max Move.",
-		shortDesc: "User must be asleep. Uses another known move.",
+		desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Dynamax Cannon, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Max Move.",
+		shortDesc: "User must be drowsy. Uses another known move.",
 		gen7: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Z-Move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Z-Move.",
 		},
 		gen6: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Belch, Bide, Celebrate, Chatter, Copycat, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, Uproar, or any two-turn move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Belch, Bide, Celebrate, Chatter, Copycat, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, Uproar, or any two-turn move.",
 		},
 		gen5: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Bide, Chatter, Copycat, Focus Punch, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, Uproar, or any two-turn move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Bide, Chatter, Copycat, Focus Punch, Me First, Metronome, Mimic, Mirror Move, Nature Power, Sketch, Sleep Talk, Struggle, Uproar, or any two-turn move.",
 		},
 		gen4: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Bide, Chatter, Copycat, Focus Punch, Me First, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Bide, Chatter, Copycat, Focus Punch, Me First, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move.",
 		},
 		gen3: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, but if it currently has 0 PP it will fail to be used. This move cannot select Assist, Bide, Focus Punch, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, but if it currently has 0 PP it will fail to be used. This move cannot select Assist, Bide, Focus Punch, Metronome, Mirror Move, Sleep Talk, Uproar, or any two-turn move.",
 		},
 		gen2: {
-			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not asleep. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Bide, Sleep Talk, or any two-turn move.",
+			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Bide, Sleep Talk, or any two-turn move.",
 		},
 	},
 	sludge: {
@@ -5803,8 +5781,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	snore: {
 		name: "Snore",
-		desc: "Has a 30% chance to make the target flinch. Fails if the user is not asleep.",
-		shortDesc: "User must be asleep. 30% chance to flinch target.",
+		desc: "Has a 30% chance to make the target flinch. Fails if the user is not drowsy.",
+		shortDesc: "User must be drowsy. 30% chance to flinch target.",
 	},
 	soak: {
 		name: "Soak",
@@ -6039,7 +6017,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	spore: {
 		name: "Spore",
-		shortDesc: "Causes the target to fall asleep.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	spotlight: {
 		name: "Spotlight",
@@ -6063,7 +6041,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	steameruption: {
 		name: "Steam Eruption",
-		desc: "Has a 30% chance to burn the target. The target thaws out if it is frozen.",
+		desc: "Has a 30% chance to burn the target. The target thaws out if it is frostbitten.",
 		shortDesc: "30% chance to burn the target. Thaws target.",
 	},
 	steamroller: {
@@ -6599,24 +6577,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	thrash: {
 		name: "Thrash",
-		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is drowsy at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is drowsy, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
-		gen6: {
-			desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an adjacent opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen4: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen3: {
-			desc: "The user spends two or three turns locked into this move and becomes confused at the end of the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, falls asleep, becomes frozen, or the attack is not successful against the target, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen2: {
-			desc: "Whether or not this move is successful, the user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. If this move is called by Sleep Talk, the move is used for one turn and does not confuse the user.",
-		},
-		gen1: {
-			desc: "Whether or not this move is successful, the user spends three or four turns locked into this move and becomes confused immediately after its move on the last turn of the effect, even if it is already confused. If the user is prevented from moving, the effect ends without causing confusion. During the effect, this move's accuracy is overwritten every turn with the current calculated accuracy including stat stage changes, but not to less than 1/256 or more than 255/256.",
-			shortDesc: "Lasts 3-4 turns. Confuses the user afterwards.",
-		},
 	},
 	throatchop: {
 		name: "Throat Chop",
@@ -6755,15 +6717,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	triattack: {
 		name: "Tri Attack",
-		desc: "Has a 20% chance to either burn, freeze, or paralyze the target.",
-		shortDesc: "20% chance to paralyze or burn or freeze target.",
-		gen2: {
-			desc: "This move selects burn, freeze, or paralysis at random, and has a 20% chance to inflict the target with that status. If the target is frozen and burn was selected, it thaws out.",
-		},
-		gen1: {
-			desc: "No additional effect.",
-			shortDesc: "No additional effect.",
-		},
+		desc: "Has a 20% chance to either burn, frostbite, or paralyze the target.",
+		shortDesc: "20% chance to paralyze or burn or frostbite target.",
 	},
 	trick: {
 		name: "Trick",
@@ -6876,17 +6831,17 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	uproar: {
 		name: "Uproar",
-		desc: "The user spends three turns locked into this move. This move targets an opponent at random on each turn. On the first of the three turns, all sleeping active Pokemon wake up. During the three turns, no active Pokemon can fall asleep by any means, and Pokemon switched in during the effect do not wake up. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
-		shortDesc: "Lasts 3 turns. Active Pokemon cannot fall asleep.",
+		desc: "The user spends three turns locked into this move. This move targets an opponent at random on each turn. On the first of the three turns, all sleeping active Pokemon wake up. During the three turns, no active Pokemon can become drowsy by any means, and Pokemon switched in during the effect do not wake up. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
+		shortDesc: "Lasts 3 turns. Active Pokemon cannot become drowsy.",
 		gen6: {
-			desc: "The user spends three turns locked into this move. This move targets an adjacent opponent at random on each turn. On the first of the three turns, all sleeping active Pokemon wake up. During the three turns, no active Pokemon can fall asleep by any means, and Pokemon switched in during the effect do not wake up. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
+			desc: "The user spends three turns locked into this move. This move targets an adjacent opponent at random on each turn. On the first of the three turns, all sleeping active Pokemon wake up. During the three turns, no active Pokemon can become drowsy by any means, and Pokemon switched in during the effect do not wake up. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
 		},
 		gen4: {
-			desc: "The user spends three to six turns locked into this move. This move targets an opponent at random on each turn. During effect, no active Pokemon can fall asleep by any means, and Pokemon that are already asleep wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
+			desc: "The user spends three to six turns locked into this move. This move targets an opponent at random on each turn. During effect, no active Pokemon can become drowsy by any means, and Pokemon that are already drowsy wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
 			shortDesc: "Lasts 3-6 turns. Active Pokemon cannot sleep.",
 		},
 		gen3: {
-			desc: "The user spends two to five turns locked into this move. This move targets an opposing Pokemon at random on each turn. During effect, no active Pokemon can fall asleep by any means, and Pokemon that are already asleep wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
+			desc: "The user spends two to five turns locked into this move. This move targets an opposing Pokemon at random on each turn. During effect, no active Pokemon can become drowsy by any means, and Pokemon that are already drowsy wake up as their turn starts or at the end of each turn, including the last one. If the user is prevented from moving or the attack is not successful against the target during one of the turns, the effect ends.",
 			shortDesc: "Lasts 2-5 turns. Active Pokemon cannot sleep.",
 		},
 
@@ -6959,10 +6914,10 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	wakeupslap: {
 		name: "Wake-Up Slap",
-		desc: "Power doubles if the target is asleep. If the user has not fainted, the target wakes up.",
-		shortDesc: "Power doubles if target is asleep, and wakes it.",
+		desc: "Power doubles if the target is drowsy. If the user has not fainted, the target wakes up.",
+		shortDesc: "Power doubles if target is drowsy, and wakes it.",
 		gen4: {
-			desc: "Power doubles if the target is asleep. If this move is successful, the target wakes up.",
+			desc: "Power doubles if the target is drowsy. If this move is successful, the target wakes up.",
 		},
 	},
 	waterfall: {
@@ -7205,10 +7160,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	yawn: {
 		name: "Yawn",
-		desc: "Causes the target to fall asleep at the end of the next turn. Fails when used if the target cannot fall asleep or if it already has a non-volatile status condition. At the end of the next turn, if the target is still active, does not have a non-volatile status condition, and can fall asleep, it falls asleep. If the target becomes affected, this effect cannot be prevented by Safeguard or a substitute, or by falling asleep and waking up during the effect.",
-		shortDesc: "Puts the target to sleep after 1 turn.",
-
-		start: "  [POKEMON] grew drowsy!",
+		desc: "Causes the target to become drowsy.",
+		shortDesc: "Causes the target to become drowsy.",
 	},
 	zapcannon: {
 		name: "Zap Cannon",

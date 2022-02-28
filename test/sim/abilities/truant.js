@@ -52,7 +52,7 @@ describe('Truant', function () {
 
 		battle.makeChoices('move irondefense', 'move endure');
 		battle.makeChoices('move irondefense', 'move spore');
-		while (user.status === 'slp') {
+		while (user.status === 'drowsy') {
 			assert.fullHP(pokemon);
 			battle.makeChoices('move scratch', 'move endure');
 		}

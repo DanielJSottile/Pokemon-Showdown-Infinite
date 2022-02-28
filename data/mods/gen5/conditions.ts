@@ -1,5 +1,5 @@
 export const Conditions: {[k: string]: ModdedConditionData} = {
-	slp: {
+	drowsy: {
 		inherit: true,
 		onSwitchIn(target) {
 			this.effectState.time = this.effectState.startTime;

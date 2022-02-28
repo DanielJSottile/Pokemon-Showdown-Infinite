@@ -18,7 +18,7 @@ describe('Trick Room', function () {
 		battle.makeChoices('move trickroom', 'move poisonjab');
 		battle.makeChoices('move spore', 'move spore');
 		assert.equal(battle.p1.active[0].status, '');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it('should not allow Pokemon using a lower priority move to act before other Pokemon', function () {
@@ -67,12 +67,12 @@ describe('Trick Room', function () {
 
 		battle.makeChoices('move spore', 'move spore');
 		assert.equal(battle.p1.active[0].status, '');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 		battle.p2.active[0].setStatus('');
 		battle.p2.active[0].setItem('choicescarf'); // Deoxys is now much faster speed-wise than Ninjask, but should still be slower in Trick Room.
 		battle.makeChoices('move spore', 'move spore');
 		assert.equal(battle.p1.active[0].status, '');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it('should not affect damage dealt by moves whose power is reliant on speed', function () {

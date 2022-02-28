@@ -114,7 +114,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.effectState.lastDamageSource = source;
 			},
 			onAfterSetStatus(status, pokemon) {
-				if (status.id === 'slp' || status.id === 'frz') {
+				if (status.id === 'drowsy' || status.id === 'frz') {
 					pokemon.removeVolatile('bide');
 				}
 			},
@@ -402,7 +402,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dreameater: {
 		inherit: true,
 		onTryImmunity(target) {
-			return target.status === 'slp' && !target.volatiles['substitute'];
+			return target.status === 'drowsy' && !target.volatiles['substitute'];
 		},
 	},
 	embargo: {
@@ -1131,7 +1131,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				if (pokemon.status !== 'slp' && !pokemon.hasAbility('comatose')) {
+				if (pokemon.status !== 'drowsy' && !pokemon.hasAbility('comatose')) {
 					return false;
 				}
 				this.add('-start', pokemon, 'Nightmare');
@@ -1697,11 +1697,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onLockMove: 'uproar',
 			onAnySetStatus(status, pokemon) {
-				if (status.id === 'slp') {
+				if (status.id === 'drowsy') {
 					if (pokemon === this.effectState.target) {
-						this.add('-fail', pokemon, 'slp', '[from] Uproar', '[msg]');
+						this.add('-fail', pokemon, 'drowsy', '[from] Uproar', '[msg]');
 					} else {
-						this.add('-fail', pokemon, 'slp', '[from] Uproar');
+						this.add('-fail', pokemon, 'drowsy', '[from] Uproar');
 					}
 					return null;
 				}
@@ -1785,7 +1785,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onResidualSubOrder: 19,
 			onEnd(target) {
 				this.add('-end', target, 'move: Yawn', '[silent]');
-				target.trySetStatus('slp', this.effectState.source);
+				target.trySetStatus('drowsy', this.effectState.source);
 			},
 		},
 	},

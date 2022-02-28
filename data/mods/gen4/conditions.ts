@@ -13,14 +13,14 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			}
 		},
 	},
-	slp: {
-		name: 'slp',
+	drowsy: {
+		name: 'drowsy',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Move') {
-				this.add('-status', target, 'slp', '[from] move: ' + sourceEffect.name);
+				this.add('-status', target, 'drowsy', '[from] move: ' + sourceEffect.name);
 			} else {
-				this.add('-status', target, 'slp');
+				this.add('-status', target, 'drowsy');
 			}
 			// 1-4 turns
 			this.effectState.time = this.random(2, 6);
@@ -35,7 +35,7 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 				pokemon.cureStatus();
 				return;
 			}
-			this.add('cant', pokemon, 'slp');
+			this.add('cant', pokemon, 'drowsy');
 			if (move.sleepUsable) {
 				return;
 			}

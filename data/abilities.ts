@@ -317,7 +317,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		onResidual(pokemon) {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
-				if (target.status === "slp" || target.hasAbility("comatose")) {
+				if (target.status === "drowsy" || target.hasAbility("comatose")) {
 					this.damage(target.baseMaxhp / 8, target, pokemon);
 				}
 			}
@@ -1185,7 +1185,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 			) {
 				const r = this.random(100);
 				if (r < 11) {
-					source.setStatus("slp", target);
+					source.setStatus("drowsy", target);
 				} else if (r < 21) {
 					source.setStatus("par", target);
 				} else if (r < 30) {
@@ -2245,13 +2245,13 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	insomnia: {
 		onUpdate(pokemon) {
-			if (pokemon.status === "slp") {
+			if (pokemon.status === "drowsy") {
 				this.add("-activate", pokemon, "ability: Insomnia");
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
-			if (status.id !== "slp") return;
+			if (status.id !== "drowsy") return;
 			if ((effect as Move)?.status) {
 				this.add("-immune", target, "[from] ability: Insomnia");
 			}
@@ -5001,7 +5001,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	sweetveil: {
 		name: "Sweet Veil",
 		onAllySetStatus(status, target, source, effect) {
-			if (status.id === "slp") {
+			if (status.id === "drowsy") {
 				this.debug("Sweet Veil interrupts sleep");
 				const effectHolder = this.effectState.target;
 				this.add(
@@ -5079,7 +5079,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		onAfterSetStatus(status, target, source, effect) {
 			if (!source || source === target) return;
 			if (effect && effect.id === "toxicspikes") return;
-			if (status.id === "slp" || status.id === "frz") return;
+			if (status.id === "drowsy" || status.id === "fsb") return;
 			this.add("-activate", target, "ability: Synchronize");
 			// Hack to make status-prevention abilities think Synchronize is a status move
 			// and show messages when activating against it.
@@ -5582,13 +5582,13 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	vitalspirit: {
 		onUpdate(pokemon) {
-			if (pokemon.status === "slp") {
+			if (pokemon.status === "drowsy") {
 				this.add("-activate", pokemon, "ability: Vital Spirit");
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
-			if (status.id !== "slp") return;
+			if (status.id !== "drowsy") return;
 			if ((effect as Move)?.status) {
 				this.add("-immune", target, "[from] ability: Vital Spirit");
 			}

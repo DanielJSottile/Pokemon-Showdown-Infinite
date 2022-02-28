@@ -1110,7 +1110,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.add('-anim', source, 'Overheat', target);
 		},
 		onBasePower(basePower, pokemon) {
-			if (pokemon.status && pokemon.status !== 'slp') {
+			if (pokemon.status && pokemon.status !== 'drowsy') {
 				return this.chainModify(2);
 			}
 		},
@@ -3158,9 +3158,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			this.add('-anim', source, "Celebrate", target);
 		},
 		onHit(target, source) {
-			const hax = this.sample(['slp', 'brn', 'par', 'tox']);
+			const hax = this.sample(['drowsy', 'brn', 'par', 'tox']);
 			target.trySetStatus(hax, source);
-			if (hax === 'slp') {
+			if (hax === 'drowsy') {
 				this.actions.useMove('Dream Eater', source);
 			} else if (hax === 'par') {
 				this.actions.useMove('Iron Head', source);

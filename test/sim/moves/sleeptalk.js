@@ -34,7 +34,7 @@ describe('Sleep Talk', function () {
 		assert.equal(move.pp, move.maxpp - 1);
 		const hp = breloom.hp;
 		battle.makeChoices('move snore', 'move sleeptalk');
-		assert.equal(chansey.status, 'slp');
+		assert.equal(chansey.status, 'drowsy');
 		assert.equal(breloom.hp, hp);
 		assert.equal(move.pp, move.maxpp - 2);
 	});

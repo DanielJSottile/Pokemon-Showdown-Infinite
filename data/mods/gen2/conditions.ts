@@ -24,14 +24,14 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			}
 		},
 	},
-	slp: {
-		name: 'slp',
+	drowsy: {
+		name: 'drowsy',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Move') {
-				this.add('-status', target, 'slp', '[from] move: ' + sourceEffect.name);
+				this.add('-status', target, 'drowsy', '[from] move: ' + sourceEffect.name);
 			} else {
-				this.add('-status', target, 'slp');
+				this.add('-status', target, 'drowsy');
 			}
 			// 1-6 turns
 			this.effectState.time = this.random(2, 8);
@@ -43,7 +43,7 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 				pokemon.cureStatus();
 				return;
 			}
-			this.add('cant', pokemon, 'slp');
+			this.add('cant', pokemon, 'drowsy');
 			if (move.sleepUsable) {
 				return;
 			}
@@ -165,7 +165,7 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			return this.random(2, 4);
 		},
 		onResidual(target) {
-			if ((target.lastMove && target.lastMove.id === 'struggle') || target.status === 'slp') {
+			if ((target.lastMove && target.lastMove.id === 'struggle') || target.status === 'drowsy') {
 				// don't lock, and bypass confusion for calming
 				delete target.volatiles['lockedmove'];
 			}

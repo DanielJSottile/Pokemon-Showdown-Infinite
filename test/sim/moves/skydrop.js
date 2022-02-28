@@ -186,7 +186,7 @@ describe('Sky Drop', function () {
 		]]);
 
 		battle.makeChoices('move skydrop -2, move spore 1', 'auto');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it(`should hit its picked-up target even if its position changed with Ally Switch`, function () {

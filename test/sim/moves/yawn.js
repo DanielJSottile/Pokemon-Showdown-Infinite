@@ -19,7 +19,7 @@ describe('Yawn', function () {
 		battle.makeChoices();
 		assert.equal(battle.p2.active[0].status, '');
 		battle.makeChoices('move 2', 'move 1');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it(`should be blocked by Safeguard`, function () {
@@ -41,6 +41,6 @@ describe('Yawn', function () {
 		]]);
 		battle.makeChoices();
 		battle.makeChoices();
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 });

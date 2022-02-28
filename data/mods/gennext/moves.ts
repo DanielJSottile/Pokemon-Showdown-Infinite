@@ -645,7 +645,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return damage;
 			},
 			onAfterSetStatus(status, pokemon) {
-				if (status.id === 'slp') {
+				if (status.id === 'drowsy') {
 					pokemon.removeVolatile('bide');
 					pokemon.removeVolatile('bidestall');
 				}

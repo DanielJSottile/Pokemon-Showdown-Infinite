@@ -266,7 +266,7 @@ message).
 > The switched Pokémon has HP `HP`, and status `STATUS`. `HP` is specified as
 > a fraction; if it is your own Pokémon then it will be `CURRENT/MAX`, if not,
 > it will be `/100` if HP Percentage Mod is in effect and `/48` otherwise.
-> `STATUS` can be left blank, or it can be `slp`, `par`, etc.
+> `STATUS` can be left blank, or it can be `drowsy`, `par`, etc.
 >
 > `switch` means it was intentional, while `drag` means it was unintentional
 > (forced by Whirlwind, Roar, etc).

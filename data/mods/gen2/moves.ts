@@ -159,7 +159,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	dig: {
 		inherit: true,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 		condition: {
 			duration: 2,
@@ -250,7 +250,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	fly: {
 		inherit: true,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 		condition: {
 			duration: 2,
@@ -523,14 +523,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				if (pokemon.status !== 'slp') {
+				if (pokemon.status !== 'drowsy') {
 					return false;
 				}
 				this.add('-start', pokemon, 'Nightmare');
 			},
 			onAfterMoveSelfPriority: 1,
 			onAfterMoveSelf(pokemon) {
-				if (pokemon.status === 'slp') this.damage(pokemon.baseMaxhp / 4);
+				if (pokemon.status === 'drowsy') this.damage(pokemon.baseMaxhp / 4);
 			},
 		},
 	},
@@ -637,7 +637,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		accuracy: 75,
 		critRatio: 3,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 	},
 	reflect: {
@@ -662,10 +662,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			return null;
 		},
 		onHit(target, source, move) {
-			if (target.status !== 'slp') {
-				if (!target.setStatus('slp', source, move)) return;
+			if (target.status !== 'drowsy') {
+				if (!target.setStatus('drowsy', source, move)) return;
 			} else {
-				this.add('-status', target, 'slp', '[from] move: Rest');
+				this.add('-status', target, 'drowsy', '[from] move: Rest');
 			}
 			target.statusState.time = 3;
 			target.statusState.startTime = 3;
@@ -743,14 +743,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	skullbash: {
 		inherit: true,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 	},
 	skyattack: {
 		inherit: true,
 		critRatio: 1,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 		secondary: null,
 	},
@@ -779,7 +779,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	solarbeam: {
 		inherit: true,
 		onPrepareHit(target, source) {
-			return source.status !== 'slp';
+			return source.status !== 'drowsy';
 		},
 		// Rain weakening done directly in the damage formula
 		onBasePower() {},

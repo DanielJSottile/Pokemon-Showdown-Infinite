@@ -266,7 +266,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			// If a sleep inducing move is used while the user is recharging, the accuracy is true.
-			if (move.status === 'slp' && target && target.volatiles['mustrecharge']) {
+			if (move.status === 'drowsy' && target && target.volatiles['mustrecharge']) {
 				accuracy = true;
 			}
 
@@ -488,7 +488,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					// Gen 1 bug: If the target has just used hyperbeam and must recharge, its status will be ignored and put to sleep.
 					// This does NOT revert the paralyse speed drop or the burn attack drop.
 					// Also, being put to sleep clears the recharge condition.
-					if (moveData.status === 'slp' && target.volatiles['mustrecharge']) {
+					if (moveData.status === 'drowsy' && target.volatiles['mustrecharge']) {
 						// The sleep move is guaranteed to hit in this situation, unless Sleep Clause activates.
 						// Do not clear recharge in that case.
 						if (target.setStatus(moveData.status, pokemon, move)) {

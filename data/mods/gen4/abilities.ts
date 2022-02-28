@@ -74,7 +74,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (damage && move.flags['contact'] && !source.status) {
 				const r = this.random(100);
 				if (r < 10) {
-					source.setStatus('slp', target);
+					source.setStatus('drowsy', target);
 				} else if (r < 20) {
 					source.setStatus('par', target);
 				} else if (r < 30) {
@@ -448,7 +448,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (!source || source === target) return;
 			if (effect && effect.id === 'toxicspikes') return;
 			let id: string = status.id;
-			if (id === 'slp' || id === 'frz') return;
+			if (id === 'drowsy' || id === 'frz') return;
 			if (id === 'tox') id = 'psn';
 			source.trySetStatus(id, target);
 		},

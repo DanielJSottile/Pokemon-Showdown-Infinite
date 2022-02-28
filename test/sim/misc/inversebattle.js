@@ -122,6 +122,6 @@ describe('Inverse Battle', function () {
 			{species: 'talonflame', moves: ['mistyterrain']},
 		]]);
 		battle.makeChoices();
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 });

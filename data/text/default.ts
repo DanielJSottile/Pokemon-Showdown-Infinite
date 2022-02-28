@@ -175,13 +175,14 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		endFromItem: "  [POKEMON]'s [ITEM] healed its burn!",
 		damage: "  [POKEMON] was hurt by its burn!",
 	},
-	frz: {
-		start: "  [POKEMON] was frozen solid!",
-		alreadyStarted: "  [POKEMON] is already frozen solid!",
-		end: "  [POKEMON] thawed out!",
-		endFromItem: "  [POKEMON]'s [ITEM] defrosted it!",
-		endFromMove: "  [POKEMON]'s [MOVE] melted the ice!",
-		cant: "[POKEMON] is frozen solid!",
+	fsb: {
+		start: "  [POKEMON] became frostbitten!",
+		startFromItem: "  [POKEMON] was frostbitten by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already frostbitten!",
+		end: "  [POKEMON]'s frostbite was healed'!",
+		endFromItem: "  [POKEMON]'s [ITEM] healed its frostbite!",
+		endFromMove: "  [POKEMON]'s [MOVE] healed its frostbite!",
+		damage: "  [POKEMON] was hurt by its frostbite!",
 	},
 	par: {
 		start: "  [POKEMON] is paralyzed! It may be unable to move!",
@@ -205,13 +206,33 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		alreadyStarted: "#psn",
 		damage: "#psn",
 	},
-	slp: {
-		start: "  [POKEMON] fell asleep!",
-		startFromRest: "  [POKEMON] slept and became healthy!",
-		alreadyStarted: "  [POKEMON] is already asleep!",
+	drowsy: {
+		start: "  [POKEMON] became drowsy!",
+		startFromRest: "  [POKEMON] snoozed and became healthy!",
+		alreadyStarted: "  [POKEMON] is already drowsy!",
 		end: "  [POKEMON] woke up!",
 		endFromItem: "  [POKEMON]'s [ITEM] woke it up!",
-		cant: "[POKEMON] is fast asleep.",
+		cant: "[POKEMON] is too drowsy to move.",
+	},
+	bewitchment: {
+		start: "  [POKEMON] is bewitched! It may be unable to move!",
+		alreadyStarted: "  [POKEMON] is already bewitched!",
+		end: "  [POKEMON] was cured of bewitchment!",
+		endFromItem: "  [POKEMON]'s [ITEM] cured its bewitchment!",
+		cant: "[POKEMON] is bewitched! It can't move!",
+	},
+	whiplash: {
+		start: "  [POKEMON] became whiplashed!",
+		alreadyStarted: "  [POKEMON] is already whiplashed!",
+		end: "  [POKEMON]'s whiplash was ended!",
+		endFromItem: "  [POKEMON]'s [ITEM] ended its whiplash!",
+		damage: "  [POKEMON] was hurt by its whiplash!",
+	},
+	blindness: {
+		start: "  [POKEMON] became blinded!  Moves may be harder to hit!",
+		alreadyStarted: "  [POKEMON] is already blinded!",
+		end: "  [POKEMON] became able to see!",
+		endFromItem: "  [POKEMON]'s [ITEM] ended its blindness!",
 	},
 
 	// misc effects

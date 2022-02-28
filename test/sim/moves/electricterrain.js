@@ -45,7 +45,7 @@ describe('Electric Terrain', function () {
 		battle.setPlayer('p2', {team: [{species: "Abra", ability: 'magicguard', moves: ['telekinesis', 'spore']}]});
 		battle.makeChoices('move electricterrain', 'move telekinesis');
 		battle.makeChoices('move spore', 'move spore');
-		assert.equal(battle.p1.active[0].status, 'slp');
+		assert.equal(battle.p1.active[0].status, 'drowsy');
 		assert.equal(battle.p2.active[0].status, '');
 	});
 
@@ -54,7 +54,7 @@ describe('Electric Terrain', function () {
 		battle.setPlayer('p1', {team: [{species: "Jolteon", ability: 'voltabsorb', moves: ['sleeptalk', 'electricterrain']}]});
 		battle.setPlayer('p2', {team: [{species: "Whimsicott", ability: 'prankster', moves: ['spore']}]});
 		battle.makeChoices('move sleeptalk', 'move spore');
-		assert.equal(battle.p1.active[0].status, 'slp');
+		assert.equal(battle.p1.active[0].status, 'drowsy');
 	});
 
 	it('should prevent Yawn from putting grounded Pokemon to sleep, and cause Yawn to fail', function () {
@@ -83,8 +83,8 @@ describe('Electric Terrain', function () {
 		battle.setPlayer('p2', {team: [{species: "Sableye", ability: 'prankster', moves: ['yawn', 'electricterrain']}]});
 		battle.makeChoices('move yawn', 'move yawn');
 		battle.makeChoices('move skydrop', 'move electricterrain');
-		assert.equal(battle.p1.active[0].status, 'slp');
-		assert.equal(battle.p2.active[0].status, 'slp');
+		assert.equal(battle.p1.active[0].status, 'drowsy');
+		assert.equal(battle.p2.active[0].status, 'drowsy');
 	});
 
 	it('should cause Nature Power to become Thunderbolt', function () {

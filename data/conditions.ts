@@ -16,6 +16,17 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "brn");
 			}
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
+		},
+		onBeforeMovePriority: 10,
+		onBeforeMove(pokemon, target, move) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 		},
 		// Damage reduction is handled directly in the sim/battle.js damage function
 		onResidualOrder: 10,
@@ -38,6 +49,9 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "par");
 			}
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onModifySpe(spe, pokemon) {
 			if (!pokemon.hasAbility("quickfeet")) {
@@ -46,21 +60,26 @@ export const Conditions: { [k: string]: ConditionData } = {
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 			if (this.randomChance(1, 4)) {
 				this.add("cant", pokemon, "par");
 				return false;
 			}
 		},
 	},
-	slp: {
-		name: "slp",
-		effectType: "Status",
+	drowsy: {
+		name: 'drowsy',
+		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === "Ability") {
 				this.add(
 					"-status",
 					target,
-					"slp",
+					"drowsy",
 					"[from] ability: " + sourceEffect.name,
 					"[of] " + source
 				);
@@ -68,12 +87,13 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.add(
 					"-status",
 					target,
-					"slp",
+					"drowsy",
 					"[from] move: " + sourceEffect.name
 				);
 			} else {
-				this.add("-status", target, "slp");
+				this.add("-status", target, "drowsy");
 			}
+			this.add("-message", "The target became Drowsy!");
 			// 1-3 turns
 			this.effectState.startTime = this.random(2, 5);
 			this.effectState.time = this.effectState.startTime;
@@ -88,9 +108,11 @@ export const Conditions: { [k: string]: ConditionData } = {
 				pokemon.cureStatus();
 				return;
 			}
-			this.add("cant", pokemon, "slp");
-			if (move.sleepUsable) {
-				return;
+			if (this.randomChance(1, 4)) {
+				this.add("cant", pokemon, "drowsy");
+				if (move.sleepUsable) {
+					return;
+				}
 			}
 			return false;
 		},
@@ -113,8 +135,18 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.add("-status", target, "fsb");
 			}
 			this.add("-message", "The target became Frostbitten!");
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onBeforeMovePriority: 10,
+		onBeforeMove(pokemon) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
+		},
 		onModifyMove(move, pokemon) {
 			if (move.flags["defrost"]) {
 				this.add("-curestatus", pokemon, "fsb", "[from] move: " + move);
@@ -149,10 +181,21 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "psn");
 			}
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
+		},
+		onBeforeMovePriority: 10,
+		onBeforeMove(pokemon, target, move) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 		},
 	},
 	tox: {
@@ -173,6 +216,9 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "tox");
 			}
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onSwitchIn() {
 			this.effectState.stage = 0;
@@ -186,6 +232,14 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.clampIntRange(pokemon.baseMaxhp / 16, 1) *
 					this.effectState.stage
 			);
+		},
+		onBeforeMovePriority: 10,
+		onBeforeMove(pokemon, target, move) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 		},
 	},
 	bewitchment: {
@@ -203,13 +257,20 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "bewitchment");
 			}
-			this.add("-message", "The target became Bewitched!");
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onModifySpD(spd, pokemon) {
 			return this.chainModify(0.33);
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 			if (this.randomChance(1, 4)) {
 				this.add("cant", pokemon, "bewitchment");
 				return false;
@@ -231,7 +292,9 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "whiplash");
 			}
-			this.add("-message", "The target became Whiplashed!");
+			// 1-3 turns
+			this.effectState.startTime = this.random(2, 5);
+			this.effectState.time = this.effectState.startTime;
 		},
 		onModifyDef(def, pokemon) {
 			return this.chainModify(0.33);
@@ -239,7 +302,18 @@ export const Conditions: { [k: string]: ConditionData } = {
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
-			this.add("-message", "The target suffers from Whiplash!");
+		},
+		onBeforeMovePriority: 1,
+		onBeforeMove(pokemon) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
+			if (this.randomChance(1, 4)) {
+				this.add("cant", pokemon, "bewitchment");
+				return false;
+			}
 		},
 	},
 	blindness: {
@@ -257,7 +331,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "blindness");
 			}
-			this.add("-message", "The target became Blinded!");
 			this.effectState.startTime = this.random(2, 5);
 			this.effectState.time = this.effectState.startTime;
 		},
@@ -272,7 +345,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
-				this.add("-message", "The target became able to see!");
 				return;
 			}
 			return;
@@ -283,7 +355,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 				(move.type === "Water" && move.category !== "Status")
 			) {
 				target.cureStatus();
-				this.add("-message", "The target became able to see!");
 			}
 		},
 	},
@@ -408,7 +479,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 		name: "lockedmove",
 		duration: 2,
 		onResidual(target) {
-			if (target.status === "slp") {
+			if (target.status === "drowsy") {
 				// don't lock, and bypass confusion for calming
 				delete target.volatiles["lockedmove"];
 			}

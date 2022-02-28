@@ -656,52 +656,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Accuracy Moves Clause: Accuracy-lowering moves are banned');
 		},
 	},
-	sleepmovesclause: {
-		effectType: 'ValidatorRule',
-		name: 'Sleep Moves Clause',
-		desc: "Bans all moves that induce sleep, such as Hypnosis",
-		banlist: ['Yawn'],
-		onBegin() {
-			this.add('rule', 'Sleep Clause: Sleep-inducing moves are banned');
-		},
-		onValidateSet(set) {
-			const problems = [];
-			if (set.moves) {
-				for (const id of set.moves) {
-					const move = this.dex.moves.get(id);
-					if (move.status && move.status === 'slp') problems.push(move.name + ' is banned by Sleep Clause.');
-				}
-			}
-			return problems;
-		},
-	},
-	gravitysleepclause: {
-		effectType: 'ValidatorRule',
-		name: 'Gravity Sleep Clause',
-		desc: "Bans sleep moves below 100% accuracy, in conjunction with Gravity or Gigantamax Orbeetle",
-		banlist: [
-			'Gravity ++ Grass Whistle', 'Gravity ++ Hypnosis', 'Gravity ++ Lovely Kiss', 'Gravity ++ Sing', 'Gravity ++ Sleep Powder',
-		],
-		onValidateTeam(team) {
-			let hasOrbeetle = false;
-			let hasSleepMove = false;
-			for (const set of team) {
-				const species = this.dex.species.get(set.species);
-				if (species.name === "Orbeetle" && set.gigantamax) hasOrbeetle = true;
-				if (!hasOrbeetle && species.name === "Orbeetle-Gmax") hasOrbeetle = true;
-				for (const moveid of set.moves) {
-					const move = this.dex.moves.get(moveid);
-					if (move.status && move.status === 'slp' && move.accuracy < 100) hasSleepMove = true;
-				}
-			}
-			if (hasOrbeetle && hasSleepMove) {
-				return [`The combination of Gravity and Gigantamax Orbeetle on the same team is banned.`];
-			}
-		},
-		onBegin() {
-			this.add('rule', 'Gravity Sleep Clause: The combination of sleep-inducing moves with imperfect accuracy and Gravity or Gigantamax Orbeetle are banned');
-		},
-	},
 	endlessbattleclause: {
 		effectType: 'Rule',
 		name: 'Endless Battle Clause',
@@ -874,51 +828,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Allows players to change their own choices before their opponents make one",
 		onBegin() {
 			this.supportCancel = true;
-		},
-	},
-	sleepclausemod: {
-		effectType: 'Rule',
-		name: 'Sleep Clause Mod',
-		desc: "Prevents players from putting more than one of their opponent's Pok&eacute;mon to sleep at a time, and bans Mega Gengar from using Hypnosis",
-		banlist: ['Hypnosis + Gengarite'],
-		onBegin() {
-			this.add('rule', 'Sleep Clause Mod: Limit one foe put to sleep');
-		},
-		onSetStatus(status, target, source) {
-			if (source && source.isAlly(target)) {
-				return;
-			}
-			if (status.id === 'slp') {
-				for (const pokemon of target.side.pokemon) {
-					if (pokemon.hp && pokemon.status === 'slp') {
-						if (!pokemon.statusState.source || !pokemon.statusState.source.isAlly(pokemon)) {
-							this.add('-message', 'Sleep Clause Mod activated.');
-							return false;
-						}
-					}
-				}
-			}
-		},
-	},
-	stadiumsleepclause: {
-		effectType: 'Rule',
-		name: 'Stadium Sleep Clause',
-		desc: "Prevents players from putting one of their opponent's Pok\u00E9mon to sleep if any of the opponent's other Pok\u00E9mon are asleep (different from Sleep Clause Mod because putting your own Pok\u00E9mon to sleep is enough to prevent opponents from putting your others to sleep).",
-		onBegin() {
-			this.add('rule', 'Stadium Sleep Clause: Limit one foe put to sleep');
-		},
-		onSetStatus(status, target, source) {
-			if (source && source.isAlly(target)) {
-				return;
-			}
-			if (status.id === 'slp') {
-				for (const pokemon of target.side.pokemon) {
-					if (pokemon.hp && pokemon.status === 'slp') {
-						this.add('-message', "Sleep Clause activated. (In Stadium, Sleep Clause activates if any of the opponent's Pokemon are asleep, even if self-inflicted from Rest)");
-						return false;
-					}
-				}
-			}
 		},
 	},
 	switchpriorityclausemod: {

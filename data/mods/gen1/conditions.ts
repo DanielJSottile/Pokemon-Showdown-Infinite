@@ -56,14 +56,14 @@ export const Conditions: {[id: string]: ModdedConditionData} = {
 			pokemon.addVolatile('parspeeddrop');
 		},
 	},
-	slp: {
-		name: 'slp',
+	drowsy: {
+		name: 'drowsy',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Move') {
-				this.add('-status', target, 'slp', '[from] move: ' + sourceEffect.name);
+				this.add('-status', target, 'drowsy', '[from] move: ' + sourceEffect.name);
 			} else {
-				this.add('-status', target, 'slp');
+				this.add('-status', target, 'drowsy');
 			}
 			// 1-7 turns
 			this.effectState.startTime = this.random(1, 8);
@@ -73,7 +73,7 @@ export const Conditions: {[id: string]: ModdedConditionData} = {
 		onBeforeMove(pokemon, target, move) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time > 0) {
-				this.add('cant', pokemon, 'slp');
+				this.add('cant', pokemon, 'drowsy');
 			}
 			pokemon.lastMove = null;
 			return false;
@@ -200,7 +200,7 @@ export const Conditions: {[id: string]: ModdedConditionData} = {
 			return duration;
 		},
 		onResidual(target) {
-			if (target.lastMove && target.lastMove.id === 'struggle' || target.status === 'slp') {
+			if (target.lastMove && target.lastMove.id === 'struggle' || target.status === 'drowsy') {
 				delete target.volatiles['partialtrappinglock'];
 			}
 		},

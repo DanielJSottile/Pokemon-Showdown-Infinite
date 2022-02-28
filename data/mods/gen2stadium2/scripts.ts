@@ -193,7 +193,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				const isSleepUsable = move.sleepUsable || this.dex.moves.get(move.sourceEffect).sleepUsable;
 				let i: number;
 				for (i = 0; i < hits && target.hp && pokemon.hp; i++) {
-					if (pokemon.status === 'slp' && !isSleepUsable) break;
+					if (pokemon.status === 'drowsy' && !isSleepUsable) break;
 					move.hit = i + 1;
 					if (move.hit === hits) move.lastHit = true;
 					moveDamage = this.moveHit(target, pokemon, move);

@@ -684,11 +684,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onLockMove: 'uproar',
 			onAnySetStatus(status, pokemon) {
-				if (status.id === 'slp') {
+				if (status.id === 'drowsy') {
 					if (pokemon === this.effectState.target) {
-						this.add('-fail', pokemon, 'slp', '[from] Uproar', '[msg]');
+						this.add('-fail', pokemon, 'drowsy', '[from] Uproar', '[msg]');
 					} else {
-						this.add('-fail', pokemon, 'slp', '[from] Uproar');
+						this.add('-fail', pokemon, 'drowsy', '[from] Uproar');
 					}
 					return null;
 				}

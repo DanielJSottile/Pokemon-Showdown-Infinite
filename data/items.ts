@@ -889,12 +889,12 @@ export const Items: { [itemid: string]: ItemData } = {
 			type: "Water",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === "slp") {
+			if (pokemon.status === "drowsy") {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === "slp") {
+			if (pokemon.status === "drowsy") {
 				pokemon.cureStatus();
 			}
 		},
@@ -3298,7 +3298,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
 			pokemon.trySetStatus("par", pokemon);
-			pokemon.trySetStatus("slp", pokemon);
+			pokemon.trySetStatus("drowsy", pokemon);
 		},
 		num: -43,
 		gen: 8,
@@ -4412,7 +4412,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
 			pokemon.trySetStatus("psn", pokemon);
-			pokemon.trySetStatus("slp", pokemon);
+			pokemon.trySetStatus("drowsy", pokemon);
 		},
 		num: -46,
 		gen: 8,
@@ -6577,7 +6577,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
 			pokemon.trySetStatus("bewitchment", pokemon);
-			pokemon.trySetStatus("slp", pokemon);
+			pokemon.trySetStatus("drowsy", pokemon);
 		},
 		num: -47,
 		gen: 8,
@@ -6605,7 +6605,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
 			pokemon.trySetStatus("brn", pokemon);
-			pokemon.trySetStatus("slp", pokemon);
+			pokemon.trySetStatus("drowsy", pokemon);
 		},
 		num: -55,
 		gen: 8,
@@ -7929,7 +7929,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp * 0.5);
 			pokemon.trySetStatus("whiplash", pokemon);
-			pokemon.trySetStatus("slp", pokemon);
+			pokemon.trySetStatus("drowsy", pokemon);
 		},
 		num: -44,
 		gen: 8,

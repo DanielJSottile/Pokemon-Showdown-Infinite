@@ -152,7 +152,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			// Fails if the difference between
 			// max HP and current HP is 0, 255, or 511
 			if (target.hp >= target.maxhp) return false;
-			if (!target.setStatus('slp', source, move)) return false;
+			if (!target.setStatus('drowsy', source, move)) return false;
 			target.statusState.time = 2;
 			target.statusState.startTime = 2;
 			target.recalculateStats!(); // Stadium Rest removes statdrops given by Major Status Conditions.

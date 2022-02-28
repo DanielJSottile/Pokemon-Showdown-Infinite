@@ -71,7 +71,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					this.effectState.duration++;
 				} else {
 					switch (status.id) {
-					case 'slp':
+					case 'drowsy':
 					case 'frz':
 						this.effectState.duration++;
 						break;
@@ -676,7 +676,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.hint("In Gen 1, recovery moves fail if (user's maximum HP - user's current HP + 1) is divisible by 256.");
 				return false;
 			}
-			if (!target.setStatus('slp', source, move)) return false;
+			if (!target.setStatus('drowsy', source, move)) return false;
 			target.statusState.time = 2;
 			target.statusState.startTime = 2;
 			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game

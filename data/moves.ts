@@ -1519,7 +1519,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 						"Insomnia",
 						"[from] move: Beastly Awakening Punch"
 					);
-					if (pokemon.status === "slp") {
+					if (pokemon.status === "drowsy") {
 						pokemon.cureStatus();
 					}
 					return;
@@ -3765,14 +3765,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	darkvoid: {
 		num: 464,
-		accuracy: 70,
+		accuracy: 90,
 		basePower: 0,
 		category: "Status",
 		name: "Dark Void",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		status: "slp",
+		status: "drowsy",
 		onTry(source, target, move) {
 			if (
 				["Darkrai", "Apocalylidae"].includes(source.species.name) ||
@@ -4643,7 +4643,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		onTryImmunity(target) {
-			return target.status === "slp" || target.hasAbility("comatose");
+			return target.status === "drowsy" || target.hasAbility("comatose");
 		},
 		secondary: null,
 		target: "normal",
@@ -4913,7 +4913,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onSetStatus(status, target, source, effect) {
 				if (
-					status.id === "slp" &&
+					status.id === "drowsy" &&
 					target.isGrounded() &&
 					!target.isSemiInvulnerable()
 				) {
@@ -5478,7 +5478,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon) {
-			if (pokemon.status && pokemon.status !== "slp") {
+			if (pokemon.status) {
 				return this.chainModify(2);
 			}
 		},
@@ -7313,7 +7313,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				for (const pokemon of source.foes()) {
 					const result = this.random(3);
 					if (result === 0) {
-						pokemon.trySetStatus("slp", source);
+						pokemon.trySetStatus("drowsy", source);
 					} else if (result === 1) {
 						pokemon.trySetStatus("par", source);
 					} else {
@@ -8004,12 +8004,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {},
 		isMax: "Grimmsnarl",
 		onHit(target) {
-			if (target.status || !target.runStatusImmunity("slp")) return;
+			if (target.status || !target.runStatusImmunity("drowsy")) return;
 			if (this.random(2) === 0) return;
 			target.addVolatile("yawn");
 		},
 		onAfterSubDamage(damage, target) {
-			if (target.status || !target.runStatusImmunity("slp")) return;
+			if (target.status || !target.runStatusImmunity("drowsy")) return;
 			if (this.random(2) === 0) return;
 			target.addVolatile("yawn");
 		},
@@ -8535,14 +8535,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	grasswhistle: {
 		num: 320,
-		accuracy: 55,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Grass Whistle",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
-		status: 'slp',
+		status: 'drowsy',
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -10337,7 +10337,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		status: "slp",
+		status: "drowsy",
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -10356,7 +10356,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			) {
 				bp *= Math.pow(2, pokemon.volatiles["iceball"].hitCount);
 			}
-			if (pokemon.status !== "slp") pokemon.addVolatile("iceball");
+			pokemon.addVolatile("iceball");
 			if (pokemon.volatiles["defensecurl"]) {
 				bp *= 2;
 			}
@@ -12152,7 +12152,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		status: "slp",
+		status: "drowsy",
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -14662,7 +14662,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				if (pokemon.status !== "slp" && !pokemon.hasAbility("comatose")) {
+				if (pokemon.status !== "drowsy" && !pokemon.hasAbility("comatose")) {
 					return false;
 				}
 				this.add("-start", pokemon, "Nightmare");
@@ -15165,26 +15165,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
-	paleowave: {
-		num: 0,
-		accuracy: 100,
-		basePower: 85,
-		category: "Special",
-		isNonstandard: "CAP",
-		name: "Paleo Wave",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: {
-			chance: 20,
-			boosts: {
-				atk: -1,
-			},
-		},
-		target: "normal",
-		type: "Rock",
-		contestType: "Beautiful",
-	},
 	paraboliccharge: {
 		num: 570,
 		accuracy: 100,
@@ -15364,7 +15344,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 20,
-			status: "slp",
+			status: "drowsy",
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
@@ -15437,7 +15417,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 				} else if (rand < 22) {
 					this.field.setWeather("maelstrom");
 				} else if (rand < 24) {
-					source.setStatus("slp", target);
+					source.setStatus("drowsy", target);
 				} else if (rand < 26) {
 					source.setStatus("brn", target);
 				} else if (rand < 28) {
@@ -17307,7 +17287,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {snatch: 1},
 		onHit(pokemon) {
-			if (["", "slp", "fsb"].includes(pokemon.status)) return false;
 			pokemon.cureStatus();
 		},
 		secondary: null,
@@ -17327,7 +17306,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		secondary: {
 			chance: 10,
-			status: "slp",
+			status: "drowsy",
 		},
 		onHit(target, pokemon, move) {
 			if (
@@ -17363,7 +17342,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onTry(source) {
-			if (source.status === "slp" || source.hasAbility("comatose")) {
+			if (source.status === "drowsy" || source.hasAbility("comatose")) {
 				return false;
 			}
 
@@ -17382,10 +17361,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 			}
 		},
 		onHit(target, source, move) {
-			if (!target.setStatus("slp", source, move)) return false;
-			target.statusState.time = 3;
-			target.statusState.startTime = 3;
-			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
+			if (!target.setStatus("drowsy", source, move)) return false;
+			this.heal(target.maxhp / 2);
 		},
 		secondary: null,
 		target: "self",
@@ -17836,7 +17813,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			) {
 				bp *= Math.pow(2, pokemon.volatiles["rollout"].hitCount);
 			}
-			if (pokemon.status !== "slp") pokemon.addVolatile("rollout");
+			pokemon.addVolatile("rollout");
 			if (pokemon.volatiles["defensecurl"]) {
 				bp *= 2;
 			}
@@ -18339,7 +18316,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			} else if (this.field.isTerrain("grassyterrain")) {
 				move.secondaries.push({
 					chance: 30,
-					status: "slp",
+					status: "drowsy",
 				});
 			} else if (this.field.isTerrain("mistyterrain")) {
 				move.secondaries.push({
@@ -18920,14 +18897,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	sing: {
 		num: 47,
-		accuracy: 55,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Sing",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
-		status: 'slp',
+		status: 'drowsy',
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -19391,7 +19368,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 15,
 		priority: 0,
 		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
-		status: "slp",
+		status: "drowsy",
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -19409,7 +19386,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "slp" || source.hasAbility("comatose");
+			return source.status === "drowsy" || source.hasAbility("comatose");
 		},
 		onHit(pokemon) {
 			const noSleepTalk = [
@@ -19739,7 +19716,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "slp" || source.hasAbility("comatose");
+			return source.status === "drowsy" || source.hasAbility("comatose");
 		},
 		secondary: {
 			chance: 30,
@@ -20452,7 +20429,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 15,
 		priority: 0,
 		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
-		status: "slp",
+		status: "drowsy",
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -22916,11 +22893,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 			const activeTeam = target.side.activeTeam();
 			const foeActiveTeam = target.side.foe.activeTeam();
 			for (const [i, allyActive] of activeTeam.entries()) {
-				if (allyActive && allyActive.status === "slp") {
+				if (allyActive && allyActive.status === "drowsy") {
 					allyActive.cureStatus();
 				}
 				const foeActive = foeActiveTeam[i];
-				if (foeActive && foeActive.status === "slp") foeActive.cureStatus();
+				if (foeActive && foeActive.status === "drowsy") foeActive.cureStatus();
 			}
 		},
 		condition: {
@@ -22946,11 +22923,11 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 			onLockMove: "uproar",
 			onAnySetStatus(status, pokemon) {
-				if (status.id === "slp") {
+				if (status.id === "drowsy") {
 					if (pokemon === this.effectState.target) {
-						this.add("-fail", pokemon, "slp", "[from] Uproar", "[msg]");
+						this.add("-fail", pokemon, "drowsy", "[from] Uproar", "[msg]");
 					} else {
-						this.add("-fail", pokemon, "slp", "[from] Uproar");
+						this.add("-fail", pokemon, "drowsy", "[from] Uproar");
 					}
 					return null;
 				}
@@ -23139,7 +23116,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: 100,
 		basePower: 70,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status === "slp" || target.hasAbility("comatose")) {
+			if (target.status === "drowsy" || target.hasAbility("comatose")) {
 				return move.basePower * 2;
 			}
 			return move.basePower;
@@ -23150,7 +23127,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onHit(target) {
-			if (target.status === "slp") target.cureStatus();
+			if (target.status === "drowsy") target.cureStatus();
 		},
 		secondary: null,
 		target: "normal",
@@ -23718,7 +23695,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					"Insomnia",
 					"[from] move: Worry Seed"
 				);
-				if (pokemon.status === "slp") {
+				if (pokemon.status === "drowsy") {
 					pokemon.cureStatus();
 				}
 				return;
@@ -23828,31 +23805,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 	},
 	yawn: {
 		num: 281,
-		accuracy: true,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Yawn",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		volatileStatus: "yawn",
-		onTryHit(target) {
-			if (target.status || !target.runStatusImmunity("slp")) {
-				return false;
-			}
-		},
-		condition: {
-			noCopy: true, // doesn't get copied by Baton Pass
-			duration: 2,
-			onStart(target, source) {
-				this.add("-start", target, "move: Yawn", "[of] " + source);
-			},
-			onResidualOrder: 23,
-			onEnd(target) {
-				this.add("-end", target, "move: Yawn", "[silent]");
-				target.trySetStatus("slp", this.effectState.source);
-			},
-		},
+		status: "drowsy",
 		secondary: null,
 		target: "normal",
 		type: "Normal",
