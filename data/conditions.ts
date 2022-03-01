@@ -100,7 +100,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
-			if (this.randomChance(1, 4)) {
+			if (this.randomChance(1, 2)) {
 				this.add("cant", pokemon, "drowsy");
 				if (move.sleepUsable) {
 					return;
