@@ -119,6 +119,17 @@ export const Conditions: { [k: string]: ConditionData } = {
 				return;
 			}
 		},
+		onModifyMove(move, pokemon) {
+			if (move.flags["awakens"]) {
+				this.add("-curestatus", pokemon, "drowsy", "[from] move: " + move);
+				pokemon.setStatus("");
+			}
+		},
+		onAfterMoveSecondary(target, source, move) {
+			if (move.thawsTarget) {
+				target.cureStatus();
+			}
+		},
 	},
 	fsb: {
 		name: "fsb",

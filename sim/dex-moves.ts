@@ -31,7 +31,8 @@ interface MoveFlags {
 	charge?: 1; // The user is unable to make a move between turns.
 	contact?: 1; // Makes contact.
 	dance?: 1; // When used by a Pokemon, other Pokemon with the Ability Dancer can attempt to execute the same move.
-	defrost?: 1; // Thaws the user if executed successfully while the user is frozen.
+	defrost?: 1; // Thaws the user if executed successfully while the user is frostbitten.
+	awakens?: 1; // Wakes up the user if executted successfully while the user is drowsy.
 	distance?: 1; // Can target a Pokemon positioned anywhere in a Triple Battle.
 	gravity?: 1; // Prevented from being executed or selected during Gravity's effect.
 	heal?: 1; // Prevented from being executed or selected during Heal Block's effect.
@@ -175,6 +176,7 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 	// -----------
 	ohko?: boolean | string;
 	thawsTarget?: boolean;
+	awakensTarget?: boolean;
 	heal?: number[] | null;
 	forceSwitch?: boolean;
 	selfSwitch?: string | boolean;
