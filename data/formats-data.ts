@@ -1102,6 +1102,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	growlithe: {
 		tier: "LC",
 	},
+	growlithehisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	arcanine: {
 		randomBattleMoves: [
 			"flareblitz",
@@ -1151,6 +1155,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "OU",
 		doublesTier: "DOU",
+	},
+	arcaninehisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	poliwag: {
 		tier: "LC",
@@ -1966,6 +1974,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	voltorb: {
 		tier: "LC",
 	},
+	voltorbhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	electrode: {
 		randomBattleMoves: [
 			"voltswitch",
@@ -1987,6 +1999,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	electrodehisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	exeggcute: {
 		tier: "LC",
@@ -3571,6 +3587,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
+	typhlosionhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	totodile: {
 		tier: "LC",
 	},
@@ -4384,6 +4404,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
+	qwilfishhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	shuckle: {
 		randomBattleMoves: [
 			"toxic",
@@ -4455,6 +4479,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	sneasel: {
 		tier: "NU",
 		doublesTier: "LC",
+	},
+	sneaselhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	weavile: {
 		randomBattleMoves: [
@@ -10014,6 +10042,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "RU",
 		doublesTier: "DUU",
 	},
+	samurotthisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	patrat: {
 		tier: "LC",
 	},
@@ -10623,6 +10655,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "PUBL",
 		doublesTier: "(DUU)",
 	},
+	lilliganthisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	basculin: {
 		randomBattleMoves: [
 			"liquidation",
@@ -10660,6 +10696,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	basculinwhitestriped: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	sandile: {
 		tier: "LC",
@@ -10979,6 +11019,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	zorua: {
 		tier: "LC",
 	},
+	zoruahisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	zoroark: {
 		randomBattleMoves: [
 			"suckerpunch",
@@ -11004,6 +11048,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "RUBL",
 		doublesTier: "(DUU)",
+	},
+	zoroarkhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	minccino: {
 		tier: "LC",
@@ -11797,6 +11845,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "NU",
 		doublesTier: "(DUU)",
+	},
+	braviaryhisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	vullaby: {
 		tier: "LC",
@@ -13179,6 +13231,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	sliggoo: {
 		tier: "NFE",
 	},
+	sliggoohisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	goodra: {
 		randomBattleMoves: [
 			"dracometeor",
@@ -13201,6 +13257,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 		tier: "UU",
 		doublesTier: "(DUU)",
+	},
+	goodrahisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	klefki: {
 		randomBattleMoves: [
@@ -13375,6 +13435,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 		tier: "(PU)",
 		doublesTier: "(DUU)",
+	},
+	avalugghisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	noibat: {
 		tier: "LC",
@@ -13676,6 +13740,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 
 		tier: "NU",
 		doublesTier: "(DUU)",
+	},
+	decidueyehisui: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	litten: {
 		tier: "LC",
@@ -16408,6 +16476,42 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		randomBattleMoves: ["darkpulse", "nastyplot", "shadowball", "substitute"],
 		tier: "AG",
 		doublesTier: "DUber",
+	},
+	wyrdeer: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	kleavor: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	ursaluna: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	basculegion: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	basculegionf: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	sneasler: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	overqwil: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	enamorus: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
+	enamorustherian: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	apocalylidae: {
 		randomBattleMoves: [
