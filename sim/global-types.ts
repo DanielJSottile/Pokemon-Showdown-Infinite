@@ -217,6 +217,7 @@ interface ModdedBattleActions {
 	calcRecoilDamage?: (this: BattleActions, damageDealt: number, move: Move) => number;
 	canMegaEvo?: (this: BattleActions, pokemon: Pokemon) => string | undefined | null;
 	canUltraBurst?: (this: BattleActions, pokemon: Pokemon) => string | null;
+	canTimeTravel?: (this: BattleActions, pokemon: Pokemon) => string | null;
 	canZMove?: (this: BattleActions, pokemon: Pokemon) => ZMoveOptions | void;
 	canDynamax?: (this: BattleActions, pokemon: Pokemon, skipChecks?: boolean) => DynamaxOptions | void;
 	forceSwitch?: (
@@ -316,7 +317,7 @@ interface ModdedBattlePokemon {
 	getMoveRequestData?: (this: Pokemon) => {
 		moves: {move: string, id: ID, target?: string, disabled?: boolean}[],
 		maybeDisabled?: boolean, trapped?: boolean, maybeTrapped?: boolean,
-		canMegaEvo?: boolean, canUltraBurst?: boolean, canZMove?: ZMoveOptions,
+		canMegaEvo?: boolean, canUltraBurst?: boolean, canTimeTravel?: boolean, canZMove?: ZMoveOptions,
 	};
 	getStat?: (
 		this: Pokemon, statName: StatIDExceptHP, unboosted?: boolean, unmodified?: boolean, fastReturn?: boolean

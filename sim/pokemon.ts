@@ -244,6 +244,7 @@ export class Pokemon {
 
 	canMegaEvo: string | null | undefined;
 	canUltraBurst: string | null | undefined;
+	canTimeTravel: string | null | undefined;
 	readonly canGigantamax: string | null;
 
 	/** A Pokemon's currently 'staleness' with respect to the Endless Battle Clause. */
@@ -437,6 +438,7 @@ export class Pokemon {
 
 		this.canMegaEvo = this.battle.actions.canMegaEvo(this);
 		this.canUltraBurst = this.battle.actions.canUltraBurst(this);
+		this.canTimeTravel = this.battle.actions.canTimeTravel(this);
 		this.canGigantamax = this.baseSpecies.canGigantamax || null;
 
 		// This is used in gen 1 only, here to avoid code repetition.
@@ -936,7 +938,7 @@ export class Pokemon {
 			if (!this.side.canDynamaxNow()) return;
 			if (
 				this.species.isMega || this.species.isPrimal || this.species.forme === "Ultra" ||
-				this.getItem().zMove || this.canMegaEvo
+				this.getItem().zMove || this.canMegaEvo || this.canTimeTravel
 			) {
 				return;
 			}
@@ -982,6 +984,7 @@ export class Pokemon {
 			maybeTrapped?: boolean,
 			canMegaEvo?: boolean,
 			canUltraBurst?: boolean,
+			canTimeTravel?: boolean,
 			canZMove?: AnyObject | null,
 			canDynamax?: boolean,
 			maxMoves?: DynamaxOptions,
@@ -1008,6 +1011,7 @@ export class Pokemon {
 		if (!lockedMove) {
 			if (this.canMegaEvo) data.canMegaEvo = true;
 			if (this.canUltraBurst) data.canUltraBurst = true;
+			if (this.canTimeTravel) data.canTimeTravel = true;
 			const canZMove = this.battle.actions.canZMove(this);
 			if (canZMove) data.canZMove = canZMove;
 

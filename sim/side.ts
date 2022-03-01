@@ -396,7 +396,10 @@ export class Side {
 		return this.choice.actions.length >= this.active.length;
 	}
 
-	chooseMove(moveText?: string | number, targetLoc = 0, megaDynaOrZ: 'mega' | 'zmove' | 'ultra' | 'dynamax' | '' = '') {
+	chooseMove(
+		moveText?: string | number, targetLoc = 0,
+		megaDynaOrZ: 'mega' | 'zmove' | 'ultra' | 'timetravel' | 'dynamax' | '' = ''
+	) {
 		if (this.requestState !== 'move') {
 			return this.emitChoiceError(`Can't move: You need a ${this.requestState} response`);
 		}
@@ -590,6 +593,10 @@ export class Side {
 		}
 		if (ultra && this.choice.ultra) {
 			return this.emitChoiceError(`Can't move: You can only ultra burst once per battle`);
+		}
+		const time = (megaDynaOrZ === 'timetravel');
+		if (time && !pokemon.canTimeTravel) {
+			return this.emitChoiceError(`Can't move: ${pokemon.name} can't time travel`);
 		}
 		let dynamax = (megaDynaOrZ === 'dynamax');
 		const canDynamax = this.activeRequest?.active[this.active.indexOf(pokemon)].canDynamax;

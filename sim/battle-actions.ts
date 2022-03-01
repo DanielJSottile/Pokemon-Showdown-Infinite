@@ -1789,8 +1789,20 @@ export class BattleActions {
 		return null;
 	}
 
+	canTimeTravel(pokemon: Pokemon) {
+		if (['Mebiusan-Future'].includes(pokemon.baseSpecies.name) &&
+			pokemon.getAbility().id === 'timetravel') {
+			return "Mebiusan-Past";
+		}
+		if (['Mebiusan-Past'].includes(pokemon.baseSpecies.name) &&
+			pokemon.getAbility().id === 'timetravel') {
+			return "Mebiusan-Future";
+		}
+		return null;
+	}
+
 	runMegaEvo(pokemon: Pokemon) {
-		const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+		const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst || pokemon.canTimeTravel;
 		if (!speciesid) return false;
 
 		// Pokémon affected by Sky Drop cannot mega evolve. Enforce it here for now.
