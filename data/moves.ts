@@ -3775,14 +3775,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 		status: "drowsy",
 		onTry(source, target, move) {
 			if (
-				["Darkrai", "Apocalylidae"].includes(source.species.name) ||
+				["Darkrai", "Darkrai-Mega", "Apocalylidae"].includes(source.species.name) ||
 				move.hasBounced
 			) {
 				return;
 			}
 			this.add("-fail", source, "move: Dark Void");
 			this.hint(
-				"Only a Pokemon whose form is Darkrai or Apocalylidae can use this move."
+				"Only a Pokemon whose form is Darkrai, Darkrai-Mega, or Apocalylidae can use this move."
 			);
 			return null;
 		},

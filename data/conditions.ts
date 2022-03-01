@@ -105,8 +105,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 				if (move.sleepUsable) {
 					return;
 				}
+				return false;
 			}
-			return false;
 		},
 		onResidualOrder: 10,
 		onResidual(pokemon) {
