@@ -20,18 +20,15 @@ export const Conditions: { [k: string]: ConditionData } = {
 			this.effectState.startTime = this.random(2, 5);
 			this.effectState.time = this.effectState.startTime;
 		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
+		// Damage reduction is handled directly in the sim/battle-actions.ts damage function
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 8);
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
 			}
-		},
-		// Damage reduction is handled directly in the sim/battle-actions.ts damage function
-		onResidualOrder: 10,
-		onResidual(pokemon) {
-			this.damage(pokemon.baseMaxhp / 8);
 		},
 	},
 	par: {
@@ -60,14 +57,17 @@ export const Conditions: { [k: string]: ConditionData } = {
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
+			if (this.randomChance(1, 4)) {
+				this.add("cant", pokemon, "par");
+				return false;
+			}
+		},
+		onResidualOrder: 10,
+		onResidual(pokemon) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
-			}
-			if (this.randomChance(1, 4)) {
-				this.add("cant", pokemon, "par");
-				return false;
 			}
 		},
 	},
@@ -100,6 +100,16 @@ export const Conditions: { [k: string]: ConditionData } = {
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
+			if (this.randomChance(1, 4)) {
+				this.add("cant", pokemon, "drowsy");
+				if (move.sleepUsable) {
+					return;
+				}
+			}
+			return false;
+		},
+		onResidualOrder: 10,
+		onResidual(pokemon) {
 			if (pokemon.hasAbility("earlybird")) {
 				pokemon.statusState.time--;
 			}
@@ -108,13 +118,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 				pokemon.cureStatus();
 				return;
 			}
-			if (this.randomChance(1, 4)) {
-				this.add("cant", pokemon, "drowsy");
-				if (move.sleepUsable) {
-					return;
-				}
-			}
-			return false;
 		},
 	},
 	fsb: {
@@ -139,14 +142,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 			this.effectState.startTime = this.random(2, 5);
 			this.effectState.time = this.effectState.startTime;
 		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon) {
-			pokemon.statusState.time--;
-			if (pokemon.statusState.time <= 0) {
-				pokemon.cureStatus();
-				return;
-			}
-		},
 		onModifyMove(move, pokemon) {
 			if (move.flags["defrost"]) {
 				this.add("-curestatus", pokemon, "fsb", "[from] move: " + move);
@@ -162,7 +157,11 @@ export const Conditions: { [k: string]: ConditionData } = {
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
-			this.add("-message", "The target is chilled by frostbite!");
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
+				pokemon.cureStatus();
+				return;
+			}
 		},
 	},
 	psn: {
@@ -187,9 +186,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 		onResidualOrder: 9,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
-		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
@@ -231,9 +227,6 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.clampIntRange(pokemon.baseMaxhp / 16, 1) *
 					this.effectState.stage
 			);
-		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
@@ -265,14 +258,18 @@ export const Conditions: { [k: string]: ConditionData } = {
 		},
 		onBeforeMovePriority: 1,
 		onBeforeMove(pokemon) {
+			if (this.randomChance(1, 4)) {
+				this.add("cant", pokemon, "bewitchment");
+				return false;
+			}
+		},
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 8);
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
-			}
-			if (this.randomChance(1, 4)) {
-				this.add("cant", pokemon, "bewitchment");
-				return false;
 			}
 		},
 	},
@@ -298,20 +295,13 @@ export const Conditions: { [k: string]: ConditionData } = {
 		onModifyDef(def, pokemon) {
 			return this.chainModify(0.5);
 		},
-		onResidualOrder: 9,
+		onResidualOrder: 10,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 8);
-		},
-		onBeforeMovePriority: 1,
-		onBeforeMove(pokemon) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
-			}
-			if (this.randomChance(1, 4)) {
-				this.add("cant", pokemon, "bewitchment");
-				return false;
 			}
 		},
 	},
@@ -339,14 +329,13 @@ export const Conditions: { [k: string]: ConditionData } = {
 				move.accuracy *= 0.7;
 			}
 		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
+		onResidualOrder: 10,
+		onResidual(pokemon) {
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
 			}
-			return;
 		},
 		onHit(target, source, move) {
 			if (
