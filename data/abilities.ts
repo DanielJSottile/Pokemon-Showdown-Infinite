@@ -5198,26 +5198,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		num: -13,
 	},
 	timetravel: {
-		// TODO: make this work
-		// onModifyMove(move) {
-		// const past : {[k: string]: string} = {
-		//	'Mebiusan-Past': 'pastsassurance',
-		// };
-		// const future : {[k: string]: string} = {
-		//	'Mebiusan-Future': 'futuresreckoning',
-		// };
-		// if (set.species in past) {
-		// const futuresReckoning = set.moves.indexOf('futuresreckoning');
-		// if (futuresReckoning >= 0) {
-		// set.moves[futuresreckoning] = past[set.species];
-		// }
-		// if (set.species in future) {
-		// const pastsAssurance = set.moves.indexOf('pastsassurance');
-		// if (pastsAssurance >= 0) {
-		// set.moves[pastsassurance] = future[set.species];
-		// }
-		// }
-		// },
+		// TODO: add functionality to change the move based on the form
 		name: "Time Travel",
 		rating: 4,
 		num: -11,
