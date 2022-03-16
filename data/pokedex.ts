@@ -17754,7 +17754,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	pileaglet: {
 		num: -22,
 		name: "Pileaglet",
-		types: ["Flying"],
+		types: ["Flying", "Fighting"],
 		baseStats: {hp: 26, atk: 51, def: 27, spa: 45, spd: 27, spe: 75},
 		abilities: {0: "Early Bird", H: "Infiltrator"},
 		heightm: 0.4,
@@ -17766,7 +17766,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	javaleur: {
 		num: -23,
 		name: "Javaleur",
-		types: ["Flying"],
+		types: ["Flying", "Fighting"],
 		baseStats: {hp: 49, atk: 83, def: 43, spa: 60, spd: 43, spe: 104},
 		abilities: {0: "Sniper", H: "Infiltrator"},
 		heightm: 0.8,
@@ -17780,7 +17780,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	eaglance: {
 		num: -24,
 		name: "Eaglance",
-		types: ["Flying"],
+		types: ["Flying", "Fighting"],
 		baseStats: {hp: 59, atk: 95, def: 60, spa: 80, spd: 60, spe: 141},
 		abilities: {0: "Sniper", H: "Infiltrator"},
 		heightm: 1.6,
