@@ -1396,6 +1396,29 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {def: 1}},
 		contestType: "Tough",
 	},
+	barbbarage: {
+		num: 827,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status || target.hasAbility("comatose")) {
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		name: "Barb Barage",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: "psn",
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Popular",
+	},
 	barrage: {
 		num: 140,
 		accuracy: 85,
@@ -1804,6 +1827,29 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Dark",
 		contestType: "Tough",
 	},
+	bittermalice: {
+		num: 828,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status || target.hasAbility("comatose")) {
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Special",
+		name: "Bitter Malice",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: 'fsb',
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Popular",
+	},
 	blackholeeclipse: {
 		num: 654,
 		accuracy: true,
@@ -1853,6 +1899,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Fire",
 		contestType: "Cool",
+	},
+	bleakwindstorm: {
+		num: 829,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Bleakwind Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: 'fsb',
+		},
+		target: "normal",
+		type: "Flying",
+		contestType: "Popular",
 	},
 	blizzard: {
 		num: 59,
@@ -2647,6 +2710,27 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	ceaselessedge: {
+		num: 830,
+		accuracy: 100,
+		basePower: 65,
+		category: "Physical",
+		critRatio: 2,
+		name: "Ceaseless Edge",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			onHit(source) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition("spikes");
+				}
+			},
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Popular",
+	},
 	celebrate: {
 		num: 606,
 		accuracy: true,
@@ -2812,6 +2896,32 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",
+	},
+	chloroblast: {
+		num: 831,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Choloroblast",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		mindBlownRecoil: true,
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(
+					Math.round(pokemon.maxhp / 2),
+					pokemon,
+					pokemon,
+					this.dex.conditions.get("Chloroblast"),
+					true
+				);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Popular",
 	},
 	circlethrow: {
 		num: 509,
@@ -12249,6 +12359,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		zMove: {boost: {evasion: 1}},
 		contestType: "Cute",
+	},
+	lunarblessing: {
+		num: 836,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Lunar Blessing",
+		pp: 10,
+		priority: 0,
+		flags: {heal: 1, bypasssub: 1, allyanim: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, [5325, 4096]));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
 	},
 	lunardance: {
 		num: 461,
