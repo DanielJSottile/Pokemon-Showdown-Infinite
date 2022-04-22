@@ -9273,6 +9273,26 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		contestType: "Tough",
 	},
+	headlongrush: {
+		num: 834,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Headlong Rush",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Tough",
+	},
 	headsmash: {
 		num: 457,
 		accuracy: 80,
@@ -10737,6 +10757,29 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "allAdjacentFoes",
 		type: "Fire",
 		contestType: "Tough",
+	},
+	infernalparade: {
+		num: 835,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status || target.hasAbility("comatose")) {
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Special",
+		name: "Infernal Parade",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Popular",
 	},
 	inferno: {
 		num: 517,
@@ -17044,6 +17087,31 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Normal",
 		contestType: "Tough",
 	},
+	ragingfury: {
+		num: 841,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Raging Fury",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			volatileStatus: "lockedmove",
+		},
+		onAfterMove(pokemon) {
+			if (
+				pokemon.volatiles["lockedmove"] &&
+				pokemon.volatiles["lockedmove"].duration === 1
+			) {
+				pokemon.removeVolatile("lockedmove");
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Fire",
+		contestType: "Popular",
+	},
 	ragepowder: {
 		num: 476,
 		accuracy: true,
@@ -18222,6 +18290,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Ground",
 		zMove: {boost: {evasion: 1}},
 		contestType: "Cute",
+	},
+	sandsearstorm: {
+		num: 842,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Sandsear Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Popular",
 	},
 	sandstorm: {
 		num: 201,
@@ -20603,6 +20688,60 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {spd: 1}},
 		contestType: "Cute",
 	},
+	springtidestorm: {
+		num: 844,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Springtide Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			onHit(target, source, move) {
+				if (source.species.name === "Enamorus-Incarnate") {
+					const result = this.random(2);
+					if (result === 0) {
+						return !!this.boost(
+							{atk: 1, spa: 1, spe: 1},
+							source,
+							source,
+							move
+						);
+					} else {
+						return !!this.boost(
+							{def: 1, spd: 1, spe: 1},
+							source,
+							source,
+							move
+						);
+					}
+				} else if (source.species.name === "Enamorus-Therian") {
+					const result = this.random(2);
+					if (result === 0) {
+						return !!this.boost(
+							{atk: -1, spa: -1, spe: -1},
+							target,
+							source,
+							move
+						);
+					} else {
+						return !!this.boost(
+							{def: -1, spd: -1, spe: -1},
+							target,
+							source,
+							move
+						);
+					}
+				}
+				return false;
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Popular",
+	},
 	stealthrock: {
 		num: 446,
 		accuracy: true,
@@ -21777,6 +21916,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Rock",
+	},
+	takeheart: {
+		num: 846,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Take Heart",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		onHit(pokemon) {
+			pokemon.cureStatus();
+		},
+		boosts: {
+			spa: 1,
+			spd: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		zMove: {effect: "clearnegativeboost"},
+		contestType: "Popular",
 	},
 	taunt: {
 		num: 269,
@@ -23626,6 +23787,23 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Rock",
 		zMove: {boost: {def: 1}},
 		contestType: "Tough",
+	},
+	wildboltstorm: {
+		num: 850,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Wildbolt Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Popular",
 	},
 	wildcharge: {
 		num: 528,
