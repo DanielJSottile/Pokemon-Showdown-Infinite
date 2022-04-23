@@ -71455,6 +71455,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			moonlight: ["8L1"],
 			photongeyser: ["8L23"],
 			powertrick: ["8L31"],
+			powershift: ["8L31"]
 			toxic: ["8M"],
 		},
 	},

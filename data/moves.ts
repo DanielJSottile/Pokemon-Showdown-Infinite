@@ -4195,6 +4195,33 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Ground",
 		contestType: "Tough",
 	},
+	direclaw: {
+		num: 832,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Dire Claw",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 20,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus("psn", source);
+				} else if (result === 1) {
+					target.trySetStatus("par", source);
+				} else {
+					target.trySetStatus("drowsy", source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Popular",
+	},
 	disable: {
 		num: 50,
 		accuracy: 100,
@@ -5471,6 +5498,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "allAdjacentFoes",
 		type: "Fire",
 		contestType: "Beautiful",
+	},
+	esperwing: {
+		num: 833,
+		accuracy: 90,
+		basePower: 65,
+		category: "Special",
+		name: "Esper Wing",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		critRatio: 1,
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Popular",
 	},
 	eternabeam: {
 		num: 795,
@@ -14491,6 +14540,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {effect: "clearnegativeboost"},
 		contestType: "Beautiful",
 	},
+	mountaingale: {
+		num: 837,
+		accuracy: 85,
+		basePower: 120,
+		category: "Physical",
+		name: "Mountain Gale",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			boosts: {
+				spe: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+		contestType: "Popular",
+	},
 	mudbomb: {
 		num: 426,
 		accuracy: 85,
@@ -14666,6 +14734,48 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Fire",
 		contestType: "Beautiful",
+	},
+	mysticalpower: {
+		num: 838,
+		accuracy: 90,
+		basePower: 70,
+		category: "Special",
+		name: "Mystical Power",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				const returnHighest = (arr: number[]) => arr.sort()[0];
+				const atk = source.getStat("atk", false, true);
+				const spa = source.getStat("spa", false, true);
+				const def = source.getStat("def", false, true);
+				const spd = source.getStat("spd", false, true);
+				const statCheck = [atk, spa, def, spd];
+				/** If attack or special attack is the highest base stat */
+				if ([atk, spa].includes(returnHighest(statCheck))) {
+					return !!this.boost(
+						{atk: 1, spa: 1},
+						source,
+						source,
+						move
+					);
+					/** if defense or special defense is the highest base stat */
+				} else if ([spd, def].includes(returnHighest(statCheck))) {
+					return !!this.boost(
+						{def: 1, spd: 1},
+						source,
+						source,
+						move
+					);
+				}
+				return false;
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Popular",
 	},
 	nastyplot: {
 		num: 417,
@@ -16153,6 +16263,59 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Rock",
 		contestType: "Beautiful",
 	},
+	powershift: {
+		num: 839,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Shift",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		volatileStatus: "powershift",
+		condition: {
+			onStart(pokemon) {
+				this.add("-start", pokemon, "Power Shift");
+				const newatk = pokemon.storedStats.def;
+				const newspa = pokemon.storedStats.spd;
+				const newdef = pokemon.storedStats.atk;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onCopy(pokemon) {
+				const newatk = pokemon.storedStats.def;
+				const newspa = pokemon.storedStats.spd;
+				const newdef = pokemon.storedStats.atk;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onEnd(pokemon) {
+				this.add("-end", pokemon, "Power Shift");
+				const newatk = pokemon.storedStats.def;
+				const newspa = pokemon.storedStats.spd;
+				const newdef = pokemon.storedStats.atk;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onRestart(pokemon) {
+				pokemon.removeVolatile("Power Shift");
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {boost: {spe: 1}},
+		contestType: "Popular",
+	},
 	powersplit: {
 		num: 471,
 		accuracy: true,
@@ -16226,42 +16389,30 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
-		volatileStatus: "powertrick",
+		volatileStatus: 'powertrick',
 		condition: {
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Power Trick");
+				this.add('-start', pokemon, 'Power Trick');
 				const newatk = pokemon.storedStats.def;
-				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
-				const newspd = pokemon.storedStats.spa;
 				pokemon.storedStats.atk = newatk;
 				pokemon.storedStats.def = newdef;
-				pokemon.storedStats.spa = newspa;
-				pokemon.storedStats.spd = newspd;
 			},
 			onCopy(pokemon) {
 				const newatk = pokemon.storedStats.def;
-				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
-				const newspd = pokemon.storedStats.spa;
 				pokemon.storedStats.atk = newatk;
 				pokemon.storedStats.def = newdef;
-				pokemon.storedStats.spa = newspa;
-				pokemon.storedStats.spd = newspd;
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Power Trick");
+				this.add('-end', pokemon, 'Power Trick');
 				const newatk = pokemon.storedStats.def;
-				const newspa = pokemon.storedStats.spd;
 				const newdef = pokemon.storedStats.atk;
-				const newspd = pokemon.storedStats.spa;
 				pokemon.storedStats.atk = newatk;
 				pokemon.storedStats.def = newdef;
-				pokemon.storedStats.spa = newspa;
-				pokemon.storedStats.spd = newspd;
 			},
 			onRestart(pokemon) {
-				pokemon.removeVolatile("Power Trick");
+				pokemon.removeVolatile('Power Trick');
 			},
 		},
 		secondary: null,
@@ -16676,6 +16827,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Psychic",
 		zMove: {boost: {spa: 2}},
 		contestType: "Clever",
+	},
+	psyshieldbash: {
+		num: 840,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Psyshield Bash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					def: 1,
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Popular",
 	},
 	psyshock: {
 		num: 473,
@@ -18946,6 +19119,26 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Fire",
 		contestType: "Tough",
 	},
+	shelter: {
+		num: 843,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Cosmic Power",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			def: 1,
+			spd: 1,
+			evasion: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+		zMove: {boost: {def: 1}},
+		contestType: "Popular",
+	},
 	shieldbreaker: {
 		num: -35,
 		accuracy: 100,
@@ -20704,14 +20897,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 					const result = this.random(2);
 					if (result === 0) {
 						return !!this.boost(
-							{atk: 1, spa: 1, spe: 1},
+							{atk: 1, spa: 1},
 							source,
 							source,
 							move
 						);
 					} else {
 						return !!this.boost(
-							{def: 1, spd: 1, spe: 1},
+							{def: 1, spd: 1},
 							source,
 							source,
 							move
@@ -20721,14 +20914,14 @@ export const Moves: { [moveid: string]: MoveData } = {
 					const result = this.random(2);
 					if (result === 0) {
 						return !!this.boost(
-							{atk: -1, spa: -1, spe: -1},
+							{atk: -1, spa: -1},
 							target,
 							source,
 							move
 						);
 					} else {
 						return !!this.boost(
-							{def: -1, spd: -1, spe: -1},
+							{def: -1, spd: -1},
 							target,
 							source,
 							move
@@ -21034,6 +21227,27 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Ground",
 		contestType: "Tough",
+	},
+	stoneaxe: {
+		num: 845,
+		accuracy: 100,
+		basePower: 65,
+		category: "Physical",
+		critRatio: 2,
+		name: "Stone Axe",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			onHit(source) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition("stealthrock");
+				}
+			},
+		},
+		target: "normal",
+		type: "Rock",
+		contestType: "Popular",
 	},
 	stoneedge: {
 		num: 444,
@@ -23008,6 +23222,43 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {boost: {accuracy: 1}},
 		contestType: "Clever",
 	},
+	triplearrows: {
+		num: 847,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Triple Arrows",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		volatileStatus: "triplearrows",
+		condition: {
+			onStart(target, source, effect) {
+				if (effect?.id === "zpower") {
+					this.add("-start", target, "move: Triple Arrows", "[zeffect]");
+				} else if (
+					effect &&
+					["imposter", "psychup", "transform"].includes(effect.id)
+				) {
+					this.add("-start", target, "move: Triple Arrows", "[silent]");
+				} else {
+					this.add("-start", target, "move: Triple Arrows");
+				}
+			},
+			onModifyCritRatio(critRatio) {
+				return critRatio + 2;
+			},
+		},
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
 	tripleaxel: {
 		num: 813,
 		accuracy: 90,
@@ -23344,6 +23595,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	victorydance: {
+		num: 848,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Victory Dance",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			atk: 2,
+			def: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Fighting",
+		zMove: {boost: {atk: 1}},
+		contestType: "Cool",
+	},
 	visegrip: {
 		num: 11,
 		accuracy: 100,
@@ -23636,6 +23906,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "allAdjacentFoes",
 		type: "Water",
 		contestType: "Beautiful",
+	},
+	wavecrash: {
+		num: 849,
+		accuracy: 90,
+		basePower: 75,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		recoil: [33, 100],
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Popular",
 	},
 	weatherball: {
 		num: 311,
