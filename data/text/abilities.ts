@@ -30,6 +30,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		start: "  The effects of the weather disappeared.",
 	},
+	amperage: {
+		name: "Amperage",
+		desc: "The power of this Pokemon's moves (if electric) is increased with consecutive electric type moves.",
+		shortDesc: "The power of this Pokemon's moves is increased with consecutive electric type moves.",
+	},
 	analytic: {
 		name: "Analytic",
 		desc: "The power of this Pokemon's move is multiplied by 1.3 if it is the last to move in a turn. Does not affect Doom Desire and Future Sight.",

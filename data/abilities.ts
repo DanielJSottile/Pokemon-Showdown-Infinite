@@ -118,43 +118,39 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	amperage: {
 		onStart(pokemon) {
-			pokemon.addVolatile("amperage");
+			this.effectState.numConsecutive = 0;
+			this.effectState.lastMove = "";
 		},
-		condition: {
-			onStart(pokemon) {
-				this.effectState.numConsecutive = 0;
-				this.effectState.lastMove = "";
-			},
-			onTryMovePriority: -2,
-			onTryMove(pokemon, target, move) {
-				const electricMoveCheck = this.effectState.lastMove.type === "Electric";
-				const moveCheck = this.effectState.lastMove === move.id;
-				if (!electricMoveCheck) {
-					pokemon.removeVolatile("amperage");
-					return;
-				}
-				if (moveCheck && electricMoveCheck) {
+		onTryMovePriority: -2,
+		onTryMove(pokemon, target, move) {
+			const electricMoveCheck = this.effectState.lastMove.type === "Electric";
+			const moveCheck = this.effectState.lastMove.id === move.id;
+			if (moveCheck && electricMoveCheck) {
+				this.effectState.numConsecutive++;
+			} else if (pokemon.volatiles["twoturnmove"]) {
+				if (!moveCheck && electricMoveCheck) {
+					this.effectState.numConsecutive = 1;
+				} else if (electricMoveCheck) {
 					this.effectState.numConsecutive++;
-				} else if (pokemon.volatiles["twoturnmove"]) {
-					if (!moveCheck && electricMoveCheck) {
-						this.effectState.numConsecutive = 1;
-					} else if (electricMoveCheck) {
-						this.effectState.numConsecutive++;
-					}
-				} else {
-					this.effectState.numConsecutive = 0;
 				}
-				this.effectState.lastMove = move.id;
-			},
-			onModifyDamage(damage, source, target, move) {
-				const dmgMod = [4096, 4506, 4915, 5324, 5734, 6144, 6553, 6963, 7372, 7782, 8192];
-				const numConsecutive =
+			} else {
+				this.effectState.numConsecutive = 0;
+			}
+			this.effectState.lastMove = {id: move.id, type: move.type};
+		},
+		onModifyDamage(damage, source, target, move) {
+			/** up to 1.8x damage */
+			const dmgMod = [4096, 4751, 5406, 6062, 6717, 7372];
+			const numConsecutive =
 					this.effectState.numConsecutive > 5 ?
 						5 :
 						this.effectState.numConsecutive;
+			if (this.effectState.lastMove.type === "Electric") {
 				return this.chainModify([dmgMod[numConsecutive], 4096]);
-			},
+			}
+			return this.chainModify(1);
 		},
+
 		name: "Amperage",
 		rating: 3,
 		num: -1,

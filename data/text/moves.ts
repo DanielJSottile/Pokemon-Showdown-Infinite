@@ -7180,8 +7180,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	zippyzap: {
 		name: "Zippy Zap",
-		desc: "Has a 100% chance to raise the user's evasion by 1 stage.",
-		shortDesc: "Goes first. Raises user's evasion by 1.",
+		desc: "Nearly always goes first, Has a higher chance for a critical hit.",
+		shortDesc: "Nearly always goes first, Has a higher chance for a critical hit.",
 		gen7: {
 			desc: "Will always result in a critical hit.",
 			shortDesc: "Nearly always goes first. Always crits.",
