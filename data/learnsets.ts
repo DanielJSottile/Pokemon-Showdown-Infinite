@@ -72086,7 +72086,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			innerpower: ["8M"],
 			chaosleap: ["8M"],
 			fairyspell: ["8M"],
-			lifedew: ["8T"],
 			aquaring: ["8L53"],
 			blizzard: ["8M"],
 			brine: ["8L32"],
