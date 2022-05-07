@@ -16,8 +16,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "brn");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		// Damage reduction is handled directly in the sim/battle-actions.ts damage function
@@ -46,8 +46,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "par");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifySpe(spe, pokemon) {
@@ -94,8 +94,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.add("-status", target, "drowsy");
 			}
 			this.add("-message", "The target became Drowsy!");
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onBeforeMovePriority: 10,
@@ -149,8 +149,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 				this.add("-status", target, "fsb");
 			}
 			this.add("-message", "The target became Frostbitten!");
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifyMove(move, pokemon) {
@@ -190,8 +190,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "psn");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onResidualOrder: 9,
@@ -222,8 +222,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "tox");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onSwitchIn() {
@@ -260,8 +260,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "bewitchment");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifySpD(spd, pokemon) {
@@ -299,8 +299,8 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "whiplash");
 			}
-			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			// 3-5 turns
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifyDef(def, pokemon) {
@@ -331,7 +331,7 @@ export const Conditions: { [k: string]: ConditionData } = {
 			} else {
 				this.add("-status", target, "blindness");
 			}
-			this.effectState.startTime = this.random(2, 5);
+			this.effectState.startTime = this.random(4, 6);
 			this.effectState.time = this.effectState.startTime;
 		},
 		onModifyMovePriority: 1,

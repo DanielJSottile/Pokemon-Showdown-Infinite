@@ -26729,7 +26729,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			closecombat: ["8L43"],
 			falseswipe: ["8T"],
 			aerialace: ["8T"],
-			powershift: ["8T"],
 			focusenergy: ["8T"],
 			bulkup: ["8T"],
 			calmmind: ["8T"],
@@ -59721,7 +59720,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	braviaryhisui: {
 		learnset: {
-			powershift: ["8T"],
 			quickattack: ["8L1"],
 			aerialace: ["8T", "8L6"],
 			twister: ["8L11"],
@@ -61015,7 +61013,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	enamorus: {
 		learnset: {
-			powershift: ["8T"],
 			superpower: ["8T"],
 			bite: ["8L7"],
 			twister: ["8L11"],
@@ -66714,7 +66711,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	avalugghisui: {
 		learnset: {
-			powershift: ["8T"],
 			rockslide: ["8T", "8L1"],
 			tackle: ["8L1"],
 			powdersnow: ["8L5"],
