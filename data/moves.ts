@@ -19124,7 +19124,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Cosmic Power",
+		name: "Shelter",
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
