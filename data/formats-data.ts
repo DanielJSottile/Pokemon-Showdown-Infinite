@@ -589,13 +589,13 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		doublesTier: "(DUU)",
 	},
 	gorochu: {
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	gorochugmax: {
 		isNonstandard: "Gigantamax",
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	sandshrew: {
 		tier: "LC",
@@ -3496,7 +3496,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"helpinghand",
 			"tailwind",
 		],
-		tier: "UUBL",
+		tier: "OU",
 		doublesTier: "DUU",
 	},
 	chikorita: {
@@ -12250,7 +12250,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"roost",
 			"protect",
 		],
-		tier: "RUBL",
+		tier: "OU",
 		doublesTier: "DUU",
 	},
 	kyuremblack: {
@@ -15043,7 +15043,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"naturesmadness",
 		],
-		tier: "UUBL",
+		tier: "UU",
 		doublesTier: "DUU",
 	},
 	tapufini: {
@@ -15593,8 +15593,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"suckerpunch",
 		],
 
-		tier: "OU",
-		doublesTier: "DOU",
+		tier: "AG",
+		doublesTier: "DUber",
 	},
 	cinderacegmax: {
 		isNonstandard: "Gigantamax",
@@ -15617,12 +15617,12 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"snipeshot",
 			"uturn",
 		],
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	inteleongmax: {
 		isNonstandard: "Gigantamax",
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	skwovet: {
@@ -16309,7 +16309,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"surgingstrikes",
 			"uturn",
 		],
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "DUU",
 	},
 	urshifudragonfist: {
@@ -16323,7 +16323,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"uturn",
 		],
 		tier: "UU",
-		doublesTier: "DOU",
+		doublesTier: "DUU",
 	},
 	urshifutigerclaw: {
 		randomBattleMoves: [
@@ -16340,8 +16340,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"blazingstrikes",
 			"uturn",
 		],
-		tier: "RUBL",
-		doublesTier: "DOU",
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	urshifugmax: {
 		randomBattleMoves: ["bulkup", "drainpunch", "substitute", "wickedblow"],
@@ -16350,13 +16350,13 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	},
 	urshifurapidstrikegmax: {
 		randomBattleMoves: ["bulkup", "closecombat", "surgingstrikes", "icepunch", "uturn"],
-		tier: "UU",
+		tier: "UUBL",
 		doublesTier: "DUU",
 	},
 	urshifudragonfistgmax: {
 		randomBattleMoves: ["bulkup", "drainpunch", "substitute", "wyvernblow"],
 		tier: "UU",
-		doublesTier: "DOU",
+		doublesTier: "DUU",
 	},
 	urshifutigerclawgmax: {
 		randomBattleMoves: [
@@ -16366,7 +16366,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"blazingstrikes",
 		],
 		tier: "UU",
-		doublesTier: "DOU",
+		doublesTier: "DUU",
 	},
 	zarude: {
 		randomBattleMoves: [
@@ -16384,7 +16384,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"rockslide",
 		],
-		tier: "NU",
+		tier: "RU",
 	},
 	zarudedada: {
 		randomBattleMoves: [
@@ -16402,7 +16402,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"protect",
 			"rockslide",
 		],
-		tier: "RUBL",
+		tier: "UUBL",
 	},
 	regieleki: {
 		randomBattleMoves: [
@@ -16411,7 +16411,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"thunderbolt",
 			"voltswitch",
 		],
-		tier: "UUBL",
+		tier: "OU",
 		doublesTier: "DUU",
 	},
 	regidrago: {

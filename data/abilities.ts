@@ -116,6 +116,49 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 2,
 		num: 76,
 	},
+	amperage: {
+		onStart(pokemon) {
+			pokemon.addVolatile("amperage");
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.numConsecutive = 0;
+				this.effectState.lastMove = "";
+			},
+			onTryMovePriority: -2,
+			onTryMove(pokemon, target, move) {
+				const electricMoveCheck = this.effectState.lastMove.type === "Electric";
+				const moveCheck = this.effectState.lastMove === move.id;
+				if (!electricMoveCheck) {
+					pokemon.removeVolatile("amperage");
+					return;
+				}
+				if (moveCheck && electricMoveCheck) {
+					this.effectState.numConsecutive++;
+				} else if (pokemon.volatiles["twoturnmove"]) {
+					if (!moveCheck && electricMoveCheck) {
+						this.effectState.numConsecutive = 1;
+					} else if (electricMoveCheck) {
+						this.effectState.numConsecutive++;
+					}
+				} else {
+					this.effectState.numConsecutive = 0;
+				}
+				this.effectState.lastMove = move.id;
+			},
+			onModifyDamage(damage, source, target, move) {
+				const dmgMod = [4096, 4506, 4915, 5324, 5734, 6144, 6553, 6963, 7372, 7782, 8192];
+				const numConsecutive =
+					this.effectState.numConsecutive > 5 ?
+						5 :
+						this.effectState.numConsecutive;
+				return this.chainModify([dmgMod[numConsecutive], 4096]);
+			},
+		},
+		name: "Amperage",
+		rating: 3,
+		num: -1,
+	},
 	analytic: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon) {
@@ -925,7 +968,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Deflagrate",
 		rating: 4,
-		num: -2,
+		num: -3,
 	},
 	deltastream: {
 		onStart(source) {
@@ -1089,7 +1132,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Dragon Scales",
 		rating: 3,
-		num: -3,
+		num: -4,
 	},
 	dragonsmaw: {
 		onModifyAtkPriority: 5,
@@ -1912,7 +1955,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Hero Of The Forest",
 		rating: 3,
-		num: -10,
+		num: -11,
 	},
 	highstrung: {
 		onDamagingHit(damage, target, source, move) {
@@ -1922,7 +1965,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "High-Strung",
 		rating: 3.5,
-		num: -4,
+		num: -5,
 	},
 	honeygather: {
 		name: "Honey Gather",
@@ -2363,7 +2406,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Lava Surge",
 		rating: 4,
-		num: -12,
+		num: -13,
 	},
 	leafguard: {
 		onSetStatus(status, target, source, effect) {
@@ -2839,7 +2882,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		// Hazard Immunity implemented in moves.js
 		name: "Mountaineer",
 		rating: 3,
-		num: -13,
+		num: -14,
 	},
 	moxie: {
 		onSourceAfterFaint(length, target, source, effect) {
@@ -3188,7 +3231,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Omniforge",
 		rating: 3.5,
-		num: -8,
+		num: -9,
 	},
 	overcoat: {
 		onImmunity(type, pokemon) {
@@ -4018,7 +4061,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Resolute Gauntlet",
 		rating: 4.5,
-		num: -7,
+		num: -8,
 	},
 	resurrection: {
 		onDamagingHitOrder: 1,
@@ -4058,7 +4101,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Resurrection",
 		rating: 4,
-		num: -14,
+		num: -15,
 	},
 	ripen: {
 		onTryHeal(damage, target, source, effect) {
@@ -4688,7 +4731,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Spooked",
 		rating: 3.5,
-		num: -1,
+		num: -2,
 	},
 	stakeout: {
 		onModifyAtkPriority: 5,
@@ -4967,7 +5010,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Supreme Being",
 		rating: 3.5,
-		num: -9,
+		num: -10,
 	},
 	surgesurfer: {
 		onModifySpe(spe) {
@@ -5201,7 +5244,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		// TODO: add functionality to change the move based on the form
 		name: "Time Travel",
 		rating: 4,
-		num: -11,
+		num: -12,
 	},
 	tintedlens: {
 		onModifyDamage(damage, source, target, move) {
@@ -5444,7 +5487,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Type Flux",
 		rating: 3.5,
-		num: -5,
+		num: -6,
 	},
 	unaware: {
 		name: "Unaware",
@@ -5537,7 +5580,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		isPermanent: true,
 		name: "Unown's Spell",
 		rating: 5,
-		num: -6,
+		num: -7,
 	},
 	unseenfist: {
 		onModifyMove(move) {

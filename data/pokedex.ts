@@ -852,7 +852,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Gorochu",
 		types: ["Electric", "Dark"],
 		baseStats: {hp: 60, atk: 120, def: 95, spa: 35, spd: 95, spe: 80},
-		abilities: {0: "Defiant", 1: "Anger Point", H: "Electric Surge"},
+		abilities: {0: "Defiant", 1: "Anger Point", H: "Amperage"},
 		heightm: 0.6,
 		weightkg: 32,
 		color: "Red",
