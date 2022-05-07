@@ -12140,6 +12140,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	gengar: {
 		learnset: {
+			powershift: ["8T"],
 			corrosivegas: ["8T"],
 			poltergeist: ["8T"],
 			skittersmack: ["8T"],
@@ -12258,6 +12259,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	onix: {
 		learnset: {
+			powershift: ["8T"],
 			liquefaction: ["8M"],
 			scorchingsands: ["8T"],
 			meteorbeam: ["8T"],
@@ -12354,6 +12356,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	steelix: {
 		learnset: {
+			powershift: ["8T"],
 			liquefaction: ["8M"],
 			scorchingsands: ["8T"],
 			meteorbeam: ["8T"],
@@ -14916,6 +14919,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	blissey: {
 		learnset: {
+			powershift: ["8T"],
 			plumage: ["8M"],
 			storedpower: ["8M"],
 			gravitybeam: ["8M"],
@@ -15985,6 +15989,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	mrmime: {
 		learnset: {
+			powershift: ["8T"],
 			expandingforce: ["8T"],
 			psychokinesis: ["8M"],
 			mysticalfire: ["8M"],
@@ -17950,6 +17955,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	flareon: {
 		learnset: {
+			powershift: ["8T"],
 			scorchingsands: ["8T"],
 			burningjealousy: ["8T"],
 			innerpower: ["8M"],
@@ -18148,6 +18154,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	umbreon: {
 		learnset: {
+			powershift: ["8T"],
 			lashout: ["8T"],
 			backlash: ["8M"],
 			innerpower: ["8M"],
@@ -18857,6 +18864,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	porygonz: {
 		learnset: {
+			powershift: ["8T"],
 			quantumjump: ["8M"],
 			powerswap: ["8M"],
 			guardswap: ["8M"],
@@ -25817,6 +25825,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	gliscor: {
 		learnset: {
+			powershift: ["8T"],
 			dualwingbeat: ["8T"],
 			pinmissile: ["8M"],
 			assurance: ["8M"],
@@ -26709,6 +26718,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	sneasler: {
 		learnset: {
+			powershift: ["8T"],
 			quickattack: ["8L1"],
 			rocksmash: ["8T", "8L6"],
 			swift: ["8T", "8L11"],
@@ -27933,6 +27943,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	mantine: {
 		learnset: {
+			powershift: ["8T"],
 			dualwingbeat: ["8T"],
 			bodypress: ["8M"],
 			hurricane: ["8M"],
@@ -28611,6 +28622,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	stantler: {
 		learnset: {
+			psyshieldbash: ["8L21"],
 			innerpower: ["8M"],
 			roundhousekick: ["8M"],
 			safeguard: ["8T"],
@@ -28701,7 +28713,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			wildcharge: ["8M"],
 			workup: ["8M"],
 			zenheadbutt: ["8T", "8L38", "8E"],
-			psyshieldbash: ["8L21"],
 		},
 	},
 	stantmoose: {
@@ -34308,6 +34319,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	nosepass: {
 		learnset: {
+			powershift: ["8T"],
 			meteorbeam: ["8T"],
 			sandtomb: ["8M"],
 			heavyslam: ["8M"],
@@ -34389,6 +34401,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	probopass: {
 		learnset: {
+			powershift: ["8T"],
 			meteorbeam: ["8T"],
 			steelroller: ["8T"],
 			futuresight: ["8M"],
@@ -39572,6 +39585,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	dusclops: {
 		learnset: {
+			powershift: ["8T"],
 			poltergeist: ["8T"],
 			skittersmack: ["8T"],
 			innerpower: ["8M"],
@@ -39672,6 +39686,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	dusknoir: {
 		learnset: {
+			powershift: ["8T"],
 			poltergeist: ["8T"],
 			skittersmack: ["8T"],
 			innerpower: ["8M"],
@@ -42685,6 +42700,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	torterra: {
 		learnset: {
+			headlongrush: ["8L57"],
 			lichenwave: ["8M"],
 			liquefaction: ["8M"],
 			grassyglide: ["8T"],
@@ -42943,6 +42959,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	infernape: {
 		learnset: {
+			ragingfury: ["8L46"],
 			coaching: ["8T"],
 			scorchingsands: ["8T"],
 			innerpower: ["8M"],
@@ -43193,6 +43210,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	empoleon: {
 		learnset: {
+			wavecrash: ["8L57"],
 			hydrodynamicburst: ["8M"],
 			lifedew: ["8T"],
 			innerpower: ["8M"],
@@ -43996,6 +44014,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	rampardos: {
 		learnset: {
+			powershift: ["8T"],
 			meteorbeam: ["8T"],
 			innerpower: ["8M"],
 			bodypress: ["8M"],
@@ -44166,6 +44185,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	bastiodon: {
 		learnset: {
+			powershift: ["8T"],
 			meteorbeam: ["8T"],
 			steelroller: ["8T"],
 			innerpower: ["8M"],
@@ -44544,6 +44564,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	vespiquen: {
 		learnset: {
+			powershift: ["8T"],
 			dualwingbeat: ["8T"],
 			innerpower: ["8M"],
 			reversal: ["8M"],
@@ -45195,6 +45216,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	drifblim: {
 		learnset: {
+			powershift: ["8T"],
 			plumage: ["8M"],
 			innerpower: ["8M"],
 			strengthsap: ["8M"],
@@ -45978,6 +46000,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	chatot: {
 		learnset: {
+			powershift: ["8T"],
 			dualwingbeat: ["8T"],
 			limitbreak: ["8M"],
 			aerialace: ["8M"],
@@ -47989,6 +48012,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	uxie: {
 		learnset: {
+			powershift: ["8T"],
+			mysticalpower: ["8L46"],
 			expandingforce: ["8T"],
 			drainpunch: ["8M"],
 			psychocut: ["8M"],
@@ -48089,6 +48114,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	mesprit: {
 		learnset: {
+			mysticalpower: ["8L46"],
 			expandingforce: ["8T"],
 			drainpunch: ["8M"],
 			psychocut: ["8M"],
@@ -48187,6 +48213,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	azelf: {
 		learnset: {
+			powershift: ["8T"],
+			mysticalpower: ["8L46"],
 			expandingforce: ["8T"],
 			selfdestruct: ["8M"],
 			assurance: ["8M"],
@@ -48757,6 +48785,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	cresselia: {
 		learnset: {
+			powershift: ["8T"],
+			lunarblessing: ["8L57"],
 			expandingforce: ["8T"],
 			powerswap: ["8M"],
 			guardswap: ["8M"],
@@ -48836,6 +48866,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	phione: {
 		learnset: {
+			takeheart: ["8L46"],
 			hydrodynamicburst: ["8M"],
 			flipturn: ["8T"],
 			lifedew: ["8M"],
@@ -48897,6 +48928,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	manaphy: {
 		learnset: {
+			takeheart: ["8L46"],
 			hydrodynamicburst: ["8M"],
 			flipturn: ["8T"],
 			lifedew: ["8M"],
@@ -53484,6 +53516,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	basculin: {
 		learnset: {
+			wavecrash: ["8L34"],
 			hydrodynamicburst: ["8M"],
 			flipturn: ["8T"],
 			scaleshot: ["8T"],
@@ -59688,6 +59721,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	braviaryhisui: {
 		learnset: {
+			powershift: ["8T"],
 			quickattack: ["8L1"],
 			aerialace: ["8T", "8L6"],
 			twister: ["8L11"],
@@ -60575,6 +60609,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	tornadus: {
 		learnset: {
+			bleakwindstorm: ["8L52"],
 			plumage: ["8M"],
 			lashout: ["8T"],
 			scaryface: ["8M"],
@@ -60653,6 +60688,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	thundurus: {
 		learnset: {
+			powershift: ["8T"],
+			wildboltstorm: ["8L52"],
 			risingvoltage: ["8T"],
 			lashout: ["8T"],
 			scaryface: ["8M"],
@@ -60903,6 +60940,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	landorus: {
 		learnset: {
+			sandsearstorm: ["8L52"],
 			liquefaction: ["8M"],
 			scorchingsands: ["8T"],
 			selfdestruct: ["8M"],
@@ -60977,6 +61015,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	enamorus: {
 		learnset: {
+			powershift: ["8T"],
 			superpower: ["8T"],
 			bite: ["8L7"],
 			twister: ["8L11"],
@@ -65929,6 +65968,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	goomy: {
 		learnset: {
+			shelter: ["8L32"],
 			skittersmack: ["8T"],
 			strengthsap: ["8L1"],
 			absorb: ["8L5"],
@@ -66674,6 +66714,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 	},
 	avalugghisui: {
 		learnset: {
+			powershift: ["8T"],
 			rockslide: ["8T", "8L1"],
 			tackle: ["8L1"],
 			powdersnow: ["8L5"],
