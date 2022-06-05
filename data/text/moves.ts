@@ -347,6 +347,11 @@ export const MovesText: {[k: string]: MoveText} = {
 			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		},
 	},
+	barbbarrage: {
+		name: "Barb Barrage",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.  May poison the target.  Doubles power if opponent has a status condition",
+		shortDesc: "Hits 2-5 times in one turn.  May poison the target, and has double power if statused",
+	},
 	barrage: {
 		name: "Barrage",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
@@ -498,6 +503,11 @@ export const MovesText: {[k: string]: MoveText} = {
 			shortDesc: "10% chance to make the target flinch.",
 		},
 	},
+	bittermalice: {
+		name: "Bitter Malice",
+		desc: "Power doubles if the target has a non-volatile status condition.  30% chance to give frostbite",
+		shortDesc: "Power doubles if the target has a status ailment.  30% frostbite",
+	},
 	blackholeeclipse: {
 		name: "Black Hole Eclipse",
 		shortDesc: "Power is equal to the base move's Z-Power.",
@@ -511,6 +521,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Blaze Kick",
 		desc: "Has a 10% chance to burn the target and a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio. 10% chance to burn.",
+	},
+	bleakwindstorm: {
+		name: "Bleakwind Storm",
+		desc: "30% chance to give frostbite",
+		shortDesc: "30% frostbite",
 	},
 	blizzard: {
 		name: "Blizzard",
@@ -2250,10 +2265,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		start: "  [POKEMON] foresaw an attack!",
 		activate: "  [TARGET] took the Future Sight attack!",
 	},
-	futuresreckoning: {
+	mechanicalreckoning: {
 		desc: "This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes.  Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Phsyical or Special based on higher stat, Lowers the user's Defense and Sp. Def by 1.",
-		name: "Future's Reckoning",
+		name: "Mechanical Reckoning",
 	},
 	gastroacid: {
 		name: "Gastro Acid",
@@ -4448,10 +4463,10 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		heal: "#memento",
 	},
-	pastsassurance: {
+	naturalassurance: {
 		desc: "This clears all stat boosts and the effects of Reflect, Light Screen, Aurora Veil, Safeguard, Mist, Spikes, Toxic Spikes, Stealth Rock, Sticky Web, Weather, Pseudo-Weather, Field Effects, and Terrains end for the target's and users's side, ",
 		shortDesc: "Clears user and target side's stat boosts, hazards, and field effects.",
-		name: "Past's Assurance",
+		name: "Natural Assurance",
 	},
 	payback: {
 		name: "Payback",
@@ -6657,6 +6672,7 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "At the end of the next turn, the current user is given a +1 boost to Attack, Special Attack, and Speed while healing 1/2 its full health.",
 		shortDesc: "Gives +1 in Att, SpA, and Spe and heals 1/2 the next turn.",
 		name: "Time's Arrow",
+		heal: "  [NICKNAME]'s desire was fulfilled!",
 	},
 	topsyturvy: {
 		name: "Topsy-Turvy",

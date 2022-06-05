@@ -1626,8 +1626,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "Upon landing a critical hit, the user recieves a +2 boost in attack.",
 		shortDesc: "Upon landing a critical hit, the user recieves a +2 boost in attack.",
 	},
-	timetravel: {
-		name: "Time Travel",
+	tesseract: {
+		name: "Tesseract",
 		shortDesc: "This ability changes the signature move of Mebiusan depending on what form it is in.",
 	},
 	tintedlens: {

@@ -398,7 +398,7 @@ export class Side {
 
 	chooseMove(
 		moveText?: string | number, targetLoc = 0,
-		megaDynaOrZ: 'mega' | 'zmove' | 'ultra' | 'timetravel' | 'dynamax' | '' = ''
+		megaDynaOrZ: 'mega' | 'zmove' | 'ultra' | 'tesseract' | 'dynamax' | '' = ''
 	) {
 		if (this.requestState !== 'move') {
 			return this.emitChoiceError(`Can't move: You need a ${this.requestState} response`);
@@ -594,9 +594,9 @@ export class Side {
 		if (ultra && this.choice.ultra) {
 			return this.emitChoiceError(`Can't move: You can only ultra burst once per battle`);
 		}
-		const time = (megaDynaOrZ === 'timetravel');
-		if (time && !pokemon.canTimeTravel) {
-			return this.emitChoiceError(`Can't move: ${pokemon.name} can't time travel`);
+		const time = (megaDynaOrZ === 'tesseract');
+		if (time && !pokemon.canTesseract) {
+			return this.emitChoiceError(`Can't move: ${pokemon.name} can't tesseract`);
 		}
 		let dynamax = (megaDynaOrZ === 'dynamax');
 		const canDynamax = this.activeRequest?.active[this.active.indexOf(pokemon)].canDynamax;

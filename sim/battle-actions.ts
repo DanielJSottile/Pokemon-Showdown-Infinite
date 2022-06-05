@@ -1789,20 +1789,20 @@ export class BattleActions {
 		return null;
 	}
 
-	canTimeTravel(pokemon: Pokemon) {
-		if (['Mebiusan-Future'].includes(pokemon.baseSpecies.name) &&
-			pokemon.getAbility().id === 'timetravel') {
-			return "Mebiusan-Past";
+	canTesseract(pokemon: Pokemon) {
+		if (['Mebiusan-Innovation'].includes(pokemon.baseSpecies.name) &&
+			pokemon.getAbility().id === 'tesseract') {
+			return "Mebiusan-Tradition";
 		}
-		if (['Mebiusan-Past'].includes(pokemon.baseSpecies.name) &&
-			pokemon.getAbility().id === 'timetravel') {
-			return "Mebiusan-Future";
+		if (['Mebiusan-Tradition'].includes(pokemon.baseSpecies.name) &&
+			pokemon.getAbility().id === 'tesseract') {
+			return "Mebiusan-Innovation";
 		}
 		return null;
 	}
 
 	runMegaEvo(pokemon: Pokemon) {
-		const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst || pokemon.canTimeTravel;
+		const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst || pokemon.canTesseract;
 		if (!speciesid) return false;
 
 		// Pokémon affected by Sky Drop cannot mega evolve. Enforce it here for now.

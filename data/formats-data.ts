@@ -1,8 +1,8 @@
 export const FormatsData: { [k: string]: SpeciesFormatsData } = {
-	mebiusanpast: {
+	mebiusantradition: {
 		randomBattleMoves: [
 			"morningsun",
-			"pastsassurance",
+			"naturalassurance",
 			"partingshot",
 			"timesarrow",
 			"originpulse",
@@ -10,7 +10,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 		randomDoubleBattleMoves: [
 			"morningsun",
-			"pastsassurance",
+			"naturalassurance",
 			"partingshot",
 			"timesarrow",
 			"originpulse",
@@ -20,10 +20,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "AG",
 		doublesTier: "DUber",
 	},
-	mebiusanfuture: {
+	mebiusaninnovation: {
 		randomBattleMoves: [
 			"morningsun",
-			"futuresreckoning",
+			"mechanicalreckoning",
 			"swordsdance",
 			"timesarrow",
 			"originpulse",
@@ -31,7 +31,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		],
 		randomDoubleBattleMoves: [
 			"morningsun",
-			"futuresreckoning",
+			"mechanicalreckoning",
 			"swordsdance",
 			"timesarrow",
 			"originpulse",
@@ -16496,7 +16496,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"bravebird",
 			"oblivionwing",
 			"precipiceblades",
-			"pastsassurance",
+			"naturalassurance",
 		],
 		randomDoubleBattleMoves: [
 			"apocalypticmaelstrom",
@@ -16506,7 +16506,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"bravebird",
 			"oblivionwing",
 			"precipiceblades",
-			"pastsassurance",
+			"naturalassurance",
 			"protect",
 		],
 		tier: "AG",

@@ -5236,9 +5236,9 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 2,
 		num: -13,
 	},
-	timetravel: {
+	tesseract: {
 		// TODO: add functionality to change the move based on the form
-		name: "Time Travel",
+		name: "Tesseract",
 		rating: 4,
 		num: -12,
 	},
@@ -5371,7 +5371,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	triage: {
 		onModifyPriority(priority, pokemon, target, move) {
-			if (move?.flags["heal"]) return priority + 1;
+			if (move?.flags["heal"]) return priority + 2;
 		},
 		name: "Triage",
 		rating: 3.5,

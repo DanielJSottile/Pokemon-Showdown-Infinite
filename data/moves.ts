@@ -7129,12 +7129,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	futuresreckoning: {
+	mechanicalreckoning: {
 		num: -11,
 		accuracy: 100,
 		basePower: 110,
 		category: "Special",
-		name: "Future's Reckoning",
+		name: "Mechanical Reckoning",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
@@ -15485,12 +15485,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		zMove: {effect: "healreplacement"},
 		contestType: "Cool",
 	},
-	pastsassurance: {
+	naturalassurance: {
 		num: -10,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Past's Assurance",
+		name: "Natural Assurance",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
@@ -17021,7 +17021,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 					}
 					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
 					// If it is, then Mega Evolve before moving.
-					if (source.canMegaEvo || source.canUltraBurst || source.canTimeTravel) {
+					if (source.canMegaEvo || source.canUltraBurst || source.canTesseract) {
 						for (const [actionIndex, action] of this.queue.entries()) {
 							if (
 								action.pokemon === source &&
@@ -17810,7 +17810,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			duration: 1,
 			onStart(pokemon) {
 				this.add("-singleturn", pokemon, "move: Revealing Judgment");
-				this.add("-message", "Unown is judging your character...");
+				this.add("-message", `${pokemon.name} is judging your character...`);
 			},
 			onHit(pokemon, source, move) {
 				if (
@@ -22856,7 +22856,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			duration: 2,
 			onStart(pokemon, source) {
 				this.effectState.hp = source.maxhp / 2;
-				this.add("-message", "Mebiusan sent a desire through time.");
+				this.add("-message", `${pokemon.name} sent a desire through time.`);
 			},
 			onResidualOrder: 4,
 			onEnd(target) {
@@ -22872,7 +22872,6 @@ export const Moves: { [moveid: string]: MoveData } = {
 							"[wisher] " + this.effectState.source.name
 						);
 					}
-					this.add("-message", "Mebiusans desire was fulfilled!");
 				}
 			},
 		},

@@ -1,5 +1,5 @@
 export const Learnsets: { [speciesid: string]: LearnsetData } = {
-	mebiusanpast: {
+	mebiusantradition: {
 		learnset: {
 			quantumjump: ["8M"],
 			teleport: ["8M"],
@@ -35,7 +35,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			relicsong: ["8L30"],
 			partingshot: ["8L35"],
 			timesarrow: ["8L42"],
-			pastsassurance: ["8L49"],
+			naturalassurance: ["8L49"],
 			laserfocus: ["8L53", "8T"],
 			foresight: ["8L56"],
 			technoblast: ["8L69"],
@@ -97,7 +97,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			hypervoice: ["8T"],
 		},
 	},
-	mebiusanfuture: {
+	mebiusaninnovation: {
 		learnset: {
 			quantumjump: ["8M"],
 			teleport: ["8M"],
@@ -134,7 +134,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			relicsong: ["8L30"],
 			partingshot: ["8L35"],
 			timesarrow: ["8L42"],
-			futuresreckoning: ["8L49"],
+			mechanicalreckoning: ["8L49"],
 			laserfocus: ["8L53", "8T"],
 			foresight: ["8L56"],
 			technoblast: ["8L69"],
@@ -80578,8 +80578,8 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			tailwind: ["8T"],
 			foulplay: ["8T"],
 			knockoff: ["8T"],
-			pastsassurance: ["8T"],
-			futuresreckoning: ["8T"],
+			naturalassurance: ["8T"],
+			mechanicalreckoning: ["8T"],
 		},
 	},
 	spookypillar: {
