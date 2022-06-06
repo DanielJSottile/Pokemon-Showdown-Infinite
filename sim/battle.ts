@@ -89,6 +89,11 @@ export class Battle {
 	readonly activePerHalf: 1 | 2 | 3;
 	readonly field: Field;
 	readonly sides: [Side, Side] | [Side, Side, Side, Side];
+	/** Mebiusan's Blessing code?  may need more
+	 * readonly lastField: Field
+	 * readonly oneTurnAgoSides: [Side, Side] | [Side, Side, Side, Side];
+	 * readonly twoTurnsAgoSides: [Side, Side] | [Side, Side, Side, Side];
+	 */
 	readonly prngSeed: PRNGSeed;
 	dex: ModdedDex;
 	gen: number;

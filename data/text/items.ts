@@ -280,6 +280,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Choice Band",
 		desc: "Holder's Attack is 1.5x, but it can only select the first move it executes.",
 	},
+	choicecap: {
+		name: "Choice Cap",
+		desc: "Holder's moves switch offensive category, but it can only select the first move it executes.",
+	},
 	choicescarf: {
 		name: "Choice Scarf",
 		desc: "Holder's Speed is 1.5x, but it can only select the first move it executes.",
@@ -1330,6 +1334,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 	normaliumz: {
 		name: "Normalium Z",
 		desc: "If holder has a Normal move, this item allows it to use a Normal Z-Move.",
+	},
+	nullifytarget: {
+		name: "Nullify Target",
+		desc: "It nullifies the ability of the user.  Does not apply to certain abilities.",
 	},
 	nutpeaberry: {
 		name: "Nutpea Berry",

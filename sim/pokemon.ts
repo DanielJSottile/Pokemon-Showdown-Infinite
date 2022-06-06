@@ -772,7 +772,7 @@ export class Pokemon {
 		for (const pokemon of this.battle.getAllActive()) {
 			// can't use hasAbility because it would lead to infinite recursion
 			if (pokemon.ability === ('neutralizinggas' as ID) && !pokemon.volatiles['gastroacid'] &&
-				!pokemon.abilityState.ending) {
+			pokemon.item !== 'nullifytarget' && !pokemon.abilityState.ending) {
 				neutralizinggas = true;
 				break;
 			}
@@ -780,7 +780,8 @@ export class Pokemon {
 
 		return !!(
 			(this.battle.gen >= 5 && !this.isActive) ||
-			((this.volatiles['gastroacid'] || (neutralizinggas && this.ability !== ('neutralizinggas' as ID))) &&
+			((this.volatiles['gastroacid'] || this.item === 'nullifytarget' ||
+			(neutralizinggas && this.ability !== ('neutralizinggas' as ID))) &&
 			!this.getAbility().isPermanent
 			)
 		);

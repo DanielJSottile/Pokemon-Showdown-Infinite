@@ -5238,6 +5238,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 	},
 	tesseract: {
 		// TODO: add functionality to change the move based on the form
+		isPermanent: true,
 		name: "Tesseract",
 		rating: 4,
 		num: -12,

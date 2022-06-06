@@ -978,6 +978,29 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 220,
 		gen: 3,
 	},
+	choicecap: {
+		name: "Choice Cap",
+		spritenum: 68,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			if (pokemon.volatiles["choicelock"]) {
+				this.debug(
+					"removing choicelock: " + pokemon.volatiles["choicelock"]
+				);
+			}
+			pokemon.removeVolatile("choicelock");
+		},
+		onModifyMove(move, pokemon) {
+			pokemon.addVolatile("choicelock");
+			if (move.category === "Status") return;
+			move.category = move.category === "Physical" ? "Special" : "Physical";
+		},
+		isChoice: true,
+		num: -57,
+		gen: 8,
+	},
 	choicescarf: {
 		name: "Choice Scarf",
 		spritenum: 69,
@@ -4468,6 +4491,16 @@ export const Items: { [itemid: string]: ItemData } = {
 		zMoveType: "Normal",
 		num: 776,
 		gen: 7,
+	},
+	nullifytarget: {
+		// Ability suppression implemented in Pokemon.ignoringAbility() within sim/pokemon.js
+		name: "Nullify Target",
+		spritenum: 410,
+		fling: {
+			basePower: 10,
+		},
+		num: -56,
+		gen: 8,
 	},
 	nutpeaberry: {
 		name: "Nutpea Berry",
