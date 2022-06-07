@@ -767,12 +767,26 @@ export class Pokemon {
 	}
 
 	ignoringAbility() {
+		const additionalBannedAbilities = [
+			"noability",
+			"flowergift",
+			"forecast",
+			"hungerswitch",
+			"illusion",
+			"imposter",
+			"neutralizinggas",
+			"powerofalchemy",
+			"receiver",
+			"trace",
+			"wonderguard",
+		];
 		// Check if any active pokemon have the ability Neutralizing Gas
 		let neutralizinggas = false;
 		for (const pokemon of this.battle.getAllActive()) {
 			// can't use hasAbility because it would lead to infinite recursion
 			if (pokemon.ability === ('neutralizinggas' as ID) && !pokemon.volatiles['gastroacid'] &&
-			pokemon.item !== 'nullifytarget' && !pokemon.abilityState.ending) {
+			(pokemon.item !== 'nullifytarget') &&
+			!pokemon.abilityState.ending) {
 				neutralizinggas = true;
 				break;
 			}
@@ -780,7 +794,8 @@ export class Pokemon {
 
 		return !!(
 			(this.battle.gen >= 5 && !this.isActive) ||
-			((this.volatiles['gastroacid'] || this.item === 'nullifytarget' ||
+			((this.volatiles['gastroacid'] ||
+			(this.item === 'nullifytarget' && !additionalBannedAbilities.includes(this.ability)) ||
 			(neutralizinggas && this.ability !== ('neutralizinggas' as ID))) &&
 			!this.getAbility().isPermanent
 			)
