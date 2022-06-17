@@ -7818,11 +7818,11 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		doublesTier: "(DUU)",
 	},
 	deoxysspecial: {
-		tier: "OU",
+		tier: "AG",
 		doublesTier: "DOU",
 	},
 	deoxysphysical: {
-		tier: "OU",
+		tier: "AG",
 		doublesTier: "DOU",
 	},
 	turtwig: {
