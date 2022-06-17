@@ -805,7 +805,7 @@ export class Pokemon {
 	ignoringItem() {
 		return !!((this.battle.gen >= 5 && !this.isActive) ||
 			(this.hasAbility('klutz') && !this.getItem().ignoreKlutz) ||
-			this.volatiles['embargo'] || this.battle.field.pseudoWeather['magicroom']);
+			this.volatiles['embargo'] || (this.battle.field.pseudoWeather['magicroom'] && !this.getItem().ignoreMagicRoom));
 	}
 
 	deductPP(move: string | Move, amount?: number | null, target?: Pokemon | null | false) {

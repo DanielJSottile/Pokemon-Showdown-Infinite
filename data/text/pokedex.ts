@@ -1484,6 +1484,12 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	deoxysspeed: {
 		name: "Deoxys-Speed",
 	},
+	deoxysspecial: {
+		name: "Deoxys-Special",
+	},
+	deoxysphysical: {
+		name: "Deoxys-Physical",
+	},
 	turtwig: {
 		name: "Turtwig",
 	},

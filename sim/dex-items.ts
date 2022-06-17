@@ -82,6 +82,8 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	readonly isBerry: boolean;
 	/** Whether or not this item ignores the Klutz ability. */
 	readonly ignoreKlutz: boolean;
+	/** Whether or not this item ignores the effects of Magic Room. */
+	readonly ignoreMagicRoom: boolean;
 	/** The type the holder will change into if it is an Arceus. */
 	readonly onPlate?: string;
 	/** Is this item a Gem? */
@@ -117,6 +119,7 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 		this.itemUser = data.itemUser || undefined;
 		this.isBerry = !!data.isBerry;
 		this.ignoreKlutz = !!data.ignoreKlutz;
+		this.ignoreMagicRoom = !!data.ignoreMagicRoom;
 		this.onPlate = data.onPlate || undefined;
 		this.isGem = !!data.isGem;
 		this.isPokeball = !!data.isPokeball;

@@ -663,7 +663,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "normal",
-		type: "Aeonic",
+		type: "Delta",
 		contestType: "Clever",
 	},
 	appleacid: {
@@ -7151,7 +7151,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "any",
-		type: "Aeonic",
+		type: "Delta",
 		contestType: "Beautiful",
 	},
 	gastroacid: {
@@ -11394,6 +11394,12 @@ export const Moves: { [moveid: string]: MoveData } = {
 		pseudoWeather: "inverseroom",
 		condition: {
 			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem("roomextender")) {
+					return 8;
+				}
+				return 5;
+			},
 			onStart(target, source) {
 				this.add("-fieldstart", "move: Inverse Room", "[of] " + source);
 				this.add(
@@ -12671,9 +12677,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility("persistent")) {
-					this.add("-activate", source, "ability: Persistent", effect);
-					return 7;
+				if (source?.hasItem("roomextender")) {
+					return 8;
 				}
 				return 5;
 			},
@@ -12993,7 +12998,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 			},
 		},
 		target: "adjacentFoe",
-		type: "Aeonic",
+		type: "Delta",
 		contestType: "Beautiful",
 	},
 	maxflare: {
@@ -15559,7 +15564,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Aeonic",
+		type: "Delta",
 		zMove: {effect: "heal"},
 		contestType: "Beautiful",
 	},
@@ -22877,7 +22882,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Aeonic",
+		type: "Delta",
 		zMove: {effect: "heal"},
 		contestType: "Clever",
 	},
@@ -23196,9 +23201,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility("persistent")) {
-					this.add("-activate", source, "ability: Persistent", effect);
-					return 7;
+				if (source?.hasItem("roomextender")) {
+					return 8;
 				}
 				return 5;
 			},
@@ -23612,6 +23616,55 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Fighting",
 		zMove: {boost: {atk: 1}},
 		contestType: "Cool",
+	},
+	viralcannon: {
+		num: -57,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Viral Cannon",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		mindBlownRecoil: true,
+		onTry(source, target, move) {
+			if (
+				["Deoxys-Special", "Deoxys-Physical"].includes(source.species.name) ||
+				move.hasBounced
+			) {
+				return;
+			}
+			this.add("-fail", source, "move: Viral Cannon");
+			this.hint(
+				"Only a Pokemon whose form is Deoxys-Physical or Deoxys-Special can use this move."
+			);
+			return null;
+		},
+		onModifyMove(move, pokemon) {
+			if (
+				pokemon.species.name === "Deoxys-Physical"
+			) {
+				move.category = "Physical";
+			}
+		},
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(
+					Math.round(pokemon.maxhp / 2),
+					pokemon,
+					pokemon,
+					this.dex.conditions.get("Viral Cannon"),
+					true
+				);
+			}
+		},
+		secondary: {
+			chance: 100,
+			status: "tox",
+		},
+		target: "allAdjacent",
+		type: "Psychic",
+		contestType: "Popular",
 	},
 	visegrip: {
 		num: 11,
@@ -24210,9 +24263,8 @@ export const Moves: { [moveid: string]: MoveData } = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility("persistent")) {
-					this.add("-activate", source, "ability: Persistent", effect);
-					return 7;
+				if (source?.hasItem("roomextender")) {
+					return 8;
 				}
 				return 5;
 			},

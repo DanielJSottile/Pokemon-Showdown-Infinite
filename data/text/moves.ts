@@ -6896,6 +6896,13 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Vine Whip",
 		shortDesc: "No additional effect.",
 	},
+	viralcannon: {
+		name: "Viral Cannon",
+		desc: "Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability. This move is prevented from executing and the user does not lose HP if any active Pokemon has the Damp Ability.  This move becomes a physical attack if the user is Deoxys-Physical.  Only Deoxys-Special and Deoxys Physical can use this move.  This move has 100% chance to badly poison the target.",
+		shortDesc: "User loses 50% max HP. Hits adjacent Pokemon. Physical if user is Deoxys-P, 100% chance to badly posion.",
+
+		damage: "  ([POKEMON] cut its own HP to power up its move!)",
+	},
 	visegrip: {
 		name: "Vise Grip",
 		shortDesc: "No additional effect.",

@@ -1171,7 +1171,7 @@ export const Items: { [itemid: string]: ItemData } = {
 		name: "Cosmoemium Z",
 		spritenum: 690,
 		onTakeItem: false,
-		zMove: "Infinite Potential Geyser",
+		zMove: "Infinite fGeyser",
 		zMoveFrom: "Photon Geyser",
 		itemUser: ["Cosmoem"],
 		num: -33,
@@ -2551,11 +2551,11 @@ export const Items: { [itemid: string]: ItemData } = {
 		isBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Aeonic",
+			type: "Delta",
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			if (
-				move.type === "Aeonic" &&
+				move.type === "Delta" &&
 				target.getMoveHitData(move).typeMod > 0 &&
 				(!target.volatiles["substitute"] ||
 					move.flags["bypasssub"] ||
@@ -3055,27 +3055,27 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 799,
 		gen: 7,
 	},
-	aeonicgem: {
-		name: "Aeonic Gem",
+	deltagem: {
+		name: "Delta Gem",
 		spritenum: 89,
 		isGem: true,
 		onSourceTryPrimaryHit(target, source, move) {
 			if (target === source || move.category === "Status") return;
-			if (move.type === "Aeonic" && source.useItem()) {
+			if (move.type === "Delta" && source.useItem()) {
 				source.addVolatile("gem");
 			}
 		},
 		num: -35,
 		gen: 8,
 	},
-	aeoniciumz: {
-		name: "Aeonicium Z",
+	deltiumz: {
+		name: "Deltium Z",
 		spritenum: 636,
-		onPlate: "Aeonic",
-		onMemory: "Aeonic",
+		onPlate: "Delta",
+		onMemory: "Delta",
 		onTakeItem: false,
 		zMove: true,
-		zMoveType: "Aeonic",
+		zMoveType: "Delta",
 		num: -25,
 		gen: 7,
 	},
@@ -5486,6 +5486,16 @@ export const Items: { [itemid: string]: ItemData } = {
 		},
 		num: 540,
 		gen: 5,
+	},
+	roomextender: {
+		ignoreMagicRoom: true,
+		name: "Room Extender",
+		spritenum: 662,
+		fling: {
+			basePower: 60,
+		},
+		num: -58,
+		gen: 8,
 	},
 	roomservice: {
 		name: "Room Service",

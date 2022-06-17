@@ -322,7 +322,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	cosmoemiumz: {
 		name: "Cosmoemium Z",
-		desc: "If held by a Cosmoem with Photon Geyser, it can use Aeonic Potential Geyser.",
+		desc: "If held by a Cosmoem with Photon Geyser, it can use Infinite Potential Geyser.",
 	},
 	coverfossil: {
 		name: "Cover Fossil",
@@ -754,7 +754,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	ginemaberry: {
 		name: "Ginema Berry",
-		desc: "Halves damage taken from a supereffective Aeonic-type attack. Single use.",
+		desc: "Halves damage taken from a supereffective Delta-type attack. Single use.",
 	},
 	glalitite: {
 		name: "Glalitite",
@@ -922,13 +922,13 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Incinium Z",
 		desc: "If held by an Incineroar with Darkest Lariat, it can use Malicious Moonsault.",
 	},
-	aeonicgem: {
-		name: "Aeonic Gem",
-		desc: "Holder's first successful Aeonic-type attack will have 1.3x power. Single use.",
+	deltagem: {
+		name: "Delta Gem",
+		desc: "Holder's first successful Delta-type attack will have 1.3x power. Single use.",
 	},
-	aeoniciumz: {
-		name: "Infinitium Z",
-		desc: "If holder has an Aeonic move, this item allows it to use an Aeonic Z-Move.",
+	deltiumz: {
+		name: "Deltium Z",
+		desc: "If holder has an Delta move, this item allows it to use an Delta Z-Move.",
 	},
 	insectplate: {
 		name: "Insect Plate",
@@ -1633,6 +1633,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		desc: "If holder is hit by a contact move, the attacker loses 1/6 of its max HP.",
 
 		damage: "  [POKEMON] was hurt by the Rocky Helmet!",
+	},
+	roomextender: {
+		name: "Room Extender",
+		desc: "Holder's use of Trick/Wonder/Magic/Inverse Room lasts 8 turns instead of 5.",
 	},
 	roomservice: {
 		name: "Room Service",
