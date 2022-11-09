@@ -4276,30 +4276,6 @@
 // 		tier: "(PU)",
 // 		doublesTier: "(DUU)",
 // 	},
-// 	dunsparcemega: {
-// 		randomBattleMoves: [
-// 			"earthquake",
-// 			"dragonrush",
-// 			"coil",
-// 			"glare",
-// 			"outrage",
-// 			"roost",
-// 			"landswrath",
-// 		],
-// 		randomDoubleBattleMoves: [
-// 			"coil",
-// 			"earthquake",
-// 			"landswrath",
-// 			"earthquake",
-// 			"glare",
-// 			"outrage",
-// 			"protect",
-// 			"roost",
-// 		],
-
-// 		tier: "UUBL",
-// 		doublesTier: "DUU",
-// 	},
 // 	gligar: {
 // 		randomBattleMoves: [
 // 			"stealthrock",

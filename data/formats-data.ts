@@ -4291,30 +4291,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
-	dunsparcemega: {
-		randomBattleMoves: [
-			"earthquake",
-			"dragonrush",
-			"coil",
-			"glare",
-			"outrage",
-			"roost",
-			"landswrath",
-		],
-		randomDoubleBattleMoves: [
-			"coil",
-			"earthquake",
-			"landswrath",
-			"earthquake",
-			"glare",
-			"outrage",
-			"protect",
-			"roost",
-		],
-
-		tier: "UUBL",
-		doublesTier: "DUU",
-	},
 	gligar: {
 		randomBattleMoves: [
 			"stealthrock",
@@ -11744,6 +11720,31 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
+	golettremius: {
+		tier: "LC",
+	},
+	golaunch: {
+		randomBattleMoves: [
+			"fireblast",
+			"hurricane",
+			"focusblast",
+			"icebeam",
+			"inferno",
+			"ignition",
+		],
+		randomDoubleBattleMoves: [
+			"fireblast",
+			"hurricane",
+			"focusblast",
+			"icebeam",
+			"inferno",
+			"ignition",
+			"protect",
+		],
+
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	pawniard: {
 		tier: "LC",
 	},
@@ -16577,7 +16578,34 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 			"bulkup",
 			"heavyslam",
 			"darkestlariat",
+			"closecombat",
+			"icepunch",
+			"firepunch",
+			"thunderpunch",
 		],
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
+	crockydara: {
+		randomBattleMoves: [
+			"dracometeor",
+			"hydropump",
+			"scald",
+			"agility",
+			"icebeam",
+			"focusblast",
+		],
+		randomDoubleBattleMoves: [
+			"dracometeor",
+			"hydropump",
+			"scald",
+			"agility",
+			"icebeam",
+			"focusblast",
+			"fakeout",
+			"protect",
+		],
+
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},

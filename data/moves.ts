@@ -383,7 +383,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		category: "Status",
 		name: "Ally Switch",
 		pp: 15,
-		priority: 2,
+		priority: 0,
 		flags: {},
 		onTryHit(source) {
 			if (source.side.active.length === 1) return false;
@@ -643,7 +643,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Flying",
 		zMove: {basePower: 150},
 		maxMove: {basePower: 120},
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	apocalypticmaelstrom: {
 		num: 0,
@@ -1417,7 +1417,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Poison",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	barrage: {
 		num: 140,
@@ -1454,7 +1454,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Normal",
 		zMove: {effect: "clearnegativeboost"},
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	barrier: {
 		num: 112,
@@ -1848,7 +1848,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Ghost",
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	blackholeeclipse: {
 		num: 654,
@@ -1915,7 +1915,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Flying",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	blizzard: {
 		num: 59,
@@ -2729,7 +2729,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	celebrate: {
 		num: 606,
@@ -2879,7 +2879,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Ghost",
 		zMove: {basePower: 130},
 		maxMove: {basePower: 120},
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	chipaway: {
 		num: 498,
@@ -2921,7 +2921,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	circlethrow: {
 		num: 509,
@@ -4220,7 +4220,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Poison",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	disable: {
 		num: 50,
@@ -5519,7 +5519,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	eternabeam: {
 		num: 795,
@@ -10193,7 +10193,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Ice",
 		zMove: {boost: {atk: 1}},
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	holdback: {
 		num: 610,
@@ -10380,7 +10380,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	hydropump: {
 		num: 56,
@@ -10745,6 +10745,25 @@ export const Moves: { [moveid: string]: MoveData } = {
 		type: "Ice",
 		contestType: "Beautiful",
 	},
+	ignition: {
+		num: -57,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Ignition",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			spe: 2,
+			spa: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Fire",
+		zMove: {effect: "clearnegativeboost"},
+		contestType: "Clever",
+	},
 	imprison: {
 		num: 286,
 		accuracy: true,
@@ -10828,7 +10847,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Ghost",
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	inferno: {
 		num: 517,
@@ -12129,7 +12148,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "allAdjacent",
 		type: "Grass",
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	lick: {
 		num: 122,
@@ -12288,7 +12307,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		forceSwitch: true,
 		target: "normal",
 		type: "Ground",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	liquidation: {
 		num: 710,
@@ -14562,7 +14581,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Ice",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	mudbomb: {
 		num: 426,
@@ -14780,7 +14799,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	nastyplot: {
 		num: 417,
@@ -15283,7 +15302,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Poison",
 		zMove: {effect: "clearnegativeboost"},
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	ominouswind: {
 		num: 466,
@@ -15340,7 +15359,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	originstrike: {
 		num: -28,
@@ -15359,7 +15378,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Popular",
+		contestType: "Beautiful",
 	},
 	outrage: {
 		num: 200,
@@ -15636,7 +15655,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	perfecttemposymphony: {
 		num: -15,
@@ -16012,7 +16031,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Flying",
 		zMove: {effect: "clearnegativeboost"},
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	pointypoint: {
 		num: -32,
@@ -16036,7 +16055,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Steel",
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	poisonfang: {
 		num: 305,
@@ -16319,7 +16338,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Normal",
 		zMove: {boost: {spe: 1}},
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	powersplit: {
 		num: 471,
@@ -16807,7 +16826,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		contestType: "Popular",
+		contestType: "Clever",
 	},
 	psychoshift: {
 		num: 375,
@@ -16853,7 +16872,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	psyshock: {
 		num: 473,
@@ -16934,7 +16953,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Bug",
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	punishment: {
 		num: 386,
@@ -17124,7 +17143,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "normal",
 		type: "Electric",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	quash: {
 		num: 511,
@@ -17288,7 +17307,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		secondary: null,
 		target: "randomNormal",
 		type: "Fire",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	ragepowder: {
 		num: 476,
@@ -17518,7 +17537,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Rock",
 		zMove: {effect: "clearnegativeboost"},
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	recover: {
 		num: 105,
@@ -18484,7 +18503,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Ground",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	sandstorm: {
 		num: 201,
@@ -19142,7 +19161,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Steel",
 		zMove: {boost: {def: 1}},
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	shieldbreaker: {
 		num: -35,
@@ -19342,7 +19361,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Electric",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	sinisterarrowraid: {
 		num: 695,
@@ -20834,7 +20853,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Ghost",
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	spore: {
 		num: 147,
@@ -20938,7 +20957,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	stealthrock: {
 		num: 446,
@@ -21252,7 +21271,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Rock",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	stoneedge: {
 		num: 444,
@@ -22156,7 +22175,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "self",
 		type: "Psychic",
 		zMove: {effect: "clearnegativeboost"},
-		contestType: "Popular",
+		contestType: "Cute",
 	},
 	taunt: {
 		num: 269,
@@ -23285,9 +23304,9 @@ export const Moves: { [moveid: string]: MoveData } = {
 	triplekick: {
 		num: 167,
 		accuracy: 90,
-		basePower: 10,
+		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
-			return 10 * move.hit;
+			return 20 * move.hit;
 		},
 		category: "Physical",
 		name: "Triple Kick",
@@ -23300,7 +23319,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		target: "normal",
 		type: "Fighting",
 		zMove: {basePower: 110},
-		maxMove: {basePower: 70},
+		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
 	tropkick: {
@@ -23618,7 +23637,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		contestType: "Cool",
 	},
 	viralcannon: {
-		num: -57,
+		num: -58,
 		accuracy: 100,
 		basePower: 150,
 		category: "Special",
@@ -23629,23 +23648,16 @@ export const Moves: { [moveid: string]: MoveData } = {
 		mindBlownRecoil: true,
 		onTry(source, target, move) {
 			if (
-				["Deoxys-Special", "Deoxys-Physical"].includes(source.species.name) ||
+				["Deoxys-Special"].includes(source.species.name) ||
 				move.hasBounced
 			) {
 				return;
 			}
 			this.add("-fail", source, "move: Viral Cannon");
 			this.hint(
-				"Only a Pokemon whose form is Deoxys-Physical or Deoxys-Special can use this move."
+				"Only a Pokemon whose form is Deoxys-Special can use this move."
 			);
 			return null;
-		},
-		onModifyMove(move, pokemon) {
-			if (
-				pokemon.species.name === "Deoxys-Physical"
-			) {
-				move.category = "Physical";
-			}
 		},
 		onAfterMove(pokemon, target, move) {
 			if (move.mindBlownRecoil && !move.multihit) {
@@ -23664,7 +23676,49 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "allAdjacent",
 		type: "Psychic",
-		contestType: "Popular",
+		contestType: "Cool",
+	},
+	viralpummeling: {
+		num: -59,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "Viral Pummeling",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		mindBlownRecoil: true,
+		onTry(source, target, move) {
+			if (
+				["Deoxys-Physical"].includes(source.species.name) ||
+				move.hasBounced
+			) {
+				return;
+			}
+			this.add("-fail", source, "move: Viral Pummeling");
+			this.hint(
+				"Only a Pokemon whose form is Deoxys-Physical can use this move."
+			);
+			return null;
+		},
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(
+					Math.round(pokemon.maxhp / 2),
+					pokemon,
+					pokemon,
+					this.dex.conditions.get("Viral Pummeling"),
+					true
+				);
+			}
+		},
+		secondary: {
+			chance: 100,
+			status: "tox",
+		},
+		target: "allAdjacent",
+		type: "Psychic",
+		contestType: "Cool",
 	},
 	visegrip: {
 		num: 11,
@@ -23979,7 +24033,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Popular",
+		contestType: "Tough",
 	},
 	weatherball: {
 		num: 311,
@@ -24147,7 +24201,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		},
 		target: "normal",
 		type: "Electric",
-		contestType: "Popular",
+		contestType: "Cool",
 	},
 	wildcharge: {
 		num: 528,

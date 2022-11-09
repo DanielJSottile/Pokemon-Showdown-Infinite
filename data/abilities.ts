@@ -551,6 +551,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 3,
 		num: 171,
 	},
+	cessationoffate: {
+		onStart(source) {
+			this.field.addPseudoWeather('magicroom');
+		},
+		name: "Cessation of Fate",
+		rating: 4,
+		num: -19,
+	},
 	cheekpouch: {
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -749,6 +757,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Cotton Down",
 		rating: 2,
 		num: 238,
+	},
+	creationoffate: {
+		onStart(source) {
+			this.field.addPseudoWeather('inverseroom');
+		},
+		name: "Creation of Fate",
+		rating: 4,
+		num: -17,
 	},
 	curiousmedicine: {
 		onStart(pokemon) {
@@ -1115,21 +1131,6 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 3.5,
 		num: 88,
 	},
-	dragonscales: {
-		onSourceModifyDamage(damage, source, target, move) {
-			let mod = 1;
-			if (target.getMoveHitData(move).typeMod > 0) mod *= 0.66;
-			if (
-				move &&
-				move.effectType === "Move" &&
-				target.getMoveHitData(move).crit
-			) { mod *= 2; }
-			return this.chainModify(mod);
-		},
-		name: "Dragon Scales",
-		rating: 3,
-		num: -4,
-	},
 	dragonsmaw: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -1148,6 +1149,14 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		name: "Dragon's Maw",
 		rating: 3.5,
 		num: 263,
+	},
+	drawingoffate: {
+		onStart(source) {
+			this.field.addPseudoWeather('wonderroom');
+		},
+		name: "Drawing of Fate",
+		rating: 4,
+		num: -18,
 	},
 	drizzle: {
 		onStart(source) {
@@ -1293,7 +1302,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Eternal Winter",
 		rating: 4.5,
-		num: -17,
+		num: -20,
 	},
 	fairyaura: {
 		onStart(pokemon) {
@@ -2695,6 +2704,25 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		rating: 1.5,
 		num: 196,
 	},
+	metamorphosis: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === "Bug") {
+				this.debug("Metamorphosis boost");
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === "Bug") {
+				this.debug("Metamorphosis boost");
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Metamorphosis",
+		rating: 3.5,
+		num: -4,
+	},
 	mimicry: {
 		onStart(pokemon) {
 			if (this.field.terrain) {
@@ -3276,7 +3304,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Overshock",
 		rating: 2.5,
-		num: -19,
+		num: -22,
 	},
 	owntempo: {
 		onUpdate(pokemon) {
@@ -4021,7 +4049,7 @@ export const Abilities: { [abilityid: string]: AbilityData } = {
 		},
 		name: "Relentless Khamsin",
 		rating: 4.5,
-		num: -17,
+		num: -21,
 	},
 	resolutegauntlet: {
 		onStart(pokemon) {

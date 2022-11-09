@@ -1580,19 +1580,6 @@ export const Items: { [itemid: string]: ItemData } = {
 		num: 324,
 		gen: 4,
 	},
-	dunsparcite: {
-		name: "Dunsparcite",
-		spritenum: 576,
-		megaStone: "Dunsparce-Mega",
-		megaEvolves: "Dunsparce",
-		itemUser: ["Dunsparce"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: -9,
-		gen: 8,
-	},
 	durinberry: {
 		name: "Durin Berry",
 		spritenum: 114,

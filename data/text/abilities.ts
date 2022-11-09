@@ -156,6 +156,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon is immune to ballistic moves. Ballistic moves include Bullet Seed, Octazooka, Barrage, Rock Wrecker, Zap Cannon, Acid Spray, Aura Sphere, Focus Blast, and all moves with Ball or Bomb in their name.",
 		shortDesc: "Makes user immune to ballistic moves (Shadow Ball, Sludge Bomb, Focus Blast, etc).",
 	},
+	cessationoffate: {
+		name: "Cessation of Fate",
+		shortDesc: "On switch-in, this Pokemon summons Magic Room.",
+	},
 	cheekpouch: {
 		name: "Cheek Pouch",
 		desc: "If this Pokemon eats a Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect.",
@@ -224,6 +228,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Cotton Down",
 		desc: "When this Pokemon is hit by an attack, the Speed of all other Pokemon on the field is lowered by 1 stage.",
 		shortDesc: "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage.",
+	},
+	creationoffate: {
+		name: "Creation of Fate",
+		shortDesc: "On switch-in, this Pokemon summons Inverse Room.",
 	},
 	curiousmedicine: {
 		name: "Curious Medicine",
@@ -326,14 +334,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
 		shortDesc: "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",
 	},
-	dragonscales: {
-		name: "Dragon Scales",
-		desc: "This Pokemon reduces 1/3 damage from Super Effective moves, but double damage from Critical Hits.",
-		shortDesc: "This Pokemon reduces 1/3 damage from Super Effective moves, 2x damage from Critical Hits.",
-	},
 	dragonsmaw: {
 		name: "Dragon's Maw",
 		shortDesc: "This Pokemon's attacking stat is multiplied by 1.5 while using a Dragon-type attack.",
+	},
+	drawingoffate: {
+		name: "Drawing of Fate",
+		shortDesc: "On switch-in, this Pokemon summons Wonder Room.",
 	},
 	drizzle: {
 		name: "Drizzle",
@@ -814,6 +821,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	merciless: {
 		name: "Merciless",
 		shortDesc: "This Pokemon's attacks are critical hits if the target is poisoned.",
+	},
+	metamorphosis: {
+		name: "Metamorphosis",
+		shortDesc: "This Pokemon's attacking stat is multiplied by 1.5 while using a Bug-type attack.",
 	},
 	mimicry: {
 		name: "Mimicry",
