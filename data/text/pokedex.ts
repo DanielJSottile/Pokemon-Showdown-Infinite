@@ -836,6 +836,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	dunsparce: {
 		name: "Dunsparce",
 	},
+	dunsuchinoko: {
+		name: "Dunsuchinoko",
+	},
 	gligar: {
 		name: "Gligar",
 	},

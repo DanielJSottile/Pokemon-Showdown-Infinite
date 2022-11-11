@@ -4291,6 +4291,31 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	dunsuchinoko: {
+		randomBattleMoves: [
+			"bodyslam",
+			"rockslide",
+			"coil",
+			"glare",
+			"earthquake",
+			"dragonrush",
+			"headbutt",
+			"roost",
+		],
+		randomDoubleBattleMoves: [
+			"coil",
+			"rockslide",
+			"headbutt",
+			"glare",
+			"dragonrush",
+			"earthquake",
+			"bodyslam",
+			"roost",
+			"protect",
+		],
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	gligar: {
 		randomBattleMoves: [
 			"stealthrock",
