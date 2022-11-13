@@ -17738,32 +17738,28 @@ export const Moves: { [moveid: string]: MoveData } = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onTry(source) {
-			if (source.status === "drowsy" || source.hasAbility("comatose")) {
-				return false;
-			}
+			if (source.status === 'slp' || source.hasAbility('comatose')) return false;
 
 			if (source.hp === source.maxhp) {
-				this.add("-fail", source, "heal");
+				this.add('-fail', source, 'heal');
 				return null;
 			}
-			if (source.hasAbility(["insomnia", "vitalspirit"])) {
-				this.add(
-					"-fail",
-					source,
-					"[from] ability: " + source.getAbility().name,
-					"[of] " + source
-				);
+			if (source.hasAbility(['insomnia', 'vitalspirit'])) {
+				this.add('-fail', source, '[from] ability: ' + source.getAbility().name, '[of] ' + source);
 				return null;
 			}
 		},
 		onHit(target, source, move) {
-			if (!target.setStatus("drowsy", source, move)) return false;
-			this.heal(target.maxhp / 2);
+			const result = target.setStatus('slp', source, move);
+			if (!result) return result;
+			target.statusState.time = 3;
+			target.statusState.startTime = 3;
+			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
 		},
 		secondary: null,
 		target: "self",
 		type: "Psychic",
-		zMove: {effect: "clearnegativeboost"},
+		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Cute",
 	},
 	retaliate: {
@@ -19820,7 +19816,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "drowsy" || source.hasAbility("comatose");
+			return source.status === "drowsy" || source.status === "slp" || source.hasAbility("comatose");
 		},
 		onHit(pokemon) {
 			const noSleepTalk = [
@@ -20150,7 +20146,7 @@ export const Moves: { [moveid: string]: MoveData } = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "drowsy" || source.hasAbility("comatose");
+			return source.status === "drowsy" || source.status === 'slp' || source.hasAbility("comatose");
 		},
 		secondary: {
 			chance: 30,

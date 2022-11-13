@@ -5078,8 +5078,14 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	rest: {
 		name: "Rest",
-		desc: "The user becomes drowsy and heals 50% of its max health.",
-		shortDesc: "User becomes drowsy and heals 50% of its max health.",
+		desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. Fails if the user has full HP, is already asleep, or if another effect is preventing sleep.",
+		shortDesc: "User sleeps 2 turns and restores HP and status.",
+		gen2: {
+			desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process, even if it was already asleep. Fails if the user has full HP.",
+		},
+		gen1: {
+			desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. This does not remove the user's stat penalty for burn or paralysis. Fails if the user has full HP.",
+		},
 	},
 	retaliate: {
 		name: "Retaliate",
@@ -5694,7 +5700,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	sleeptalk: {
 		name: "Sleep Talk",
 		desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Dynamax Cannon, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Max Move.",
-		shortDesc: "User must be drowsy. Uses another known move.",
+		shortDesc: "User must be drowsy or asleep. Uses another known move.",
 		gen7: {
 			desc: "One of the user's known moves, besides this move, is selected for use at random. Fails if the user is not drowsy. The selected move does not have PP deducted from it, and can currently have 0 PP. This move cannot select Assist, Beak Blast, Belch, Bide, Celebrate, Chatter, Copycat, Focus Punch, Hold Hands, Me First, Metronome, Mimic, Mirror Move, Nature Power, Shell Trap, Sketch, Sleep Talk, Struggle, Uproar, any two-turn move, or any Z-Move.",
 		},
@@ -5797,7 +5803,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	snore: {
 		name: "Snore",
 		desc: "Has a 30% chance to make the target flinch. Fails if the user is not drowsy.",
-		shortDesc: "User must be drowsy. 30% chance to flinch target.",
+		shortDesc: "User must be drowsy or asleep. 30% chance to flinch target.",
 	},
 	soak: {
 		name: "Soak",
